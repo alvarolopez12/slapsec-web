@@ -1,0 +1,10 @@
+# Netlify CLI (local link, not needed once Git CD is on)
+.netlify
+# Local backups / old versions
+archive/
+# npm
+node_modules/
+# macOS
+.DS_Store
+# Claude local settings
+.claude/settings.local.json

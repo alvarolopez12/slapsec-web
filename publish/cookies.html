@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cookie Policy — SlapSec</title>
+<meta name="description" content="Cookie and local-storage policy for slapsec.com. No tracking or advertising cookies." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://slapsec.com/cookies.html" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c12'/%3E%3Cpath d='M16 3.5 27.2 7.6c0 11.2-2.1 18.4-11.2 23.4C6.9 26 4.8 18.8 4.8 7.6L16 3.5Z' fill='%23ff1b2d'/%3E%3Ccircle cx='16' cy='14.6' r='3.1' fill='%230a0c12'/%3E%3Crect x='14.7' y='14.2' width='2.6' height='7.2' rx='1.3' fill='%230a0c12'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#050505;--bg-2:#0a0c12;--fg:#f2f0ea;--fg-dim:#8b8878;--fg-muted:#4a4840;--lime:#caff3d;--cyan:#22e5ff;--red:#ff1b2d;--line:rgba(242,240,234,0.10);--line-strong:rgba(242,240,234,0.18);--display:"Bricolage Grotesque",system-ui,sans-serif;--sans:"Manrope",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}
+::selection{background:var(--lime);color:var(--bg)}
+header{position:sticky;top:0;z-index:10;background:rgba(5,5,5,0.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.head-inner{max-width:860px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:var(--fg)}
+.logo svg{width:22px;height:22px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(255,27,45,.5))}
+.logo .s{color:var(--fg-muted);font-weight:300}.logo .x{color:var(--cyan)}
+.head-right{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em}
+.head-right a.back{color:var(--fg-dim)}.head-right a.back:hover{color:var(--lime)}
+.lang{display:flex;border:1px solid var(--line-strong)}
+.lang button{background:transparent;color:var(--fg-dim);border:none;padding:6px 10px;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit;transition:all .2s}
+.lang button.active{background:var(--lime);color:var(--bg);font-weight:600}
+.lang button:not(.active):hover{color:var(--lime)}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+main{padding:60px 0 72px}
+.eyebrow{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--cyan);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--lime)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.02;letter-spacing:-0.03em;margin-bottom:10px}
+.updated{font-family:var(--mono);font-size:12px;color:var(--fg-muted);margin-bottom:8px}
+h2{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-0.01em;margin:34px 0 12px;padding-top:26px;border-top:1px solid var(--line)}
+p,li{color:var(--fg-dim);margin-bottom:12px}
+strong{color:var(--fg);font-weight:600}
+ul{padding-left:20px;margin-bottom:12px}li{margin-bottom:7px}
+.box{border:1px solid var(--line-strong);background:var(--bg-2);padding:18px 20px;margin:20px 0;font-size:14.5px;position:relative}
+.box::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:2px;background:linear-gradient(90deg,var(--lime),var(--cyan))}
+.box .label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--cyan);margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+th,td{text-align:left;padding:11px 12px;border:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--cyan);background:var(--bg-2)}
+td{color:var(--fg-dim)}td code{font-family:var(--mono);font-size:12.5px;color:var(--lime)}
+footer{border-top:1px solid var(--line);padding:28px 0;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-muted)}
+.foot-inner{max-width:860px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:space-between;align-items:center}
+.foot-links{display:flex;flex-wrap:wrap;gap:14px}
+.foot-inner a{color:var(--fg-muted)}.foot-inner a:hover{color:var(--lime)}
+[hidden]{display:none!important}
+@media(max-width:560px){table,thead,tbody,th,td,tr{display:block}th{display:none}td{border-top:none}td:first-child{border-top:1px solid var(--line)}td::before{content:attr(data-th);display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--cyan);margin-bottom:4px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <a class="logo" href="index.html" aria-label="SlapSec — home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0a0c12"/><path d="M16 3.5 27.2 7.6c0 11.2-2.1 18.4-11.2 23.4C6.9 26 4.8 18.8 4.8 7.6L16 3.5Z" fill="#ff1b2d"/><circle cx="16" cy="14.6" r="3.1" fill="#0a0c12"/><rect x="14.7" y="14.2" width="2.6" height="7.2" rx="1.3" fill="#0a0c12"/></svg>
+      <span>SLAP<span class="s">/</span><span class="x">SEC</span></span>
+    </a>
+    <div class="head-right">
+      <a class="back" href="index.html" data-en="← Back" data-es="← Volver">← Back</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-l="es">ES</button>
+        <button type="button" data-l="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ============ EN ============ -->
+  <article data-lang="en">
+    <div class="eyebrow">Legal</div>
+    <h1>Cookie Policy</h1>
+    <p class="updated">Last updated: June 5, 2026</p>
+
+    <p>This Cookie Policy explains the storage technologies used by <strong>slapsec.com</strong>, operated by SlapSec LLC. The short version: <strong>we do not use tracking or advertising cookies, and we do not run web analytics.</strong></p>
+
+    <div class="box">
+      <div class="label">In one line</div>
+      No ad cookies. No analytics. No cross-site tracking. We store two functional values in your browser and load fonts from Google Fonts.
+    </div>
+
+    <h2>1. Functional local storage</h2>
+    <p>To remember your choices, we store the following in your browser's <strong>local storage</strong> (not traditional cookies). These values stay on your device, are not sent to advertising networks, and are not used to track you across other sites.</p>
+    <table>
+      <thead><tr><th>Key</th><th>Purpose</th><th>Lifetime</th></tr></thead>
+      <tbody>
+        <tr><td data-th="Key"><code>slapsec-lang</code></td><td data-th="Purpose">Remembers your language preference (EN/ES).</td><td data-th="Lifetime">Until you clear it</td></tr>
+        <tr><td data-th="Key"><code>slapsec-consent</code></td><td data-th="Purpose">Remembers that you dismissed the privacy notice so it isn't shown again.</td><td data-th="Lifetime">Until you clear it</td></tr>
+      </tbody>
+    </table>
+
+    <h2>2. No analytics or advertising</h2>
+    <p>We do not use Google Analytics, tracking pixels, advertising cookies, or any similar technology to profile visitors.</p>
+
+    <h2>3. Third-party content — Google Fonts</h2>
+    <p>To render our typography, the site loads font files from <strong>Google Fonts</strong> (Google LLC) via <code style="font-family:var(--mono);font-size:13px;color:var(--lime)">fonts.googleapis.com</code> and <code style="font-family:var(--mono);font-size:13px;color:var(--lime)">fonts.gstatic.com</code>. When your browser requests these files, Google may process your IP address as part of delivering them. Google Fonts does not set cookies for the basic font request, but the request itself reaches Google's servers. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+
+    <h2>4. Managing storage and requests</h2>
+    <ul>
+      <li>You can clear the local-storage values at any time through your browser settings. Doing so resets your language preference and the privacy notice.</li>
+      <li>You can block third-party requests (including Google Fonts) using your browser settings or extensions. Note that blocking fonts may change how the site looks.</li>
+    </ul>
+
+    <h2>5. Legal basis (EEA/UK)</h2>
+    <p>Functional local storage is used because it is necessary to remember the choices you make on the site (our legitimate interest in a working, user-friendly site). Loading Google Fonts is based on our legitimate interest in consistent, accessible typography. If you have any concern, contact us at <a href="mailto:info@slapsec.com">info@slapsec.com</a>.</p>
+
+    <h2>6. Changes &amp; contact</h2>
+    <p>We may update this policy; the date above reflects the current version. Questions: <a href="mailto:info@slapsec.com">info@slapsec.com</a>. See also our <a href="privacy.html">Privacy Policy</a>.</p>
+  </article>
+
+  <!-- ============ ES ============ -->
+  <article data-lang="es" hidden>
+    <div class="eyebrow">Legal</div>
+    <h1>Política de Cookies</h1>
+    <p class="updated">Última actualización: 5 de junio de 2026</p>
+
+    <p>Esta Política de Cookies explica las tecnologías de almacenamiento que utiliza <strong>slapsec.com</strong>, operado por SlapSec LLC. En resumen: <strong>no usamos cookies de seguimiento ni publicitarias, y no empleamos analítica web.</strong></p>
+
+    <div class="box">
+      <div class="label">En una línea</div>
+      Sin cookies publicitarias. Sin analítica. Sin seguimiento entre sitios. Guardamos dos valores funcionales en tu navegador y cargamos las fuentes desde Google Fonts.
+    </div>
+
+    <h2>1. Almacenamiento funcional local</h2>
+    <p>Para recordar tus elecciones, guardamos lo siguiente en el <strong>almacenamiento local</strong> de tu navegador (no son cookies tradicionales). Estos valores permanecen en tu dispositivo, no se envían a redes publicitarias y no se usan para rastrearte en otros sitios.</p>
+    <table>
+      <thead><tr><th>Clave</th><th>Finalidad</th><th>Duración</th></tr></thead>
+      <tbody>
+        <tr><td data-th="Clave"><code>slapsec-lang</code></td><td data-th="Finalidad">Recuerda tu preferencia de idioma (EN/ES).</td><td data-th="Duración">Hasta que lo borres</td></tr>
+        <tr><td data-th="Clave"><code>slapsec-consent</code></td><td data-th="Finalidad">Recuerda que cerraste el aviso de privacidad para no volver a mostrarlo.</td><td data-th="Duración">Hasta que lo borres</td></tr>
+      </tbody>
+    </table>
+
+    <h2>2. Sin analítica ni publicidad</h2>
+    <p>No utilizamos Google Analytics, píxeles de seguimiento, cookies publicitarias ni ninguna tecnología similar para perfilar a los visitantes.</p>
+
+    <h2>3. Contenido de terceros — Google Fonts</h2>
+    <p>Para mostrar la tipografía, el sitio carga archivos de fuentes desde <strong>Google Fonts</strong> (Google LLC) a través de <code style="font-family:var(--mono);font-size:13px;color:var(--lime)">fonts.googleapis.com</code> y <code style="font-family:var(--mono);font-size:13px;color:var(--lime)">fonts.gstatic.com</code>. Cuando tu navegador solicita estos archivos, Google puede tratar tu dirección IP como parte de la entrega. Google Fonts no establece cookies para la solicitud básica de fuentes, pero la propia petición llega a los servidores de Google. Consulta la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>.</p>
+
+    <h2>4. Gestión del almacenamiento y las peticiones</h2>
+    <ul>
+      <li>Puedes borrar los valores de almacenamiento local en cualquier momento desde la configuración de tu navegador. Al hacerlo se reinician tu preferencia de idioma y el aviso de privacidad.</li>
+      <li>Puedes bloquear las peticiones a terceros (incluido Google Fonts) mediante la configuración de tu navegador o extensiones. Ten en cuenta que bloquear las fuentes puede cambiar el aspecto del sitio.</li>
+    </ul>
+
+    <h2>5. Base jurídica (EEE/Reino Unido)</h2>
+    <p>El almacenamiento funcional local se utiliza porque es necesario para recordar las elecciones que haces en el sitio (nuestro interés legítimo en una web funcional y cómoda). La carga de Google Fonts se basa en nuestro interés legítimo en una tipografía consistente y accesible. Si tienes cualquier duda, escríbenos a <a href="mailto:info@slapsec.com">info@slapsec.com</a>.</p>
+
+    <h2>6. Cambios y contacto</h2>
+    <p>Podemos actualizar esta política; la fecha superior refleja la versión vigente. Dudas: <a href="mailto:info@slapsec.com">info@slapsec.com</a>. Consulta también nuestra <a href="privacy.html">Política de Privacidad</a>.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>© <span id="year">2026</span> SlapSec LLC · Clovis, NM (USA)</span>
+    <span class="foot-links">
+      <a href="index.html" data-en="Home" data-es="Inicio">Home</a>
+      <a href="privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a>
+      <a href="legal.html" data-en="Legal Notice" data-es="Aviso Legal">Legal Notice</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY="slapsec-lang";
+  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function save(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  function apply(l){
+    l=(l==="es")?"es":"en";
+    document.documentElement.lang=l;
+    document.querySelectorAll("article[data-lang]").forEach(function(a){a.hidden=(a.getAttribute("data-lang")!==l);});
+    document.querySelectorAll("[data-en]").forEach(function(el){var v=el.getAttribute("data-"+l);if(v!==null)el.textContent=v;});
+    document.querySelectorAll(".lang button").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-l")===l);});
+    save(l);
+  }
+  var saved=get();
+  if(saved!=="es"&&saved!=="en"){var n=(navigator.language||navigator.userLanguage||"en").toLowerCase();saved=n.indexOf("es")===0?"es":"en";}
+  apply(saved);
+  document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){apply(b.getAttribute("data-l"));});});
+  var y=document.getElementById("year");if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
