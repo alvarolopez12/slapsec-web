@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Slapsec — Senior cybersecurity. Democratized.</title>
+<title>Cybersecurity Consulting — Pentest & Red Team | SlapSec</title>
 <meta name="description" content="Independent senior cybersecurity consulting. Red team, pentest, Digital Risk Radar, Zero Trust, data security (DLP/DSPM) and AI automation. Big Four judgment, without the overhead." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="author" content="SlapSec LLC" />
@@ -887,7 +887,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       </div>
       <div class="prompt-line" aria-hidden="true"><span class="p">slapsec</span>:<span class="c">~/intake</span>$ <span data-en="./new-engagement --priority" data-es="./nuevo-proyecto --prioridad">./new-engagement --priority</span><span class="cursor"></span></div>
 
-      <form class="form" id="contactForm" novalidate>
+      <form class="form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="company_website" novalidate>
+        <input type="hidden" name="form-name" value="contact" />
         <!-- Honeypot: real users never fill this; bots do. -->
         <div class="hp" aria-hidden="true">
           <label for="company_website">Company website (leave blank)</label>
@@ -1238,25 +1239,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   var statusEl = document.getElementById("formStatus");
   var submitBtn = document.getElementById("formSubmit");
 
-  // Configure your backend here. If left empty, the form falls back to a mailto: draft.
-  var FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxx" or your own API
-
   var MSG = {
     en: {
       sending: "[ ~ ] Establishing secure channel… transmitting.",
       ok: "[ ✓ ] Received. A senior will reply within one business day — usually faster.",
       err: "[ ✗ ] Transmission failed. Email us directly at info@slapsec.com.",
-      invalid: "[ ! ] Please complete the required fields (name, company, work email, message).",
-      mailto: "[ ~ ] Opening your mail client with the message pre-filled…",
-      mailtoDone: "[ i ] Draft opened in your email client — press Send there to deliver it. If nothing opened, write to info@slapsec.com."
+      invalid: "[ ! ] Please complete the required fields (name, company, work email, message)."
     },
     es: {
       sending: "[ ~ ] Estableciendo canal seguro… transmitiendo.",
       ok: "[ ✓ ] Recibido. Un senior te responderá en un día hábil — normalmente antes.",
       err: "[ ✗ ] Falló la transmisión. Escríbenos directamente a info@slapsec.com.",
-      invalid: "[ ! ] Completa los campos obligatorios (nombre, empresa, email corporativo, mensaje).",
-      mailto: "[ ~ ] Abriendo tu cliente de correo con el mensaje listo…",
-      mailtoDone: "[ i ] Borrador abierto en tu cliente de correo — pulsa Enviar allí para que nos llegue. Si no se abrió nada, escribe a info@slapsec.com."
+      invalid: "[ ! ] Completa los campos obligatorios (nombre, empresa, email corporativo, mensaje)."
     }
   };
   function lang(){ return document.documentElement.lang === "es" ? "es" : "en"; }
@@ -1264,21 +1258,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     if(!statusEl) return;
     statusEl.className = "form-status show " + kind;
     statusEl.textContent = text;
-  }
-
-  function buildMailto(data){
-    var subj = "[Slapsec] " + (data.company || "New engagement") + " — " + (data.urgency || "");
-    var bodyLines = [
-      "Name: " + (data.name||""),
-      "Company: " + (data.company||""),
-      "Email: " + (data.email||""),
-      "Role: " + (data.role||""),
-      "Sector: " + (data.sector||""),
-      "Urgency: " + (data.urgency||""),
-      "",
-      (data.message||"")
-    ];
-    return "mailto:info@slapsec.com?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(bodyLines.join("\n"));
   }
 
   if(form){
@@ -1308,7 +1287,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       if(!valid){ showStatus("error", MSG[L].invalid); return; }
 
       var data = {
-        name: form.name.value.trim(),
+        name: form.elements["name"].value.trim(),
         company: form.company.value.trim(),
         email: form.email.value.trim(),
         role: form.role.value.trim(),
@@ -1317,22 +1296,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         message: form.message.value.trim()
       };
 
-      // No backend configured → mailto fallback. Honest status: the message
-      // is only delivered when the visitor presses Send in their mail client.
-      if(!FORM_ENDPOINT){
-        showStatus("pending", MSG[L].mailto);
-        window.location.href = buildMailto(data);
-        setTimeout(function(){ showStatus("pending", MSG[L].mailtoDone); }, 800);
-        return;
-      }
+      // Submit to Netlify Forms (url-encoded POST to the page path).
+      var payload = new URLSearchParams();
+      payload.append("form-name", "contact");
+      Object.keys(data).forEach(function(k){ payload.append(k, data[k]); });
 
-      // Backend submit
       showStatus("pending", MSG[L].sending);
       if(submitBtn) submitBtn.disabled = true;
-      fetch(FORM_ENDPOINT, {
+      fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify(data)
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: payload.toString()
       }).then(function(res){
         if(!res.ok) throw new Error("bad status " + res.status);
         showStatus("ok", MSG[L].ok);
