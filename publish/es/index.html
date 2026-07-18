@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Consultoría de Ciberseguridad — Pentest y Red Team | SlapSec</title>
+<meta content="Consultoría de ciberseguridad senior independiente. Red team, pentest, Digital Risk Radar, Zero Trust, seguridad del dato (DLP/DSPM) y automatización con IA. El criterio de las Big Four, sin el overhead." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="SlapSec LLC" name="author"/>
+<meta content="#050505" name="theme-color"/>
+<link href="https://slapsec.com/es/" rel="canonical"/>
+<link href="https://slapsec.com/" hreflang="en" rel="alternate"/>
+<link href="https://slapsec.com/es/" hreflang="es" rel="alternate"/>
+<link href="https://slapsec.com/" hreflang="x-default" rel="alternate"/>
+<!-- Favicon (inline, no extra file needed) -->
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c12'/%3E%3Cpath d='M16 3.5 27.2 7.6c0 11.2-2.1 18.4-11.2 23.4C6.9 26 4.8 18.8 4.8 7.6L16 3.5Z' fill='%23ff1b2d'/%3E%3Ccircle cx='16' cy='14.6' r='3.1' fill='%230a0c12'/%3E%3Crect x='14.7' y='14.2' width='2.6' height='7.2' rx='1.3' fill='%230a0c12'/%3E%3C/svg%3E" rel="icon"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c12'/%3E%3Cpath d='M16 3.5 27.2 7.6c0 11.2-2.1 18.4-11.2 23.4C6.9 26 4.8 18.8 4.8 7.6L16 3.5Z' fill='%23ff1b2d'/%3E%3Ccircle cx='16' cy='14.6' r='3.1' fill='%230a0c12'/%3E%3Crect x='14.7' y='14.2' width='2.6' height='7.2' rx='1.3' fill='%230a0c12'/%3E%3C/svg%3E" rel="apple-touch-icon"/>
+<!-- Open Graph / social. og.png (1200x630) is bundled at repo root — deploy it to the site root so /og.png resolves. -->
+<meta content="website" property="og:type"/>
+<meta content="Slapsec" property="og:site_name"/>
+<meta content="SlapSec — Ciberseguridad senior. Democratizada." property="og:title"/>
+<meta content="Mismo rigor que las firmas tier-1, sin el overhead. Red team, pentest, Digital Risk Radar, Zero Trust, seguridad del dato y automatización con IA." property="og:description"/>
+<meta content="https://slapsec.com/es/" property="og:url"/>
+<meta content="https://slapsec.com/og.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="es_ES" property="og:locale"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="SlapSec — Ciberseguridad senior. Democratizada." name="twitter:title"/>
+<meta content="Mismo rigor que las firmas tier-1, sin el overhead. Consultoría de ciberseguridad senior." name="twitter:description"/>
+<meta content="https://slapsec.com/og.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Fraunces:ital,wght@1,300;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Slapsec",
+  "legalName": "SlapSec LLC",
+  "description": "Independent senior cybersecurity consulting. Red team, pentesting, Digital Risk Radar, Zero Trust architecture, data security (DLP/IRM/DSPM) and AI automation. Same rigor as tier-1 firms, without the overhead.",
+  "url": "https://slapsec.com/",
+  "logo": "https://slapsec.com/og.png",
+  "image": "https://slapsec.com/og.png",
+  "email": "info@slapsec.com",
+  "slogan": "Senior cybersecurity. Democratized.",
+  "areaServed": ["ES", "PT", "EU"],
+  "address": { "@type": "PostalAddress", "streetAddress": "412 W 7th St", "addressLocality": "Clovis", "addressRegion": "NM", "postalCode": "88101", "addressCountry": "US" },
+  "knowsAbout": ["Penetration Testing","Red Team","Pentesting","Digital Risk Protection","Threat Intelligence","Zero Trust","IAM","PAM","Microsegmentation","SASE","ZTNA","EDR","XDR","CSPM","Cloud Security","DLP","IRM","DSPM","SOAR","Security Automation","Certificate Automation","ISO 27001","PCI DSS","GDPR","ENS"],
+  "sameAs": []
+}
+</script>
+<style>
+:root{
+  --bg:#050505; --bg-2:#0a0c12; --bg-3:#11141c; --bg-card:#0e1018;
+  --fg:#f2f0ea; --fg-dim:#8b8878; --fg-muted:#4a4840; --fg-very-muted:#2a2820;
+  --lime:#caff3d; --lime-glow:rgba(202,255,61,0.22);
+  --cyan:#22e5ff; --cyan-glow:rgba(34,229,255,0.18);
+  --red:#ff1b2d; --red-glow:rgba(255,27,45,0.24);
+  --magenta:var(--red); --magenta-glow:var(--red-glow);
+  --violet:#9d4dff; --amber:#ffb020;
+  --line:rgba(242,240,234,0.08); --line-strong:rgba(242,240,234,0.18); --line-very-strong:rgba(242,240,234,0.32);
+  --display:"Bricolage Grotesque", system-ui, sans-serif;
+  --serif:"Fraunces", Georgia, serif;
+  --sans:"Manrope", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+section[id],[id]{scroll-margin-top:84px}
+@media (max-width:640px){section[id],[id]{scroll-margin-top:70px}}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;position:relative}
+::selection{background:var(--lime);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(var(--line) 1px, transparent 1px),linear-gradient(90deg, var(--line) 1px, transparent 1px);background-size:140px 140px;opacity:0.5;mask-image:radial-gradient(ellipse at center, black 10%, transparent 80%);-webkit-mask-image:radial-gradient(ellipse at center, black 10%, transparent 80%)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background:repeating-linear-gradient(0deg,transparent 0px, transparent 2px,rgba(255,255,255,0.012) 2px, rgba(255,255,255,0.012) 3px),radial-gradient(ellipse 800px 400px at 15% 0%, var(--cyan-glow) 0%, transparent 60%),radial-gradient(ellipse 700px 500px at 85% 100%, var(--lime-glow) 0%, transparent 60%)}
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:200;background:transparent}
+.scroll-progress-bar{height:100%;width:0%;background:linear-gradient(90deg, var(--lime), var(--cyan));transition:width .1s ease;box-shadow:0 0 12px var(--lime)}
+.corner-hud{position:fixed;z-index:60;pointer-events:none;font-family:var(--mono);font-size:10px;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;opacity:0.45;line-height:1.7}
+.corner-hud.tl{top:92px;left:20px}
+.corner-hud.tr{top:92px;right:20px;text-align:right}
+.corner-hud.bl{bottom:24px;left:20px}
+.corner-hud.br{bottom:24px;right:20px;text-align:right}
+.corner-hud .ok{color:var(--lime)}.corner-hud .alert{color:var(--magenta)}.corner-hud .dim{color:var(--fg-muted)}
+.corner-hud .blink{animation:blink 1.8s step-end infinite}
+@keyframes blink{50%{opacity:0.3}}
+@media (max-width:1100px){.corner-hud{display:none}}
+.top-bar{position:relative;z-index:101;background:var(--bg-2);border-bottom:1px solid var(--line);padding:7px 32px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-dim);overflow:hidden}
+.top-bar-left{display:flex;align-items:center;gap:20px}
+.top-bar-left .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime);animation:pulse 2s ease-in-out infinite}
+.top-bar-right{display:flex;gap:18px;align-items:center}
+.top-bar .divider{color:var(--fg-muted);opacity:0.5}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
+@media (max-width:768px){.top-bar{font-size:9.5px;padding:6px 18px}.top-bar-right{display:none}}
+.nav{position:sticky;top:0;z-index:100;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(5,5,5,0.82);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--mono);font-size:14px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:11px;color:var(--fg)}
+.logo-shield{width:25px;height:28px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(255,27,45,.5));transition:filter .3s, transform .3s}
+.logo:hover .logo-shield{filter:drop-shadow(0 0 12px rgba(255,27,45,.9));transform:translateY(-1px)}
+.logo-word{display:inline-flex;align-items:center}
+.logo .slash{color:var(--fg-muted);margin:0 1px;font-weight:300}.logo .suffix{color:var(--cyan);font-weight:700}
+.nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links a{position:relative;padding:6px 0;transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--lime);transition:width .35s ease}
+.nav-links a:hover{color:var(--lime)}.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:16px}
+.lang-switch{display:flex;align-items:center;border:1px solid var(--line-strong);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em}
+.lang-btn{background:transparent;color:var(--fg-dim);padding:7px 12px;border:none;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit;transition:all .2s}
+.lang-btn.active{background:var(--lime);color:var(--bg);font-weight:600}
+.lang-btn:not(.active):hover{color:var(--lime)}
+.nav-cta{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--bg);background:var(--lime);padding:11px 18px;cursor:pointer;transition:all .25s;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.nav-cta:hover{background:var(--fg);transform:translateY(-1px)}
+.nav-burger{display:none;background:none;border:none;color:var(--fg);cursor:pointer;padding:8px;align-items:center;justify-content:center}
+@media (max-width:1024px){.nav-links{display:none}.nav-burger{display:inline-flex}.nav-right .nav-cta{display:none}}
+@media (max-width:640px){.nav{padding:14px 18px}.logo{font-size:12px}}
+.hero{min-height:calc(100vh - 88px);position:relative;z-index:2;padding:80px 40px 40px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.hero:focus{outline:none}
+.hero-shield{position:absolute;right:-3%;top:46%;transform:translateY(-50%);width:min(48vw,640px);height:auto;aspect-ratio:100/112;z-index:0;opacity:0.09;filter:drop-shadow(0 0 90px rgba(255,27,45,.3));pointer-events:none;animation:shieldIn 1.6s 0.6s ease both}
+@keyframes shieldIn{from{opacity:0;transform:translateY(-50%) scale(.94)}to{opacity:0.09;transform:translateY(-50%) scale(1)}}
+@media (max-width:1100px){.hero-shield{right:-18%;width:88vw;opacity:0.05}}
+.hero-hud-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.hero-hud-top span{display:inline-flex;align-items:center;gap:8px}
+.hero-hud-top .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime)}
+.hero-hud-top .dot-c{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.hero-hud-top .dot-m{background:var(--magenta);box-shadow:0 0 8px var(--magenta)}
+.hero-hud-top .clock{color:var(--cyan);font-variant-numeric:tabular-nums}
+.hero-inner{position:relative;z-index:2;max-width:1440px;margin:0 auto;width:100%;flex:1;display:flex;flex-direction:column;justify-content:center}
+.hero-tag{font-family:var(--mono);font-size:11px;color:var(--fg);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:36px;display:inline-flex;align-items:center;gap:12px;padding:8px 14px;border:1px solid var(--line-strong);border-radius:100px;width:fit-content;animation:fadeUp 1s .1s ease both}
+.hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:pulse 2.4s ease-in-out infinite}
+.hero-title{font-family:var(--display);font-weight:700;font-size:clamp(56px, 10.5vw, 188px);line-height:0.88;letter-spacing:-0.045em;margin-bottom:56px}
+@media (max-width:600px){.hero-title{font-size:clamp(40px, 12.5vw, 64px)}}
+.hero-title .line{display:block;overflow:hidden;padding:0.05em 0}
+.hero-title .inner{display:block;animation:reveal 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero-title .l1 .inner{animation-delay:.15s}.hero-title .l2 .inner{animation-delay:.3s}.hero-title .l3 .inner{animation-delay:.45s}
+.hero-title em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime);letter-spacing:-0.035em;padding-right:0.03em}
+.hero-title .struck{position:relative;display:inline-block;color:var(--fg-dim)}
+.hero-title .struck::after{content:"";position:absolute;left:-2%;right:-2%;top:52%;height:6px;background:var(--magenta);transform:rotate(-1.2deg);box-shadow:0 0 16px var(--magenta-glow)}
+.hero-title .bracket{color:var(--cyan);font-weight:300}
+@keyframes reveal{from{transform:translateY(110%)}to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero-panel{position:absolute;right:40px;top:180px;z-index:3;width:280px;background:var(--bg-card);border:1px solid var(--line-strong);padding:16px;font-family:var(--mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:0.04em;opacity:0;animation:fadeUp 1s 1.2s ease both;transform:rotate(-0.4deg);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.hero-panel::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:2px;background:linear-gradient(90deg, var(--lime), var(--cyan))}
+.hero-panel-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid var(--line);text-transform:uppercase;font-size:10px}
+.hero-panel-head .dots{display:flex;gap:5px}
+.hero-panel-head .dots i{width:6px;height:6px;border-radius:50%;display:block}
+.hero-panel-head .dots i:nth-child(1){background:var(--magenta)}.hero-panel-head .dots i:nth-child(2){background:var(--amber)}.hero-panel-head .dots i:nth-child(3){background:var(--lime)}
+.hero-panel-line{display:flex;gap:8px;align-items:baseline;margin-bottom:4px}
+.hero-panel-line .t{color:var(--cyan);min-width:54px}.hero-panel-line .v{color:var(--fg)}
+.hero-panel-line.ok .v{color:var(--lime)}.hero-panel-line.warn .v{color:var(--amber)}
+@media (max-width:1300px){.hero-panel{display:none}}
+.hero-meta{display:grid;grid-template-columns:1.4fr auto 1fr;align-items:end;gap:48px;padding-top:36px;border-top:1px solid var(--line);animation:fadeUp 1s .7s ease both}
+.hero-meta-text{max-width:540px;font-size:17px;line-height:1.55;color:var(--fg)}
+.hero-meta-text strong{color:var(--lime);font-weight:600}.hero-meta-text em{color:var(--cyan);font-style:italic}
+.hero-cta-group{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.hero-index{text-align:right;font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:0.08em;line-height:1.9}
+.hero-index .k{color:var(--cyan)}.hero-index .big{color:var(--fg);font-size:13px}
+.btn{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;padding:14px 22px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:all .25s;font-weight:600;white-space:nowrap}
+.btn-primary{background:var(--lime);color:var(--bg)}.btn-primary:hover{background:var(--fg);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--fg);border:1px solid var(--line-strong)}.btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+.btn-alert{background:var(--magenta);color:var(--bg)}.btn-alert:hover{background:var(--fg);transform:translateY(-2px)}
+.btn-cyan{background:var(--cyan);color:var(--bg)}.btn-cyan:hover{background:var(--fg);transform:translateY(-2px)}
+.ticker{margin-top:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;overflow:hidden;white-space:nowrap;animation:fadeUp 1s .9s ease both;position:relative;z-index:2}
+.ticker-track{display:inline-flex;gap:48px;animation:scroll 72s linear infinite;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-dim)}
+.ticker-track span{display:inline-flex;align-items:center;gap:48px}
+.ticker-track em{font-style:normal;color:var(--lime)}.ticker-track .c{color:var(--cyan)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.trust{padding:54px 40px;position:relative;z-index:2;border-bottom:1px solid var(--line);background:var(--bg)}
+.trust-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center}
+.trust-label{font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:0.1em;max-width:180px;line-height:1.6}
+.trust-label strong{color:var(--cyan);display:block;font-weight:500;font-size:12px;margin-bottom:4px}
+.trust-logos{display:flex;flex-wrap:wrap;gap:32px 56px;align-items:center;font-family:var(--display);font-weight:600;font-size:34px;color:var(--fg-dim);letter-spacing:-0.02em}
+.trust-logos span{transition:color .3s;cursor:default;position:relative}.trust-logos span:hover{color:var(--lime)}
+.trust-logos .dot{color:var(--fg-muted);font-weight:400}
+@media (max-width:768px){.trust-inner{grid-template-columns:1fr;gap:24px}.trust-logos{font-size:26px;gap:20px 36px}}
+.section{position:relative;z-index:2;padding:140px 40px}
+.section-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--fg-dim);margin-bottom:32px;display:inline-flex;align-items:center;gap:12px}
+.section-label::before{content:"";width:28px;height:1px;background:var(--lime)}.section-label .k{color:var(--cyan)}
+.eyebrow-h2{font-family:var(--display);font-weight:700;font-size:clamp(44px, 6vw, 104px);line-height:0.94;letter-spacing:-0.035em}
+.eyebrow-h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime);letter-spacing:-0.025em}
+.eyebrow-h2 .cyan-em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--cyan);letter-spacing:-0.025em}
+.eyebrow-h2 .mag-em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--magenta);letter-spacing:-0.025em}
+.eyebrow-h2 .struck{position:relative;display:inline-block;color:var(--fg-dim)}
+.eyebrow-h2 .struck::after{content:"";position:absolute;left:-1%;right:-1%;top:52%;height:4px;background:var(--magenta);transform:rotate(-1deg)}
+.manifesto-wrap{max-width:1440px;margin:0 auto}
+.manifesto{display:grid;grid-template-columns:200px 1fr;gap:80px}
+.manifesto-num{font-family:var(--serif);font-style:italic;font-weight:300;font-size:140px;line-height:1;color:var(--fg-very-muted)}
+.manifesto h2{font-family:var(--display);font-weight:700;font-size:clamp(44px, 6vw, 96px);line-height:0.96;letter-spacing:-0.035em;margin-bottom:40px}
+.manifesto h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
+.manifesto h2 .u{position:relative;display:inline-block}
+.manifesto h2 .u::after{content:"";position:absolute;left:0;right:0;bottom:0.05em;height:3px;background:var(--cyan);box-shadow:0 0 12px var(--cyan-glow)}
+.manifesto-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:40px}
+.manifesto-col p{font-size:17px;line-height:1.6;color:var(--fg);margin-bottom:14px}
+.manifesto-col p.lead{font-family:var(--serif);font-size:22px;font-style:italic;font-weight:300;color:var(--fg)}
+.manifesto-col p em{color:var(--cyan);font-style:italic}.manifesto-col p strong{color:var(--lime);font-weight:600}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;padding:6px 12px;border:1px solid var(--line-strong);color:var(--fg-dim);transition:all .2s}
+.chip.on{border-color:var(--lime);color:var(--lime)}.chip.cy{border-color:var(--cyan);color:var(--cyan)}.chip.mg{border-color:var(--magenta);color:var(--magenta)}
+@media (max-width:1024px){.manifesto{grid-template-columns:1fr;gap:32px}.manifesto-num{font-size:80px}.manifesto-grid{grid-template-columns:1fr;gap:28px}}
+.services-head{max-width:1440px;margin:0 auto 80px;display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:end}
+.services-head p{font-size:17px;line-height:1.6;color:var(--fg-dim);max-width:480px}
+.services-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.service{position:relative;padding:48px 40px 44px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .3s;overflow:hidden}
+.service::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg, var(--lime), var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.service::after{content:attr(data-hex);position:absolute;top:20px;right:22px;font-family:var(--mono);font-size:10px;color:var(--fg-muted);letter-spacing:0.08em;opacity:0.7}
+.service:hover{background:var(--bg-2)}.service:hover::before{transform:scaleX(1)}
+.service-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:28px}
+.service-num{font-family:var(--mono);font-size:12px;color:var(--lime);letter-spacing:0.08em}
+.service-status{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-dim);display:flex;align-items:center;gap:6px}
+.service-status::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--lime);box-shadow:0 0 6px var(--lime)}
+.service h3{font-family:var(--display);font-weight:700;font-size:clamp(32px, 3.6vw, 52px);line-height:0.96;letter-spacing:-0.028em;margin-bottom:16px}
+.service h3 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
+.service-intro{color:var(--fg-dim);font-size:15px;line-height:1.55;margin-bottom:28px;max-width:500px}
+.service-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:16px}
+.service-list li{background:var(--bg);padding:13px 14px;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg);display:flex;align-items:center;gap:10px;transition:color .2s, background .2s}
+.service:hover .service-list li{background:var(--bg-2)}
+.service-list li::before{content:"+";color:var(--cyan);font-weight:600}.service-list li:hover{color:var(--lime)}
+@media (max-width:1024px){.services-head{grid-template-columns:1fr;gap:32px;align-items:start}}
+@media (max-width:768px){.services-grid{grid-template-columns:1fr}.service-list{grid-template-columns:1fr}.service{padding:36px 24px}}
+.industries{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.industries-inner{max-width:1440px;margin:0 auto}
+.industries-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:72px}
+.industries-head p{font-size:16px;color:var(--fg-dim);line-height:1.6;max-width:460px}
+.industries-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.industry{background:var(--bg-2);padding:36px 30px;position:relative;transition:background .3s;min-height:240px;display:flex;flex-direction:column;justify-content:space-between}
+.industry:hover{background:var(--bg-3)}
+.industry-code{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:var(--cyan);text-transform:uppercase}
+.industry h3{font-family:var(--display);font-weight:600;font-size:28px;letter-spacing:-0.02em;line-height:1.1;margin:18px 0 14px}
+.industry p{color:var(--fg-dim);font-size:13.5px;line-height:1.5}
+.industry-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+.industry-tags span{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--fg-muted);padding:3px 8px;border:1px solid var(--line)}
+@media (max-width:1024px){.industries-head{grid-template-columns:1fr;gap:32px;align-items:start}.industries-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.industries-grid{grid-template-columns:1fr}}
+.compare-wrap{background:var(--lime);color:var(--bg);padding:120px 40px;position:relative;z-index:2;overflow:hidden}
+.compare-wrap::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 10%, rgba(0,0,0,0.1) 0%, transparent 50%),radial-gradient(circle at 90% 90%, rgba(0,0,0,0.05) 0%, transparent 50%)}
+.compare-inner{max-width:1440px;margin:0 auto;position:relative}
+.compare-head{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:end;margin-bottom:72px}
+.compare-wrap .section-label{color:rgba(0,0,0,0.6)}.compare-wrap .section-label::before{background:var(--bg)}.compare-wrap .section-label .k{color:var(--magenta)}
+.compare-wrap h2{font-family:var(--display);font-weight:800;font-size:clamp(48px, 7vw, 124px);line-height:0.9;letter-spacing:-0.045em;color:var(--bg)}
+.compare-wrap h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--bg);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:0.1em}
+.compare-wrap h2 .mag{color:var(--magenta);-webkit-text-stroke:2px var(--bg);text-shadow:4px 4px 0 var(--bg)}
+.compare-wrap .intro{font-size:18px;line-height:1.55;color:rgba(0,0,0,0.7);max-width:460px;font-weight:500}
+.compare-wrap .intro strong{color:var(--bg);font-weight:700}
+.compare-table{background:var(--bg);color:var(--fg);border:2px solid var(--bg);box-shadow:8px 8px 0 0 var(--magenta);position:relative;overflow:hidden}
+.compare-table::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--lime),var(--cyan),var(--magenta))}
+.compare-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-top:1px solid var(--line);align-items:stretch}
+.compare-row:first-child{border-top:none}.compare-row.header{background:var(--bg-2)}
+.compare-row.header > div{padding:20px 22px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-dim)}
+.compare-row.header .us{color:var(--lime);font-weight:600}.compare-row.header .big4{color:var(--fg-dim)}.compare-row.header .boutique{color:var(--fg-dim)}
+.compare-row > div{padding:20px 22px;display:flex;align-items:center;gap:8px;border-left:1px solid var(--line);font-size:14px}
+.compare-row > div:first-child{border-left:none}
+.compare-row .feature{font-family:var(--display);font-weight:600;font-size:16px;color:var(--fg);letter-spacing:-0.01em}
+.compare-row .us{background:rgba(202,255,61,0.04);color:var(--fg);font-weight:600}
+.check{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-weight:700;font-size:13px;flex-shrink:0}
+.check.yes{background:var(--lime);color:var(--bg)}.check.no{background:transparent;color:var(--magenta);border:1.5px solid var(--magenta)}.check.partial{background:transparent;color:var(--amber);border:1.5px solid var(--amber)}
+.compare-row .note{font-family:var(--mono);font-size:11px;color:var(--fg-dim);letter-spacing:0.04em;text-transform:uppercase}
+@media (max-width:1024px){.compare-head{grid-template-columns:1fr;gap:32px;align-items:start}.compare-table{box-shadow:6px 6px 0 0 var(--magenta)}}
+@media (max-width:768px){.compare-wrap{padding:80px 20px}.compare-row{grid-template-columns:1.5fr 1fr 1fr 1fr}.compare-row > div{padding:14px 10px;font-size:12px}.compare-row .feature{font-size:13px}.compare-row.header > div{padding:14px 10px;font-size:10px}}
+.cases-head{max-width:1440px;margin:0 auto 72px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+.cases-head p{font-size:16px;color:var(--fg-dim);line-height:1.6;max-width:460px}
+.cases-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.case{border:1px solid var(--line);background:var(--bg-card);padding:32px 28px;position:relative;overflow:hidden;transition:border-color .3s, transform .3s;display:flex;flex-direction:column}
+.case:hover{border-color:var(--line-strong);transform:translateY(-4px)}
+.case::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, var(--cyan), transparent);opacity:0;transition:opacity .3s}
+.case:hover::before{opacity:1}
+.case-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.case-sector{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--lime)}
+.case-id{font-family:var(--mono);font-size:10px;color:var(--fg-muted);letter-spacing:0.08em}
+.case h3{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-0.018em;line-height:1.2;margin-bottom:14px}
+.case-challenge{font-size:14px;color:var(--fg-dim);line-height:1.55;margin-bottom:20px;flex:1}
+.case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:20px;border-top:1px solid var(--line)}
+.case-metric .k{font-family:var(--display);font-weight:700;font-size:32px;line-height:1;color:var(--lime);letter-spacing:-0.03em;display:block}
+.case-metric .v{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg-dim);margin-top:6px;display:block}
+@media (max-width:1024px){.cases-head{grid-template-columns:1fr;gap:32px;align-items:start}.cases-grid{grid-template-columns:1fr;gap:16px}}
+.numbers{padding:120px 40px;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:2;overflow:hidden}
+.numbers::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%, var(--cyan-glow) 0%, transparent 55%);pointer-events:none}
+.numbers-inner{max-width:1440px;margin:0 auto;position:relative}
+.numbers-intro{max-width:680px;margin-bottom:72px}
+.numbers-intro h3{font-family:var(--display);font-weight:700;font-size:clamp(40px, 5vw, 80px);line-height:0.98;letter-spacing:-0.032em}
+.numbers-intro h3 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
+.numbers-intro p{margin-top:18px;color:var(--fg-dim);font-size:16px;line-height:1.6;max-width:520px}
+.numbers-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.stat-cell{background:var(--bg);padding:44px 32px;position:relative;transition:background .3s}
+.stat-cell:hover{background:var(--bg-2)}
+.stat-cell::after{content:attr(data-idx);position:absolute;top:16px;right:20px;font-family:var(--mono);font-size:10px;color:var(--fg-muted);letter-spacing:0.08em}
+.stat-num{font-family:var(--display);font-weight:700;font-size:clamp(64px, 8vw, 120px);line-height:0.9;letter-spacing:-0.045em;color:var(--fg)}
+.stat-num .plus{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
+.stat-num .sub{font-family:var(--display);font-weight:500;font-size:0.5em;color:var(--cyan);letter-spacing:-0.02em}
+.stat-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-dim);margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}
+@media (max-width:1024px){.numbers-grid{grid-template-columns:repeat(2, 1fr)}}
+@media (max-width:600px){.numbers-grid{grid-template-columns:1fr}}
+.methodology{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.methodology::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 30%, var(--cyan-glow) 0%, transparent 45%),radial-gradient(circle at 20% 80%, var(--lime-glow) 0%, transparent 45%);opacity:0.6}
+.methodology-inner{max-width:1440px;margin:0 auto;position:relative}
+.methodology-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:72px}
+.methodology-head p{font-size:17px;color:var(--fg-dim);line-height:1.6;max-width:460px}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.timeline::before{content:"";position:absolute;top:44px;left:2%;right:2%;height:1px;background:linear-gradient(90deg, var(--lime), var(--cyan), var(--lime));z-index:0}
+.timeline-step{padding:0 24px;position:relative;z-index:1}
+.timeline-step .dot{width:16px;height:16px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 6px var(--bg-2), 0 0 16px var(--cyan);margin-bottom:28px;margin-top:36px}
+.timeline-step.first .dot{background:var(--lime);box-shadow:0 0 0 6px var(--bg-2), 0 0 16px var(--lime)}
+.timeline-step.last .dot{background:var(--lime);box-shadow:0 0 0 6px var(--bg-2), 0 0 16px var(--lime)}
+.timeline-step .n{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px}
+.timeline-step h4{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:14px}
+.timeline-step h4 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
+.timeline-step p{color:var(--fg-dim);font-size:14px;line-height:1.55}
+.timeline-step .sla{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border:1px solid var(--lime);color:var(--lime)}
+@media (max-width:1024px){.methodology-head{grid-template-columns:1fr;gap:32px;align-items:start}.timeline{grid-template-columns:1fr;gap:32px}.timeline::before{display:none}.timeline-step{padding:0}.timeline-step .dot{margin-top:0;margin-bottom:16px}}
+.team-inner{max-width:1440px;margin:0 auto}
+.team-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
+.team-head p{font-size:16px;color:var(--fg-dim);line-height:1.6;max-width:460px}
+.creds-tabs{display:flex;gap:0;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.creds-tab{background:transparent;border:none;color:var(--fg-dim);cursor:pointer;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;padding:14px 20px;position:relative;transition:color .25s}
+.creds-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:center;transition:transform .3s}
+.creds-tab.active{color:var(--lime)}.creds-tab.active::after{transform:scaleX(1)}.creds-tab:hover{color:var(--fg)}
+.cert-pool{display:none}.cert-pool.active{display:flex;flex-wrap:wrap;gap:8px;animation:fadeUp .4s ease}
+.cert{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;padding:8px 12px;border:1px solid var(--line-strong);color:var(--fg);transition:all .2s}
+.cert:hover{border-color:var(--lime);color:var(--lime)}.cert.blue:hover{border-color:var(--cyan);color:var(--cyan)}
+@media (max-width:1024px){.team-head{grid-template-columns:1fr;gap:32px;align-items:start}}
+@media (max-width:640px){.creds-tabs{overflow-x:auto}}
+.faq-head{max-width:1440px;margin:0 auto 72px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+.faq-head p{font-size:16px;color:var(--fg-dim);line-height:1.6;max-width:460px}
+.faq-list{max-width:1000px;margin:0 auto;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:transparent;border:none;color:var(--fg);cursor:pointer;padding:28px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;text-align:left;transition:color .25s}
+.faq-q:hover{color:var(--lime)}
+.faq-q-text{font-family:var(--display);font-weight:600;letter-spacing:-0.018em;font-size:clamp(18px, 2vw, 24px);line-height:1.3}
+.faq-q-icon{flex-shrink:0;width:32px;height:32px;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:18px;color:var(--lime);transition:transform .3s, border-color .3s}
+.faq-item.open .faq-q-icon{transform:rotate(45deg);border-color:var(--lime)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.2,.7,.2,1)}
+.faq-a-inner{padding:0 0 28px;color:var(--fg-dim);font-size:15px;line-height:1.65;max-width:820px}
+.faq-a-inner strong{color:var(--fg);font-weight:600}.faq-a-inner em{color:var(--cyan);font-style:italic}
+@media (max-width:1024px){.faq-head{grid-template-columns:1fr;gap:32px;align-items:start}}
+.cta{padding:120px 40px;position:relative;z-index:2;border-top:1px solid var(--line)}
+.cta-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.cta-left h2{font-family:var(--display);font-weight:700;font-size:clamp(44px, 6vw, 96px);line-height:0.96;letter-spacing:-0.035em;margin-bottom:28px}
+.cta-left h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
+.cta-left p{color:var(--fg-dim);font-size:17px;line-height:1.6;max-width:460px;margin-bottom:32px}
+.cta-left p em{color:var(--cyan);font-style:italic}
+.cta-channels{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);margin-top:40px}
+.channel{padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:130px 1fr auto;gap:20px;align-items:center;transition:padding .3s}
+.channel:hover{padding-left:12px}
+.channel-label{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-dim)}
+.channel-value{font-family:var(--display);font-size:18px;color:var(--fg);letter-spacing:-0.005em;font-weight:500}
+.channel-value.alert{color:var(--magenta)}
+.channel-arrow{font-family:var(--mono);font-size:14px;color:var(--lime);transition:transform .3s}.channel:hover .channel-arrow{transform:translateX(6px)}
+.console{border:1px solid var(--line-strong);background:var(--bg-2);padding:36px 36px 32px;position:relative}
+.console::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:2px;background:linear-gradient(90deg,var(--lime),var(--cyan),var(--lime))}
+.console-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:32px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-dim)}
+.console-head .dots{display:flex;gap:6px}
+.console-head .dots span{width:8px;height:8px;border-radius:50%;background:var(--fg-muted)}
+.console-head .dots span:first-child{background:var(--magenta)}.console-head .dots span:nth-child(2){background:var(--amber)}.console-head .dots span:last-child{background:var(--lime)}
+.prompt-line{font-family:var(--mono);font-size:13px;color:var(--fg-dim);margin-bottom:14px;line-height:1.6}
+.prompt-line .p{color:var(--lime)}.prompt-line .c{color:var(--cyan)}
+.form{display:flex;flex-direction:column;gap:18px;margin-top:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-dim)}
+.field label .req{color:var(--lime)}
+.field input,.field select,.field textarea{background:var(--bg);border:1px solid var(--line-strong);color:var(--fg);font-family:var(--sans);font-size:14px;padding:12px 14px;transition:border-color .2s, background .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--lime);background:var(--bg-3)}
+.field input.invalid,.field select.invalid,.field textarea.invalid{border-color:var(--magenta);background:rgba(255,27,45,0.05)}
+.field textarea{resize:vertical;min-height:100px;font-family:var(--sans)}
+.field select{cursor:pointer;appearance:none;background-image:linear-gradient(45deg, transparent 50%, var(--fg-dim) 50%), linear-gradient(-45deg, transparent 50%, var(--fg-dim) 50%);background-position:calc(100% - 20px) 50%, calc(100% - 14px) 50%;background-size:6px 6px, 6px 6px;background-repeat:no-repeat}
+.form-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:20px;flex-wrap:wrap}
+.form-footer small{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-muted)}
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.form-status{font-family:var(--mono);font-size:11.5px;letter-spacing:0.03em;line-height:1.55;max-height:0;overflow:hidden;padding:0 12px;border-left:2px solid transparent;transition:max-height .35s ease, padding .35s ease}
+.form-status.show{max-height:140px;padding:11px 12px}
+.form-status.ok{color:var(--lime);border-color:var(--lime);background:rgba(202,255,61,0.05)}
+.form-status.error{color:var(--magenta);border-color:var(--magenta);background:rgba(255,27,45,0.06)}
+.form-status.pending{color:var(--cyan);border-color:var(--cyan);background:rgba(34,229,255,0.04)}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--lime);margin-left:4px;vertical-align:text-bottom;animation:cursor-blink 1s step-end infinite}
+@keyframes cursor-blink{50%{opacity:0}}
+@media (max-width:1024px){.cta-grid{grid-template-columns:1fr;gap:48px}}
+@media (max-width:640px){.console{padding:24px 20px}.form-row{grid-template-columns:1fr}.channel{grid-template-columns:1fr;gap:6px;padding:18px 0}}
+footer{position:relative;z-index:2;padding:80px 40px 32px;border-top:1px solid var(--line);background:var(--bg-2);overflow:hidden}
+.footer-inner{max-width:1440px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px}
+.footer-brand{max-width:360px}.footer-brand .logo{margin-bottom:16px}
+.footer-brand p{font-size:14px;color:var(--fg-dim);line-height:1.6;margin-bottom:20px}
+.footer-brand .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--cyan);text-transform:uppercase;letter-spacing:0.08em;padding:6px 12px;border:1px solid var(--cyan)}
+.footer-col h4{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-dim);margin-bottom:20px;font-weight:500}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{color:var(--fg);font-size:14px;transition:color .2s;display:inline-block}.footer-col a:hover{color:var(--lime)}.footer-col a.alert{color:var(--magenta)}
+.footer-bigmark{position:absolute;left:40px;right:40px;bottom:-40px;z-index:0;font-family:var(--display);font-weight:800;font-size:clamp(140px, 24vw, 420px);line-height:0.82;letter-spacing:-0.055em;color:var(--fg);opacity:0.03;pointer-events:none;user-select:none;text-align:center;white-space:nowrap}
+.footer-bottom{max-width:1440px;margin:80px auto 0;padding-top:24px;border-top:1px solid var(--line);position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:11px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.08em}
+.footer-bottom a{color:var(--fg-muted);transition:color .2s}.footer-bottom a:hover{color:var(--lime)}
+@media (max-width:1024px){.footer-inner{grid-template-columns:1fr 1fr 1fr;gap:36px}}
+@media (max-width:640px){.footer-inner{grid-template-columns:1fr 1fr;gap:28px}}
+@media (max-width:900px){.hero{padding:40px 20px 32px}.hero-meta{grid-template-columns:1fr;gap:24px}.hero-index{text-align:left}.corner-hud{display:none}}
+@media (max-width:640px){.section{padding:80px 20px}.compare-wrap,.numbers,.methodology,.cta{padding:80px 20px}.industries,.team{padding:80px 20px}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.code-block{background:var(--bg);position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.code-block::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 900px 500px at 70% 20%, var(--lime-glow) 0%, transparent 55%);opacity:0.6}
+.code-inner{max-width:1440px;margin:0 auto;position:relative}
+.code-head{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:end;margin-bottom:80px}
+.code-head p{font-size:17px;color:var(--fg-dim);line-height:1.6;max-width:460px}
+.code-head .signature{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime);font-size:16px;margin-top:20px;letter-spacing:-0.005em;display:inline-flex;align-items:center;gap:10px}
+.code-head .signature::before{content:"";width:30px;height:1px;background:var(--lime)}
+@media (max-width:1024px){.code-head{grid-template-columns:1fr;gap:32px;align-items:start}}
+.commitment-list{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(34,229,255,0.22)}
+.commitment{padding:28px 0;border-bottom:1px solid rgba(34,229,255,0.15);display:grid;grid-template-columns:70px 1fr auto;gap:24px;align-items:center;transition:padding .35s, background .35s}
+.commitment:hover{padding-left:18px;background:rgba(34,229,255,0.03)}
+.commitment .num{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:0.14em}
+.commitment .text{font-family:var(--display);font-weight:600;font-size:clamp(20px, 2.6vw, 34px);line-height:1.18;letter-spacing:-0.022em;color:var(--fg)}
+.commitment .text em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--cyan);letter-spacing:-0.015em}
+.commitment .metric{font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;color:var(--cyan);text-transform:uppercase;font-weight:500;padding:7px 12px;border:1px solid var(--cyan);white-space:nowrap}
+@media (max-width:640px){.commitment{grid-template-columns:50px 1fr;gap:14px;padding:22px 0}.commitment .metric{grid-column:2;justify-self:start;margin-top:6px}}
+.skip-link{position:fixed;top:-120px;left:16px;z-index:300;background:var(--lime);color:var(--bg);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;padding:12px 18px;transition:top .2s ease}
+.skip-link:focus{top:16px;outline:none}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.nav-burger svg{display:block}
+.mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(5,5,5,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s ease, visibility .3s ease}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-menu-inner{display:flex;flex-direction:column;gap:6px;text-align:center;font-family:var(--display);font-weight:700;font-size:clamp(30px, 9vw, 48px);letter-spacing:-0.03em;line-height:1.1}
+.mobile-menu-inner a{padding:6px 0;color:var(--fg);transition:color .2s}.mobile-menu-inner a:hover,.mobile-menu-inner a:active{color:var(--lime)}
+.mobile-menu-cta{margin-top:26px;font-family:var(--mono);font-size:15px;letter-spacing:0.06em;color:var(--lime)!important;border:1px solid var(--lime);padding:14px 26px;align-self:center}
+.mobile-menu-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--fg);cursor:pointer;padding:8px;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:0.1em}
+.mobile-menu-close:hover{color:var(--lime)}
+.cookie-note{position:fixed;bottom:20px;left:50%;z-index:150;transform:translate(-50%,160%);opacity:0;max-width:560px;width:calc(100% - 40px);background:var(--bg-card);border:1px solid var(--line-strong);padding:16px 18px;display:flex;gap:18px;align-items:center;font-family:var(--mono);font-size:11px;line-height:1.55;color:var(--fg-dim);letter-spacing:0.02em;box-shadow:0 20px 60px rgba(0,0,0,0.5);transition:transform .5s cubic-bezier(.2,.7,.2,1), opacity .5s ease}
+.cookie-note::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:2px;background:linear-gradient(90deg,var(--cyan),var(--lime))}
+.cookie-note.show{transform:translate(-50%,0);opacity:1}
+.cookie-note button{flex-shrink:0;background:var(--lime);color:var(--bg);border:none;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;padding:9px 14px;cursor:pointer;transition:background .2s}
+.cookie-note button:hover{background:var(--fg)}
+@media (max-width:600px){.cookie-note{flex-direction:column;align-items:stretch;text-align:left;gap:12px}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}html{scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important}.ticker-track{animation:none!important}}
+@media print{.top-bar,.corner-hud,.scroll-progress,.ticker,.mobile-menu,.nav-burger,.cookie-note,.hero-panel,.console{display:none!important}body::before,body::after{display:none!important}body{background:#fff;color:#000}.section,.compare-wrap,.numbers,.methodology,.cta{padding:24px 0}}
+</style>
+</head>
+<body>
+<svg aria-hidden="true" focusable="false" height="0" style="position:absolute" width="0">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="slapOuter" x1="50" x2="50" y1="6" y2="106">
+<stop offset="0" stop-color="#ff3a44"></stop><stop offset=".55" stop-color="#ed1d27"></stop><stop offset="1" stop-color="#c20f18"></stop>
+</lineargradient>
+<lineargradient gradientunits="userSpaceOnUse" id="slapKey" x1="50" x2="50" y1="34" y2="71">
+<stop offset="0" stop-color="#ff3a44"></stop><stop offset="1" stop-color="#e0141e"></stop>
+</lineargradient>
+<symbol id="slapShield" viewbox="0 0 100 112">
+<path d="M14 8 H86 Q93 8 93 17 V49 C93 76 75 94 50 104 C25 94 7 76 7 49 V17 Q7 8 14 8 Z" fill="url(#slapOuter)" stroke="#ffffff" stroke-width="3" style="paint-order:stroke"></path>
+<path d="M23 18 H77 Q83 18 83 24 V49 C83 70 68 84 50 92 C32 84 17 70 17 49 V24 Q17 18 23 18 Z" fill="#161618"></path>
+<circle cx="50" cy="43" fill="url(#slapKey)" r="10.5"></circle>
+<path d="M42 45 L37 69 L63 69 L58 45 Z" fill="url(#slapKey)"></path>
+</symbol>
+</defs>
+</svg>
+<a class="skip-link" data-en="Skip to content" data-es="Saltar al contenido" href="#main">Saltar al contenido</a>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.cookie-note,.mobile-menu,.nav-burger{display:none!important}</style></noscript>
+<div class="scroll-progress"><div class="scroll-progress-bar" id="progressBar"></div></div>
+<div aria-hidden="true" class="corner-hud tl"><div>SLP // SEC-OPS</div><div class="ok">STATUS: ONLINE</div><div class="dim">SYS v2026.05.r1</div></div>
+<div aria-hidden="true" class="corner-hud tr"><div>LAT 34.4048°N</div><div>LON 103.2052°W</div><div id="clock">—</div></div>
+<div aria-hidden="true" class="corner-hud bl"><div>NODE 0x7a3f<span class="blink">_</span></div><div>TLS 1.3 / AES-256</div><div class="dim">CHANNEL SECURE</div></div>
+<div aria-hidden="true" class="corner-hud br"><div class="ok">RADAR ONLINE</div><div>NM · EU REMOTE</div><div class="dim">RECON ACTIVE</div></div>
+<div class="top-bar">
+<div class="top-bar-left">
+<span><span class="dot"></span> <span data-en="Systems operational" data-es="Todo operativo">Todo operativo</span></span>
+<span class="divider">///</span>
+<span data-en="Red team on call" data-es="Red team disponible">Red team disponible</span>
+</div>
+<div class="top-bar-right">
+<span id="topClock">—</span>
+<span class="divider">//</span>
+<span data-en="NM · USA · EU REMOTE" data-es="NM · USA · EU REMOTE">NM · USA · EU REMOTE</span>
+<span class="divider">//</span>
+<span data-en="Booking Q3 '26" data-es="Reservando Q3 '26">Reservando Q3 '26</span>
+</div>
+</div>
+<nav aria-label="Primary" class="nav">
+<a aria-label="Slapsec — home" class="logo" href="#">
+<svg aria-hidden="true" class="logo-shield" viewbox="0 0 100 112"><use href="#slapShield"></use></svg>
+<span class="logo-word">SLAP<span class="slash">/</span><span class="suffix">SEC</span></span>
+</a>
+<div class="nav-links">
+<a data-en="About" data-es="Quiénes" href="#manifesto">Quiénes</a>
+<a data-en="Code" data-es="Código" href="#code">Código</a>
+<a data-en="Services" data-es="Servicios" href="#services">Servicios</a>
+<a data-en="Cases" data-es="Casos" href="#cases">Casos</a>
+<a data-en="Method" data-es="Método" href="#approach">Método</a>
+<a data-en="FAQ" data-es="FAQ" href="#faq">FAQ</a>
+</div>
+<div class="nav-right">
+<div aria-label="Language / Idioma" class="lang-switch" role="group">
+<button aria-pressed="true" class="lang-btn active" data-lang="es">ES</button>
+<button aria-pressed="false" class="lang-btn" data-lang="en">EN</button>
+</div>
+<a class="nav-cta" data-en="Talk to us →" data-es="Contáctanos →" href="#contact">Contáctanos →</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-burger" id="navBurger" type="button">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="24"><line x1="3" x2="21" y1="7" y2="7"></line><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="17" y2="17"></line></svg>
+</button>
+</div>
+</nav>
+<div aria-hidden="true" class="mobile-menu" id="mobileMenu">
+<button aria-label="Close menu" class="mobile-menu-close" data-en="Close ✕" data-es="Cerrar ✕" id="mobileMenuClose" type="button">Cerrar ✕</button>
+<nav aria-label="Mobile" class="mobile-menu-inner">
+<a data-en="About" data-es="Quiénes" href="#manifesto">Quiénes</a>
+<a data-en="Code" data-es="Código" href="#code">Código</a>
+<a data-en="Services" data-es="Servicios" href="#services">Servicios</a>
+<a data-en="Cases" data-es="Casos" href="#cases">Casos</a>
+<a data-en="Method" data-es="Método" href="#approach">Método</a>
+<a data-en="FAQ" data-es="FAQ" href="#faq">FAQ</a>
+<a class="mobile-menu-cta" data-en="Talk to us →" data-es="Contáctanos →" href="#contact">Contáctanos →</a>
+</nav>
+</div>
+<main>
+<section class="hero" id="main" tabindex="-1">
+<svg aria-hidden="true" class="hero-shield" viewbox="0 0 100 112"><use href="#slapShield"></use></svg>
+<div aria-hidden="true" class="hero-hud-top">
+<span><span class="dot"></span>SlapSec · New Mexico · EU remote</span>
+<span><span class="dot-c"></span><span data-en="Sec-ops always on" data-es="Sec-ops siempre activos">Sec-ops siempre activos</span></span>
+<span><span class="dot-m"></span>Digital Risk Radar 24/7</span>
+<span class="clock" id="clock2">—</span>
+</div>
+<div class="hero-inner">
+<span class="hero-tag">
+<span class="dot"></span>
+<span data-en="v2026.05 · Independent cyber consultancy" data-es="v2026.05 · Consultora ciber independiente">v2026.05 · Consultora ciber independiente</span>
+</span>
+<h1 class="hero-title" id="heroTitle">
+<span class="line l1"><span class="inner" data-en-html="Senior &lt;span class='bracket'&gt;[&lt;/span&gt;cybersecurity&lt;span class='bracket'&gt;]&lt;/span&gt;." data-es-html="Ciberseguridad &lt;em&gt;de verdad.&lt;/em&gt;">Ciberseguridad <em>de verdad.</em></span></span>
+<span class="line l2"><span class="inner" data-en-html="Without &lt;span class='struck'&gt;the Big Four&lt;/span&gt; bill." data-es-html="Sin &lt;span class='struck'&gt;la tarifa&lt;/span&gt; de consultora grande.">Sin <span class="struck">la tarifa</span> de consultora grande.</span></span>
+<span class="line l3"><span class="inner" data-en-html="Just &lt;em&gt;the judgment.&lt;/em&gt;" data-es-html="Sólo el &lt;em&gt;criterio.&lt;/em&gt;">Sólo el <em>criterio.</em></span></span>
+</h1>
+<div aria-hidden="true" class="hero-panel">
+<div class="hero-panel-head"><span>slapsec@root</span><span class="dots"><i></i><i></i><i></i></span></div>
+<div class="hero-panel-line"><span class="t">[SCAN]</span> <span class="v">recon pipeline...</span></div>
+<div class="hero-panel-line ok"><span class="t">[AUTH]</span> <span class="v">mTLS · verified</span></div>
+<div class="hero-panel-line"><span class="t">[KEYS]</span> <span class="v">Ed25519 · rotated</span></div>
+<div class="hero-panel-line warn"><span class="t">[ALERT]</span> <span class="v">3 findings HIGH</span></div>
+<div class="hero-panel-line ok"><span class="t">[PRIV]</span> <span class="v">domain admin ✓</span></div>
+<div class="hero-panel-line"><span class="t">[LOG]</span> <span class="v">stream → SIEM</span></div>
+</div>
+<div class="hero-meta">
+<p class="hero-meta-text" data-en-html="The same people who &lt;strong&gt;signed your last audit&lt;/strong&gt; — without the machinery behind them. We attack to discover, architect to resist, protect the data and &lt;em&gt;automate the operation&lt;/em&gt;." data-es-html="Los mismos que &lt;strong&gt;firmaron tu última auditoría&lt;/strong&gt; — sin la maquinaria detrás. Atacamos para descubrir, arquitecturamos para resistir, protegemos el dato y &lt;em&gt;automatizamos la operación&lt;/em&gt;.">Los mismos que <strong>firmaron tu última auditoría</strong> — sin la maquinaria detrás. Atacamos para descubrir, arquitecturamos para resistir, protegemos el dato y <em>automatizamos la operación</em>.</p>
+<div class="hero-cta-group">
+<a class="btn btn-primary" data-en="Start engagement →" data-es="Empezar →" href="#contact">Empezar →</a>
+<a class="btn btn-ghost" data-en="See services" data-es="Servicios" href="#services">Servicios</a>
+</div>
+<div aria-hidden="true" class="hero-index">
+<div><span class="k">04</span>  /  <span data-en="pillars" data-es="pilares">pilares</span></div>
+<div><span class="k">28</span>  /  <span data-en="disciplines" data-es="disciplinas">disciplinas</span></div>
+<div><span class="k">01</span>  /  <span data-en="point of contact" data-es="punto de contacto">punto de contacto</span></div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="ticker">
+<div class="ticker-track">
+<span>Red Team <em>◆</em> Pentesting <em>◆</em> Web &amp; API <em>◆</em> Mobile <em>◆</em> Infra &amp; AD <em>◆</em> Cloud AWS/Azure/GCP <em>◆</em> OT/ICS <em>◆</em> Social Engineering <em>◆</em> <span class="c">Digital Risk Radar</span> <em>◆</em> Zero Trust <em>◆</em> ZTNA <em>◆</em> SASE <em>◆</em> IAM <em>◆</em> PAM <em>◆</em> EDR/XDR <em>◆</em> CSPM <em>◆</em> DLP <em>◆</em> IRM <em>◆</em> DSPM <em>◆</em> SOAR <em>◆</em> SSL Automation <em>◆</em> OWASP <em>◆</em> MITRE ATT&amp;CK <em>◆</em> PTES <em>◆</em> ISO 27001 <em>◆</em> PCI DSS <em>◆</em> ENS <em>◆</em> RGPD <em>◆</em></span>
+<span>Red Team <em>◆</em> Pentesting <em>◆</em> Web &amp; API <em>◆</em> Mobile <em>◆</em> Infra &amp; AD <em>◆</em> Cloud AWS/Azure/GCP <em>◆</em> OT/ICS <em>◆</em> Social Engineering <em>◆</em> <span class="c">Digital Risk Radar</span> <em>◆</em> Zero Trust <em>◆</em> ZTNA <em>◆</em> SASE <em>◆</em> IAM <em>◆</em> PAM <em>◆</em> EDR/XDR <em>◆</em> CSPM <em>◆</em> DLP <em>◆</em> IRM <em>◆</em> DSPM <em>◆</em> SOAR <em>◆</em> SSL Automation <em>◆</em> OWASP <em>◆</em> MITRE ATT&amp;CK <em>◆</em> PTES <em>◆</em> ISO 27001 <em>◆</em> PCI DSS <em>◆</em> ENS <em>◆</em> RGPD <em>◆</em></span>
+</div>
+</div>
+</section>
+<section class="trust">
+<div class="trust-inner">
+<div class="trust-label">
+<strong data-en="EX — TEAMS FROM" data-es="EX — EQUIPOS DE">EX — EQUIPOS DE</strong>
+<span data-en="Senior talent democratized. We know that bill — we used to send it." data-es="Talento senior democratizado. Conocemos esa factura porque la enviábamos nosotros.">Talento senior democratizado. Conocemos esa factura porque la enviábamos nosotros.</span>
+</div>
+<div class="trust-logos">
+<span>DXC</span><span class="dot">·</span><span>KPMG</span><span class="dot">·</span><span>Accenture</span><span class="dot">·</span><span>IBM</span><span class="dot">·</span><span>Deloitte</span><span class="dot">·</span><span>PwC</span>
+</div>
+</div>
+</section>
+<section class="section" id="manifesto">
+<div class="manifesto-wrap">
+<span class="section-label"><span class="k">01</span> · <span data-en="Who we are" data-es="Quiénes somos">Quiénes somos</span></span>
+<div class="manifesto">
+<div aria-hidden="true" class="manifesto-num">§</div>
+<div>
+<h2 data-en-html="We came from the &lt;em&gt;Big Four.&lt;/em&gt;&lt;br/&gt;And from the &lt;span class='u'&gt;trenches.&lt;/span&gt;" data-es-html="Venimos de las &lt;em&gt;Big Four.&lt;/em&gt;&lt;br/&gt;Y también de las &lt;span class='u'&gt;trincheras.&lt;/span&gt;">Venimos de las <em>Big Four.</em><br/>Y también de las <span class="u">trincheras.</span></h2>
+<div class="manifesto-grid">
+<div class="manifesto-col">
+<p class="lead" data-en="We've run critical banking infrastructure. We responded to real incidents. We signed audits that passed audits. That's not something you learn in a deck." data-es="Hemos operado infraestructura crítica bancaria. Respondimos a incidentes reales. Firmamos auditorías que pasaron auditorías. Eso no se aprende en una presentación.">Hemos operado infraestructura crítica bancaria. Respondimos a incidentes reales. Firmamos auditorías que pasaron auditorías. Eso no se aprende en una presentación.</p>
+</div>
+<div class="manifesto-col">
+<p data-en-html="We built SlapSec because enterprise cyber consulting got &lt;strong&gt;expensive&lt;/strong&gt;, slow and noisy. We go straight at the problem — and skip the theater." data-es-html="Montamos SlapSec porque la consultoría de ciber se volvió &lt;strong&gt;cara&lt;/strong&gt;, lenta y ruidosa. Vamos directos al problema — y nos saltamos el teatro.">Montamos SlapSec porque la consultoría de ciber se volvió <strong>cara</strong>, lenta y ruidosa. Vamos directos al problema — y nos saltamos el teatro.</p>
+<p data-en-html="We missed the craft. We missed telling clients what we &lt;em&gt;actually&lt;/em&gt; thought. We missed engagements that ended when the work was done." data-es-html="Echábamos de menos el oficio. Decirle al cliente lo que &lt;em&gt;de verdad&lt;/em&gt; pensábamos. Proyectos que terminan cuando el trabajo termina.">Echábamos de menos el oficio. Decirle al cliente lo que <em>de verdad</em> pensábamos. Proyectos que terminan cuando el trabajo termina.</p>
+<p data-en="We don't sell you frameworks. We fix things." data-es="No te vendemos frameworks. Arreglamos cosas.">No te vendemos frameworks. Arreglamos cosas.</p>
+<div class="chip-row">
+<span class="chip on">ex-DXC</span><span class="chip on">ex-KPMG</span><span class="chip on">ex-Accenture</span><span class="chip on">ex-IBM</span><span class="chip on">ex-Deloitte</span>
+<span class="chip cy" data-en="senior team" data-es="equipo senior">equipo senior</span>
+<span class="chip mg" data-en="offensive-born" data-es="nacidos en ofensiva">nacidos en ofensiva</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section code-block" id="code">
+<div class="code-inner">
+<span class="section-label">§ · <span data-en="The Slapsec Code" data-es="El Código Slapsec">El Código Slapsec</span></span>
+<div class="code-head">
+<h2 class="eyebrow-h2" data-en-html="Six clauses we &lt;em&gt;sign,&lt;/em&gt;&lt;br/&gt;not just say." data-es-html="Seis cláusulas que &lt;em&gt;firmamos,&lt;/em&gt;&lt;br/&gt;no sólo decimos.">Seis cláusulas que <em>firmamos,</em><br/>no sólo decimos.</h2>
+<div>
+<p data-en="Not values on a wall — clauses in the contract. Each one is measurable, and if we break any of them, you don't pay for that phase." data-es="No son valores de pared — son cláusulas del contrato. Cada una es medible, y si incumplimos cualquiera, no pagas esa fase.">No son valores de pared — son cláusulas del contrato. Cada una es medible, y si incumplimos cualquiera, no pagas esa fase.</p>
+<span class="signature" data-en="the founders" data-es="los fundadores">los fundadores</span>
+</div>
+</div>
+<div class="commitment-list">
+<div class="commitment"><span class="num">C · 01</span><span class="text" data-en-html="The truth, even when it &lt;em&gt;costs us&lt;/em&gt; the deal. A good “no” beats a comfortable “yes”." data-es-html="La verdad, aunque nos &lt;em&gt;cueste&lt;/em&gt; el proyecto. Un buen “no” vale más que un “sí” cómodo.">La verdad, aunque nos <em>cueste</em> el proyecto. Un buen “no” vale más que un “sí” cómodo.</span><span class="metric" data-en="Always" data-es="Siempre">Siempre</span></div>
+<div class="commitment"><span class="num">C · 02</span><span class="text" data-en-html="Whoever signs the report &lt;em&gt;did the work.&lt;/em&gt; No ghost juniors." data-es-html="Quien firma el informe &lt;em&gt;hizo el trabajo.&lt;/em&gt; Sin juniors fantasma.">Quien firma el informe <em>hizo el trabajo.</em> Sin juniors fantasma.</span><span class="metric">100 %</span></div>
+<div class="commitment"><span class="num">C · 03</span><span class="text" data-en-html="Same lead from &lt;em&gt;kickoff to closeout.&lt;/em&gt;" data-es-html="El mismo responsable del &lt;em&gt;kick-off al cierre.&lt;/em&gt;">El mismo responsable del <em>kick-off al cierre.</em></span><span class="metric">1 : 1</span></div>
+<div class="commitment"><span class="num">C · 04</span><span class="text" data-en-html="Proposal in 72 hours, &lt;em&gt;fixed price&lt;/em&gt; when the scope is clean." data-es-html="Propuesta en 72 horas, &lt;em&gt;precio cerrado&lt;/em&gt; con scope limpio.">Propuesta en 72 horas, <em>precio cerrado</em> con scope limpio.</span><span class="metric">≤ 72 h</span></div>
+<div class="commitment"><span class="num">C · 05</span><span class="text" data-en-html="Critical findings reported the &lt;em&gt;day we see them.&lt;/em&gt; No strategic timing, no saved-up sales." data-es-html="Hallazgos críticos reportados &lt;em&gt;el día que los vemos.&lt;/em&gt; Sin timing estratégico ni ventas guardadas.">Hallazgos críticos reportados <em>el día que los vemos.</em> Sin timing estratégico ni ventas guardadas.</span><span class="metric">D + 0</span></div>
+<div class="commitment"><span class="num">C · 06</span><span class="text" data-en-html="We transfer capability and get out. Your data &lt;em&gt;stays yours&lt;/em&gt; — ours is wiped." data-es-html="Transferimos capacidad y salimos. Tus datos &lt;em&gt;siguen siendo tuyos&lt;/em&gt; — los nuestros se borran.">Transferimos capacidad y salimos. Tus datos <em>siguen siendo tuyos</em> — los nuestros se borran.</span><span class="metric" data-en="Clean exit" data-es="Salida limpia">Salida limpia</span></div>
+</div>
+</div>
+</section>
+<section class="section" id="services" style="padding-top:60px">
+<span class="section-label" style="display:block;max-width:1440px;margin:0 auto 32px"><span class="k">02</span> · <span data-en="Portfolio" data-es="Portfolio">Portfolio</span></span>
+<div class="services-head">
+<h2 class="eyebrow-h2" data-en-html="Four &lt;em&gt;fronts.&lt;/em&gt;&lt;br/&gt;One standard of craft." data-es-html="Cuatro &lt;em&gt;frentes.&lt;/em&gt;&lt;br/&gt;Un mismo oficio.">Cuatro <em>frentes.</em><br/>Un mismo oficio.</h2>
+<p data-en="From a two-week pentest to a full Zero Trust rollout — same crew, same standard. Pick one front, or run the whole cycle: each loop shrinks your attack surface." data-es="De un pentest de dos semanas a una implantación Zero Trust completa — el mismo equipo, el mismo estándar. Elige un frente o recorre el ciclo entero: cada vuelta reduce tu superficie de ataque.">De un pentest de dos semanas a una implantación Zero Trust completa — el mismo equipo, el mismo estándar. Elige un frente o recorre el ciclo entero: cada vuelta reduce tu superficie de ataque.</p>
+</div>
+<div class="services-grid">
+<div class="service" data-hex="0xA1">
+<div class="service-head"><span class="service-num">01 / 04</span><span class="service-status" data-en="Operational" data-es="Operativo">Operativo</span></div>
+<h3 data-en-html="Offensive Security&lt;br/&gt;&amp; &lt;em&gt;Intelligence&lt;/em&gt;" data-es-html="Seguridad Ofensiva&lt;br/&gt;&amp; &lt;em&gt;Intelligence&lt;/em&gt;">Seguridad Ofensiva<br/>&amp; <em>Intelligence</em></h3>
+<p class="service-intro" data-en="Red team and pentesting — manual and automated — plus continuous external threat monitoring with our Digital Risk Radar. We find what a real attacker would exploit, before they do. PTES, OWASP, MITRE ATT&amp;CK." data-es="Red team y pentesting — manual y automático — más vigilancia continua de amenazas externas con nuestro Digital Risk Radar. Encontramos lo que un atacante real explotaría, antes que él. PTES, OWASP, MITRE ATT&amp;CK.">Red team y pentesting — manual y automático — más vigilancia continua de amenazas externas con nuestro Digital Risk Radar. Encontramos lo que un atacante real explotaría, antes que él. PTES, OWASP, MITRE ATT&amp;CK.</p>
+<ul class="service-list">
+<li data-en="Web &amp; API Pentest" data-es="Pentest Web &amp; API">Pentest Web &amp; API</li>
+<li data-en="Red Team Ops" data-es="Red Team Ops">Red Team Ops</li>
+<li data-en="Infra &amp; AD Pentest" data-es="Pentest Infra &amp; AD">Pentest Infra &amp; AD</li>
+<li data-en="Cloud Pentest (AWS/Azure/GCP)" data-es="Pentest Cloud (AWS/Azure/GCP)">Pentest Cloud (AWS/Azure/GCP)</li>
+<li data-en="OT/ICS Pentest" data-es="Pentest OT/ICS">Pentest OT/ICS</li>
+<li data-en="Mobile Pentest" data-es="Pentest Mobile">Pentest Mobile</li>
+<li data-en="Social Engineering" data-es="Ingeniería Social">Ingeniería Social</li>
+<li data-en="Bug Bounty &amp; Retainer" data-es="Bug Bounty &amp; Retainer">Bug Bounty &amp; Retainer</li>
+<li data-en="Digital Risk Radar" data-es="Digital Risk Radar">Digital Risk Radar</li>
+<li data-en="Dark Web Monitoring" data-es="Vigilancia Dark Web">Vigilancia Dark Web</li>
+</ul>
+</div>
+<div class="service" data-hex="0xB2">
+<div class="service-head"><span class="service-num">02 / 04</span><span class="service-status" data-en="Operational" data-es="Operativo">Operativo</span></div>
+<h3 data-en-html="Zero Trust&lt;br/&gt;&lt;em&gt;Architecture&lt;/em&gt;" data-es-html="Arquitectura&lt;br/&gt;&lt;em&gt;Zero Trust&lt;/em&gt;">Arquitectura<br/><em>Zero Trust</em></h3>
+<p class="service-intro" data-en="Design, implement and operate 'never trust, always verify' architectures. Identity-first, segmented, verified, measured — vendor-agnostic, with the market's leading platforms." data-es="Diseñamos, implantamos y operamos arquitecturas 'never trust, always verify'. Identity-first, segmentado, verificado, medido — vendor-agnostic, con las principales plataformas del mercado.">Diseñamos, implantamos y operamos arquitecturas 'never trust, always verify'. Identity-first, segmentado, verificado, medido — vendor-agnostic, con las principales plataformas del mercado.</p>
+<ul class="service-list">
+<li>IAM &amp; PAM</li>
+<li data-en="Microsegmentation" data-es="Microsegmentación">Microsegmentación</li>
+<li>SASE &amp; ZTNA</li>
+<li>EDR / XDR</li>
+<li data-en="Cloud Posture (CSPM/CIEM)" data-es="Cloud Posture (CSPM/CIEM)">Cloud Posture (CSPM/CIEM)</li>
+<li data-en="Design &amp; Governance" data-es="Diseño &amp; Gobierno">Diseño &amp; Gobierno</li>
+</ul>
+</div>
+<div class="service" data-hex="0xC3">
+<div class="service-head"><span class="service-num">03 / 04</span><span class="service-status" data-en="Operational" data-es="Operativo">Operativo</span></div>
+<h3 data-en-html="Data&lt;br/&gt;&lt;em&gt;Security&lt;/em&gt;" data-es-html="Seguridad&lt;br/&gt;en el &lt;em&gt;Dato&lt;/em&gt;">Seguridad<br/>en el <em>Dato</em></h3>
+<p class="service-intro" data-en="Protect information across its full lifecycle — discover, classify, protect, monitor, respond. DLP, IRM and DSPM with leading platforms (SealPath, arexdata, Microsoft Purview)." data-es="Protegemos la información en todo su ciclo de vida — descubrir, clasificar, proteger, monitorizar, responder. DLP, IRM y DSPM con plataformas líderes (SealPath, arexdata, Microsoft Purview).">Protegemos la información en todo su ciclo de vida — descubrir, clasificar, proteger, monitorizar, responder. DLP, IRM y DSPM con plataformas líderes (SealPath, arexdata, Microsoft Purview).</p>
+<ul class="service-list">
+<li>DLP</li>
+<li>IRM (SealPath)</li>
+<li>DSPM (arexdata)</li>
+<li data-en="Discovery &amp; classification" data-es="Descubrimiento &amp; clasificación">Descubrimiento &amp; clasificación</li>
+<li>Microsoft Purview</li>
+<li data-en="GDPR &amp; PCI mapping" data-es="Mapeo RGPD &amp; PCI">Mapeo RGPD &amp; PCI</li>
+</ul>
+</div>
+<div class="service" data-hex="0xD4">
+<div class="service-head"><span class="service-num">04 / 04</span><span class="service-status" data-en="Operational" data-es="Operativo">Operativo</span></div>
+<h3 data-en-html="AI &amp;&lt;br/&gt;&lt;em&gt;Automation&lt;/em&gt;" data-es-html="IA &amp;&lt;br/&gt;&lt;em&gt;Automatización&lt;/em&gt;">IA &amp;<br/><em>Automatización</em></h3>
+<p class="service-intro" data-en="Intelligent, continuous operation. We orchestrate, harden and automate critical tasks — from AI-assisted triage to unattended SSL certificate rotation." data-es="Operación inteligente y continua. Orquestamos, endurecemos y automatizamos tareas críticas — del triage asistido por IA a la rotación desatendida de certificados SSL.">Operación inteligente y continua. Orquestamos, endurecemos y automatizamos tareas críticas — del triage asistido por IA a la rotación desatendida de certificados SSL.</p>
+<ul class="service-list">
+<li data-en="AI-assisted triage" data-es="Triage con IA">Triage con IA</li>
+<li data-en="SOAR orchestration" data-es="Orquestación SOAR">Orquestación SOAR</li>
+<li data-en="Continuous hardening (CIS)" data-es="Hardening continuo (CIS)">Hardening continuo (CIS)</li>
+<li data-en="Vulnerability mgmt" data-es="Gestión de vulns">Gestión de vulns</li>
+<li data-en="Certificate automation" data-es="Automatización de certs">Automatización de certs</li>
+<li data-en="Integration &amp; APIs" data-es="Integración &amp; APIs">Integración &amp; APIs</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="section industries" id="industries">
+<div class="industries-inner">
+<span class="section-label"><span class="k">03</span> · <span data-en="Industries" data-es="Industrias">Industrias</span></span>
+<div class="industries-head">
+<h2 class="eyebrow-h2" data-en-html="Regulated. &lt;em&gt;Complex.&lt;/em&gt;&lt;br/&gt;No room for error." data-es-html="Reguladas. &lt;em&gt;Complejas.&lt;/em&gt;&lt;br/&gt;Sin margen de error.">Reguladas. <em>Complejas.</em><br/>Sin margen de error.</h2>
+<p data-en="We work where cyber failures are expensive, visible and regulated. Every engagement maps to the threat model and compliance obligations of your sector." data-es="Trabajamos donde el fallo ciber es caro, visible y está regulado. Cada proyecto se adapta al threat model y las obligaciones regulatorias de tu sector.">Trabajamos donde el fallo ciber es caro, visible y está regulado. Cada proyecto se adapta al threat model y las obligaciones regulatorias de tu sector.</p>
+</div>
+<div class="industries-grid">
+<div class="industry"><span class="industry-code">SEC/FIN.01</span><div><h3 data-en="Financial Services" data-es="Servicios Financieros">Servicios Financieros</h3><p data-en="Retail, commercial and investment banking, insurance, fintech. DORA, EBA ICT, PSD2, PCI-DSS scope reduction." data-es="Banca retail, comercial e inversión, seguros, fintech. DORA, EBA ICT, PSD2, reducción de scope PCI-DSS.">Banca retail, comercial e inversión, seguros, fintech. DORA, EBA ICT, PSD2, reducción de scope PCI-DSS.</p></div><div class="industry-tags"><span>DORA</span><span>EBA</span><span>PCI-DSS</span></div></div>
+<div class="industry"><span class="industry-code">SEC/ENE.02</span><div><h3 data-en="Energy &amp; Utilities" data-es="Energía &amp; Utilities">Energía &amp; Utilities</h3><p data-en="Generation, distribution, O&amp;G. OT/IT convergence, NIS2 essential entity compliance, SCADA hardening." data-es="Generación, distribución, O&amp;G. Convergencia OT/IT, cumplimiento NIS2 entidad esencial, hardening SCADA.">Generación, distribución, O&amp;G. Convergencia OT/IT, cumplimiento NIS2 entidad esencial, hardening SCADA.</p></div><div class="industry-tags"><span>NIS2</span><span>IEC-62443</span><span>OT</span></div></div>
+<div class="industry"><span class="industry-code">SEC/DEF.03</span><div><h3 data-en="Defense &amp; Aerospace" data-es="Defensa &amp; Aeroespacial">Defensa &amp; Aeroespacial</h3><p data-en="Supply-chain assurance, ENS Alta hardening, segmentation and air-gapped / OT environments for critical defense and aerospace systems." data-es="Aseguramiento de cadena de suministro, hardening ENS Alta, segmentación y entornos air-gap / OT para sistemas críticos de defensa y aeroespacial.">Aseguramiento de cadena de suministro, hardening ENS Alta, segmentación y entornos air-gap / OT para sistemas críticos de defensa y aeroespacial.</p></div><div class="industry-tags"><span>ENS Alta</span><span data-en="Supply-chain" data-es="Cadena suministro">Cadena suministro</span><span>Air-gap</span></div></div>
+<div class="industry"><span class="industry-code">SEC/HLT.04</span><div><h3 data-en="Healthcare &amp; Pharma" data-es="Salud &amp; Farma">Salud &amp; Farma</h3><p data-en="Patient data protection, medical device security, clinical systems hardening, GDPR Art.9 special category data." data-es="Protección de datos de paciente, seguridad de dispositivo médico, hardening clínico, GDPR Art.9 categoría especial.">Protección de datos de paciente, seguridad de dispositivo médico, hardening clínico, GDPR Art.9 categoría especial.</p></div><div class="industry-tags"><span>HIPAA</span><span>MDR</span><span>GDPR-9</span></div></div>
+<div class="industry"><span class="industry-code">SEC/PUB.05</span><div><h3 data-en="Public Sector" data-es="Sector Público">Sector Público</h3><p data-en="Central and regional administration, critical digital services, transparent procurement, ENS CCN-STIC." data-es="Administración central y autonómica, servicios digitales críticos, procurement transparente, ENS CCN-STIC.">Administración central y autonómica, servicios digitales críticos, procurement transparente, ENS CCN-STIC.</p></div><div class="industry-tags"><span>ENS</span><span>CCN-STIC</span><span>eIDAS</span></div></div>
+<div class="industry"><span class="industry-code">SEC/RET.06</span><div><h3 data-en="Retail &amp; E-commerce" data-es="Retail &amp; E-commerce">Retail &amp; E-commerce</h3><p data-en="Omnichannel architecture, card data scope reduction, fraud prevention, bot mgmt, account takeover defense." data-es="Arquitectura omnicanal, reducción de scope de datos de tarjeta, prevención de fraude, bots y ATO.">Arquitectura omnicanal, reducción de scope de datos de tarjeta, prevención de fraude, bots y ATO.</p></div><div class="industry-tags"><span>PCI-DSS</span><span>Bot-Mgmt</span><span>Fraud</span></div></div>
+</div>
+</div>
+</section>
+<section class="compare-wrap">
+<div class="compare-inner">
+<span class="section-label"><span class="k">04</span> · <span data-en="Why us" data-es="Por qué nosotros">Por qué nosotros</span></span>
+<div class="compare-head">
+<h2 data-en-html="Same rigor.&lt;br/&gt;&lt;em&gt;Half the bill.&lt;/em&gt;&lt;br/&gt;&lt;span class='mag'&gt;Zero games.&lt;/span&gt;" data-es-html="Mismo rigor.&lt;br/&gt;&lt;em&gt;Mitad de factura.&lt;/em&gt;&lt;br/&gt;&lt;span class='mag'&gt;Cero juegos.&lt;/span&gt;">Mismo rigor.<br/><em>Mitad de factura.</em><br/><span class="mag">Cero juegos.</span></h2>
+<p class="intro" data-en-html="We &lt;strong&gt;drafted those proposals&lt;/strong&gt; for years. We know which line items protect you — and which ones just protect the margin." data-es-html="&lt;strong&gt;Montamos esas propuestas&lt;/strong&gt; durante años. Sabemos qué partidas te protegen a ti — y cuáles sólo protegen el margen."><strong>Montamos esas propuestas</strong> durante años. Sabemos qué partidas te protegen a ti — y cuáles sólo protegen el margen.</p>
+</div>
+<div class="compare-table">
+<div class="compare-row header"><div data-en="Criteria" data-es="Criterio">Criterio</div><div class="us">Slapsec</div><div class="big4" data-en="Big Four" data-es="Big Four">Big Four</div><div class="boutique" data-en="Boutique" data-es="Boutique">Boutique</div></div>
+<div class="compare-row"><div class="feature" data-en="Senior-only, same lead end to end" data-es="Sólo senior, mismo responsable de inicio a fin">Sólo senior, mismo responsable de inicio a fin</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check no" title="No">✗</span></div><div><span class="check partial" title="Partial">~</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Fixed-price proposals" data-es="Propuestas a precio cerrado">Propuestas a precio cerrado</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check partial" title="Partial">~</span></div><div><span class="check yes" title="Yes">✓</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Proposal in under 72h" data-es="Propuesta en menos de 72h">Propuesta en menos de 72h</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check no" title="No">✗</span></div><div><span class="check partial" title="Partial">~</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Direct comms with exec team" data-es="Comms directas con el equipo ejecutivo">Comms directas con el equipo ejecutivo</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check no" title="No">✗</span></div><div><span class="check yes" title="Yes">✓</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Vendor-independent advice" data-es="Consejo vendor-independiente">Consejo vendor-independiente</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check partial" title="Partial">~</span></div><div><span class="check yes" title="Yes">✓</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Retesting &amp; remediation included" data-es="Retesteo y remediación incluidos">Retesteo y remediación incluidos</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check partial" title="Partial">~</span></div><div><span class="check partial" title="Partial">~</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Internal capability transfer" data-es="Transferencia de capacidad interna">Transferencia de capacidad interna</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check no" title="No">✗</span></div><div><span class="check partial" title="Partial">~</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Zero subcontracting" data-es="Cero subcontratación">Cero subcontratación</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check no" title="No">✗</span></div><div><span class="check partial" title="Partial">~</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Typical day rate" data-es="Tarifa / día típica">Tarifa / día típica</div><div class="us"><span class="note">€·€</span></div><div><span class="note">€·€·€·€</span></div><div><span class="note">€·€·€</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Deck-to-code ratio" data-es="Ratio slides / ejecución">Ratio slides / ejecución</div><div class="us"><span class="note" style="color:var(--lime)">1:9</span></div><div><span class="note" style="color:var(--magenta)">9:1</span></div><div><span class="note">5:5</span></div></div>
+</div>
+</div>
+</section>
+<section class="section" id="cases">
+<span class="section-label" style="display:block;max-width:1440px;margin:0 auto 32px"><span class="k">05</span> · <span data-en="Selected work" data-es="Proyectos destacados">Proyectos destacados</span></span>
+<div class="cases-head">
+<h2 class="eyebrow-h2" data-en-html="A result you can &lt;em&gt;defend&lt;/em&gt;&lt;br/&gt;to your board." data-es-html="Un resultado que puedes &lt;em&gt;defender&lt;/em&gt;&lt;br/&gt;ante tu comité.">Un resultado que puedes <em>defender</em><br/>ante tu comité.</h2>
+<p data-en="Offensive engagements stay confidential by design — this is the build we can show in public. One flagship project, real numbers." data-es="Los proyectos ofensivos son confidenciales por definición — este es el que podemos enseñar en público. Un proyecto insignia, números reales.">Los proyectos ofensivos son confidenciales por definición — este es el que podemos enseñar en público. Un proyecto insignia, números reales.</p>
+</div>
+<div class="cases-grid" style="grid-template-columns:1fr">
+<div class="case">
+<div class="case-head"><span class="case-sector" data-en="Security Automation · Certificate Ops" data-es="Automatización · Gestión de Certificados">Automatización · Gestión de Certificados</span><span class="case-id">#CASE-SSL</span></div>
+<h3 data-en="Unattended SSL/TLS certificate rotation" data-es="Rotación desatendida de certificados SSL/TLS">Rotación desatendida de certificados SSL/TLS</h3>
+<p class="case-challenge" data-en-html="&lt;strong&gt;The problem.&lt;/strong&gt; Certificates expiring without warning caused service outages, incidents and urgent manual work. Hundreds of certs scattered across services — no reliable inventory, no clear owner." data-es-html="&lt;strong&gt;El problema.&lt;/strong&gt; Certificados que caducan sin aviso provocaban caídas de servicio, incidentes y trabajo manual urgente. Cientos de certificados dispersos, sin inventario fiable ni dueño claro."><strong>El problema.</strong> Certificados que caducan sin aviso provocaban caídas de servicio, incidentes y trabajo manual urgente. Cientos de certificados dispersos, sin inventario fiable ni dueño claro.</p>
+<p class="case-challenge" data-en-html="&lt;strong&gt;Our solution.&lt;/strong&gt; A pipeline that discovers, inventories and rotates every certificate via ACME, deploys to the services and verifies the result end to end — with zero manual intervention." data-es-html="&lt;strong&gt;Nuestra solución.&lt;/strong&gt; Un pipeline que descubre, inventaría y rota automáticamente cada certificado vía ACME, despliega en los servicios y verifica el resultado de extremo a extremo — sin intervención manual."><strong>Nuestra solución.</strong> Un pipeline que descubre, inventaría y rota automáticamente cada certificado vía ACME, despliega en los servicios y verifica el resultado de extremo a extremo — sin intervención manual.</p>
+<div class="chip-row" style="margin:4px 0 20px">
+<span class="chip cy" data-en="Discover" data-es="Descubrir">Descubrir</span>
+<span class="chip cy" data-en="Issue" data-es="Emitir">Emitir</span>
+<span class="chip cy" data-en="Rotate" data-es="Rotar">Rotar</span>
+<span class="chip cy" data-en="Deploy" data-es="Desplegar">Desplegar</span>
+<span class="chip cy" data-en="Verify" data-es="Verificar">Verificar</span>
+</div>
+<div class="case-metrics" style="grid-template-columns:repeat(3,1fr)">
+<div class="case-metric"><span class="k">0</span><span class="v" data-en="Outages from expired certs" data-es="Caídas por cert caducado">Caídas por cert caducado</span></div>
+<div class="case-metric"><span class="k">100%</span><span class="v" data-en="Inventory under control" data-es="Inventario bajo control">Inventario bajo control</span></div>
+<div class="case-metric"><span class="k">24/7</span><span class="v" data-en="Unattended renewal" data-es="Renovación desatendida">Renovación desatendida</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="numbers">
+<div class="numbers-inner">
+<div class="numbers-intro">
+<span class="section-label"><span class="k">06</span> · <span data-en="What backs us" data-es="Lo que nos avala">Lo que nos avala</span></span>
+<h3 data-en-html="Hard numbers.&lt;br/&gt;&lt;em&gt;No fine print.&lt;/em&gt;" data-es-html="Cifras claras.&lt;br/&gt;&lt;em&gt;Sin letra pequeña.&lt;/em&gt;">Cifras claras.<br/><em>Sin letra pequeña.</em></h3>
+<p data-en="Eight stats, zero asterisks. If we can't stand behind a number, it doesn't go on the page." data-es="Ocho datos, cero asteriscos. Si no podemos defender un número, no entra en la página.">Ocho datos, cero asteriscos. Si no podemos defender un número, no entra en la página.</p>
+</div>
+<div class="numbers-grid">
+<div class="stat-cell" data-idx="01"><div class="stat-num" data-num="15"><span class="val">15</span><span class="plus">+</span></div><div class="stat-label" data-en="Avg. years senior exp." data-es="Años medios exp. senior">Años medios exp. senior</div></div>
+<div class="stat-cell" data-idx="02"><div class="stat-num" data-num="200"><span class="val">200</span><span class="plus">+</span></div><div class="stat-label" data-en="Projects delivered" data-es="Proyectos entregados">Proyectos entregados</div></div>
+<div class="stat-cell" data-idx="03"><div class="stat-num" data-num="4"><span class="val">4</span></div><div class="stat-label" data-en="Service fronts" data-es="Frentes de servicio">Frentes de servicio</div></div>
+<div class="stat-cell" data-idx="04"><div class="stat-num" data-num="96"><span class="val">96</span><span class="sub">%</span></div><div class="stat-label" data-en="Client satisfaction" data-es="Clientes satisfechos">Clientes satisfechos</div></div>
+<div class="stat-cell" data-idx="05"><div class="stat-num" data-num="0"><span class="val">0</span></div><div class="stat-label" data-en="Subcontracted staff" data-es="Staff subcontratado">Staff subcontratado</div></div>
+<div class="stat-cell" data-idx="06"><div class="stat-num" data-num="28"><span class="val">28</span></div><div class="stat-label" data-en="Disciplines covered" data-es="Disciplinas cubiertas">Disciplinas cubiertas</div></div>
+<div class="stat-cell" data-idx="07"><div class="stat-num"><span class="val">24</span><span class="sub">/7</span></div><div class="stat-label" data-en="Continuous monitoring" data-es="Monitorización continua">Monitorización continua</div></div>
+<div class="stat-cell" data-idx="08"><div class="stat-num"><span class="val">100</span><span class="sub">%</span></div><div class="stat-label" data-en="Senior staff ratio" data-es="% staff senior">% staff senior</div></div>
+</div>
+</div>
+</section>
+<section class="section methodology" id="approach">
+<div class="methodology-inner">
+<span class="section-label"><span class="k">07</span> · <span data-en="How we engage" data-es="Cómo trabajamos">Cómo trabajamos</span></span>
+<div class="methodology-head">
+<h2 class="eyebrow-h2" data-en-html="No smoke. No&lt;br/&gt;&lt;em&gt;deck marathons.&lt;/em&gt;&lt;br/&gt;&lt;span class='cyan-em'&gt;In, solved, out.&lt;/span&gt;" data-es-html="Sin humo. Sin&lt;br/&gt;&lt;em&gt;PowerPoint infinito.&lt;/em&gt;&lt;br/&gt;&lt;span class='cyan-em'&gt;Entrar, resolver, salir.&lt;/span&gt;">Sin humo. Sin<br/><em>PowerPoint infinito.</em><br/><span class="cyan-em">Entrar, resolver, salir.</span></h2>
+<p data-en="How an engagement actually runs — four phases, from first call to handover." data-es="Así funciona un proyecto de verdad — cuatro fases, de la primera llamada al handover.">Así funciona un proyecto de verdad — cuatro fases, de la primera llamada al handover.</p>
+</div>
+<div class="timeline">
+<div class="timeline-step first"><div class="dot"></div><div class="n">PHASE 01</div><h4 data-en-html="Honest&lt;br/&gt;&lt;em&gt;diagnosis&lt;/em&gt;" data-es-html="Diagnóstico&lt;br/&gt;&lt;em&gt;honesto&lt;/em&gt;">Diagnóstico<br/><em>honesto</em></h4><p data-en="45-minute discovery call. We tell you if it's our terrain — straight up." data-es="Llamada discovery de 45 min. Te decimos si es nuestro terreno, sin rodeos.">Llamada discovery de 45 min. Te decimos si es nuestro terreno, sin rodeos.</p><span class="sla">&lt; 72h</span></div>
+<div class="timeline-step"><div class="dot"></div><div class="n">PHASE 02</div><h4 data-en-html="Scope&lt;br/&gt;&amp; &lt;em&gt;price&lt;/em&gt;" data-es-html="Scope&lt;br/&gt;&amp; &lt;em&gt;precio&lt;/em&gt;">Scope<br/>&amp; <em>precio</em></h4><p data-en="Fixed-price when possible. Clear deliverables, clear timeline. No time-and-materials roulette. You know exactly what you're signing." data-es="Precio cerrado cuando es posible. Entregables claros, plazos claros. Nada de ruleta por horas. Sabes exactamente qué firmas.">Precio cerrado cuando es posible. Entregables claros, plazos claros. Nada de ruleta por horas. Sabes exactamente qué firmas.</p><span class="sla">Fixed</span></div>
+<div class="timeline-step"><div class="dot"></div><div class="n">PHASE 03</div><h4 data-en-html="Senior&lt;br/&gt;&lt;em&gt;execution&lt;/em&gt;" data-es-html="Ejecución&lt;br/&gt;&lt;em&gt;senior&lt;/em&gt;">Ejecución<br/><em>senior</em></h4><p data-en="Weekly working sessions, direct answers, findings shared as they land. Reports you can actually read, prioritized by business risk — no surprises at the final readout." data-es="Sesiones de trabajo semanales, respuestas directas, hallazgos compartidos según llegan. Informes que se leen de verdad, priorizados por riesgo de negocio — sin sorpresas en la entrega final.">Sesiones de trabajo semanales, respuestas directas, hallazgos compartidos según llegan. Informes que se leen de verdad, priorizados por riesgo de negocio — sin sorpresas en la entrega final.</p><span class="sla">Sr. only</span></div>
+<div class="timeline-step last"><div class="dot"></div><div class="n">PHASE 04</div><h4 data-en-html="Transfer&lt;br/&gt;&amp; &lt;em&gt;exit&lt;/em&gt;" data-es-html="Transferencia&lt;br/&gt;&amp; &lt;em&gt;salida&lt;/em&gt;">Transferencia<br/>&amp; <em>salida</em></h4><p data-en="We leave internal capability behind. The goal isn't a 5-year retainer — it's your team owning what they should own. Clean handover." data-es="Dejamos capacidad interna. El objetivo no es un retainer de 5 años — es que tu equipo sea dueño de lo que tiene que serlo. Handover limpio.">Dejamos capacidad interna. El objetivo no es un retainer de 5 años — es que tu equipo sea dueño de lo que tiene que serlo. Handover limpio.</p><span class="sla">Handover</span></div>
+</div>
+</div>
+</section>
+<!-- testimonials section removed: no real, attributable client quotes available yet -->
+<section class="section team" id="team" style="background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:140px;padding-bottom:140px">
+<div class="team-inner">
+<span class="section-label"><span class="k">08</span> · <span data-en="Team &amp; credentials" data-es="Equipo &amp; credenciales">Equipo &amp; credenciales</span></span>
+<div class="team-head">
+<h2 class="eyebrow-h2" data-en-html="The people on your&lt;br/&gt;engagement are &lt;em&gt;senior.&lt;/em&gt;" data-es-html="La gente de tu proyecto&lt;br/&gt;es &lt;em&gt;senior.&lt;/em&gt;">La gente de tu proyecto<br/>es <em>senior.</em></h2>
+<p data-en="Every engagement is staffed by practitioners who hold the credentials below — and you meet the actual team before you sign, not after." data-es="Cada proyecto lo llevan profesionales que tienen las credenciales de abajo — y conoces al equipo real antes de firmar, no después.">Cada proyecto lo llevan profesionales que tienen las credenciales de abajo — y conoces al equipo real antes de firmar, no después.</p>
+</div>
+<div aria-label="Credentials" class="creds-tabs" role="tablist">
+<button aria-selected="true" class="creds-tab active" data-en="Certifications" data-es="Certificaciones" data-pool="certs" role="tab">Certificaciones</button>
+<button aria-selected="false" class="creds-tab" data-en="Tech Partners" data-es="Partners tecnológicos" data-pool="partners" role="tab">Partners tecnológicos</button>
+<button aria-selected="false" class="creds-tab" data-en="Frameworks" data-es="Frameworks" data-pool="frameworks" role="tab">Frameworks</button>
+</div>
+<div class="cert-pool active" data-pool="certs" role="tabpanel">
+<span class="cert">CISSP</span><span class="cert">CISM</span><span class="cert">CISA</span><span class="cert">OSCP</span><span class="cert">OSEP</span><span class="cert">OSWE</span><span class="cert">CRTP</span><span class="cert">CRTO</span><span class="cert">CRTL</span><span class="cert">eMAPT</span><span class="cert">CEH</span><span class="cert">CCSP</span><span class="cert">CCSK</span><span class="cert">ISO 27001 LA</span><span class="cert">ISO 27001 LI</span><span class="cert">ISO 22301 LA</span><span class="cert">GIAC GCIH</span><span class="cert">GIAC GPEN</span><span class="cert">GIAC GCFA</span><span class="cert">CISO-G</span><span class="cert">SABSA</span><span class="cert">TOGAF</span><span class="cert">PMP</span><span class="cert">AZ-500</span><span class="cert">AWS Sec Specialty</span><span class="cert">GCP Pro Sec</span>
+</div>
+<div class="cert-pool" data-pool="partners" role="tabpanel">
+<span class="cert blue">Microsoft Entra</span><span class="cert blue">Okta</span><span class="cert blue">CyberArk</span><span class="cert blue">SailPoint</span><span class="cert blue">Zscaler</span><span class="cert blue">Palo Alto Networks</span><span class="cert blue">Cisco</span><span class="cert blue">Fortinet</span><span class="cert blue">CrowdStrike</span><span class="cert blue">Microsoft Defender</span><span class="cert blue">SentinelOne</span><span class="cert blue">Wiz</span><span class="cert blue">Prisma Cloud</span><span class="cert blue">SealPath</span><span class="cert blue">arexdata</span><span class="cert blue">Microsoft Purview</span><span class="cert blue">Forcepoint</span><span class="cert blue">AWS</span><span class="cert blue">Azure</span><span class="cert blue">GCP</span>
+</div>
+<div class="cert-pool" data-pool="frameworks" role="tabpanel">
+<span class="cert">PTES</span><span class="cert">OWASP Top 10</span><span class="cert">OWASP ASVS</span><span class="cert">MITRE ATT&amp;CK</span><span class="cert">NIST CSF 2.0</span><span class="cert">NIST SP 800-53</span><span class="cert">ISO 27001</span><span class="cert">ISO 27701</span><span class="cert">SOC 2</span><span class="cert">PCI-DSS 4.0</span><span class="cert">GDPR</span><span class="cert">HIPAA</span><span class="cert">ENS</span><span class="cert">ENS Alta</span><span class="cert">CCN-STIC</span>
+</div>
+</div>
+</section>
+<section class="section" id="faq" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<span class="section-label" style="display:block;max-width:1440px;margin:0 auto 32px"><span class="k">09</span> · <span data-en="Frequent questions" data-es="Preguntas frecuentes">Preguntas frecuentes</span></span>
+<div class="faq-head">
+<h2 class="eyebrow-h2" data-en-html="What CISOs ask&lt;br/&gt;before &lt;em&gt;signing.&lt;/em&gt;" data-es-html="Lo que preguntan los CISOs&lt;br/&gt;antes de &lt;em&gt;firmar.&lt;/em&gt;">Lo que preguntan los CISOs<br/>antes de <em>firmar.</em></h2>
+<p data-en="The honest answers we give in every first call. If something's missing, tell us and we'll add it." data-es="Las respuestas honestas que damos en cada primera llamada. Si falta algo, dínoslo y lo añadimos.">Las respuestas honestas que damos en cada primera llamada. Si falta algo, dínoslo y lo añadimos.</p>
+</div>
+<div class="faq-list">
+<div class="faq-item"><button aria-expanded="false" class="faq-q" type="button"><span class="faq-q-text" data-en="How are you actually different from the Big Four?" data-es="¿En qué os diferenciáis realmente de las Big Four?">¿En qué os diferenciáis realmente de las Big Four?</span><span aria-hidden="true" class="faq-q-icon">+</span></button><div class="faq-a"><div class="faq-a-inner" data-en-html="&lt;strong&gt;We came from there.&lt;/strong&gt; We know exactly how their engagements are built: senior partner on kickoff and closeout, junior consultants doing the actual work, heavy slide output, high day rates. We do the opposite — &lt;em&gt;senior-only, one point of contact, technical deliverables.&lt;/em&gt; The methodology is the same (ISO, NIST, MITRE, TIBER-EU); the overhead isn't." data-es-html="&lt;strong&gt;Venimos de allí.&lt;/strong&gt; Sabemos exactamente cómo montan sus proyectos: partner senior en el kick-off y el cierre, consultores junior haciendo el trabajo real, output pesado en slides, tarifas día altas. Hacemos lo contrario: &lt;em&gt;equipo sólo senior, un punto de contacto, entregables técnicos.&lt;/em&gt; La metodología es la misma (ISO, NIST, MITRE, TIBER-EU); el overhead no."><strong>Venimos de allí.</strong> Sabemos exactamente cómo montan sus proyectos: partner senior en el kick-off y el cierre, consultores junior haciendo el trabajo real, output pesado en slides, tarifas día altas. Hacemos lo contrario: <em>equipo sólo senior, un punto de contacto, entregables técnicos.</em> La metodología es la misma (ISO, NIST, MITRE, TIBER-EU); el overhead no.</div></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-q" type="button"><span class="faq-q-text" data-en="What does a typical engagement cost and take?" data-es="¿Qué cuesta y cuánto dura un proyecto típico?">¿Qué cuesta y cuánto dura un proyecto típico?</span><span aria-hidden="true" class="faq-q-icon">+</span></button><div class="faq-a"><div class="faq-a-inner" data-en-html="Depends on scope, but our typical ranges — &lt;em&gt;pentest: 2–6 weeks&lt;/em&gt;, red team: 6–12 weeks, Zero Trust rollout: 8–16 weeks, data protection (DLP/DSPM): 4–10 weeks. Day rates land &lt;strong&gt;around half the Big Four equivalent&lt;/strong&gt; for comparable seniority. We quote fixed-price when the scope is clean, T&amp;M when discovery is needed, and we tell you which upfront." data-es-html="Depende del alcance, pero rangos típicos: &lt;em&gt;pentest: 2–6 semanas&lt;/em&gt;, red team: 6–12 semanas, implantación Zero Trust: 8–16 semanas, protección del dato (DLP/DSPM): 4–10 semanas. Las tarifas día rondan &lt;strong&gt;la mitad del equivalente Big Four&lt;/strong&gt; a igualdad de seniority. Cotizamos cerrado cuando el scope es limpio, T&amp;M cuando hace falta discovery, y te lo decimos desde el principio.">Depende del alcance, pero rangos típicos: <em>pentest: 2–6 semanas</em>, red team: 6–12 semanas, implantación Zero Trust: 8–16 semanas, protección del dato (DLP/DSPM): 4–10 semanas. Las tarifas día rondan <strong>la mitad del equivalente Big Four</strong> a igualdad de seniority. Cotizamos cerrado cuando el scope es limpio, T&amp;M cuando hace falta discovery, y te lo decimos desde el principio.</div></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-q" type="button"><span class="faq-q-text" data-en="Can you handle NDAs, DPAs, cleared engagements?" data-es="¿Podéis firmar NDAs, DPAs, cleared?">¿Podéis firmar NDAs, DPAs, cleared?</span><span aria-hidden="true" class="faq-q-icon">+</span></button><div class="faq-a"><div class="faq-a-inner" data-en-html="Yes. Standard MNDA / DPA / BAA available on request, and we sign yours. We can scope work under &lt;em&gt;ENS Alta&lt;/em&gt; and CCN-STIC requirements, and support clearance and jurisdiction needs on a per-engagement basis — tell us what your project requires." data-es-html="Sí. MNDA / DPA / BAA estándar disponibles a petición, y firmamos los vuestros. Podemos acotar el alcance bajo requisitos &lt;em&gt;ENS Alta&lt;/em&gt; y CCN-STIC, y cubrir necesidades de habilitación y jurisdicción según el proyecto — dinos qué requiere el tuyo.">Sí. MNDA / DPA / BAA estándar disponibles a petición, y firmamos los vuestros. Podemos acotar el alcance bajo requisitos <em>ENS Alta</em> y CCN-STIC, y cubrir necesidades de habilitación y jurisdicción según el proyecto — dinos qué requiere el tuyo.</div></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-q" type="button"><span class="faq-q-text" data-en="How do you manage conflicts of interest?" data-es="¿Cómo gestionáis los conflictos de interés?">¿Cómo gestionáis los conflictos de interés?</span><span aria-hidden="true" class="faq-q-icon">+</span></button><div class="faq-a"><div class="faq-a-inner" data-en-html="We screen every engagement for conflicts and refuse any that put us on both sides of a transaction or regulator. We're &lt;strong&gt;vendor-independent&lt;/strong&gt;, and any partnership that could bias a recommendation is disclosed in writing before the advice." data-es-html="Revisamos cada proyecto en busca de conflictos y rechazamos los que nos pongan a ambos lados de una transacción o regulador. Somos &lt;strong&gt;vendor-independent&lt;/strong&gt;, y cualquier partnership que pueda sesgar una recomendación se declara por escrito antes del consejo.">Revisamos cada proyecto en busca de conflictos y rechazamos los que nos pongan a ambos lados de una transacción o regulador. Somos <strong>vendor-independent</strong>, y cualquier partnership que pueda sesgar una recomendación se declara por escrito antes del consejo.</div></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-q" type="button"><span class="faq-q-text" data-en="What pentest depth options do you offer?" data-es="¿Qué niveles de pentest ofrecéis?">¿Qué niveles de pentest ofrecéis?</span><span aria-hidden="true" class="faq-q-icon">+</span></button><div class="faq-a"><div class="faq-a-inner" data-en-html="Four tiers, matched to your maturity and budget: &lt;strong&gt;Lite&lt;/strong&gt; (automated scan, broad and fast, 2-day SLA), &lt;strong&gt;Essential&lt;/strong&gt; (automated + manual, OWASP Top 10), &lt;strong&gt;Advanced&lt;/strong&gt; (deep manual testing, business-logic, exploit PoC, retest + workshop) and &lt;strong&gt;Pro&lt;/strong&gt; (&lt;em&gt;full red team&lt;/em&gt;, adversary simulation and social engineering)." data-es-html="Cuatro niveles, según tu madurez y presupuesto: &lt;strong&gt;Lite&lt;/strong&gt; (escaneo automatizado, amplio y rápido, SLA 2 días), &lt;strong&gt;Essential&lt;/strong&gt; (automático + manual, OWASP Top 10), &lt;strong&gt;Advanced&lt;/strong&gt; (manual en profundidad, lógica de negocio, PoC de explotación, retesteo + workshop) y &lt;strong&gt;Pro&lt;/strong&gt; (&lt;em&gt;red team completo&lt;/em&gt;, simulación adversaria e ingeniería social).">Cuatro niveles, según tu madurez y presupuesto: <strong>Lite</strong> (escaneo automatizado, amplio y rápido, SLA 2 días), <strong>Essential</strong> (automático + manual, OWASP Top 10), <strong>Advanced</strong> (manual en profundidad, lógica de negocio, PoC de explotación, retesteo + workshop) y <strong>Pro</strong> (<em>red team completo</em>, simulación adversaria e ingeniería social).</div></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-q" type="button"><span class="faq-q-text" data-en="Do you work with public sector / procurement?" data-es="¿Trabajáis con sector público / procurement?">¿Trabajáis con sector público / procurement?</span><span aria-hidden="true" class="faq-q-icon">+</span></button><div class="faq-a"><div class="faq-a-inner" data-en-html="Yes. We respond to public tenders (CPV 72000000 family) and scope our delivery to &lt;em&gt;ENS Alta&lt;/em&gt; and CCN-STIC requirements when the engagement calls for them." data-es-html="Sí. Nos presentamos a licitaciones públicas (familia CPV 72000000) y ajustamos la entrega a los requisitos de &lt;em&gt;ENS Alta&lt;/em&gt; y CCN-STIC cuando el proyecto lo exige.">Sí. Nos presentamos a licitaciones públicas (familia CPV 72000000) y ajustamos la entrega a los requisitos de <em>ENS Alta</em> y CCN-STIC cuando el proyecto lo exige.</div></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-q" type="button"><span class="faq-q-text" data-en="Can you augment my internal team, not replace it?" data-es="¿Podéis reforzar mi equipo interno sin sustituirlo?">¿Podéis reforzar mi equipo interno sin sustituirlo?</span><span aria-hidden="true" class="faq-q-icon">+</span></button><div class="faq-a"><div class="faq-a-inner" data-en-html="That's most of what we do. We embed alongside your team, transfer knowledge, document what we do, and leave when your folks can run it. &lt;em&gt;Extension-of-team&lt;/em&gt; is often cheaper than a traditional engagement and produces stickier internal capability." data-es-html="Es la mayor parte de lo que hacemos. Nos integramos con tu equipo, transferimos conocimiento, documentamos lo que hacemos y salimos cuando los tuyos pueden llevarlo. El modo &lt;em&gt;extension-of-team&lt;/em&gt; es a menudo más barato que un proyecto tradicional y deja capacidad interna más duradera.">Es la mayor parte de lo que hacemos. Nos integramos con tu equipo, transferimos conocimiento, documentamos lo que hacemos y salimos cuando los tuyos pueden llevarlo. El modo <em>extension-of-team</em> es a menudo más barato que un proyecto tradicional y deja capacidad interna más duradera.</div></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-q" type="button"><span class="faq-q-text" data-en="What if you find something you weren't scoped for?" data-es="¿Qué pasa si encontráis algo fuera de scope?">¿Qué pasa si encontráis algo fuera de scope?</span><span aria-hidden="true" class="faq-q-icon">+</span></button><div class="faq-a"><div class="faq-a-inner" data-en-html="We tell you. Always. If it's critical, we help contain it within the current engagement at no extra charge. If it's a new workstream, we scope it separately and &lt;em&gt;you decide&lt;/em&gt;. We will never sit on a finding to create a follow-on sale — that's a reputation we can't rebuild." data-es-html="Te lo decimos. Siempre. Si es crítico, ayudamos a contenerlo dentro del proyecto actual sin coste extra. Si es una nueva línea, la escopamos aparte y &lt;em&gt;tú decides&lt;/em&gt;. Jamás nos guardamos un hallazgo para fabricar una venta posterior — esa reputación no se reconstruye.">Te lo decimos. Siempre. Si es crítico, ayudamos a contenerlo dentro del proyecto actual sin coste extra. Si es una nueva línea, la escopamos aparte y <em>tú decides</em>. Jamás nos guardamos un hallazgo para fabricar una venta posterior — esa reputación no se reconstruye.</div></div></div>
+<div class="faq-item"><button aria-expanded="false" class="faq-q" type="button"><span class="faq-q-text" data-en="What's your definition of “senior”?" data-es="¿Qué entendéis por “senior”?">¿Qué entendéis por “senior”?</span><span aria-hidden="true" class="faq-q-icon">+</span></button><div class="faq-a"><div class="faq-a-inner" data-en-html="Minimum &lt;strong&gt;10 years&lt;/strong&gt; of hands-on cybersecurity practice, most of our team 15+. Every Slapsec person has led engagements at enterprise scale, signed audits, and owned critical operations. &lt;em&gt;Not title — practice.&lt;/em&gt;" data-es-html="Mínimo &lt;strong&gt;10 años&lt;/strong&gt; de práctica hands-on en ciberseguridad, la mayoría del equipo 15+. Cada persona en Slapsec ha liderado proyectos a escala enterprise, firmado auditorías y operado infraestructura crítica. &lt;em&gt;No es título — es práctica.&lt;/em&gt;">Mínimo <strong>10 años</strong> de práctica hands-on en ciberseguridad, la mayoría del equipo 15+. Cada persona en Slapsec ha liderado proyectos a escala enterprise, firmado auditorías y operado infraestructura crítica. <em>No es título — es práctica.</em></div></div></div>
+</div>
+</section>
+<section class="cta" id="contact">
+<div class="cta-grid">
+<div class="cta-left">
+<span class="section-label"><span class="k">10</span> · <span data-en="Start here" data-es="Empieza aquí">Empieza aquí</span></span>
+<h2 data-en-html="Got a problem&lt;br/&gt;worth &lt;em&gt;solving?&lt;/em&gt;" data-es-html="¿Tienes un problema&lt;br/&gt;que &lt;em&gt;resolver?&lt;/em&gt;">¿Tienes un problema<br/>que <em>resolver?</em></h2>
+<p data-en-html="One 45-minute call, straight answers. If we're the right fit, a clear proposal follows fast — if we're not, &lt;em&gt;we'll point you to whoever is.&lt;/em&gt;" data-es-html="Una llamada de 45 minutos, respuestas directas. Si encajamos, la propuesta llega rápido — y si no, &lt;em&gt;te decimos quién sí.&lt;/em&gt;">Una llamada de 45 minutos, respuestas directas. Si encajamos, la propuesta llega rápido — y si no, <em>te decimos quién sí.</em></p>
+<div class="cta-channels">
+<a class="channel" href="mailto:info@slapsec.com">
+<span class="channel-label" data-en="General" data-es="General">General</span>
+<span class="channel-value">info@slapsec.com</span>
+<span class="channel-arrow">→</span>
+</a>
+<a class="channel" href="https://cal.com/slapsec" rel="noopener" target="_blank">
+<span class="channel-label" data-en="Book a call" data-es="Reservar llamada">Reservar llamada</span>
+<span class="channel-value" data-en="45-min discovery →" data-es="Discovery 45 min →">Discovery 45 min →</span>
+<span class="channel-arrow">→</span>
+</a>
+<a class="channel" href="mailto:info@slapsec.com?subject=Security%20disclosure">
+<span class="channel-label" data-en="Disclosure" data-es="Divulgación">Divulgación</span>
+<span class="channel-value" data-en="Report a vulnerability →" data-es="Reportar vulnerabilidad →">Reportar vulnerabilidad →</span>
+<span class="channel-arrow">→</span>
+</a>
+</div>
+</div>
+<div class="console">
+<div class="console-head">
+<span>slapsec@intake — secure</span>
+<span aria-hidden="true" class="dots"><span></span><span></span><span></span></span>
+</div>
+<div aria-hidden="true" class="prompt-line"><span class="p">slapsec</span>:<span class="c">~/intake</span>$ <span data-en="./new-engagement --priority" data-es="./nuevo-proyecto --prioridad">./nuevo-proyecto --prioridad</span><span class="cursor"></span></div>
+<form class="form" data-netlify="true" id="contactForm" method="POST" name="contact" netlify-honeypot="company_website" novalidate="">
+<input name="form-name" type="hidden" value="contact"/>
+<!-- Honeypot: real users never fill this; bots do. -->
+<div aria-hidden="true" class="hp">
+<label for="company_website">Company website (leave blank)</label>
+<input autocomplete="off" id="company_website" name="company_website" tabindex="-1" type="text"/>
+</div>
+<div class="form-row">
+<div class="field">
+<label data-en-html="Name &lt;span class='req'&gt;*&lt;/span&gt;" data-es-html="Nombre &lt;span class='req'&gt;*&lt;/span&gt;" for="f-name">Nombre <span class="req">*</span></label>
+<input autocomplete="name" data-en-ph="Jane Doe" data-es-ph="Nombre y apellidos" id="f-name" name="name" placeholder="Nombre y apellidos" required="" type="text"/>
+</div>
+<div class="field">
+<label data-en-html="Company &lt;span class='req'&gt;*&lt;/span&gt;" data-es-html="Empresa &lt;span class='req'&gt;*&lt;/span&gt;" for="f-company">Empresa <span class="req">*</span></label>
+<input autocomplete="organization" data-en-ph="Acme Corp" data-es-ph="Acme Corp" id="f-company" name="company" placeholder="Acme Corp" required="" type="text"/>
+</div>
+</div>
+<div class="form-row">
+<div class="field">
+<label data-en-html="Work email &lt;span class='req'&gt;*&lt;/span&gt;" data-es-html="Email corporativo &lt;span class='req'&gt;*&lt;/span&gt;" for="f-email">Email corporativo <span class="req">*</span></label>
+<input autocomplete="email" data-en-ph="jane@acme.com" data-es-ph="jane@acme.com" id="f-email" name="email" placeholder="jane@acme.com" required="" type="email"/>
+</div>
+<div class="field">
+<label data-en="Role" data-es="Cargo" for="f-role">Cargo</label>
+<input autocomplete="organization-title" data-en-ph="CISO / Head of Security" data-es-ph="CISO / Resp. Seguridad" id="f-role" name="role" placeholder="CISO / Resp. Seguridad" type="text"/>
+</div>
+</div>
+<div class="form-row">
+<div class="field">
+<label data-en="Sector" data-es="Sector" for="f-sector">Sector</label>
+<select id="f-sector" name="sector">
+<option data-en="Select…" data-es="Selecciona…" value="">Selecciona…</option>
+<option data-en="Financial Services" data-es="Servicios Financieros" value="finance">Servicios Financieros</option>
+<option data-en="Energy &amp; Utilities" data-es="Energía &amp; Utilities" value="energy">Energía &amp; Utilities</option>
+<option data-en="Defense &amp; Aerospace" data-es="Defensa &amp; Aeroespacial" value="defense">Defensa &amp; Aeroespacial</option>
+<option data-en="Healthcare &amp; Pharma" data-es="Salud &amp; Farma" value="health">Salud &amp; Farma</option>
+<option data-en="Public Sector" data-es="Sector Público" value="public">Sector Público</option>
+<option data-en="Retail &amp; E-commerce" data-es="Retail &amp; E-commerce" value="retail">Retail &amp; E-commerce</option>
+<option data-en="Other" data-es="Otro" value="other">Otro</option>
+</select>
+</div>
+<div class="field">
+<label data-en="Urgency" data-es="Urgencia" for="f-urgency">Urgencia</label>
+<select id="f-urgency" name="urgency">
+<option data-en="Planning ahead" data-es="Planificando" value="planning">Planificando</option>
+<option data-en="This quarter" data-es="Este trimestre" value="quarter">Este trimestre</option>
+<option data-en="Urgent (weeks)" data-es="Urgente (semanas)" value="urgent">Urgente (semanas)</option>
+<option data-en="🔴 Critical / time-sensitive" data-es="🔴 Crítico / urgente" value="critical">🔴 Crítico / urgente</option>
+</select>
+</div>
+</div>
+<div class="field">
+<label data-en-html="What's the problem? &lt;span class='req'&gt;*&lt;/span&gt;" data-es-html="¿Cuál es el problema? &lt;span class='req'&gt;*&lt;/span&gt;" for="f-message">¿Cuál es el problema? <span class="req">*</span></label>
+<textarea data-en-ph="A few lines on what you're dealing with. The more concrete, the faster we can tell you if we're the right fit." data-es-ph="Unas líneas sobre lo que tienes entre manos. Cuanto más concreto, antes te decimos si encajamos." id="f-message" name="message" placeholder="Unas líneas sobre lo que tienes entre manos. Cuanto más concreto, antes te decimos si encajamos." required=""></textarea>
+</div>
+<div aria-live="polite" class="form-status" id="formStatus" role="status"></div>
+<div class="form-footer">
+<small data-en="NDA on request · No spam, ever" data-es="NDA a petición · Sin spam, nunca">NDA a petición · Sin spam, nunca</small>
+<button class="btn btn-primary" data-en="Send securely →" data-es="Enviar seguro →" id="formSubmit" type="submit">Enviar seguro →</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-inner">
+<div class="footer-brand">
+<a class="logo" href="#"><svg aria-hidden="true" class="logo-shield" viewbox="0 0 100 112"><use href="#slapShield"></use></svg><span class="logo-word">SLAP<span class="slash">/</span><span class="suffix">SEC</span></span></a>
+<p data-en="We break things before the bad guys do — and leave you stronger than we found you. Offensive-born, end to end: red team to Zero Trust, data and automation." data-es="Rompemos las cosas antes de que lo hagan los malos — y te dejamos más fuerte de lo que te encontramos. Nacidos en ofensiva, de punta a punta: del red team al Zero Trust, el dato y la automatización.">Rompemos las cosas antes de que lo hagan los malos — y te dejamos más fuerte de lo que te encontramos. Nacidos en ofensiva, de punta a punta: del red team al Zero Trust, el dato y la automatización.</p>
+<span class="badge"><span style="width:6px;height:6px;border-radius:50%;background:var(--cyan);display:inline-block"></span> <span data-en="Booking Q3 2026" data-es="Reservando Q3 2026">Reservando Q3 2026</span></span>
+</div>
+<div class="footer-col">
+<h4 data-en="Services" data-es="Servicios">Servicios</h4>
+<ul>
+<li><a data-en="Offensive Security" data-es="Seguridad Ofensiva" href="#services">Seguridad Ofensiva</a></li>
+<li><a data-en="Zero Trust Architecture" data-es="Arquitectura Zero Trust" href="#services">Arquitectura Zero Trust</a></li>
+<li><a data-en="Data Security" data-es="Seguridad en el Dato" href="#services">Seguridad en el Dato</a></li>
+<li><a data-en="AI &amp; Automation" data-es="IA &amp; Automatización" href="#services">IA &amp; Automatización</a></li>
+<li><a data-en="Digital Risk Radar" data-es="Digital Risk Radar" href="#services">Digital Risk Radar</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 data-en="Company" data-es="Empresa">Empresa</h4>
+<ul>
+<li><a data-en="About" data-es="Quiénes somos" href="#manifesto">Quiénes somos</a></li>
+<li><a data-en="The Code" data-es="El Código" href="#code">El Código</a></li>
+<li><a data-en="Cases" data-es="Casos" href="#cases">Casos</a></li>
+<li><a data-en="Method" data-es="Método" href="#approach">Método</a></li>
+<li><a data-en="FAQ" data-es="FAQ" href="#faq">FAQ</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 data-en="Contact" data-es="Contacto">Contacto</h4>
+<ul>
+<li><a href="mailto:info@slapsec.com">info@slapsec.com</a></li>
+<li><a data-en="Book a call" data-es="Reservar llamada" href="https://cal.com/slapsec" rel="noopener" target="_blank">Reservar llamada</a></li>
+<li><a data-en="Report a vulnerability" data-es="Reportar vulnerabilidad" href="mailto:info@slapsec.com?subject=Security%20disclosure">Reportar vulnerabilidad</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 data-en="Legal" data-es="Legal">Legal</h4>
+<ul>
+<li><a data-en="Privacy Policy" data-es="Política de Privacidad" href="/privacy.html">Política de Privacidad</a></li>
+<li><a data-en="Legal Notice" data-es="Aviso Legal" href="/legal.html">Aviso Legal</a></li>
+<li><a data-en="Cookie Policy" data-es="Política de Cookies" href="/cookies.html">Política de Cookies</a></li>
+<li><a data-en="Responsible Disclosure" data-es="Divulgación Responsable" href="mailto:info@slapsec.com?subject=Security%20disclosure">Divulgación Responsable</a></li>
+</ul>
+</div>
+</div>
+<div aria-hidden="true" class="footer-bigmark">Slapsec</div>
+<div class="footer-bottom">
+<span>© <span id="year">2026</span> SlapSec LLC · <span data-en="Clovis, NM (USA) · EU remote" data-es="Clovis, NM (EE.UU.) · EU remoto">Clovis, NM (EE.UU.) · EU remoto</span></span>
+<span data-en="Senior cybersecurity. Democratized." data-es="Ciberseguridad senior. Democratizada.">Ciberseguridad senior. Democratizada.</span>
+<span>v2026.05 · <span class="ok" style="color:var(--lime)">ALL SYSTEMS OPERATIONAL</span></span>
+</div>
+</footer>
+<div aria-label="Privacy notice" aria-live="polite" class="cookie-note" id="cookieNote" role="dialog">
+<span data-en-html="We only use &lt;strong style='color:var(--fg)'&gt;functional storage&lt;/strong&gt; to remember your language and this notice — no tracking, no ad cookies. Fonts load via Google Fonts; details in our &lt;a href='/cookies.html' style='color:var(--cyan)'&gt;Cookie Policy&lt;/a&gt;." data-es-html="Sólo usamos &lt;strong style='color:var(--fg)'&gt;almacenamiento funcional&lt;/strong&gt; para recordar tu idioma y este aviso — sin tracking ni cookies publicitarias. Las fuentes se cargan vía Google Fonts; detalles en nuestra &lt;a href='/cookies.html' style='color:var(--cyan)'&gt;Política de Cookies&lt;/a&gt;.">Sólo usamos <strong style="color:var(--fg)">almacenamiento funcional</strong> para recordar tu idioma y este aviso — sin tracking ni cookies publicitarias. Las fuentes se cargan vía Google Fonts; detalles en nuestra <a href="/cookies.html" style="color:var(--cyan)">Política de Cookies</a>.</span>
+<button data-en="Got it" data-es="Entendido" id="cookieOk" type="button">Entendido</button>
+</div>
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ============ LANGUAGE ============ */
+  function safeGet(k){ try { return window.localStorage.getItem(k); } catch(e){ return null; } }
+  function safeSet(k,v){ try { window.localStorage.setItem(k,v); } catch(e){} }
+
+  // Two static language URLs: "/" = EN, "/es/" = ES. The toggle navigates between them.
+  (function initLang(){
+    var lang = (document.documentElement.lang === "es") ? "es" : "en";
+    document.querySelectorAll(".lang-btn").forEach(function(btn){
+      var target = btn.getAttribute("data-lang");
+      var on = target === lang;
+      btn.classList.toggle("active", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.addEventListener("click", function(){
+        if(target !== lang){ window.location.href = (target === "es") ? "/es/" : "/"; }
+      });
+    });
+  })();
+
+  /* ============ CLOCKS (UTC) ============ */
+  function tick(){
+    var d = new Date();
+    function p(n){ return (n<10?"0":"")+n; }
+    var t = p(d.getUTCHours())+":"+p(d.getUTCMinutes())+":"+p(d.getUTCSeconds())+" UTC";
+    ["clock","clock2","topClock"].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.textContent = t;
+    });
+  }
+  tick(); setInterval(tick, 1000);
+
+  var yEl = document.getElementById("year");
+  if(yEl) yEl.textContent = new Date().getFullYear();
+
+  /* ============ SCROLL PROGRESS ============ */
+  var progressBar = document.getElementById("progressBar");
+  function onScroll(){
+    if(!progressBar) return;
+    var h = document.documentElement;
+    var max = (h.scrollHeight - h.clientHeight) || 1;
+    var pct = (h.scrollTop || document.body.scrollTop) / max * 100;
+    progressBar.style.width = pct + "%";
+  }
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+
+  /* ============ HERO PARALLAX (guarded) ============ */
+  if(!reduceMotion){
+    var heroTitle = document.getElementById("heroTitle");
+    var ticking = false;
+    window.addEventListener("scroll", function(){
+      if(ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function(){
+        var y = window.scrollY || window.pageYOffset;
+        if(heroTitle && y < 900){ heroTitle.style.transform = "translateY(" + (y * 0.12) + "px)"; heroTitle.style.opacity = String(Math.max(0, 1 - y/700)); }
+        ticking = false;
+      });
+    }, { passive:true });
+  }
+
+  /* ============ SCROLL REVEAL ============ */
+  var revealEls = [];
+  document.querySelectorAll(
+    ".manifesto-col, .service, .industry, .compare-table, .case, .stat-cell, .timeline-step, .commitment, .faq-item, .numbers-intro, .cta-left, .console"
+  ).forEach(function(el){ el.classList.add("reveal"); revealEls.push(el); });
+
+  if(reduceMotion || !("IntersectionObserver" in window)){
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold:0.12, rootMargin:"0px 0px -40px 0px" });
+    revealEls.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ============ STAT COUNT-UP ============ */
+  function countUp(el){
+    var target = parseInt(el.getAttribute("data-num"), 10);
+    var valEl = el.querySelector(".val");
+    if(isNaN(target) || !valEl){ return; }
+    if(reduceMotion){ valEl.textContent = String(target); return; }
+    var dur = 1400, start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start)/dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      valEl.textContent = String(Math.round(target * eased));
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if("IntersectionObserver" in window && !reduceMotion){
+    var statIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ countUp(e.target.querySelector(".stat-num") || e.target); statIO.unobserve(e.target); }
+      });
+    }, { threshold:0.4 });
+    document.querySelectorAll(".stat-cell").forEach(function(c){ statIO.observe(c); });
+  } else {
+    document.querySelectorAll(".stat-num[data-num]").forEach(function(n){ var v=n.querySelector(".val"); if(v) v.textContent=n.getAttribute("data-num"); });
+  }
+
+  /* ============ CREDS TABS ============ */
+  var tabs = document.querySelectorAll(".creds-tab");
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      var pool = tab.getAttribute("data-pool");
+      tabs.forEach(function(t){
+        var on = t === tab;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll(".cert-pool").forEach(function(p){
+        p.classList.toggle("active", p.getAttribute("data-pool") === pool);
+      });
+    });
+  });
+
+  /* ============ FAQ ACCORDION ============ */
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    var btn = item.querySelector(".faq-q");
+    var ans = item.querySelector(".faq-a");
+    if(!btn || !ans) return;
+    btn.addEventListener("click", function(){
+      var isOpen = item.classList.contains("open");
+      // close others
+      document.querySelectorAll(".faq-item.open").forEach(function(other){
+        if(other !== item){
+          other.classList.remove("open");
+          var ob = other.querySelector(".faq-q"); if(ob) ob.setAttribute("aria-expanded","false");
+          var oa = other.querySelector(".faq-a"); if(oa) oa.style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove("open");
+        btn.setAttribute("aria-expanded","false");
+        ans.style.maxHeight = null;
+      } else {
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded","true");
+        ans.style.maxHeight = ans.scrollHeight + "px";
+      }
+    });
+  });
+
+  /* ============ MOBILE MENU ============ */
+  var burger = document.getElementById("navBurger");
+  var menu = document.getElementById("mobileMenu");
+  var menuClose = document.getElementById("mobileMenuClose");
+
+  function openMenu(){
+    if(!menu) return;
+    menu.classList.add("open");
+    menu.setAttribute("aria-hidden","false");
+    if(burger) burger.setAttribute("aria-expanded","true");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenu(){
+    if(!menu) return;
+    menu.classList.remove("open");
+    menu.setAttribute("aria-hidden","true");
+    if(burger) burger.setAttribute("aria-expanded","false");
+    document.body.style.overflow = "";
+  }
+  if(burger) burger.addEventListener("click", openMenu);
+  if(menuClose) menuClose.addEventListener("click", closeMenu);
+  if(menu){
+    menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
+  }
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ closeMenu(); }
+  });
+
+  /* ============ SMOOTH ANCHOR SCROLL (sticky-nav offset) ============ */
+  var NAV_OFFSET = 80;
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click", function(e){
+      var href = a.getAttribute("href");
+      if(href === "#" || href.length < 2) return;
+      var target = document.querySelector(href);
+      if(!target) return;
+      e.preventDefault();
+      var top = target.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - NAV_OFFSET;
+      window.scrollTo({ top: top, behavior: reduceMotion ? "auto" : "smooth" });
+      if(history.replaceState) history.replaceState(null, "", href);
+    });
+  });
+
+  /* ============ CONTACT FORM ============ */
+  var form = document.getElementById("contactForm");
+  var statusEl = document.getElementById("formStatus");
+  var submitBtn = document.getElementById("formSubmit");
+
+  var MSG = {
+    en: {
+      sending: "[ ~ ] Establishing secure channel… transmitting.",
+      ok: "[ ✓ ] Received. A senior will reply within one business day — usually faster.",
+      err: "[ ✗ ] Transmission failed. Email us directly at info@slapsec.com.",
+      invalid: "[ ! ] Please complete the required fields (name, company, work email, message)."
+    },
+    es: {
+      sending: "[ ~ ] Estableciendo canal seguro… transmitiendo.",
+      ok: "[ ✓ ] Recibido. Un senior te responderá en un día hábil — normalmente antes.",
+      err: "[ ✗ ] Falló la transmisión. Escríbenos directamente a info@slapsec.com.",
+      invalid: "[ ! ] Completa los campos obligatorios (nombre, empresa, email corporativo, mensaje)."
+    }
+  };
+  function lang(){ return document.documentElement.lang === "es" ? "es" : "en"; }
+  function showStatus(kind, text){
+    if(!statusEl) return;
+    statusEl.className = "form-status show " + kind;
+    statusEl.textContent = text;
+  }
+
+  if(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var L = lang();
+
+      // Honeypot: if filled, silently "succeed" without sending.
+      var hp = form.querySelector('input[name="company_website"]');
+      if(hp && hp.value.trim() !== ""){
+        showStatus("ok", MSG[L].ok);
+        form.reset();
+        return;
+      }
+
+      // Validation
+      var required = ["name","company","email","message"];
+      var valid = true;
+      required.forEach(function(n){
+        var fld = form.querySelector('[name="'+n+'"]');
+        if(!fld) return;
+        var ok = fld.value.trim() !== "";
+        if(n === "email"){ ok = ok && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fld.value.trim()); }
+        fld.classList.toggle("invalid", !ok);
+        if(!ok) valid = false;
+      });
+      if(!valid){ showStatus("error", MSG[L].invalid); return; }
+
+      var data = {
+        name: form.elements["name"].value.trim(),
+        company: form.company.value.trim(),
+        email: form.email.value.trim(),
+        role: form.role.value.trim(),
+        sector: form.sector.value,
+        urgency: form.urgency.value,
+        message: form.message.value.trim()
+      };
+
+      // Submit to Netlify Forms (url-encoded POST to the page path).
+      var payload = new URLSearchParams();
+      payload.append("form-name", "contact");
+      Object.keys(data).forEach(function(k){ payload.append(k, data[k]); });
+
+      showStatus("pending", MSG[L].sending);
+      if(submitBtn) submitBtn.disabled = true;
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: payload.toString()
+      }).then(function(res){
+        if(!res.ok) throw new Error("bad status " + res.status);
+        showStatus("ok", MSG[L].ok);
+        form.reset();
+      }).catch(function(){
+        showStatus("error", MSG[L].err);
+      }).finally(function(){
+        if(submitBtn) submitBtn.disabled = false;
+      });
+    });
+
+    // Clear invalid state as the user types
+    form.querySelectorAll("input, textarea, select").forEach(function(fld){
+      fld.addEventListener("input", function(){ fld.classList.remove("invalid"); });
+    });
+  }
+
+  /* ============ COOKIE / PRIVACY NOTICE ============ */
+  var STORE_CONSENT = "slapsec-consent";
+  var cookieNote = document.getElementById("cookieNote");
+  var cookieOk = document.getElementById("cookieOk");
+  if(cookieNote && safeGet(STORE_CONSENT) !== "1"){
+    setTimeout(function(){ cookieNote.classList.add("show"); }, 1200);
+  }
+  if(cookieOk){
+    cookieOk.addEventListener("click", function(){
+      safeSet(STORE_CONSENT, "1");
+      if(cookieNote) cookieNote.classList.remove("show");
+    });
+  }
+})();
+</script>
+</body>
+</html>
