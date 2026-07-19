@@ -527,22 +527,34 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}html{scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important}.ticker-track{animation:none!important}}
 @media print{.top-bar,.corner-hud,.scroll-progress,.ticker,.mobile-menu,.nav-burger,.cookie-note,.hero-panel,.console{display:none!important}body::before,body::after{display:none!important}body{background:#fff;color:#000}.section,.compare-wrap,.numbers,.methodology,.cta{padding:24px 0}}
 
-.pymes{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.pymes::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 800px 420px at 85% 10%, var(--lime-glow) 0%, transparent 55%),radial-gradient(ellipse 600px 400px at 10% 90%, var(--cyan-glow) 0%, transparent 50%);opacity:.7}
+/* Pymes/SMBs — inverted light "callout" block (same palette, flipped) */
+.pymes{background:#f2f0ea;color:#050505;border-top:1px solid rgba(5,5,5,0.14);border-bottom:1px solid rgba(5,5,5,0.14);position:relative;overflow:hidden}
+.pymes::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(5,5,5,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(5,5,5,0.05) 1px,transparent 1px);background-size:120px 120px;mask-image:radial-gradient(ellipse at center,#000 15%,transparent 82%);-webkit-mask-image:radial-gradient(ellipse at center,#000 15%,transparent 82%)}
 .pymes-inner{max-width:1440px;margin:0 auto;position:relative}
+.pymes .section-label{color:rgba(5,5,5,0.55)}
+.pymes .section-label::before{background:var(--red)}
+.pymes .section-label .k{color:var(--red)}
+.pymes .eyebrow-h2{color:#050505}
+.pymes .eyebrow-h2 em{color:var(--red)}
 .pymes-head{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:end;margin-bottom:56px}
-.pymes-head p{font-size:17px;color:var(--fg-dim);line-height:1.6;max-width:520px}
-.pymes-head p strong{color:var(--fg);font-weight:600}
-.pymes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.pyme-card{background:var(--bg-2);padding:36px 32px;transition:background .3s;position:relative}
-.pyme-card:hover{background:var(--bg-3)}
-.pyme-card .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--lime);text-transform:uppercase}
-.pyme-card h3{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;line-height:1.12;margin:16px 0 12px}
-.pyme-card h3 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
-.pyme-card p{color:var(--fg-dim);font-size:14.5px;line-height:1.6}
+.pymes-head p{font-size:17px;color:rgba(5,5,5,0.62);line-height:1.6;max-width:520px}
+.pymes-head p strong{color:#050505;font-weight:600}
+.pymes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(5,5,5,0.10);border:1px solid rgba(5,5,5,0.10)}
+.pyme-card{background:#fff;padding:36px 32px;transition:transform .3s, box-shadow .3s;position:relative;overflow:hidden}
+.pyme-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--lime));transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.pyme-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(5,5,5,0.12)}
+.pyme-card:hover::before{transform:scaleX(1)}
+.pyme-card .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--red);text-transform:uppercase;font-weight:600}
+.pyme-card h3{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;line-height:1.12;margin:16px 0 12px;color:#050505}
+.pyme-card h3 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--red)}
+.pyme-card p{color:rgba(5,5,5,0.62);font-size:14.5px;line-height:1.6}
 .pymes-cta{margin-top:40px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.pymes-cta .note{font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:.08em}
+.pymes .btn-primary:hover{background:#050505;color:var(--fg)}
+.pymes-cta .note{font-family:var(--mono);font-size:11px;color:rgba(5,5,5,0.55);text-transform:uppercase;letter-spacing:.08em}
 @media(max-width:1024px){.pymes-head{grid-template-columns:1fr;gap:28px;align-items:start}.pymes-grid{grid-template-columns:1fr}}
+.nav-hot{color:var(--lime)!important}
+.nav-hot::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--lime);margin-right:7px;vertical-align:middle;box-shadow:0 0 7px var(--lime)}
+.mobile-menu-inner .nav-hot::before{display:none}
 </style>
 </head>
 <body>
@@ -591,7 +603,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <div class="nav-links">
 <a data-en="About" data-es="Quiénes" href="#manifesto">Quiénes</a>
 <a data-en="Code" data-es="Código" href="#code">Código</a>
-<a data-en="Services" data-es="Servicios" href="#services">Servicios</a><a data-en="SMBs" data-es="Pymes" href="#pymes">Pymes</a>
+<a data-en="Services" data-es="Servicios" href="#services">Servicios</a><a class="nav-hot" data-en="SMBs" data-es="Pymes" href="#pymes">Pymes</a>
 <a data-en="Cases" data-es="Casos" href="#cases">Casos</a>
 <a data-en="Method" data-es="Método" href="#approach">Método</a>
 <a data-en="FAQ" data-es="FAQ" href="#faq">FAQ</a>
@@ -612,7 +624,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <nav aria-label="Mobile" class="mobile-menu-inner">
 <a data-en="About" data-es="Quiénes" href="#manifesto">Quiénes</a>
 <a data-en="Code" data-es="Código" href="#code">Código</a>
-<a data-en="Services" data-es="Servicios" href="#services">Servicios</a><a data-en="SMBs" data-es="Pymes" href="#pymes">Pymes</a>
+<a data-en="Services" data-es="Servicios" href="#services">Servicios</a><a class="nav-hot" data-en="SMBs" data-es="Pymes" href="#pymes">Pymes</a>
 <a data-en="Cases" data-es="Casos" href="#cases">Casos</a>
 <a data-en="Method" data-es="Método" href="#approach">Método</a>
 <a data-en="FAQ" data-es="FAQ" href="#faq">FAQ</a>
