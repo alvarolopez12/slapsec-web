@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Cybersecurity Consulting — Red Team, GRC &amp; Zero Trust | SlapSec</title>
-<meta content="Independent senior cybersecurity consulting. Red team &amp; threat intel, Zero Trust, GRC &amp; compliance (ENS, ISO 27001), data security and automation. Big Four judgment, without the overhead." name="description"/>
+<meta content="Senior cybersecurity consulting for enterprises and SMBs. Red team &amp; threat intel, Zero Trust, GRC &amp; compliance (ENS, ISO 27001), data security and automation. Big Four judgment, without the overhead." name="description"/>
 <meta content="index, follow, max-image-preview:large" name="robots"/>
 <meta content="SlapSec LLC" name="author"/>
 <meta content="AJyx2sypmYVQC6-4kUNhl5HgsmlhAM7IEbg4ilSYX5c" name="google-site-verification"/>
@@ -485,6 +485,23 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media (max-width:600px){.cookie-note{flex-direction:column;align-items:stretch;text-align:left;gap:12px}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}html{scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important}.ticker-track{animation:none!important}}
 @media print{.top-bar,.corner-hud,.scroll-progress,.ticker,.mobile-menu,.nav-burger,.cookie-note,.hero-panel,.console{display:none!important}body::before,body::after{display:none!important}body{background:#fff;color:#000}.section,.compare-wrap,.numbers,.methodology,.cta{padding:24px 0}}
+
+.pymes{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.pymes::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 800px 420px at 85% 10%, var(--lime-glow) 0%, transparent 55%),radial-gradient(ellipse 600px 400px at 10% 90%, var(--cyan-glow) 0%, transparent 50%);opacity:.7}
+.pymes-inner{max-width:1440px;margin:0 auto;position:relative}
+.pymes-head{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:end;margin-bottom:56px}
+.pymes-head p{font-size:17px;color:var(--fg-dim);line-height:1.6;max-width:520px}
+.pymes-head p strong{color:var(--fg);font-weight:600}
+.pymes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.pyme-card{background:var(--bg-2);padding:36px 32px;transition:background .3s;position:relative}
+.pyme-card:hover{background:var(--bg-3)}
+.pyme-card .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--lime);text-transform:uppercase}
+.pyme-card h3{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;line-height:1.12;margin:16px 0 12px}
+.pyme-card h3 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
+.pyme-card p{color:var(--fg-dim);font-size:14.5px;line-height:1.6}
+.pymes-cta{margin-top:40px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.pymes-cta .note{font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:1024px){.pymes-head{grid-template-columns:1fr;gap:28px;align-items:start}.pymes-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -533,7 +550,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <div class="nav-links">
 <a data-en="About" data-es="Quiénes" href="#manifesto">About</a>
 <a data-en="Code" data-es="Código" href="#code">Code</a>
-<a data-en="Services" data-es="Servicios" href="#services">Services</a>
+<a data-en="Services" data-es="Servicios" href="#services">Services</a><a data-en="SMBs" data-es="Pymes" href="#pymes">SMBs</a>
 <a data-en="Cases" data-es="Casos" href="#cases">Cases</a>
 <a data-en="Method" data-es="Método" href="#approach">Method</a>
 <a data-en="FAQ" data-es="FAQ" href="#faq">FAQ</a>
@@ -554,7 +571,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <nav aria-label="Mobile" class="mobile-menu-inner">
 <a data-en="About" data-es="Quiénes" href="#manifesto">About</a>
 <a data-en="Code" data-es="Código" href="#code">Code</a>
-<a data-en="Services" data-es="Servicios" href="#services">Services</a>
+<a data-en="Services" data-es="Servicios" href="#services">Services</a><a data-en="SMBs" data-es="Pymes" href="#pymes">SMBs</a>
 <a data-en="Cases" data-es="Casos" href="#cases">Cases</a>
 <a data-en="Method" data-es="Método" href="#approach">Method</a>
 <a data-en="FAQ" data-es="FAQ" href="#faq">FAQ</a>
@@ -733,9 +750,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </div>
 </div>
 </section>
+<section class="section pymes" id="pymes">
+<div class="pymes-inner">
+<span class="section-label"><span class="k">03</span> · <span data-en="SMBs" data-es="Pymes">SMBs</span></span>
+<div class="pymes-head">
+<h2 class="eyebrow-h2" data-en-html="Cybersecurity for &lt;em&gt;SMBs.&lt;/em&gt;&lt;br/&gt;Enterprise craft, right-sized." data-es-html="Ciberseguridad para &lt;em&gt;pymes.&lt;/em&gt;&lt;br/&gt;Oficio de gran empresa, a tu medida.">Cybersecurity for <em>SMBs.</em><br/>Enterprise craft, right-sized.</h2>
+<p data-en-html="Attacks run on autopilot — company size is not a shield. You don't need a security department to be well defended: you need &lt;strong&gt;senior judgment, a few hours at a time&lt;/strong&gt;." data-es-html="En España la mayoría de los ciberataques ya golpean a pymes: los ataques van en piloto automático y el tamaño no te esconde. No necesitas un departamento de seguridad para estar bien defendido: necesitas &lt;strong&gt;criterio senior, unas horas al mes&lt;/strong&gt;.">Attacks run on autopilot — company size is not a shield. You don't need a security department to be well defended: you need <strong>senior judgment, a few hours at a time</strong>.</p>
+</div>
+<div class="pymes-grid">
+<div class="pyme-card"><span class="k" data-en="Challenge 01" data-es="Reto 01">Challenge 01</span><h3 data-en-html="Your big customers &lt;em&gt;demand it&lt;/em&gt;" data-es-html="Tu cliente grande te lo &lt;em&gt;exige&lt;/em&gt;">Your big customers <em>demand it</em></h3><p data-en="Vendor security questionnaires, ISO 27001, supply-chain clauses… more and more contracts hinge on proving your security. We get you through them without stalling your business." data-es="Cuestionarios de seguridad, ISO 27001, ENS para vender a la Administración… cada vez más contratos dependen de demostrar tu seguridad. Te preparamos para pasarlos sin drama y sin parar tu negocio.">Vendor security questionnaires, ISO 27001, supply-chain clauses… more and more contracts hinge on proving your security. We get you through them without stalling your business.</p></div>
+<div class="pyme-card"><span class="k" data-en="Challenge 02" data-es="Reto 02">Challenge 02</span><h3 data-en-html="No security team? &lt;em&gt;You don't need one.&lt;/em&gt;" data-es-html="Sin equipo de seguridad. &lt;em&gt;Ni falta que hace.&lt;/em&gt;">No security team? <em>You don't need one.</em></h3><p data-en="A senior vCISO a few hours a month: clear priorities, sound decisions, and someone to call when something smells off. No impossible hires, no CISO payroll." data-es="Un vCISO senior unas horas al mes: prioridades claras, decisiones con criterio y alguien a quien llamar cuando algo huele raro. Sin fichajes imposibles ni nóminas de CISO.">A senior vCISO a few hours a month: clear priorities, sound decisions, and someone to call when something smells off. No impossible hires, no CISO payroll.</p></div>
+<div class="pyme-card"><span class="k" data-en="Challenge 03" data-es="Reto 03">Challenge 03</span><h3 data-en-html="SMB budget, &lt;em&gt;senior&lt;/em&gt; work" data-es-html="Presupuesto de pyme, trabajo &lt;em&gt;senior&lt;/em&gt;">SMB budget, <em>senior</em> work</h3><p data-en="Tiered pentesting — from a Lite scan to deep manual testing — at a fixed price. You know what you pay, what you get, and when. No surprises, no fine print." data-es="Pentest por niveles — del escaneo Lite al test manual en profundidad — con precio cerrado. Sabes qué pagas, qué recibes y cuándo. Sin sorpresas ni letra pequeña.">Tiered pentesting — from a Lite scan to deep manual testing — at a fixed price. You know what you pay, what you get, and when. No surprises, no fine print.</p></div>
+<div class="pyme-card"><span class="k" data-en="Challenge 04" data-es="Reto 04">Challenge 04</span><h3 data-en-html="Ransomware doesn't check your &lt;em&gt;size&lt;/em&gt;" data-es-html="El ransomware no mira tu &lt;em&gt;tamaño&lt;/em&gt;">Ransomware doesn't check your <em>size</em></h3><p data-en="If you're exposed, you get found. We watch your external footprint — domains, leaked credentials, dark web — and close what actually matters first." data-es="Si estás expuesto, te encuentran. Vigilamos tu huella externa — dominios, credenciales filtradas, dark web — y cerramos primero lo que de verdad importa.">If you're exposed, you get found. We watch your external footprint — domains, leaked credentials, dark web — and close what actually matters first.</p></div>
+</div>
+<div class="pymes-cta">
+<a class="btn btn-primary" data-en="Book a 45-min call →" data-es="Reserva 45 min →" href="https://cal.com/slapsec" rel="noopener" target="_blank">Book a 45-min call →</a>
+<span class="note" data-en="Straight answers · fixed prices · no strings" data-es="Respuestas claras · precios cerrados · sin compromiso">Straight answers · fixed prices · no strings</span>
+</div>
+</div>
+</section>
 <section class="section industries" id="industries">
 <div class="industries-inner">
-<span class="section-label"><span class="k">03</span> · <span data-en="Industries" data-es="Industrias">Industries</span></span>
+<span class="section-label"><span class="k">04</span> · <span data-en="Industries" data-es="Industrias">Industries</span></span>
 <div class="industries-head">
 <h2 class="eyebrow-h2" data-en-html="Regulated. &lt;em&gt;Complex.&lt;/em&gt;&lt;br/&gt;No room for error." data-es-html="Reguladas. &lt;em&gt;Complejas.&lt;/em&gt;&lt;br/&gt;Sin margen de error.">Regulated. <em>Complex.</em><br/>No room for error.</h2>
 <p data-en="We work where cyber failures are expensive, visible and regulated. Every engagement maps to the threat model and compliance obligations of your sector." data-es="Trabajamos donde el fallo ciber es caro, visible y está regulado. Cada proyecto se adapta al threat model y las obligaciones regulatorias de tu sector.">We work where cyber failures are expensive, visible and regulated. Every engagement maps to the threat model and compliance obligations of your sector.</p>
@@ -752,7 +788,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </section>
 <section class="compare-wrap">
 <div class="compare-inner">
-<span class="section-label"><span class="k">04</span> · <span data-en="Why us" data-es="Por qué nosotros">Why us</span></span>
+<span class="section-label"><span class="k">05</span> · <span data-en="Why us" data-es="Por qué nosotros">Why us</span></span>
 <div class="compare-head">
 <h2 data-en-html="Same rigor.&lt;br/&gt;&lt;em&gt;Half the bill.&lt;/em&gt;&lt;br/&gt;&lt;span class='mag'&gt;Zero games.&lt;/span&gt;" data-es-html="Mismo rigor.&lt;br/&gt;&lt;em&gt;Mitad de factura.&lt;/em&gt;&lt;br/&gt;&lt;span class='mag'&gt;Cero juegos.&lt;/span&gt;">Same rigor.<br/><em>Half the bill.</em><br/><span class="mag">Zero games.</span></h2>
 <p class="intro" data-en-html="We &lt;strong&gt;drafted those proposals&lt;/strong&gt; for years. We know which line items protect you — and which ones just protect the margin." data-es-html="&lt;strong&gt;Montamos esas propuestas&lt;/strong&gt; durante años. Sabemos qué partidas te protegen a ti — y cuáles sólo protegen el margen.">We <strong>drafted those proposals</strong> for years. We know which line items protect you — and which ones just protect the margin.</p>
@@ -770,7 +806,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </div>
 </section>
 <section class="section" id="cases">
-<span class="section-label" style="display:block;max-width:1440px;margin:0 auto 32px"><span class="k">05</span> · <span data-en="Selected work" data-es="Proyectos destacados">Selected work</span></span>
+<span class="section-label" style="display:block;max-width:1440px;margin:0 auto 32px"><span class="k">06</span> · <span data-en="Selected work" data-es="Proyectos destacados">Selected work</span></span>
 <div class="cases-head">
 <h2 class="eyebrow-h2" data-en-html="A result you can &lt;em&gt;defend&lt;/em&gt;&lt;br/&gt;to your board." data-es-html="Un resultado que puedes &lt;em&gt;defender&lt;/em&gt;&lt;br/&gt;ante tu comité.">A result you can <em>defend</em><br/>to your board.</h2>
 <p data-en="Offensive engagements stay confidential by design — this is the build we can show in public. One flagship project, real numbers." data-es="Los proyectos ofensivos son confidenciales por definición — este es el que podemos enseñar en público. Un proyecto insignia, números reales.">Offensive engagements stay confidential by design — this is the build we can show in public. One flagship project, real numbers.</p>
@@ -799,7 +835,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <section class="numbers">
 <div class="numbers-inner">
 <div class="numbers-intro">
-<span class="section-label"><span class="k">06</span> · <span data-en="What backs us" data-es="Lo que nos avala">What backs us</span></span>
+<span class="section-label"><span class="k">07</span> · <span data-en="What backs us" data-es="Lo que nos avala">What backs us</span></span>
 <h3 data-en-html="Hard numbers.&lt;br/&gt;&lt;em&gt;No fine print.&lt;/em&gt;" data-es-html="Cifras claras.&lt;br/&gt;&lt;em&gt;Sin letra pequeña.&lt;/em&gt;">Hard numbers.<br/><em>No fine print.</em></h3>
 <p data-en="Four stats, zero asterisks. If we can't stand behind a number, it doesn't go on the page." data-es="Cuatro datos, cero asteriscos. Si no podemos defender un número, no entra en la página.">Four stats, zero asterisks. If we can't stand behind a number, it doesn't go on the page.</p>
 </div>
@@ -813,7 +849,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </section>
 <section class="section methodology" id="approach">
 <div class="methodology-inner">
-<span class="section-label"><span class="k">07</span> · <span data-en="How we engage" data-es="Cómo trabajamos">How we engage</span></span>
+<span class="section-label"><span class="k">08</span> · <span data-en="How we engage" data-es="Cómo trabajamos">How we engage</span></span>
 <div class="methodology-head">
 <h2 class="eyebrow-h2" data-en-html="No smoke. No&lt;br/&gt;&lt;em&gt;deck marathons.&lt;/em&gt;&lt;br/&gt;&lt;span class='cyan-em'&gt;In, solved, out.&lt;/span&gt;" data-es-html="Sin humo. Sin&lt;br/&gt;&lt;em&gt;PowerPoint infinito.&lt;/em&gt;&lt;br/&gt;&lt;span class='cyan-em'&gt;Entrar, resolver, salir.&lt;/span&gt;">No smoke. No<br/><em>deck marathons.</em><br/><span class="cyan-em">In, solved, out.</span></h2>
 <p data-en="How an engagement actually runs — four phases, from first call to handover." data-es="Así funciona un proyecto de verdad — cuatro fases, de la primera llamada al handover.">How an engagement actually runs — four phases, from first call to handover.</p>
@@ -829,7 +865,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <!-- testimonials section removed: no real, attributable client quotes available yet -->
 <section class="section team" id="team" style="background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:140px;padding-bottom:140px">
 <div class="team-inner">
-<span class="section-label"><span class="k">08</span> · <span data-en="Team &amp; credentials" data-es="Equipo &amp; credenciales">Team &amp; credentials</span></span>
+<span class="section-label"><span class="k">09</span> · <span data-en="Team &amp; credentials" data-es="Equipo &amp; credenciales">Team &amp; credentials</span></span>
 <div class="team-head">
 <h2 class="eyebrow-h2" data-en-html="The people on your&lt;br/&gt;engagement are &lt;em&gt;senior.&lt;/em&gt;" data-es-html="La gente de tu proyecto&lt;br/&gt;es &lt;em&gt;senior.&lt;/em&gt;">The people on your<br/>engagement are <em>senior.</em></h2>
 <p data-en="Every engagement is staffed by practitioners who hold the credentials below — and you meet the actual team before you sign, not after." data-es="Cada proyecto lo llevan profesionales que tienen las credenciales de abajo — y conoces al equipo real antes de firmar, no después.">Every engagement is staffed by practitioners who hold the credentials below — and you meet the actual team before you sign, not after.</p>
@@ -851,7 +887,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </div>
 </section>
 <section class="section" id="faq" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-<span class="section-label" style="display:block;max-width:1440px;margin:0 auto 32px"><span class="k">09</span> · <span data-en="Frequent questions" data-es="Preguntas frecuentes">Frequent questions</span></span>
+<span class="section-label" style="display:block;max-width:1440px;margin:0 auto 32px"><span class="k">10</span> · <span data-en="Frequent questions" data-es="Preguntas frecuentes">Frequent questions</span></span>
 <div class="faq-head">
 <h2 class="eyebrow-h2" data-en-html="What CISOs ask&lt;br/&gt;before &lt;em&gt;signing.&lt;/em&gt;" data-es-html="Lo que preguntan los CISOs&lt;br/&gt;antes de &lt;em&gt;firmar.&lt;/em&gt;">What CISOs ask<br/>before <em>signing.</em></h2>
 <p data-en="The honest answers we give in every first call. If something's missing, tell us and we'll add it." data-es="Las respuestas honestas que damos en cada primera llamada. Si falta algo, dínoslo y lo añadimos.">The honest answers we give in every first call. If something's missing, tell us and we'll add it.</p>
@@ -868,7 +904,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <section class="cta" id="contact">
 <div class="cta-grid">
 <div class="cta-left">
-<span class="section-label"><span class="k">10</span> · <span data-en="Start here" data-es="Empieza aquí">Start here</span></span>
+<span class="section-label"><span class="k">11</span> · <span data-en="Start here" data-es="Empieza aquí">Start here</span></span>
 <h2 data-en-html="Got a problem&lt;br/&gt;worth &lt;em&gt;solving?&lt;/em&gt;" data-es-html="¿Tienes un problema&lt;br/&gt;que &lt;em&gt;resolver?&lt;/em&gt;">Got a problem<br/>worth <em>solving?</em></h2>
 <p data-en-html="One 45-minute call, straight answers. If we're the right fit, a clear proposal follows fast — if we're not, &lt;em&gt;we'll point you to whoever is.&lt;/em&gt;" data-es-html="Una llamada de 45 minutos, respuestas directas. Si encajamos, la propuesta llega rápido — y si no, &lt;em&gt;te decimos quién sí.&lt;/em&gt;">One 45-minute call, straight answers. If we're the right fit, a clear proposal follows fast — if we're not, <em>we'll point you to whoever is.</em></p>
 <div class="cta-channels">
@@ -1071,7 +1107,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   /* ============ SCROLL REVEAL ============ */
   var revealEls = [];
   document.querySelectorAll(
-    ".manifesto-col, .service, .industry, .compare-table, .case, .stat-cell, .timeline-step, .commitment, .faq-item, .numbers-intro, .cta-left, .console"
+    ".manifesto-col, .service, .pyme-card, .industry, .compare-table, .case, .stat-cell, .timeline-step, .commitment, .faq-item, .numbers-intro, .cta-left, .console"
   ).forEach(function(el){ el.classList.add("reveal"); revealEls.push(el); });
 
   if(reduceMotion || !("IntersectionObserver" in window)){

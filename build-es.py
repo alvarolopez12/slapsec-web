@@ -17,13 +17,13 @@ SRC = os.path.join(ROOT, "publish", "index.html")
 OUT_DIR = os.path.join(ROOT, "publish", "es")
 OUT = os.path.join(OUT_DIR, "index.html")
 
-ES_TITLE = "Consultoría de Ciberseguridad — Red Team, GRC y Zero Trust | SlapSec"
-ES_DESC = ("Consultoría de ciberseguridad senior independiente. Red team y threat intel, "
-           "Zero Trust, GRC y compliance (ENS, ISO 27001), seguridad del dato y automatización. "
+ES_TITLE = "Ciberseguridad para Pymes y Empresas — Red Team, GRC y Zero Trust | SlapSec"
+ES_DESC = ("Consultoría de ciberseguridad senior para pymes y gran empresa. Red team y threat intel, "
+           "Zero Trust, GRC y compliance (ENS, ISO 27001), vCISO, dato y automatización. "
            "El criterio de las Big Four, sin el overhead.")
 ES_OG_TITLE = "SlapSec — Ciberseguridad senior. Democratizada."
 ES_OG_DESC = ("Mismo rigor que las firmas tier-1, sin el overhead. Red team y threat intel, "
-              "Zero Trust, GRC y compliance, seguridad del dato y automatización. Equipo sólo senior.")
+              "Zero Trust, GRC y compliance, dato y automatización. Para pymes y gran empresa.")
 ES_TW_DESC = "Mismo rigor que las firmas tier-1, sin el overhead. Consultoría de ciberseguridad senior."
 ES_SCHEMA_DESC = ("Consultoría de ciberseguridad senior independiente. Red team y threat intel, "
                   "arquitectura Zero Trust, GRC y compliance, seguridad del dato y automatización. "
@@ -126,6 +126,9 @@ for b in soup.select(".lang-btn"):
         b["class"] = ["lang-btn"]
         if b.has_attr("aria-current"):
             del b["aria-current"]
+        # explicit EN choice must bypass the Spain geo-redirect at the edge
+        if b.get("data-lang") == "en":
+            b["href"] = "/?lang=en"
 
 os.makedirs(OUT_DIR, exist_ok=True)
 out = str(soup)
