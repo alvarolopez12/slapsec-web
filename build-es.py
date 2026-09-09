@@ -18,7 +18,7 @@ SRC = os.path.join(ROOT, "publish", "index.html")
 OUT_DIR = os.path.join(ROOT, "publish", "es")
 OUT = os.path.join(OUT_DIR, "index.html")
 
-ES_TITLE = "Ciberseguridad para Pymes — Red Team y Zero Trust | SlapSec"
+ES_TITLE = "Ciberseguridad para Pymes: Red Team y Zero Trust | SlapSec"
 ES_DESC = ("Consultoría de ciberseguridad senior para pymes y gran empresa: red team, Zero Trust, "
            "GRC y compliance. El criterio de las Big Four, sin el overhead.")
 ES_OG_TITLE = "SlapSec — Ciberseguridad senior. Democratizada."
