@@ -18,10 +18,10 @@ SRC = os.path.join(ROOT, "publish", "index.html")
 OUT_DIR = os.path.join(ROOT, "publish", "es")
 OUT = os.path.join(OUT_DIR, "index.html")
 
-ES_TITLE = "Ciberseguridad para Pymes: Red Team y Zero Trust | SlapSec"
+ES_TITLE = "Ciberseguridad para pymes: Red Team y Zero Trust | SlapSec"
 ES_DESC = ("Consultoría de ciberseguridad senior para pymes y gran empresa: red team, Zero Trust, "
            "GRC y compliance. El criterio de las Big Four, sin el overhead.")
-ES_OG_TITLE = "SlapSec — Ciberseguridad senior. Democratizada."
+ES_OG_TITLE = "SlapSec: Ciberseguridad senior. Democratizada."
 ES_OG_DESC = ("Mismo rigor que las firmas tier-1, sin el overhead. Red team y threat intel, "
               "Zero Trust, GRC y compliance, dato y automatización. Para pymes y gran empresa.")
 ES_TW_DESC = "Mismo rigor que las firmas tier-1, sin el overhead. Consultoría de ciberseguridad senior."
@@ -110,7 +110,8 @@ setmeta("name", "twitter:description", ES_TW_DESC)
 setmeta("property", "og:url", "https://slapsec.com/es/")
 setmeta("property", "og:locale", "es_ES")
 setmeta("property", "og:locale:alternate", "en_US")
-setmeta("property", "og:image:alt", "SlapSec — consultoría de ciberseguridad senior")
+setmeta("property", "og:image:alt", "SlapSec, consultoría de ciberseguridad senior")
+setmeta("name", "twitter:image:alt", "SlapSec, consultoría de ciberseguridad senior")
 soup.find("link", attrs={"rel": "canonical"})["href"] = "https://slapsec.com/es/"
 
 # 4) localize org JSON-LD (first ld+json script, no id)
@@ -141,7 +142,7 @@ if faq_schema is not None:
 # 5b) logo links point at the Spanish home
 for a in soup.select("a.logo"):
     a["href"] = "/es/"
-    a["aria-label"] = "SlapSec — inicio"
+    a["aria-label"] = "SlapSec, inicio"
 
 # 6) language toggle links: ES active
 for b in soup.select(".lang-btn"):

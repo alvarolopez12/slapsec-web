@@ -8,11 +8,11 @@
 <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SlapSec" />
   <meta property="og:image" content="https://slapsec.com/og.png" />
-  <meta property="og:image:alt" content="SlapSec — senior cybersecurity consulting" />
+  <meta property="og:image:alt" content="SlapSec, senior cybersecurity consulting" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://slapsec.com/og.png" />
   <meta name="theme-color" content="#050505" />
-  <meta property="og:title" content="Page not found — SlapSec" />
+  <meta property="og:title" content="Page not found | SlapSec" />
   <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
   <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
@@ -27,8 +27,12 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .wrap{position:relative;z-index:1}
 .code{font-family:var(--display);font-weight:800;font-size:clamp(90px,22vw,220px);line-height:.9;letter-spacing:-.05em;color:var(--fg)}
 .code span{color:var(--accent)}
-.tag{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin:20px 0 10px}
+.tag{font-family:var(--mono);font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin:20px 0 10px}
 p{color:var(--fg-dim);font-size:16px;line-height:1.55;max-width:420px;margin:0 auto 32px}
+.tag::before{content:"// "}
+.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.alt{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--fg-dim);text-decoration:none;padding:14px 22px;border:1px solid var(--line-strong);transition:border-color .2s,color .2s}
+.alt:hover{border-color:var(--accent);color:var(--accent)}
 a.home{font-family:var(--mono);display:inline-flex;align-items:center;gap:10px;background:var(--fg);color:var(--bg);text-decoration:none;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding:14px 22px;transition:transform .2s,background .2s}
 a.home:hover{background:var(--fg);transform:translateY(-2px)}
 
@@ -37,10 +41,14 @@ a.home:hover{background:var(--fg);transform:translateY(-2px)}
 </head>
 <body>
 <div class="wrap">
-  <div class="code">4<span>0</span>4</div>
-  <div class="tag">// Route not found</div>
-  <p>This path doesn't exist, or it's been rotated out. Nothing was compromised; you just took a wrong turn.</p>
-  <a class="home" href="/">← Back to slapsec.com</a>
+  <div class="code" aria-hidden="true">4<span>0</span>4</div>
+  <h1 class="tag">Route not found</h1>
+  <p lang="en">This page doesn't exist. Nothing was compromised; the link is just wrong or out of date.</p>
+  <p lang="es">Esta página no existe. No se ha comprometido nada: el enlace es incorrecto o está obsoleto.</p>
+  <div class="actions">
+    <a class="home" href="/">Back to slapsec.com</a>
+    <a class="alt" href="/es/" lang="es">Ir a la versión en español</a>
+  </div>
 </div>
 </body>
 </html>
