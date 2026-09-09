@@ -1,0 +1,18 @@
+{
+  "negro": "#050505",
+  "negroUI": "#0a0a0b",
+  "blanco": "#f4f4f2",
+  "verde": "#67e18f",
+  "verdeOscuro": "#00a24f",
+  "grisLineaOscuro": "#232326",
+  "grisLineaClaro": "#d8d8d5",
+  "grisTextoOscuro": "#9a9a97",
+  "grisTextoClaro": "#5d5d5a",
+  "grisMeta": "#7b7b78",
+  "patronOscuro": "#1a1a1e",
+  "patronClaro": "#e2e2df",
+  "fuentes": {
+    "display": "Schibsted Grotesk (400/500/700/800)",
+    "mono": "JetBrains Mono (400/500)"
+  }
+}

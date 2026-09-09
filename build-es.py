@@ -118,6 +118,11 @@ if faq_schema is not None:
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs},
         ensure_ascii=False, indent=1) + "\n"
 
+# 5b) logo links point at the Spanish home
+for a in soup.select("a.logo"):
+    a["href"] = "/es/"
+    a["aria-label"] = "SlapSec — inicio"
+
 # 6) language toggle links: ES active
 for b in soup.select(".lang-btn"):
     if b.get("data-lang") == "es":

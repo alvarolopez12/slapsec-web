@@ -1,0 +1,16 @@
+:root {
+  --ss-negro: #050505;        /* fondo principal */
+  --ss-negro-ui: #0a0a0b;     /* texto sobre claro */
+  --ss-blanco: #f4f4f2;       /* fondo claro / texto sobre oscuro */
+  --ss-verde: #67e18f;        /* acento sobre fondo oscuro  (oklch 0.82 0.16 152) */
+  --ss-verde-oscuro: #00a24f; /* acento sobre fondo claro (oklch 0.62 0.17 152) */
+  --ss-gris-linea-oscuro: #232326;
+  --ss-gris-linea-claro: #d8d8d5;
+  --ss-gris-texto-oscuro: #9a9a97;  /* secundario sobre oscuro */
+  --ss-gris-texto-claro: #5d5d5a;   /* secundario sobre claro */
+  --ss-gris-meta: #7b7b78;
+  --ss-patron-oscuro: #1a1a1e;      /* corchetes del patrón sobre negro */
+  --ss-patron-claro: #e2e2df;       /* corchetes del patrón sobre blanco */
+  --ss-font-display: 'Schibsted Grotesk', Helvetica, Arial, sans-serif;
+  --ss-font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
