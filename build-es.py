@@ -10,6 +10,7 @@ Requires: beautifulsoup4  (pip install beautifulsoup4)
 """
 import json
 import os
+import re
 from bs4 import BeautifulSoup, NavigableString
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -30,6 +31,15 @@ ES_SCHEMA_DESC = ("Consultoría de ciberseguridad senior independiente. Red team
                   "Mismo rigor que las firmas tier-1, sin el overhead.")
 ES_SLOGAN = "Ciberseguridad senior. Democratizada."
 
+def clean(t):
+    """get_text(" ") inserts a space at every inline-element boundary, which
+    leaves artifacts like "2-6 weeks , red team" and "( full red team". The
+    JSON-LD must match what the reader actually sees."""
+    t = re.sub(r"\s+", " ", t)
+    t = re.sub(r"\s+([,.;:!?%)\]])", r"\1", t)
+    t = re.sub(r"([(\[])\s+", r"\1", t)
+    return t.strip()
+
 # ---- Step 0: bake ENGLISH statically into the source page itself ----
 # (data-en / data-en-html / data-en-ph attrs stay as the i18n source of truth;
 #  the visible static text is derived from them, so crawlers and no-JS visitors
@@ -43,13 +53,17 @@ for el in en.select("[data-en-html]"):
         el.append(c)
 for el in en.select("[data-en-ph]"):
     el["placeholder"] = el.get("data-en-ph")
+for el in en.select("[data-en-aria]"):
+    el["aria-label"] = el.get("data-en-aria")
+for el in en.select("[data-en-title]"):
+    el["title"] = el.get("data-en-title")
 # keep EN FAQPage schema in sync with the baked EN DOM
 _faq = en.find("script", id="faq-schema")
 if _faq is not None:
     _items = []
     for item in en.select(".faq-item"):
-        _q = item.select_one(".faq-q-text").get_text(" ", strip=True)
-        _a = item.select_one(".faq-a-inner").get_text(" ", strip=True)
+        _q = clean(item.select_one(".faq-q-text").get_text(" ", strip=True))
+        _a = clean(item.select_one(".faq-a-inner").get_text(" ", strip=True))
         _items.append({"@type": "Question", "name": _q,
                        "acceptedAnswer": {"@type": "Answer", "text": _a}})
     _faq.string = "\n" + json.dumps(
@@ -76,6 +90,12 @@ for el in soup.select("[data-es-html]"):
         el.append(c)
 for el in soup.select("[data-es-ph]"):
     el["placeholder"] = el.get("data-es-ph")
+# accessible names and tooltips must be translated too, or screen-reader and
+# hover users on /es/ get English ("Open menu", the comparison table's Yes/No/Partial)
+for el in soup.select("[data-es-aria]"):
+    el["aria-label"] = el.get("data-es-aria")
+for el in soup.select("[data-es-title]"):
+    el["title"] = el.get("data-es-title")
 
 # 3) ES head
 soup.title.string = ES_TITLE
@@ -110,8 +130,8 @@ faq_schema = soup.find("script", id="faq-schema")
 if faq_schema is not None:
     faqs = []
     for item in soup.select(".faq-item"):
-        q = item.select_one(".faq-q-text").get_text(" ", strip=True)
-        a = item.select_one(".faq-a-inner").get_text(" ", strip=True)
+        q = clean(item.select_one(".faq-q-text").get_text(" ", strip=True))
+        a = clean(item.select_one(".faq-a-inner").get_text(" ", strip=True))
         faqs.append({"@type": "Question", "name": q,
                      "acceptedAnswer": {"@type": "Answer", "text": a}})
     faq_schema.string = "\n" + json.dumps(

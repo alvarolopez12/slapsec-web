@@ -70,7 +70,7 @@
    "name": "What does a typical engagement cost and take?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Depends on scope, but our typical ranges — pentest: 2–6 weeks , red team: 6–12 weeks, Zero Trust rollout: 8–16 weeks, GRC / audit readiness: 4–8 weeks (vCISO runs as a monthly retainer), data protection (DLP/DSPM): 4–10 weeks. Day rates land around half the Big Four equivalent for comparable seniority. We quote fixed-price when the scope is clean, T&M when discovery is needed, and we tell you which upfront."
+    "text": "Depends on scope, but our typical ranges — pentest: 2–6 weeks, red team: 6–12 weeks, Zero Trust rollout: 8–16 weeks, GRC / audit readiness: 4–8 weeks (vCISO runs as a monthly retainer), data protection (DLP/DSPM): 4–10 weeks. Day rates land around half the Big Four equivalent for comparable seniority. We quote fixed-price when the scope is clean, T&M when discovery is needed, and we tell you which upfront."
    }
   },
   {
@@ -86,7 +86,7 @@
    "name": "What pentest depth options do you offer?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Four tiers, matched to your maturity and budget: Lite (automated scan, broad and fast, 2-day SLA), Essential (automated + manual, OWASP Top 10), Advanced (deep manual testing, business-logic, exploit PoC, retest + workshop) and Pro ( full red team , adversary simulation and social engineering)."
+    "text": "Four tiers, matched to your maturity and budget: Lite (automated scan, broad and fast, 2-day SLA), Essential (automated + manual, OWASP Top 10), Advanced (deep manual testing, business-logic, exploit PoC, retest + workshop) and Pro (full red team, adversary simulation and social engineering)."
    }
   },
   {
@@ -102,7 +102,7 @@
    "name": "What if you find something you weren't scoped for?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "We tell you. Always. If it's critical, we help contain it within the current engagement at no extra charge. If it's a new workstream, we scope it separately and you decide . We will never sit on a finding to create a follow-on sale — that's a reputation we can't rebuild."
+    "text": "We tell you. Always. If it's critical, we help contain it within the current engagement at no extra charge. If it's a new workstream, we scope it separately and you decide. We will never sit on a finding to create a follow-on sale — that's a reputation we can't rebuild."
    }
   }
  ]
@@ -111,9 +111,9 @@
 <style>
 :root{
   --bg:#050505; --bg-2:#0a0a0b; --bg-3:#121214; --bg-card:#0d0d0f;
-  --fg:#f4f4f2; --fg-dim:#9a9a97; --fg-muted:#6e6e6b; --fg-very-muted:#26262a;
-  --accent:#67e18f; --accent-dark:#00a24f;
-  --line:#232326; --line-strong:#33333a; --line-very-strong:#4a4a52;
+  --fg:#f4f4f2; --fg-dim:#9a9a97; --fg-muted:#808079;
+  --accent:#67e18f; --accent-dark:#00a24f; --on-light-dim:#5d5d5a;
+  --line:#232326; --line-strong:#33333a;
   --display:"Schibsted Grotesk", Helvetica, Arial, sans-serif;
   --sans:"Schibsted Grotesk", Helvetica, Arial, sans-serif;
   --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -128,16 +128,16 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='216' viewBox='0 0 240 216'%3E%3Cg fill='%231a1a1e'%3E%3Cpath d='M24 24h30v8H32v22h-8z'/%3E%3Cpath d='M216 192h-30v-8h22v-22h8z'/%3E%3C/g%3E%3C/svg%3E");background-size:240px 216px}
 .nav{position:sticky;top:0;z-index:100;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(5,5,5,0.82);border-bottom:1px solid var(--line)}
-.nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.08em}
+.nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.16em}
 .nav-links a{position:relative;padding:6px 0;transition:color .25s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--accent);transition:width .35s ease}
 .nav-links a:hover{color:var(--accent)}.nav-links a:hover::after{width:100%}
 .nav-right{display:flex;align-items:center;gap:16px}
-.lang-switch{display:flex;align-items:center;border:1px solid var(--line-strong);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em}
+.lang-switch{display:flex;align-items:center;border:1px solid var(--line-strong);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em}
 .lang-btn{background:transparent;color:var(--fg-dim);padding:7px 12px;border:none;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit;transition:all .2s}
 .lang-btn.active{background:var(--fg);color:var(--bg);font-weight:600}
 .lang-btn:not(.active):hover{color:var(--accent)}
-.nav-cta{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--bg);background:var(--fg);padding:11px 18px;cursor:pointer;transition:all .25s;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.nav-cta{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:var(--bg);background:var(--fg);padding:11px 18px;cursor:pointer;transition:all .25s;font-weight:600;display:inline-flex;align-items:center;gap:8px}
 .nav-cta:hover{background:var(--fg);transform:translateY(-1px)}
 .nav-burger{display:none;background:none;border:none;color:var(--fg);cursor:pointer;padding:8px;align-items:center;justify-content:center}
 @media (max-width:1024px){.nav-links{display:none}.nav-burger{display:inline-flex}.nav-right .nav-cta{display:none}}
@@ -147,7 +147,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 
 .hero-inner{position:relative;z-index:2;max-width:1440px;margin:0 auto;width:100%;flex:1;display:flex;flex-direction:column;justify-content:center}
 
-.hero-title{font-family:var(--display);font-weight:700;font-size:clamp(42px, 6.6vw, 100px);line-height:0.95;letter-spacing:-0.032em;margin-bottom:56px}
+.hero-title{font-family:var(--display);font-weight:800;font-size:clamp(42px, 6.6vw, 100px);line-height:0.95;letter-spacing:-0.032em;margin-bottom:56px}
 @media (max-width:600px){.hero-title{font-size:clamp(32px, 8.6vw, 50px);line-height:1.04;margin-bottom:36px}}
 .hero-title .line{display:block;overflow:hidden;padding:0.05em 0}
 .hero-title .inner{display:block;animation:reveal 1.1s cubic-bezier(.2,.7,.2,1) both}
@@ -162,9 +162,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .hero-meta-text{max-width:540px;font-size:17px;line-height:1.55;color:var(--fg)}
 .hero-meta-text strong{color:var(--accent);font-weight:600}.hero-meta-text em{color:var(--fg);font-style:normal;font-weight:500}
 .hero-cta-group{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.hero-index{text-align:right;font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:0.08em;line-height:1.9}
+.hero-index{text-align:right;font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:0.16em;line-height:1.9}
 .hero-index .k{color:var(--fg-dim)}.hero-index .big{color:var(--fg);font-size:13px}
-.btn{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;padding:14px 22px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:all .25s;font-weight:600;white-space:nowrap}
+.btn{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:0.16em;padding:14px 22px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:all .25s;font-weight:600;white-space:nowrap}
 .btn-primary{background:var(--fg);color:var(--bg)}.btn-primary:hover{background:var(--fg);transform:translateY(-2px)}
 .btn-ghost{background:transparent;color:var(--fg);border:1px solid var(--line-strong)}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 .btn-alert{background:var(--fg-dim);color:var(--bg)}.btn-alert:hover{background:var(--fg);transform:translateY(-2px)}
@@ -172,24 +172,24 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 
 .trust{padding:54px 40px;position:relative;z-index:2;border-bottom:1px solid var(--line);background:var(--bg)}
 .trust-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center}
-.trust-label{font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:0.1em;max-width:180px;line-height:1.6}
+.trust-label{font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:0.16em;max-width:180px;line-height:1.6}
 .trust-label strong{color:var(--fg-dim);display:block;font-weight:500;font-size:12px;margin-bottom:4px}
 .trust-logos{display:flex;flex-wrap:wrap;gap:32px 56px;align-items:center;font-family:var(--display);font-weight:600;font-size:34px;color:var(--fg-dim);letter-spacing:-0.02em}
 .trust-logos span{transition:color .3s;cursor:default;position:relative}.trust-logos span:hover{color:var(--accent)}
 .trust-logos .dot{color:var(--fg-muted);font-weight:400}
 @media (max-width:768px){.trust-inner{grid-template-columns:1fr;gap:24px}.trust-logos{font-size:26px;gap:20px 36px}}
 .section{position:relative;z-index:2;padding:140px 40px}
-.section-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-bottom:32px;display:inline-flex;align-items:center;gap:12px}
+.section-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);margin-bottom:32px;display:inline-flex;align-items:center;gap:12px}
 .section-label::before{content:"";width:28px;height:1px;background:var(--accent)}.section-label .k{color:var(--fg-dim)}
-.eyebrow-h2{font-family:var(--display);font-weight:700;font-size:clamp(32px, 4.2vw, 62px);line-height:0.94;letter-spacing:-0.035em}
+.eyebrow-h2{font-family:var(--display);font-weight:800;font-size:clamp(32px, 4.2vw, 62px);line-height:0.94;letter-spacing:-0.035em}
 .eyebrow-h2 em{font-style:normal;color:var(--accent);letter-spacing:-0.025em}
-.eyebrow-h2 .cyan-em{font-style:normal;color:var(--fg-dim);letter-spacing:-0.025em}
-.eyebrow-h2 .mag-em{font-style:normal;color:var(--fg-dim);letter-spacing:-0.025em}
+.eyebrow-h2 .em-quiet{font-style:normal;color:var(--fg-dim);letter-spacing:-0.025em}
+
 .eyebrow-h2 .struck{position:relative;display:inline-block;color:var(--fg-dim)}
 .eyebrow-h2 .struck::after{content:"";position:absolute;left:-1%;right:-1%;top:52%;height:4px;background:var(--fg-dim);transform:rotate(-1deg)}
 .manifesto-wrap{max-width:1440px;margin:0 auto}
 .manifesto{display:grid;grid-template-columns:200px 1fr;gap:80px}
-.manifesto h2{font-family:var(--display);font-weight:700;font-size:clamp(32px, 4.2vw, 62px);line-height:0.96;letter-spacing:-0.035em;margin-bottom:40px}
+.manifesto h2{font-family:var(--display);font-weight:800;font-size:clamp(32px, 4.2vw, 62px);line-height:0.96;letter-spacing:-0.035em;margin-bottom:40px}
 .manifesto h2 em{font-style:normal;color:var(--accent)}
 .manifesto h2 .u{position:relative;display:inline-block}
 .manifesto h2 .u::after{content:"";position:absolute;left:0;right:0;bottom:0.05em;height:3px;background:var(--fg-dim);}
@@ -198,8 +198,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .manifesto-col p.lead{font-size:21px;font-style:normal;font-weight:400;color:var(--fg);line-height:1.55}
 .manifesto-col p em{color:var(--fg);font-style:normal;font-weight:500}.manifesto-col p strong{color:var(--accent);font-weight:600}
 .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.chip{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;padding:6px 12px;border:1px solid var(--line-strong);color:var(--fg-dim);transition:all .2s}
-.chip.on{border-color:var(--accent);color:var(--accent)}.chip.cy{border-color:var(--fg-dim);color:var(--fg-dim)}.chip.mg{border-color:var(--fg-dim);color:var(--fg-dim)}
+.chip{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;padding:6px 12px;border:1px solid var(--line-strong);color:var(--fg-dim);transition:all .2s}
+.chip.on{border-color:var(--accent);color:var(--accent)}.chip.muted{border-color:var(--fg-dim);color:var(--fg-dim)}
 @media (max-width:1024px){.manifesto{grid-template-columns:1fr;gap:32px}.manifesto-grid{grid-template-columns:1fr;gap:28px}}
 .services-head{max-width:1440px;margin:0 auto 80px;display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:end}
 .services-head p{font-size:17px;line-height:1.6;color:var(--fg-dim);max-width:480px}
@@ -215,7 +215,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .service h3 em{font-style:normal;color:var(--accent)}
 .service-intro{color:var(--fg-dim);font-size:15px;line-height:1.55;margin-bottom:28px;max-width:500px}
 .service-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:16px}
-.service-list li{background:var(--bg);padding:13px 14px;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg);display:flex;align-items:center;gap:10px;transition:color .2s, background .2s}
+.service-list li{background:var(--bg);padding:13px 14px;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:0.16em;color:var(--fg);display:flex;align-items:center;gap:10px;transition:color .2s, background .2s}
 .service:hover .service-list li{background:var(--bg-2)}
 .service-list li::before{content:"+";color:var(--fg-dim);font-weight:600}.service-list li:hover{color:var(--accent)}
 @media (max-width:1024px){.services-head{grid-template-columns:1fr;gap:32px;align-items:start}}
@@ -227,11 +227,11 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .industries-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .industry{background:var(--bg-2);padding:36px 30px;position:relative;transition:background .3s;min-height:240px;display:flex;flex-direction:column;justify-content:space-between}
 .industry:hover{background:var(--bg-3)}
-.industry-code{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:var(--fg-dim);text-transform:uppercase}
+.industry-code{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--fg-dim);text-transform:uppercase}
 .industry h3{font-family:var(--display);font-weight:600;font-size:28px;letter-spacing:-0.02em;line-height:1.1;margin:18px 0 14px}
 .industry p{color:var(--fg-dim);font-size:13.5px;line-height:1.5}
 .industry-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
-.industry-tags span{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--fg-muted);padding:3px 8px;border:1px solid var(--line)}
+.industry-tags span{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--fg-muted);padding:3px 8px;border:1px solid var(--line)}
 @media (max-width:1024px){.industries-head{grid-template-columns:1fr;gap:32px;align-items:start}.industries-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.industries-grid{grid-template-columns:1fr}}
 .compare-wrap{background:var(--bg);color:var(--fg);padding:120px 40px;position:relative;z-index:2;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -244,15 +244,15 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .compare-table::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent)}
 .compare-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-top:1px solid var(--line);align-items:stretch}
 .compare-row:first-child{border-top:none}.compare-row.header{background:var(--bg-2)}
-.compare-row.header > div{padding:20px 22px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-dim)}
+.compare-row.header > div{padding:20px 22px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--fg-dim)}
 .compare-row.header .us{color:var(--accent);font-weight:600}.compare-row.header .big4{color:var(--fg-dim)}.compare-row.header .boutique{color:var(--fg-dim)}
 .compare-row > div{padding:20px 22px;display:flex;align-items:center;gap:8px;border-left:1px solid var(--line);font-size:14px}
 .compare-row > div:first-child{border-left:none}
 .compare-row .feature{font-family:var(--display);font-weight:600;font-size:16px;color:var(--fg);letter-spacing:-0.01em}
-.compare-row .us{background:rgba(202,255,61,0.04);color:var(--fg);font-weight:600}
+.compare-row .us{background:rgba(103,225,143,0.05);color:var(--fg);font-weight:600}
 .check{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-weight:700;font-size:13px;flex-shrink:0}
 .check.yes{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}.check.no{background:transparent;color:var(--fg-dim);border:1.5px solid var(--fg-dim)}.check.partial{background:transparent;color:var(--fg-dim);border:1.5px solid var(--fg-dim)}
-.compare-row .note{font-family:var(--mono);font-size:11px;color:var(--fg-dim);letter-spacing:0.04em;text-transform:uppercase}
+.compare-row .note{font-family:var(--mono);font-size:11px;color:var(--fg-dim);letter-spacing:0.16em;text-transform:uppercase}
 @media (max-width:1024px){.compare-head{grid-template-columns:1fr;gap:32px;align-items:start}}
 @media (max-width:768px){.compare-wrap{padding:80px 20px}.compare-row{grid-template-columns:1.5fr 1fr 1fr 1fr}.compare-row > div{padding:14px 10px;font-size:12px}.compare-row .feature{font-size:13px}.compare-row.header > div{padding:14px 10px;font-size:10px}}
 .cases-head{max-width:1440px;margin:0 auto 72px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
@@ -263,33 +263,33 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .case::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--line-strong);opacity:0;transition:opacity .3s}
 .case:hover::before{opacity:1}
 .case-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
-.case-sector{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent)}
+.case-sector{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent)}
 .case-id{font-family:var(--mono);font-size:10px;color:var(--fg-muted);letter-spacing:0.08em}
 .case h3{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-0.018em;line-height:1.2;margin-bottom:14px}
 .case-challenge{font-size:14px;color:var(--fg-dim);line-height:1.55;margin-bottom:20px;flex:1}
 .case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:20px;border-top:1px solid var(--line)}
 .case-metric .k{font-family:var(--display);font-weight:700;font-size:32px;line-height:1;color:var(--accent);letter-spacing:-0.03em;display:block}
-.case-metric .v{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg-dim);margin-top:6px;display:block}
+.case-metric .v{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--fg-dim);margin-top:6px;display:block}
 @media (max-width:1024px){.cases-head{grid-template-columns:1fr;gap:32px;align-items:start}.cases-grid{grid-template-columns:1fr;gap:16px}}
 .numbers{padding:120px 40px;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:2;overflow:hidden}
-.numbers::before{content:"";position:absolute;inset:0;pointer-events:none}
+
 .numbers-inner{max-width:1440px;margin:0 auto;position:relative}
 .numbers-intro{max-width:680px;margin-bottom:72px}
-.numbers-intro h3{font-family:var(--display);font-weight:700;font-size:clamp(30px, 3.6vw, 50px);line-height:0.98;letter-spacing:-0.032em}
-.numbers-intro h3 em{font-style:normal;color:var(--accent)}
+.numbers-intro h2{font-family:var(--display);font-weight:800;font-size:clamp(30px, 3.6vw, 50px);line-height:0.98;letter-spacing:-0.032em}
+.numbers-intro h2 em{font-style:normal;color:var(--accent)}
 .numbers-intro p{margin-top:18px;color:var(--fg-dim);font-size:16px;line-height:1.6;max-width:520px}
 .numbers-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .stat-cell{background:var(--bg);padding:44px 32px;position:relative;transition:background .3s}
 .stat-cell:hover{background:var(--bg-2)}
 .stat-cell::after{content:attr(data-idx);position:absolute;top:16px;right:20px;font-family:var(--mono);font-size:10px;color:var(--fg-muted);letter-spacing:0.08em}
-.stat-num{font-family:var(--display);font-weight:700;font-size:clamp(46px, 5.4vw, 78px);line-height:0.9;letter-spacing:-0.032em;color:var(--fg)}
+.stat-num{font-family:var(--display);font-weight:800;font-size:clamp(46px, 5.4vw, 78px);line-height:0.9;letter-spacing:-0.032em;color:var(--fg)}
 .stat-num .plus{font-style:normal;color:var(--accent)}
 .stat-num .sub{font-family:var(--display);font-weight:500;font-size:0.5em;color:var(--fg-dim);letter-spacing:-0.02em}
-.stat-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-dim);margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}
+.stat-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--fg-dim);margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}
 @media (max-width:1024px){.numbers-grid{grid-template-columns:repeat(2, 1fr)}}
 @media (max-width:600px){.numbers-grid{grid-template-columns:1fr}}
 .methodology{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.methodology::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0.6}
+
 .methodology-inner{max-width:1440px;margin:0 auto;position:relative}
 .methodology-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:72px}
 .methodology-head p{font-size:17px;color:var(--fg-dim);line-height:1.6;max-width:460px}
@@ -299,22 +299,22 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .timeline-step .dot{width:16px;height:16px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px var(--bg-2);margin-bottom:28px;margin-top:36px}
 .timeline-step.first .dot{background:var(--accent);box-shadow:0 0 0 6px var(--bg-2)}
 .timeline-step.last .dot{background:var(--accent);box-shadow:0 0 0 6px var(--bg-2)}
-.timeline-step .n{font-family:var(--mono);font-size:11px;color:var(--fg-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px}
-.timeline-step h4{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:14px}
-.timeline-step h4 em{font-style:normal;color:var(--accent)}
+.timeline-step .n{font-family:var(--mono);font-size:11px;color:var(--fg-dim);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:12px}
+.timeline-step h3{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:14px}
+.timeline-step h3 em{font-style:normal;color:var(--accent)}
 .timeline-step p{color:var(--fg-dim);font-size:14px;line-height:1.55}
-.timeline-step .sla{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border:1px solid var(--accent);color:var(--accent)}
+.timeline-step .sla{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.18em;padding:4px 10px;border:1px solid var(--accent);color:var(--accent)}
 @media (max-width:1024px){.methodology-head{grid-template-columns:1fr;gap:32px;align-items:start}.timeline{grid-template-columns:1fr;gap:32px}.timeline::before{display:none}.timeline-step{padding:0}.timeline-step .dot{margin-top:0;margin-bottom:16px}}
 .team-inner{max-width:1440px;margin:0 auto}
 .team-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
 .team-head p{font-size:16px;color:var(--fg-dim);line-height:1.6;max-width:460px}
 .creds-tabs{display:flex;gap:0;margin-bottom:24px;border-bottom:1px solid var(--line)}
-.creds-tab{background:transparent;border:none;color:var(--fg-dim);cursor:pointer;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;padding:14px 20px;position:relative;transition:color .25s}
+.creds-tab{background:transparent;border:none;color:var(--fg-dim);cursor:pointer;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;padding:14px 20px;position:relative;transition:color .25s}
 .creds-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:center;transition:transform .3s}
 .creds-tab.active{color:var(--accent)}.creds-tab.active::after{transform:scaleX(1)}.creds-tab:hover{color:var(--fg)}
 .cert-pool{display:none}.cert-pool.active{display:flex;flex-wrap:wrap;gap:8px;animation:fadeUp .4s ease}
-.cert{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;padding:8px 12px;border:1px solid var(--line-strong);color:var(--fg);transition:all .2s}
-.cert:hover{border-color:var(--accent);color:var(--accent)}.cert.blue:hover{border-color:var(--fg-dim);color:var(--fg-dim)}
+.cert{font-family:var(--sans);font-size:11px;letter-spacing:0.04em;padding:8px 12px;border:1px solid var(--line-strong);color:var(--fg);transition:all .2s}
+.cert:hover{border-color:var(--accent);color:var(--accent)}.cert.alt:hover{border-color:var(--fg-dim);color:var(--fg-dim)}
 @media (max-width:1024px){.team-head{grid-template-columns:1fr;gap:32px;align-items:start}}
 @media (max-width:640px){.creds-tabs{overflow-x:auto}}
 .faq-head{max-width:1440px;margin:0 auto 72px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
@@ -332,39 +332,39 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 @media (max-width:1024px){.faq-head{grid-template-columns:1fr;gap:32px;align-items:start}}
 .cta{padding:120px 40px;position:relative;z-index:2;border-top:1px solid var(--line)}
 .cta-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.cta-left h2{font-family:var(--display);font-weight:700;font-size:clamp(32px, 4.2vw, 62px);line-height:0.96;letter-spacing:-0.035em;margin-bottom:28px}
+.cta-left h2{font-family:var(--display);font-weight:800;font-size:clamp(32px, 4.2vw, 62px);line-height:0.96;letter-spacing:-0.035em;margin-bottom:28px}
 .cta-left h2 em{font-style:normal;color:var(--accent)}
 .cta-left p{color:var(--fg-dim);font-size:17px;line-height:1.6;max-width:460px;margin-bottom:32px}
 .cta-left p em{color:var(--fg);font-style:normal;font-weight:500}
 .cta-channels{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);margin-top:40px}
 .channel{padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:130px 1fr auto;gap:20px;align-items:center;transition:padding .3s}
 .channel:hover{padding-left:12px}
-.channel-label{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-dim)}
+.channel-label{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.16em;color:var(--fg-dim)}
 .channel-value{font-family:var(--display);font-size:18px;color:var(--fg);letter-spacing:-0.005em;font-weight:500}
 .channel-value.alert{color:var(--fg-dim)}
 .channel-arrow{font-family:var(--mono);font-size:14px;color:var(--accent);transition:transform .3s}.channel:hover .channel-arrow{transform:translateX(6px)}
 .console{border:1px solid var(--line-strong);background:var(--bg-2);padding:36px 36px 32px;position:relative}
 .console::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:2px;background:var(--accent)}
-.console-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:32px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-dim)}
+.console-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:32px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--fg-dim)}
 
 .form{display:flex;flex-direction:column;gap:18px;margin-top:20px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .field{display:flex;flex-direction:column;gap:6px}
-.field label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-dim)}
+.field label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--fg-dim)}
 .field label .req{color:var(--accent)}
 .field input,.field select,.field textarea{background:var(--bg);border:1px solid var(--line-strong);color:var(--fg);font-family:var(--sans);font-size:14px;padding:12px 14px;transition:border-color .2s, background .2s}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:var(--bg-3)}
-.field input.invalid,.field select.invalid,.field textarea.invalid{border-color:var(--fg-dim);background:rgba(255,27,45,0.05)}
+.field input.invalid,.field select.invalid,.field textarea.invalid{border-color:var(--fg-dim);background:rgba(154,154,151,0.07)}
 .field textarea{resize:vertical;min-height:100px;font-family:var(--sans)}
 .field select{cursor:pointer;appearance:none;background-image:linear-gradient(45deg, transparent 50%, var(--fg-dim) 50%), linear-gradient(-45deg, transparent 50%, var(--fg-dim) 50%);background-position:calc(100% - 20px) 50%, calc(100% - 14px) 50%;background-size:6px 6px, 6px 6px;background-repeat:no-repeat}
 .form-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:20px;flex-wrap:wrap}
-.form-footer small{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-muted)}
+.form-footer small{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--fg-muted)}
 .hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.form-status{font-family:var(--mono);font-size:11.5px;letter-spacing:0.03em;line-height:1.55;max-height:0;overflow:hidden;padding:0 12px;border-left:2px solid transparent;transition:max-height .35s ease, padding .35s ease}
+.form-status{font-family:var(--sans);font-size:11.5px;letter-spacing:0.03em;line-height:1.55;max-height:0;overflow:hidden;padding:0 12px;border-left:2px solid transparent;transition:max-height .35s ease, padding .35s ease}
 .form-status.show{max-height:140px;padding:11px 12px}
-.form-status.ok{color:var(--accent);border-color:var(--accent);background:rgba(202,255,61,0.05)}
-.form-status.error{color:var(--fg-dim);border-color:var(--fg-dim);background:rgba(255,27,45,0.06)}
-.form-status.pending{color:var(--fg-dim);border-color:var(--fg-dim);background:rgba(34,229,255,0.04)}
+.form-status.ok{color:var(--accent);border-color:var(--accent);background:rgba(103,225,143,0.07)}
+.form-status.error{color:var(--fg-dim);border-color:var(--fg-dim);background:rgba(154,154,151,0.09)}
+.form-status.pending{color:var(--fg-dim);border-color:var(--fg-dim);background:rgba(154,154,151,0.06)}
 
 @media (max-width:1024px){.cta-grid{grid-template-columns:1fr;gap:48px}}
 @media (max-width:640px){.console{padding:24px 20px}.form-row{grid-template-columns:1fr}.channel{grid-template-columns:1fr;gap:6px;padding:18px 0}}
@@ -372,12 +372,12 @@ footer{position:relative;z-index:2;padding:80px 40px 32px;border-top:1px solid v
 .footer-inner{max-width:1440px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px}
 .footer-brand{max-width:360px}.footer-brand .logo{margin-bottom:18px}
 .footer-brand p{font-size:14px;color:var(--fg-dim);line-height:1.6;margin-bottom:20px}
-.footer-brand .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:0.08em;padding:6px 12px;border:1px solid var(--fg-dim)}
-.footer-col h4{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-dim);margin-bottom:20px;font-weight:500}
+.footer-brand .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:0.16em;padding:6px 12px;border:1px solid var(--fg-dim)}
+.footer-col h3{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--fg-dim);margin-bottom:20px;font-weight:500}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .footer-col a{color:var(--fg);font-size:14px;transition:color .2s;display:inline-block}.footer-col a:hover{color:var(--accent)}.footer-col a.alert{color:var(--fg-dim)}
 .footer-bigmark{position:absolute;left:40px;right:40px;bottom:-40px;z-index:0;font-family:var(--display);font-weight:800;font-size:clamp(86px, 17vw, 290px);line-height:0.82;letter-spacing:-0.055em;color:var(--fg);opacity:0.03;pointer-events:none;user-select:none;text-align:center;white-space:nowrap}
-.footer-bottom{max-width:1440px;margin:80px auto 0;padding-top:24px;border-top:1px solid var(--line);position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:11px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.08em}
+.footer-bottom{max-width:1440px;margin:80px auto 0;padding-top:24px;border-top:1px solid var(--line);position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:11px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.16em}
 .footer-bottom a{color:var(--fg-muted);transition:color .2s}.footer-bottom a:hover{color:var(--accent)}
 @media (max-width:1024px){.footer-inner{grid-template-columns:1fr 1fr 1fr;gap:36px}}
 @media (max-width:640px){.footer-inner{grid-template-columns:1fr 1fr;gap:28px}}
@@ -386,48 +386,48 @@ footer{position:relative;z-index:2;padding:80px 40px 32px;border-top:1px solid v
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:translateY(0)}
 .code-block{background:var(--bg);position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.code-block::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0.6}
+
 .code-inner{max-width:1440px;margin:0 auto;position:relative}
 .code-head{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:end;margin-bottom:80px}
 .code-head p{font-size:17px;color:var(--fg-dim);line-height:1.6;max-width:460px}
 .code-head .signature{font-style:normal;color:var(--accent);font-size:16px;margin-top:20px;letter-spacing:-0.005em;display:inline-flex;align-items:center;gap:10px}
 .code-head .signature::before{content:"";width:30px;height:1px;background:var(--accent)}
 @media (max-width:1024px){.code-head{grid-template-columns:1fr;gap:32px;align-items:start}}
-.commitment-list{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(34,229,255,0.22)}
-.commitment{padding:28px 0;border-bottom:1px solid rgba(34,229,255,0.15);display:grid;grid-template-columns:70px 1fr auto;gap:24px;align-items:center;transition:padding .35s, background .35s}
-.commitment:hover{padding-left:18px;background:rgba(34,229,255,0.03)}
+.commitment-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line-strong)}
+.commitment{padding:28px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:70px 1fr auto;gap:24px;align-items:center;transition:padding .35s, background .35s}
+.commitment:hover{padding-left:18px;background:var(--bg-2)}
 .commitment .num{font-family:var(--mono);font-size:11px;color:var(--fg-dim);letter-spacing:0.14em}
 .commitment .text{font-family:var(--display);font-weight:600;font-size:clamp(20px, 2.6vw, 34px);line-height:1.18;letter-spacing:-0.022em;color:var(--fg)}
 .commitment .text em{font-style:normal;color:var(--fg-dim);letter-spacing:-0.015em}
-.commitment .metric{font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;color:var(--fg-dim);text-transform:uppercase;font-weight:500;padding:7px 12px;border:1px solid var(--fg-dim);white-space:nowrap}
+.commitment .metric{font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;color:var(--fg-dim);text-transform:uppercase;font-weight:500;padding:7px 12px;border:1px solid var(--fg-dim);white-space:nowrap}
 @media (max-width:640px){.commitment{grid-template-columns:50px 1fr;gap:14px;padding:22px 0}.commitment .metric{grid-column:2;justify-self:start;margin-top:6px}}
-.skip-link{position:fixed;top:-120px;left:16px;z-index:300;background:var(--fg);color:var(--bg);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;padding:12px 18px;transition:top .2s ease}
+.skip-link{position:fixed;top:-120px;left:16px;z-index:300;background:var(--fg);color:var(--bg);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;padding:12px 18px;transition:top .2s ease}
 .skip-link:focus{top:16px;outline:none}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--fg-dim);outline-offset:3px}
 .nav-burger svg{display:block}
 .mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(5,5,5,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s ease, visibility .3s ease}
 .mobile-menu.open{opacity:1;visibility:visible}
-.mobile-menu-inner{display:flex;flex-direction:column;gap:6px;text-align:center;font-family:var(--display);font-weight:700;font-size:clamp(30px, 9vw, 48px);letter-spacing:-0.03em;line-height:1.1}
+.mobile-menu-inner{display:flex;flex-direction:column;gap:6px;text-align:center;font-family:var(--display);font-weight:800;font-size:clamp(30px, 9vw, 48px);letter-spacing:-0.03em;line-height:1.1}
 .mobile-menu-inner a{padding:6px 0;color:var(--fg);transition:color .2s}.mobile-menu-inner a:hover,.mobile-menu-inner a:active{color:var(--accent)}
 .mobile-menu-cta{margin-top:26px;font-family:var(--mono);font-size:15px;letter-spacing:0.06em;color:var(--accent)!important;border:1px solid var(--accent);padding:14px 26px;align-self:center}
-.mobile-menu-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--fg);cursor:pointer;padding:8px;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:0.1em}
+.mobile-menu-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--fg);cursor:pointer;padding:8px;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:0.16em}
 .mobile-menu-close:hover{color:var(--accent)}
-.cookie-note{position:fixed;bottom:20px;left:50%;z-index:150;transform:translate(-50%,160%);opacity:0;max-width:560px;width:calc(100% - 40px);background:var(--bg-card);border:1px solid var(--line-strong);padding:16px 18px;display:flex;gap:18px;align-items:center;font-family:var(--mono);font-size:11px;line-height:1.55;color:var(--fg-dim);letter-spacing:0.02em;box-shadow:0 20px 60px rgba(0,0,0,0.5);transition:transform .5s cubic-bezier(.2,.7,.2,1), opacity .5s ease}
+.cookie-note{position:fixed;bottom:20px;left:50%;z-index:150;transform:translate(-50%,160%);opacity:0;max-width:560px;width:calc(100% - 40px);background:var(--bg-card);border:1px solid var(--line-strong);padding:16px 18px;display:flex;gap:18px;align-items:center;font-family:var(--sans);font-size:11px;line-height:1.55;color:var(--fg-dim);letter-spacing:0.02em;box-shadow:0 20px 60px rgba(0,0,0,0.5);transition:transform .5s cubic-bezier(.2,.7,.2,1), opacity .5s ease}
 .cookie-note::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:2px;background:var(--accent)}
 .cookie-note.show{transform:translate(-50%,0);opacity:1}
-.cookie-note button{flex-shrink:0;background:var(--fg);color:var(--bg);border:none;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;padding:9px 14px;cursor:pointer;transition:background .2s}
+.cookie-note button{flex-shrink:0;background:var(--fg);color:var(--bg);border:none;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;padding:9px 14px;cursor:pointer;transition:background .2s}
 .cookie-note button:hover{background:var(--fg)}
 @media (max-width:600px){.cookie-note{flex-direction:column;align-items:stretch;text-align:left;gap:12px}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}html{scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important}}
 @media print{body::before,body{background:#fff;color:#000}.section,.compare-wrap,.numbers,.methodology,.cta{padding:24px 0}}
 
 /* Pymes/SMBs — inverted light "callout" block (same palette, flipped) */
-.pymes{background:#f2f0ea;color:#050505;border-top:1px solid rgba(5,5,5,0.14);border-bottom:1px solid rgba(5,5,5,0.14);position:relative;overflow:hidden}
+.pymes{background:#f4f4f2;color:#050505;border-top:1px solid rgba(5,5,5,0.14);border-bottom:1px solid rgba(5,5,5,0.14);position:relative;overflow:hidden}
 .pymes::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(5,5,5,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(5,5,5,0.05) 1px,transparent 1px);background-size:120px 120px;mask-image:radial-gradient(ellipse at center,#000 15%,transparent 82%);-webkit-mask-image:radial-gradient(ellipse at center,#000 15%,transparent 82%)}
 .pymes-inner{max-width:1440px;margin:0 auto;position:relative}
-.pymes .section-label{color:var(--accent-dark)}
+.pymes .section-label{color:var(--on-light-dim)}
 .pymes .section-label::before{background:var(--accent-dark)}
-.pymes .section-label .k{color:var(--accent-dark)}
+.pymes .section-label .k{color:var(--on-light-dim)}
 .pymes .eyebrow-h2{color:#050505}
 .pymes .eyebrow-h2 em{color:var(--accent-dark)}
 .pymes-head{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:end;margin-bottom:56px}
@@ -438,21 +438,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .pyme-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-dark);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .pyme-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(5,5,5,0.12)}
 .pyme-card:hover::before{transform:scaleX(1)}
-.pyme-card .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--accent-dark);text-transform:uppercase;font-weight:600}
+.pyme-card .k{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--on-light-dim);text-transform:uppercase;font-weight:600}
 .pyme-card h3{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;line-height:1.12;margin:16px 0 12px;color:#050505}
 .pyme-card h3 em{font-style:normal;color:var(--accent-dark)}
 .pyme-card p{color:rgba(5,5,5,0.62);font-size:14.5px;line-height:1.6}
 .pymes-cta{margin-top:40px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.pymes .btn-primary:hover{background:#050505;color:var(--fg)}
-.pymes-cta .note{font-family:var(--mono);font-size:11px;color:rgba(5,5,5,0.55);text-transform:uppercase;letter-spacing:.08em}
+.pymes .btn-primary{background:#050505;color:#f4f4f2}.pymes .btn-primary:hover{background:#26262a;color:#f4f4f2}
+.pymes-cta .note{font-family:var(--mono);font-size:11px;color:rgba(5,5,5,0.7);text-transform:uppercase;letter-spacing:0.16em}
 @media(max-width:1024px){.pymes-head{grid-template-columns:1fr;gap:28px;align-items:start}.pymes-grid{grid-template-columns:1fr}}
 .nav-hot{color:var(--accent)!important}
 .nav-hot::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:7px;vertical-align:middle;}
 .mobile-menu-inner .nav-hot::before{display:none}
 
-.compare-wrap h2{font-family:var(--display);font-weight:800;font-size:clamp(32px, 4.2vw, 62px);line-height:0.96;letter-spacing:-0.035em;color:var(--fg)}
 .compare-wrap h2 em{font-style:normal;color:var(--accent)}
-.compare-wrap h2 .mag{color:var(--fg-dim)}
+.compare-wrap h2 .quiet{color:var(--fg-dim)}
 .compare-wrap .intro{font-size:17px;line-height:1.6;color:var(--fg-dim);max-width:460px}
 .compare-wrap .intro strong{color:var(--fg);font-weight:700}
 
@@ -468,7 +467,7 @@ footer .logo-word{font-size:19px}
 <body>
 <a class="skip-link" data-en="Skip to content" data-es="Saltar al contenido" href="#main">Skip to content</a>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}.cookie-note,.mobile-menu,.nav-burger{display:none!important}</style></noscript>
-<nav aria-label="Primary" class="nav">
+<nav aria-label="Primary" class="nav" data-en-aria="Primary" data-es-aria="Principal">
 <a aria-label="SlapSec — home" class="logo" href="/"><span class="logo-mark"><span class="logo-word">SlapSec</span></span></a>
 <div class="nav-links">
 <a data-en="About" data-es="Quiénes" href="#manifesto">About</a>
@@ -484,14 +483,14 @@ footer .logo-word{font-size:19px}
 <a aria-current="page" class="lang-btn active" data-lang="en" href="/" hreflang="en">EN</a>
 </div>
 <a class="nav-cta" data-en="Book a call →" data-es="Reserva una llamada →" href="https://cal.com/slapsec" rel="noopener" target="_blank">Book a call →</a>
-<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-burger" id="navBurger" type="button">
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav-burger" data-en-aria="Open menu" data-es-aria="Abrir menú" id="navBurger" type="button">
 <svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="24"><line x1="3" x2="21" y1="7" y2="7"></line><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="17" y2="17"></line></svg>
 </button>
 </div>
 </nav>
 <div aria-hidden="true" class="mobile-menu" id="mobileMenu">
-<button aria-label="Close menu" class="mobile-menu-close" data-en="Close ✕" data-es="Cerrar ✕" id="mobileMenuClose" type="button">Close ✕</button>
-<nav aria-label="Mobile" class="mobile-menu-inner">
+<button aria-label="Close menu" class="mobile-menu-close" data-en="Close ✕" data-en-aria="Close menu" data-es="Cerrar ✕" data-es-aria="Cerrar menú" id="mobileMenuClose" type="button">Close ✕</button>
+<nav aria-label="Mobile" class="mobile-menu-inner" data-en-aria="Mobile" data-es-aria="Móvil">
 <a data-en="About" data-es="Quiénes" href="#manifesto">About</a>
 <a data-en="Code" data-es="Código" href="#code">Code</a>
 <a data-en="Services" data-es="Servicios" href="#services">Services</a><a class="nav-hot" data-en="SMBs" data-es="Pymes" href="#pymes">SMBs</a>
@@ -505,7 +504,7 @@ footer .logo-word{font-size:19px}
 <section class="hero" id="main" tabindex="-1">
 <div class="hero-inner">
 <h1 class="hero-title" id="heroTitle">
-<span class="line l1"><span class="inner" data-en-html="Senior &lt;span class='bracket'&gt;[&lt;/span&gt;cybersecurity&lt;span class='bracket'&gt;]&lt;/span&gt;." data-es-html="Ciberseguridad &lt;em&gt;de verdad.&lt;/em&gt;">Senior <span class="bracket">[</span>cybersecurity<span class="bracket">]</span>.</span></span>
+<span class="line l1"><span class="inner" data-en-html="Senior &lt;span class='bracket'&gt;[&lt;/span&gt;cybersecurity&lt;span class='bracket'&gt;]&lt;/span&gt;." data-es-html="&lt;span class='bracket'&gt;[&lt;/span&gt;Ciberseguridad&lt;span class='bracket'&gt;]&lt;/span&gt; de verdad.">Senior <span class="bracket">[</span>cybersecurity<span class="bracket">]</span>.</span></span>
 <span class="line l2"><span class="inner" data-en-html="Without &lt;span class='struck'&gt;the Big Four&lt;/span&gt; bill." data-es-html="Sin la factura &lt;span class='struck'&gt;de las Big Four&lt;/span&gt;.">Without <span class="struck">the Big Four</span> bill.</span></span>
 <span class="line l3"><span class="inner" data-en-html="Just &lt;em&gt;the judgment.&lt;/em&gt;" data-es-html="Solo el &lt;em&gt;criterio.&lt;/em&gt;">Just <em>the judgment.</em></span></span>
 </h1>
@@ -550,8 +549,8 @@ footer .logo-word{font-size:19px}
 <p data-en="We don't sell you frameworks. We fix things." data-es="No te vendemos frameworks. Arreglamos cosas.">We don't sell you frameworks. We fix things.</p>
 <div class="chip-row">
 <span class="chip on">ex-DXC</span><span class="chip on">ex-KPMG</span><span class="chip on">ex-Accenture</span><span class="chip on">ex-IBM</span><span class="chip on">ex-Deloitte</span>
-<span class="chip cy" data-en="senior team" data-es="equipo senior">senior team</span>
-<span class="chip mg" data-en="offensive-born" data-es="origen ofensivo">offensive-born</span>
+<span class="chip muted" data-en="senior team" data-es="equipo senior">senior team</span>
+<span class="chip muted" data-en="offensive-born" data-es="origen ofensivo">offensive-born</span>
 </div>
 </div>
 </div>
@@ -561,7 +560,7 @@ footer .logo-word{font-size:19px}
 </section>
 <section class="section code-block" id="code">
 <div class="code-inner">
-<span class="section-label"><span class="k">02</span> · <span data-en="The Slapsec Code" data-es="El Código Slapsec">The Slapsec Code</span></span>
+<span class="section-label"><span class="k">02</span> · <span data-en="The SlapSec Code" data-es="El Código SlapSec">The SlapSec Code</span></span>
 <div class="code-head">
 <h2 class="eyebrow-h2" data-en-html="Six clauses we &lt;em&gt;sign,&lt;/em&gt;&lt;br/&gt;not just say." data-es-html="Seis cláusulas que &lt;em&gt;firmamos,&lt;/em&gt;&lt;br/&gt;no solo decimos.">Six clauses we <em>sign,</em><br/>not just say.</h2>
 <div>
@@ -580,7 +579,7 @@ footer .logo-word{font-size:19px}
 </div>
 </section>
 <section class="section" id="services" style="padding-top:60px">
-<span class="section-label" style="display:block;max-width:1440px;margin:0 auto 32px"><span class="k">03</span> · <span data-en="Portfolio" data-es="Portfolio">Portfolio</span></span>
+<span class="section-label" style="display:block;max-width:1440px;margin:0 auto 32px"><span class="k">03</span> · <span data-en="Portfolio" data-es="Portafolio">Portfolio</span></span>
 <div class="services-head">
 <h2 class="eyebrow-h2" data-en-html="Four &lt;em&gt;fronts.&lt;/em&gt;&lt;br/&gt;One standard of craft." data-es-html="Cuatro &lt;em&gt;frentes.&lt;/em&gt;&lt;br/&gt;Un mismo oficio.">Four <em>fronts.</em><br/>One standard of craft.</h2>
 <p data-en="From a two-week pentest to a full Zero Trust rollout — same crew, same standard. Pick one front, or run the whole cycle: each loop shrinks your attack surface." data-es="De un pentest de dos semanas a una implantación Zero Trust completa — el mismo equipo, el mismo estándar. Elige un frente o recorre el ciclo entero: cada vuelta reduce tu superficie de ataque.">From a two-week pentest to a full Zero Trust rollout — same crew, same standard. Pick one front, or run the whole cycle: each loop shrinks your attack surface.</p>
@@ -588,17 +587,17 @@ footer .logo-word{font-size:19px}
 <div class="services-grid">
 <div class="service">
 <div class="service-head"><span class="service-num">01 / 04</span></div>
-<h3 data-en-html="Red Team&lt;br/&gt;&amp; &lt;em&gt;Threat Intel&lt;/em&gt;" data-es-html="Red Team&lt;br/&gt;&amp; &lt;em&gt;Threat Intel&lt;/em&gt;">Red Team<br/>&amp; <em>Threat Intel</em></h3>
+<h3 data-en-html="Red Team&lt;br/&gt;&amp; &lt;em&gt;Threat Intel&lt;/em&gt;" data-es-html="Red team&lt;br/&gt;y &lt;em&gt;threat intel&lt;/em&gt;">Red Team<br/>&amp; <em>Threat Intel</em></h3>
 <p class="service-intro" data-en="Red team and pentesting — manual and automated — plus continuous external threat monitoring with our Digital Risk Radar. We find what a real attacker would exploit, before they do. PTES, OWASP, MITRE ATT&amp;CK." data-es="Red team y pentesting — manuales y automatizados — más vigilancia continua de amenazas externas con nuestro Digital Risk Radar. Encontramos lo que un atacante real explotaría, antes que él. PTES, OWASP, MITRE ATT&amp;CK.">Red team and pentesting — manual and automated — plus continuous external threat monitoring with our Digital Risk Radar. We find what a real attacker would exploit, before they do. PTES, OWASP, MITRE ATT&amp;CK.</p>
 <ul class="service-list">
-<li data-en="Web &amp; API Pentest" data-es="Pentest Web &amp; API">Web &amp; API Pentest</li>
+<li data-en="Web &amp; API Pentest" data-es="Pentest web y API">Web &amp; API Pentest</li>
 <li data-en="Red Team Ops" data-es="Red Team Ops">Red Team Ops</li>
-<li data-en="Infra &amp; AD Pentest" data-es="Pentest Infra &amp; AD">Infra &amp; AD Pentest</li>
+<li data-en="Infra &amp; AD Pentest" data-es="Pentest infra y AD">Infra &amp; AD Pentest</li>
 <li data-en="Cloud Pentest (AWS/Azure/GCP)" data-es="Pentest Cloud (AWS/Azure/GCP)">Cloud Pentest (AWS/Azure/GCP)</li>
 <li data-en="OT/ICS Pentest" data-es="Pentest OT/ICS">OT/ICS Pentest</li>
 <li data-en="Mobile Pentest" data-es="Pentest Mobile">Mobile Pentest</li>
 <li data-en="Social Engineering" data-es="Ingeniería Social">Social Engineering</li>
-<li data-en="Bug Bounty &amp; Retainer" data-es="Bug Bounty &amp; Retainer">Bug Bounty &amp; Retainer</li>
+<li data-en="Bug Bounty &amp; Retainer" data-es="Bug bounty y retainer">Bug Bounty &amp; Retainer</li>
 <li data-en="Digital Risk Radar" data-es="Digital Risk Radar">Digital Risk Radar</li>
 <li data-en="Dark Web Monitoring" data-es="Vigilancia Dark Web">Dark Web Monitoring</li>
 </ul>
@@ -608,30 +607,30 @@ footer .logo-word{font-size:19px}
 <h3 data-en-html="Zero Trust&lt;br/&gt;&lt;em&gt;Architecture&lt;/em&gt;" data-es-html="Arquitectura&lt;br/&gt;&lt;em&gt;Zero Trust&lt;/em&gt;">Zero Trust<br/><em>Architecture</em></h3>
 <p class="service-intro" data-en="Design, implement and operate 'never trust, always verify' architectures. Identity-first, segmented, verified, measured — vendor-agnostic, with the market's leading platforms." data-es="Diseñamos, implantamos y operamos arquitecturas 'never trust, always verify'. Identity-first, segmentado, verificado, medido — vendor-agnostic, con las principales plataformas del mercado.">Design, implement and operate 'never trust, always verify' architectures. Identity-first, segmented, verified, measured — vendor-agnostic, with the market's leading platforms.</p>
 <ul class="service-list">
-<li>IAM &amp; PAM</li>
+<li data-en="IAM &amp; PAM" data-es="IAM y PAM">IAM &amp; PAM</li>
 <li data-en="Microsegmentation" data-es="Microsegmentación">Microsegmentation</li>
-<li>SASE &amp; ZTNA</li>
+<li data-en="SASE &amp; ZTNA" data-es="SASE y ZTNA">SASE &amp; ZTNA</li>
 <li>EDR / XDR</li>
-<li data-en="Cloud Posture (CSPM/CIEM)" data-es="Cloud Posture (CSPM/CIEM)">Cloud Posture (CSPM/CIEM)</li>
-<li data-en="Design &amp; Governance" data-es="Diseño &amp; Gobierno">Design &amp; Governance</li>
+<li data-en="Cloud Posture (CSPM/CIEM)" data-es="Postura cloud (CSPM/CIEM)">Cloud Posture (CSPM/CIEM)</li>
+<li data-en="Design &amp; Governance" data-es="Diseño y gobierno">Design &amp; Governance</li>
 </ul>
 </div>
 <div class="service">
 <div class="service-head"><span class="service-num">03 / 04</span></div>
-<h3 data-en-html="GRC &amp;&lt;br/&gt;&lt;em&gt;Compliance&lt;/em&gt;" data-es-html="GRC &amp;&lt;br/&gt;&lt;em&gt;Compliance&lt;/em&gt;">GRC &amp;<br/><em>Compliance</em></h3>
+<h3 data-en-html="GRC &amp;&lt;br/&gt;&lt;em&gt;Compliance&lt;/em&gt;" data-es-html="GRC y&lt;br/&gt;&lt;em&gt;compliance&lt;/em&gt;">GRC &amp;<br/><em>Compliance</em></h3>
 <p class="service-intro" data-en="Every technical finding translated into regulatory frameworks — ENS, ISO 27001, PCI DSS, GDPR — and actionable business decisions. Governance and security direction as a service, without drowning you in paperwork." data-es="Cada hallazgo técnico traducido a marcos normativos — ENS, ISO 27001, PCI DSS, RGPD — y a decisiones de negocio accionables. Gobierno y dirección de seguridad como servicio, sin ahogarte en papeleo.">Every technical finding translated into regulatory frameworks — ENS, ISO 27001, PCI DSS, GDPR — and actionable business decisions. Governance and security direction as a service, without drowning you in paperwork.</p>
 <ul class="service-list">
 <li data-en="Compliance mapping (ENS · ISO 27001)" data-es="Mapeo normativo (ENS · ISO 27001)">Compliance mapping (ENS · ISO 27001)</li>
-<li data-en="PCI DSS &amp; GDPR" data-es="PCI DSS &amp; RGPD">PCI DSS &amp; GDPR</li>
+<li data-en="PCI DSS &amp; GDPR" data-es="PCI DSS y RGPD">PCI DSS &amp; GDPR</li>
 <li data-en="vCISO retainer" data-es="vCISO retainer">vCISO retainer</li>
-<li data-en="Governance &amp; roadmap" data-es="Gobierno &amp; roadmap">Governance &amp; roadmap</li>
+<li data-en="Governance &amp; roadmap" data-es="Gobierno y roadmap">Governance &amp; roadmap</li>
 <li data-en="Risk-to-business translation" data-es="Traducción riesgo-negocio">Risk-to-business translation</li>
 <li data-en="Audit readiness" data-es="Preparación de auditorías">Audit readiness</li>
 </ul>
 </div>
 <div class="service">
 <div class="service-head"><span class="service-num">04 / 04</span></div>
-<h3 data-en-html="Data &amp;&lt;br/&gt;&lt;em&gt;Automation&lt;/em&gt;" data-es-html="Dato &amp;&lt;br/&gt;&lt;em&gt;Automatización&lt;/em&gt;">Data &amp;<br/><em>Automation</em></h3>
+<h3 data-en-html="Data &amp;&lt;br/&gt;&lt;em&gt;Automation&lt;/em&gt;" data-es-html="Dato y&lt;br/&gt;&lt;em&gt;automatización&lt;/em&gt;">Data &amp;<br/><em>Automation</em></h3>
 <p class="service-intro" data-en="Protect the data wherever it lives — DLP, IRM, DSPM with SealPath, arexdata and Microsoft Purview — and automate the operation: AI-assisted triage, continuous hardening, unattended certificate rotation." data-es="Protegemos el dato allá donde viva — DLP, IRM, DSPM con SealPath, arexdata y Microsoft Purview — y automatizamos la operación: triaje con IA, hardening continuo, rotación desatendida de certificados.">Protect the data wherever it lives — DLP, IRM, DSPM with SealPath, arexdata and Microsoft Purview — and automate the operation: AI-assisted triage, continuous hardening, unattended certificate rotation.</p>
 <ul class="service-list">
 <li>DLP</li>
@@ -674,11 +673,11 @@ footer .logo-word{font-size:19px}
 </div>
 <div class="industries-grid">
 <div class="industry"><span class="industry-code">SEC/FIN.01</span><div><h3 data-en="Financial Services" data-es="Servicios Financieros">Financial Services</h3><p data-en="Retail, commercial and investment banking, insurance, fintech. DORA, EBA ICT, PSD2, PCI-DSS scope reduction." data-es="Banca retail, comercial y de inversión, seguros, fintech. DORA, EBA ICT, PSD2, reducción del scope PCI-DSS.">Retail, commercial and investment banking, insurance, fintech. DORA, EBA ICT, PSD2, PCI-DSS scope reduction.</p></div><div class="industry-tags"><span>DORA</span><span>EBA</span><span>PCI-DSS</span></div></div>
-<div class="industry"><span class="industry-code">SEC/ENE.02</span><div><h3 data-en="Energy &amp; Utilities" data-es="Energía &amp; Utilities">Energy &amp; Utilities</h3><p data-en="Generation, distribution, O&amp;G. OT/IT convergence, NIS2 essential entity compliance, SCADA hardening." data-es="Generación, distribución, O&amp;G. Convergencia OT/IT, cumplimiento de NIS2 como entidad esencial, hardening SCADA.">Generation, distribution, O&amp;G. OT/IT convergence, NIS2 essential entity compliance, SCADA hardening.</p></div><div class="industry-tags"><span>NIS2</span><span>IEC-62443</span><span>OT</span></div></div>
-<div class="industry"><span class="industry-code">SEC/DEF.03</span><div><h3 data-en="Defense &amp; Aerospace" data-es="Defensa &amp; Aeroespacial">Defense &amp; Aerospace</h3><p data-en="Supply-chain assurance, ENS Alta hardening, segmentation and air-gapped / OT environments for critical defense and aerospace systems." data-es="Aseguramiento de cadena de suministro, hardening ENS Alta, segmentación y entornos air-gap / OT para sistemas críticos de defensa y aeroespacial.">Supply-chain assurance, ENS Alta hardening, segmentation and air-gapped / OT environments for critical defense and aerospace systems.</p></div><div class="industry-tags"><span>ENS Alta</span><span data-en="Supply-chain" data-es="Cadena suministro">Supply-chain</span><span>Air-gap</span></div></div>
-<div class="industry"><span class="industry-code">SEC/HLT.04</span><div><h3 data-en="Healthcare &amp; Pharma" data-es="Salud &amp; Farma">Healthcare &amp; Pharma</h3><p data-en="Patient data protection, medical device security, clinical systems hardening, GDPR Art.9 special category data." data-es="Protección de datos de pacientes, seguridad de dispositivos médicos, hardening de sistemas clínicos, datos de categoría especial (art. 9 del RGPD).">Patient data protection, medical device security, clinical systems hardening, GDPR Art.9 special category data.</p></div><div class="industry-tags"><span>HIPAA</span><span>MDR</span><span>GDPR-9</span></div></div>
+<div class="industry"><span class="industry-code">SEC/ENE.02</span><div><h3 data-en="Energy &amp; Utilities" data-es="Energía y utilities">Energy &amp; Utilities</h3><p data-en="Generation, distribution, O&amp;G. OT/IT convergence, NIS2 essential entity compliance, SCADA hardening." data-es="Generación, distribución, O&amp;G. Convergencia OT/IT, cumplimiento de NIS2 como entidad esencial, hardening SCADA.">Generation, distribution, O&amp;G. OT/IT convergence, NIS2 essential entity compliance, SCADA hardening.</p></div><div class="industry-tags"><span>NIS2</span><span>IEC-62443</span><span>OT</span></div></div>
+<div class="industry"><span class="industry-code">SEC/DEF.03</span><div><h3 data-en="Defense &amp; Aerospace" data-es="Defensa y aeroespacial">Defense &amp; Aerospace</h3><p data-en="Supply-chain assurance, ENS Alta hardening, segmentation and air-gapped / OT environments for critical defense and aerospace systems." data-es="Aseguramiento de cadena de suministro, hardening ENS Alta, segmentación y entornos air-gap / OT para sistemas críticos de defensa y aeroespacial.">Supply-chain assurance, ENS Alta hardening, segmentation and air-gapped / OT environments for critical defense and aerospace systems.</p></div><div class="industry-tags"><span>ENS Alta</span><span data-en="Supply-chain" data-es="Cadena suministro">Supply-chain</span><span>Air-gap</span></div></div>
+<div class="industry"><span class="industry-code">SEC/HLT.04</span><div><h3 data-en="Healthcare &amp; Pharma" data-es="Salud y farma">Healthcare &amp; Pharma</h3><p data-en="Patient data protection, medical device security, clinical systems hardening, GDPR Art.9 special category data." data-es="Protección de datos de pacientes, seguridad de dispositivos médicos, hardening de sistemas clínicos, datos de categoría especial (art. 9 del RGPD).">Patient data protection, medical device security, clinical systems hardening, GDPR Art.9 special category data.</p></div><div class="industry-tags"><span>HIPAA</span><span>MDR</span><span>GDPR-9</span></div></div>
 <div class="industry"><span class="industry-code">SEC/PUB.05</span><div><h3 data-en="Public Sector" data-es="Sector Público">Public Sector</h3><p data-en="Central and regional administration, critical digital services, transparent procurement, ENS CCN-STIC." data-es="Administración central y autonómica, servicios digitales críticos, contratación pública transparente, ENS CCN-STIC.">Central and regional administration, critical digital services, transparent procurement, ENS CCN-STIC.</p></div><div class="industry-tags"><span>ENS</span><span>CCN-STIC</span><span>eIDAS</span></div></div>
-<div class="industry"><span class="industry-code">SEC/RET.06</span><div><h3 data-en="Retail &amp; E-commerce" data-es="Retail &amp; E-commerce">Retail &amp; E-commerce</h3><p data-en="Omnichannel architecture, card data scope reduction, fraud prevention, bot mgmt, account takeover defense." data-es="Arquitectura omnicanal, reducción de scope de datos de tarjeta, prevención de fraude, bots y ATO.">Omnichannel architecture, card data scope reduction, fraud prevention, bot mgmt, account takeover defense.</p></div><div class="industry-tags"><span>PCI-DSS</span><span>Bot-Mgmt</span><span>Fraud</span></div></div>
+<div class="industry"><span class="industry-code">SEC/RET.06</span><div><h3 data-en="Retail &amp; E-commerce" data-es="Retail y e-commerce">Retail &amp; E-commerce</h3><p data-en="Omnichannel architecture, card data scope reduction, fraud prevention, bot mgmt, account takeover defense." data-es="Arquitectura omnicanal, reducción de scope de datos de tarjeta, prevención de fraude, bots y ATO.">Omnichannel architecture, card data scope reduction, fraud prevention, bot mgmt, account takeover defense.</p></div><div class="industry-tags"><span>PCI-DSS</span><span>Bot-Mgmt</span><span>Fraud</span></div></div>
 </div>
 </div>
 </section>
@@ -686,16 +685,16 @@ footer .logo-word{font-size:19px}
 <div class="compare-inner">
 <span class="section-label"><span class="k">06</span> · <span data-en="Why us" data-es="Por qué nosotros">Why us</span></span>
 <div class="compare-head">
-<h2 data-en-html="Same rigor.&lt;br/&gt;&lt;em&gt;Half the bill.&lt;/em&gt;&lt;br/&gt;&lt;span class='mag'&gt;Zero games.&lt;/span&gt;" data-es-html="Mismo rigor.&lt;br/&gt;&lt;em&gt;Mitad de factura.&lt;/em&gt;&lt;br/&gt;&lt;span class='mag'&gt;Cero trucos.&lt;/span&gt;">Same rigor.<br/><em>Half the bill.</em><br/><span class="mag">Zero games.</span></h2>
+<h2 class="eyebrow-h2" data-en-html="Same rigor.&lt;br/&gt;&lt;em&gt;Half the bill.&lt;/em&gt;&lt;br/&gt;&lt;span class='quiet'&gt;Zero games.&lt;/span&gt;" data-es-html="Mismo rigor.&lt;br/&gt;&lt;em&gt;Mitad de factura.&lt;/em&gt;&lt;br/&gt;&lt;span class='quiet'&gt;Cero trucos.&lt;/span&gt;">Same rigor.<br/><em>Half the bill.</em><br/><span class="quiet">Zero games.</span></h2>
 <p class="intro" data-en-html="We &lt;strong&gt;drafted those proposals&lt;/strong&gt; for years. We know which line items protect you — and which ones just protect the margin." data-es-html="&lt;strong&gt;Montamos esas propuestas&lt;/strong&gt; durante años. Sabemos qué partidas te protegen a ti — y cuáles solo protegen el margen.">We <strong>drafted those proposals</strong> for years. We know which line items protect you — and which ones just protect the margin.</p>
 </div>
 <div class="compare-table">
-<div class="compare-row header"><div data-en="Criteria" data-es="Criterio">Criteria</div><div class="us">Slapsec</div><div class="big4" data-en="Big Four" data-es="Big Four">Big Four</div><div class="boutique" data-en="Boutique" data-es="Boutique">Boutique</div></div>
-<div class="compare-row"><div class="feature" data-en="Senior-only, same lead end to end" data-es="Solo senior, mismo responsable de inicio a fin">Senior-only, same lead end to end</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check no" title="No">✗</span></div><div><span class="check partial" title="Partial">~</span></div></div>
-<div class="compare-row"><div class="feature" data-en="Fixed-price proposals" data-es="Propuestas a precio cerrado">Fixed-price proposals</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check partial" title="Partial">~</span></div><div><span class="check yes" title="Yes">✓</span></div></div>
-<div class="compare-row"><div class="feature" data-en="Proposal in under 72h" data-es="Propuesta en menos de 72h">Proposal in under 72h</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check no" title="No">✗</span></div><div><span class="check partial" title="Partial">~</span></div></div>
-<div class="compare-row"><div class="feature" data-en="Vendor-independent advice" data-es="Asesoramiento independiente de fabricantes">Vendor-independent advice</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check partial" title="Partial">~</span></div><div><span class="check yes" title="Yes">✓</span></div></div>
-<div class="compare-row"><div class="feature" data-en="Zero subcontracting" data-es="Cero subcontratación">Zero subcontracting</div><div class="us"><span class="check yes" title="Yes">✓</span></div><div><span class="check no" title="No">✗</span></div><div><span class="check partial" title="Partial">~</span></div></div>
+<div class="compare-row header"><div data-en="Criteria" data-es="Criterio">Criteria</div><div class="us">SlapSec</div><div class="big4" data-en="Big Four" data-es="Big Four">Big Four</div><div class="boutique" data-en="Boutique" data-es="Boutique">Boutique</div></div>
+<div class="compare-row"><div class="feature" data-en="Senior-only, same lead end to end" data-es="Solo senior, mismo responsable de inicio a fin">Senior-only, same lead end to end</div><div class="us"><span class="check yes" data-en-title="Yes" data-es-title="Sí" title="Yes">✓</span></div><div><span class="check no" data-en-title="No" data-es-title="No" title="No">✗</span></div><div><span class="check partial" data-en-title="Partial" data-es-title="Parcial" title="Partial">~</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Fixed-price proposals" data-es="Propuestas a precio cerrado">Fixed-price proposals</div><div class="us"><span class="check yes" data-en-title="Yes" data-es-title="Sí" title="Yes">✓</span></div><div><span class="check partial" data-en-title="Partial" data-es-title="Parcial" title="Partial">~</span></div><div><span class="check yes" data-en-title="Yes" data-es-title="Sí" title="Yes">✓</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Proposal in under 72h" data-es="Propuesta en menos de 72h">Proposal in under 72h</div><div class="us"><span class="check yes" data-en-title="Yes" data-es-title="Sí" title="Yes">✓</span></div><div><span class="check no" data-en-title="No" data-es-title="No" title="No">✗</span></div><div><span class="check partial" data-en-title="Partial" data-es-title="Parcial" title="Partial">~</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Vendor-independent advice" data-es="Asesoramiento independiente de fabricantes">Vendor-independent advice</div><div class="us"><span class="check yes" data-en-title="Yes" data-es-title="Sí" title="Yes">✓</span></div><div><span class="check partial" data-en-title="Partial" data-es-title="Parcial" title="Partial">~</span></div><div><span class="check yes" data-en-title="Yes" data-es-title="Sí" title="Yes">✓</span></div></div>
+<div class="compare-row"><div class="feature" data-en="Zero subcontracting" data-es="Cero subcontratación">Zero subcontracting</div><div class="us"><span class="check yes" data-en-title="Yes" data-es-title="Sí" title="Yes">✓</span></div><div><span class="check no" data-en-title="No" data-es-title="No" title="No">✗</span></div><div><span class="check partial" data-en-title="Partial" data-es-title="Parcial" title="Partial">~</span></div></div>
 <div class="compare-row"><div class="feature" data-en="Typical day rate" data-es="Tarifa / día típica">Typical day rate</div><div class="us"><span class="note">€·€</span></div><div><span class="note">€·€·€·€</span></div><div><span class="note">€·€·€</span></div></div>
 <div class="compare-row"><div class="feature" data-en="Deck-to-code ratio" data-es="Ratio slides / ejecución">Deck-to-code ratio</div><div class="us"><span class="note" style="color:var(--accent)">1:9</span></div><div><span class="note" style="color:var(--fg-dim)">9:1</span></div><div><span class="note">5:5</span></div></div>
 </div>
@@ -714,11 +713,11 @@ footer .logo-word{font-size:19px}
 <p class="case-challenge" data-en-html="&lt;strong&gt;The problem.&lt;/strong&gt; Certificates expiring without warning caused service outages, incidents and urgent manual work. Hundreds of certs scattered across services — no reliable inventory, no clear owner." data-es-html="&lt;strong&gt;El problema.&lt;/strong&gt; Los certificados caducaban sin aviso y provocaban caídas de servicio, incidentes y trabajo manual urgente. Cientos de certificados dispersos, sin inventario fiable ni dueño claro."><strong>The problem.</strong> Certificates expiring without warning caused service outages, incidents and urgent manual work. Hundreds of certs scattered across services — no reliable inventory, no clear owner.</p>
 <p class="case-challenge" data-en-html="&lt;strong&gt;Our solution.&lt;/strong&gt; A pipeline that discovers, inventories and rotates every certificate via ACME, deploys to the services and verifies the result end to end — with zero manual intervention." data-es-html="&lt;strong&gt;Nuestra solución.&lt;/strong&gt; Un pipeline que descubre e inventaría cada certificado, lo rota automáticamente vía ACME, lo despliega en los servicios y verifica el resultado de extremo a extremo — sin intervención manual."><strong>Our solution.</strong> A pipeline that discovers, inventories and rotates every certificate via ACME, deploys to the services and verifies the result end to end — with zero manual intervention.</p>
 <div class="chip-row" style="margin:4px 0 20px">
-<span class="chip cy" data-en="Discover" data-es="Descubrir">Discover</span>
-<span class="chip cy" data-en="Issue" data-es="Emitir">Issue</span>
-<span class="chip cy" data-en="Rotate" data-es="Rotar">Rotate</span>
-<span class="chip cy" data-en="Deploy" data-es="Desplegar">Deploy</span>
-<span class="chip cy" data-en="Verify" data-es="Verificar">Verify</span>
+<span class="chip muted" data-en="Discover" data-es="Descubrir">Discover</span>
+<span class="chip muted" data-en="Issue" data-es="Emitir">Issue</span>
+<span class="chip muted" data-en="Rotate" data-es="Rotar">Rotate</span>
+<span class="chip muted" data-en="Deploy" data-es="Desplegar">Deploy</span>
+<span class="chip muted" data-en="Verify" data-es="Verificar">Verify</span>
 </div>
 <div class="case-metrics" style="grid-template-columns:repeat(3,1fr)">
 <div class="case-metric"><span class="k">0</span><span class="v" data-en="Outages from expired certs" data-es="Caídas por cert caducado">Outages from expired certs</span></div>
@@ -732,7 +731,7 @@ footer .logo-word{font-size:19px}
 <div class="numbers-inner">
 <div class="numbers-intro">
 <span class="section-label"><span class="k">08</span> · <span data-en="What backs us" data-es="Lo que nos avala">What backs us</span></span>
-<h3 data-en-html="Hard numbers.&lt;br/&gt;&lt;em&gt;No fine print.&lt;/em&gt;" data-es-html="Cifras claras.&lt;br/&gt;&lt;em&gt;Sin letra pequeña.&lt;/em&gt;">Hard numbers.<br/><em>No fine print.</em></h3>
+<h2 data-en-html="Hard numbers.&lt;br/&gt;&lt;em&gt;No fine print.&lt;/em&gt;" data-es-html="Cifras claras.&lt;br/&gt;&lt;em&gt;Sin letra pequeña.&lt;/em&gt;">Hard numbers.<br/><em>No fine print.</em></h2>
 <p data-en="Four stats, zero asterisks. If we can't stand behind a number, it doesn't go on the page." data-es="Cuatro datos, cero asteriscos. Si no podemos defender un número, no entra en la página.">Four stats, zero asterisks. If we can't stand behind a number, it doesn't go on the page.</p>
 </div>
 <div class="numbers-grid">
@@ -747,37 +746,37 @@ footer .logo-word{font-size:19px}
 <div class="methodology-inner">
 <span class="section-label"><span class="k">09</span> · <span data-en="How we engage" data-es="Cómo trabajamos">How we engage</span></span>
 <div class="methodology-head">
-<h2 class="eyebrow-h2" data-en-html="No smoke. No&lt;br/&gt;&lt;em&gt;deck marathons.&lt;/em&gt;&lt;br/&gt;&lt;span class='cyan-em'&gt;In, solved, out.&lt;/span&gt;" data-es-html="Sin humo. Sin&lt;br/&gt;&lt;em&gt;PowerPoint infinito.&lt;/em&gt;&lt;br/&gt;&lt;span class='cyan-em'&gt;Entrar, resolver, salir.&lt;/span&gt;">No smoke. No<br/><em>deck marathons.</em><br/><span class="cyan-em">In, solved, out.</span></h2>
+<h2 class="eyebrow-h2" data-en-html="No smoke. No&lt;br/&gt;&lt;em&gt;deck marathons.&lt;/em&gt;&lt;br/&gt;&lt;span class='em-quiet'&gt;In, solved, out.&lt;/span&gt;" data-es-html="Sin humo. Sin&lt;br/&gt;&lt;em&gt;PowerPoint infinito.&lt;/em&gt;&lt;br/&gt;&lt;span class='em-quiet'&gt;Entrar, resolver, salir.&lt;/span&gt;">No smoke. No<br/><em>deck marathons.</em><br/><span class="em-quiet">In, solved, out.</span></h2>
 <p data-en="How an engagement actually runs — four phases, from first call to handover." data-es="Así funciona un proyecto de verdad — cuatro fases, de la primera llamada al handover.">How an engagement actually runs — four phases, from first call to handover.</p>
 </div>
 <div class="timeline">
-<div class="timeline-step first"><div class="dot"></div><div class="n" data-en="PHASE 01" data-es="FASE 01">PHASE 01</div><h4 data-en-html="Honest&lt;br/&gt;&lt;em&gt;diagnosis&lt;/em&gt;" data-es-html="Diagnóstico&lt;br/&gt;&lt;em&gt;honesto&lt;/em&gt;">Honest<br/><em>diagnosis</em></h4><p data-en="45-minute discovery call. We tell you if it's our terrain — straight up." data-es="Llamada discovery de 45 min. Te decimos si es nuestro terreno, sin rodeos.">45-minute discovery call. We tell you if it's our terrain — straight up.</p><span class="sla" data-en="&lt; 72h" data-es="&lt; 72h">&lt; 72h</span></div>
-<div class="timeline-step"><div class="dot"></div><div class="n" data-en="PHASE 02" data-es="FASE 02">PHASE 02</div><h4 data-en-html="Scope&lt;br/&gt;&amp; &lt;em&gt;price&lt;/em&gt;" data-es-html="Alcance&lt;br/&gt;&amp; &lt;em&gt;precio&lt;/em&gt;">Scope<br/>&amp; <em>price</em></h4><p data-en="Fixed-price when possible. Clear deliverables, clear timeline. No time-and-materials roulette. You know exactly what you're signing." data-es="Precio cerrado cuando es posible. Entregables claros, plazos claros. Nada de ruleta por horas. Sabes exactamente qué firmas.">Fixed-price when possible. Clear deliverables, clear timeline. No time-and-materials roulette. You know exactly what you're signing.</p><span class="sla" data-en="Fixed" data-es="Cerrado">Fixed</span></div>
-<div class="timeline-step"><div class="dot"></div><div class="n" data-en="PHASE 03" data-es="FASE 03">PHASE 03</div><h4 data-en-html="Senior&lt;br/&gt;&lt;em&gt;execution&lt;/em&gt;" data-es-html="Ejecución&lt;br/&gt;&lt;em&gt;senior&lt;/em&gt;">Senior<br/><em>execution</em></h4><p data-en="Weekly working sessions, direct answers, findings shared as they land. Reports you can actually read, prioritized by business risk — no surprises at the final readout." data-es="Sesiones de trabajo semanales, respuestas directas, hallazgos compartidos según llegan. Informes que se leen de verdad, priorizados por riesgo de negocio — sin sorpresas en la entrega final.">Weekly working sessions, direct answers, findings shared as they land. Reports you can actually read, prioritized by business risk — no surprises at the final readout.</p><span class="sla" data-en="Sr. only" data-es="Solo senior">Sr. only</span></div>
-<div class="timeline-step last"><div class="dot"></div><div class="n" data-en="PHASE 04" data-es="FASE 04">PHASE 04</div><h4 data-en-html="Transfer&lt;br/&gt;&amp; &lt;em&gt;exit&lt;/em&gt;" data-es-html="Transferencia&lt;br/&gt;&amp; &lt;em&gt;salida&lt;/em&gt;">Transfer<br/>&amp; <em>exit</em></h4><p data-en="We leave internal capability behind. The goal isn't a 5-year retainer — it's your team owning what they should own. Clean handover." data-es="Dejamos capacidad interna. El objetivo no es un retainer de 5 años — es que tu equipo se haga cargo de lo que le corresponde. Handover limpio.">We leave internal capability behind. The goal isn't a 5-year retainer — it's your team owning what they should own. Clean handover.</p><span class="sla" data-en="Handover" data-es="Traspaso">Handover</span></div>
+<div class="timeline-step first"><div class="dot"></div><div class="n" data-en="PHASE 01" data-es="FASE 01">PHASE 01</div><h3 data-en-html="Honest&lt;br/&gt;&lt;em&gt;diagnosis&lt;/em&gt;" data-es-html="Diagnóstico&lt;br/&gt;&lt;em&gt;honesto&lt;/em&gt;">Honest<br/><em>diagnosis</em></h3><p data-en="45-minute discovery call. We tell you if it's our terrain — straight up." data-es="Llamada discovery de 45 min. Te decimos si es nuestro terreno, sin rodeos.">45-minute discovery call. We tell you if it's our terrain — straight up.</p><span class="sla" data-en="&lt; 72h" data-es="&lt; 72h">&lt; 72h</span></div>
+<div class="timeline-step"><div class="dot"></div><div class="n" data-en="PHASE 02" data-es="FASE 02">PHASE 02</div><h3 data-en-html="Scope&lt;br/&gt;&amp; &lt;em&gt;price&lt;/em&gt;" data-es-html="Alcance&lt;br/&gt;y &lt;em&gt;precio&lt;/em&gt;">Scope<br/>&amp; <em>price</em></h3><p data-en="Fixed-price when possible. Clear deliverables, clear timeline. No time-and-materials roulette. You know exactly what you're signing." data-es="Precio cerrado cuando es posible. Entregables claros, plazos claros. Nada de ruleta por horas. Sabes exactamente qué firmas.">Fixed-price when possible. Clear deliverables, clear timeline. No time-and-materials roulette. You know exactly what you're signing.</p><span class="sla" data-en="Fixed" data-es="Cerrado">Fixed</span></div>
+<div class="timeline-step"><div class="dot"></div><div class="n" data-en="PHASE 03" data-es="FASE 03">PHASE 03</div><h3 data-en-html="Senior&lt;br/&gt;&lt;em&gt;execution&lt;/em&gt;" data-es-html="Ejecución&lt;br/&gt;&lt;em&gt;senior&lt;/em&gt;">Senior<br/><em>execution</em></h3><p data-en="Weekly working sessions, direct answers, findings shared as they land. Reports you can actually read, prioritized by business risk — no surprises at the final readout." data-es="Sesiones de trabajo semanales, respuestas directas, hallazgos compartidos según llegan. Informes que se leen de verdad, priorizados por riesgo de negocio — sin sorpresas en la entrega final.">Weekly working sessions, direct answers, findings shared as they land. Reports you can actually read, prioritized by business risk — no surprises at the final readout.</p><span class="sla" data-en="Sr. only" data-es="Solo senior">Sr. only</span></div>
+<div class="timeline-step last"><div class="dot"></div><div class="n" data-en="PHASE 04" data-es="FASE 04">PHASE 04</div><h3 data-en-html="Transfer&lt;br/&gt;&amp; &lt;em&gt;exit&lt;/em&gt;" data-es-html="Transferencia&lt;br/&gt;y &lt;em&gt;salida&lt;/em&gt;">Transfer<br/>&amp; <em>exit</em></h3><p data-en="We leave internal capability behind. The goal isn't a 5-year retainer — it's your team owning what they should own. Clean handover." data-es="Dejamos capacidad interna. El objetivo no es un retainer de 5 años — es que tu equipo se haga cargo de lo que le corresponde. Handover limpio.">We leave internal capability behind. The goal isn't a 5-year retainer — it's your team owning what they should own. Clean handover.</p><span class="sla" data-en="Handover" data-es="Traspaso">Handover</span></div>
 </div>
 </div>
 </section>
 <!-- testimonials section removed: no real, attributable client quotes available yet -->
 <section class="section team" id="team" style="background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:140px;padding-bottom:140px">
 <div class="team-inner">
-<span class="section-label"><span class="k">10</span> · <span data-en="Team &amp; credentials" data-es="Equipo &amp; credenciales">Team &amp; credentials</span></span>
+<span class="section-label"><span class="k">10</span> · <span data-en="Team &amp; credentials" data-es="Equipo y credenciales">Team &amp; credentials</span></span>
 <div class="team-head">
 <h2 class="eyebrow-h2" data-en-html="The people on your&lt;br/&gt;engagement are &lt;em&gt;senior.&lt;/em&gt;" data-es-html="La gente de tu proyecto&lt;br/&gt;es &lt;em&gt;senior.&lt;/em&gt;">The people on your<br/>engagement are <em>senior.</em></h2>
 <p data-en="Every engagement is staffed by practitioners who hold the credentials below — and you meet the actual team before you sign, not after." data-es="Cada proyecto lo llevan profesionales que tienen las credenciales de abajo — y conoces al equipo real antes de firmar, no después.">Every engagement is staffed by practitioners who hold the credentials below — and you meet the actual team before you sign, not after.</p>
 </div>
-<div aria-label="Credentials" class="creds-tabs" role="tablist">
-<button aria-selected="true" class="creds-tab active" data-en="Certifications" data-es="Certificaciones" data-pool="certs" role="tab">Certifications</button>
-<button aria-selected="false" class="creds-tab" data-en="Tech Partners" data-es="Partners tecnológicos" data-pool="partners" role="tab">Tech Partners</button>
-<button aria-selected="false" class="creds-tab" data-en="Frameworks" data-es="Frameworks" data-pool="frameworks" role="tab">Frameworks</button>
+<div aria-label="Credentials" class="creds-tabs" data-en-aria="Credentials" data-es-aria="Credenciales" role="tablist">
+<button aria-controls="pool-certs" aria-selected="true" class="creds-tab active" data-en="Certifications" data-es="Certificaciones" data-pool="certs" id="tab-certs" role="tab" tabindex="0">Certifications</button>
+<button aria-controls="pool-partners" aria-selected="false" class="creds-tab" data-en="Tech Partners" data-es="Partners tecnológicos" data-pool="partners" id="tab-partners" role="tab" tabindex="-1">Tech Partners</button>
+<button aria-controls="pool-frameworks" aria-selected="false" class="creds-tab" data-en="Frameworks" data-es="Frameworks" data-pool="frameworks" id="tab-frameworks" role="tab" tabindex="-1">Frameworks</button>
 </div>
-<div class="cert-pool active" data-pool="certs" role="tabpanel">
+<div aria-labelledby="tab-certs" class="cert-pool active" data-pool="certs" id="pool-certs" role="tabpanel" tabindex="0">
 <span class="cert">CISSP</span><span class="cert">CISM</span><span class="cert">CISA</span><span class="cert">OSCP</span><span class="cert">OSEP</span><span class="cert">OSWE</span><span class="cert">CRTP</span><span class="cert">CRTO</span><span class="cert">CRTL</span><span class="cert">eMAPT</span><span class="cert">CEH</span><span class="cert">CCSP</span><span class="cert">CCSK</span><span class="cert">ISO 27001 LA</span><span class="cert">ISO 27001 LI</span><span class="cert">ISO 22301 LA</span><span class="cert">GIAC GCIH</span><span class="cert">GIAC GPEN</span><span class="cert">GIAC GCFA</span><span class="cert">CISO-G</span><span class="cert">SABSA</span><span class="cert">TOGAF</span><span class="cert">PMP</span><span class="cert">AZ-500</span><span class="cert">AWS Sec Specialty</span><span class="cert">GCP Pro Sec</span>
 </div>
-<div class="cert-pool" data-pool="partners" role="tabpanel">
-<span class="cert blue">Microsoft Entra</span><span class="cert blue">Okta</span><span class="cert blue">CyberArk</span><span class="cert blue">SailPoint</span><span class="cert blue">Zscaler</span><span class="cert blue">Palo Alto Networks</span><span class="cert blue">Cisco</span><span class="cert blue">Fortinet</span><span class="cert blue">CrowdStrike</span><span class="cert blue">Microsoft Defender</span><span class="cert blue">SentinelOne</span><span class="cert blue">Wiz</span><span class="cert blue">Prisma Cloud</span><span class="cert blue">SealPath</span><span class="cert blue">arexdata</span><span class="cert blue">Microsoft Purview</span><span class="cert blue">Forcepoint</span><span class="cert blue">AWS</span><span class="cert blue">Azure</span><span class="cert blue">GCP</span>
+<div aria-labelledby="tab-partners" class="cert-pool" data-pool="partners" id="pool-partners" role="tabpanel" tabindex="0">
+<span class="cert alt">Microsoft Entra</span><span class="cert alt">Okta</span><span class="cert alt">CyberArk</span><span class="cert alt">SailPoint</span><span class="cert alt">Zscaler</span><span class="cert alt">Palo Alto Networks</span><span class="cert alt">Cisco</span><span class="cert alt">Fortinet</span><span class="cert alt">CrowdStrike</span><span class="cert alt">Microsoft Defender</span><span class="cert alt">SentinelOne</span><span class="cert alt">Wiz</span><span class="cert alt">Prisma Cloud</span><span class="cert alt">SealPath</span><span class="cert alt">arexdata</span><span class="cert alt">Microsoft Purview</span><span class="cert alt">Forcepoint</span><span class="cert alt">AWS</span><span class="cert alt">Azure</span><span class="cert alt">GCP</span>
 </div>
-<div class="cert-pool" data-pool="frameworks" role="tabpanel">
+<div aria-labelledby="tab-frameworks" class="cert-pool" data-pool="frameworks" id="pool-frameworks" role="tabpanel" tabindex="0">
 <span class="cert">PTES</span><span class="cert">OWASP Top 10</span><span class="cert">OWASP ASVS</span><span class="cert">MITRE ATT&amp;CK</span><span class="cert">NIST CSF 2.0</span><span class="cert">NIST SP 800-53</span><span class="cert">ISO 27001</span><span class="cert">ISO 27701</span><span class="cert">SOC 2</span><span class="cert">PCI-DSS 4.0</span><span class="cert">GDPR</span><span class="cert">HIPAA</span><span class="cert">ENS</span><span class="cert">ENS Alta</span><span class="cert">CCN-STIC</span>
 </div>
 </div>
@@ -827,7 +826,7 @@ footer .logo-word{font-size:19px}
 <input name="form-name" type="hidden" value="contact"/>
 <!-- Honeypot: real users never fill this; bots do. -->
 <div aria-hidden="true" class="hp">
-<label for="company_website">Company website (leave blank)</label>
+<label data-en="Company website (leave blank)" data-es="Web de la empresa (déjalo en blanco)" for="company_website">Company website (leave blank)</label>
 <input autocomplete="off" id="company_website" name="company_website" tabindex="-1" type="text"/>
 </div>
 <div class="form-row">
@@ -843,7 +842,7 @@ footer .logo-word{font-size:19px}
 <div class="form-row">
 <div class="field">
 <label data-en-html="Work email &lt;span class='req'&gt;*&lt;/span&gt;" data-es-html="Email corporativo &lt;span class='req'&gt;*&lt;/span&gt;" for="f-email">Work email <span class="req">*</span></label>
-<input autocomplete="email" data-en-ph="jane@acme.com" data-es-ph="jane@acme.com" id="f-email" name="email" placeholder="jane@acme.com" required="" type="email"/>
+<input autocomplete="email" data-en-ph="jane@acme.com" data-es-ph="nombre@empresa.com" id="f-email" name="email" placeholder="jane@acme.com" required="" type="email"/>
 </div>
 <div class="field">
 <label data-en="Role" data-es="Cargo" for="f-role">Role</label>
@@ -856,11 +855,11 @@ footer .logo-word{font-size:19px}
 <select id="f-sector" name="sector">
 <option data-en="Select…" data-es="Selecciona…" value="">Select…</option>
 <option data-en="Financial Services" data-es="Servicios Financieros" value="finance">Financial Services</option>
-<option data-en="Energy &amp; Utilities" data-es="Energía &amp; Utilities" value="energy">Energy &amp; Utilities</option>
-<option data-en="Defense &amp; Aerospace" data-es="Defensa &amp; Aeroespacial" value="defense">Defense &amp; Aerospace</option>
-<option data-en="Healthcare &amp; Pharma" data-es="Salud &amp; Farma" value="health">Healthcare &amp; Pharma</option>
+<option data-en="Energy &amp; Utilities" data-es="Energía y utilities" value="energy">Energy &amp; Utilities</option>
+<option data-en="Defense &amp; Aerospace" data-es="Defensa y aeroespacial" value="defense">Defense &amp; Aerospace</option>
+<option data-en="Healthcare &amp; Pharma" data-es="Salud y farma" value="health">Healthcare &amp; Pharma</option>
 <option data-en="Public Sector" data-es="Sector Público" value="public">Public Sector</option>
-<option data-en="Retail &amp; E-commerce" data-es="Retail &amp; E-commerce" value="retail">Retail &amp; E-commerce</option>
+<option data-en="Retail &amp; E-commerce" data-es="Retail y e-commerce" value="retail">Retail &amp; E-commerce</option>
 <option data-en="Other" data-es="Otro" value="other">Other</option>
 </select>
 </div>
@@ -895,17 +894,17 @@ footer .logo-word{font-size:19px}
 <p data-en="We break things before the bad guys do — and leave you stronger than we found you. Offensive-born, end to end: red team to Zero Trust, GRC, data and automation." data-es="Rompemos las cosas antes de que lo hagan los malos — y te dejamos más fuerte de lo que te encontramos. Nacidos en ofensiva, de punta a punta: del red team al Zero Trust, el GRC, el dato y la automatización.">We break things before the bad guys do — and leave you stronger than we found you. Offensive-born, end to end: red team to Zero Trust, GRC, data and automation.</p>
 </div>
 <div class="footer-col">
-<h4 data-en="Services" data-es="Servicios">Services</h4>
+<h3 data-en="Services" data-es="Servicios">Services</h3>
 <ul>
-<li><a data-en="Red Team &amp; Threat Intel" data-es="Red Team &amp; Threat Intel" href="#services">Red Team &amp; Threat Intel</a></li>
+<li><a data-en="Red Team &amp; Threat Intel" data-es="Red team y threat intel" href="#services">Red Team &amp; Threat Intel</a></li>
 <li><a data-en="Zero Trust Architecture" data-es="Arquitectura Zero Trust" href="#services">Zero Trust Architecture</a></li>
-<li><a data-en="GRC &amp; Compliance" data-es="GRC &amp; Compliance" href="#services">GRC &amp; Compliance</a></li>
-<li><a data-en="Data &amp; Automation" data-es="Dato &amp; Automatización" href="#services">Data &amp; Automation</a></li>
+<li><a data-en="GRC &amp; Compliance" data-es="GRC y compliance" href="#services">GRC &amp; Compliance</a></li>
+<li><a data-en="Data &amp; Automation" data-es="Dato y automatización" href="#services">Data &amp; Automation</a></li>
 <li><a data-en="Digital Risk Radar" data-es="Digital Risk Radar" href="#services">Digital Risk Radar</a></li>
 </ul>
 </div>
 <div class="footer-col">
-<h4 data-en="Company" data-es="Empresa">Company</h4>
+<h3 data-en="Company" data-es="Empresa">Company</h3>
 <ul>
 <li><a data-en="About" data-es="Quiénes somos" href="#manifesto">About</a></li>
 <li><a data-en="The Code" data-es="El Código" href="#code">The Code</a></li>
@@ -915,7 +914,7 @@ footer .logo-word{font-size:19px}
 </ul>
 </div>
 <div class="footer-col">
-<h4 data-en="Contact" data-es="Contacto">Contact</h4>
+<h3 data-en="Contact" data-es="Contacto">Contact</h3>
 <ul>
 <li><a href="mailto:info@slapsec.com">info@slapsec.com</a></li>
 <li><a data-en="Book a call" data-es="Reservar llamada" href="https://cal.com/slapsec" rel="noopener" target="_blank">Book a call</a></li>
@@ -923,7 +922,7 @@ footer .logo-word{font-size:19px}
 </ul>
 </div>
 <div class="footer-col">
-<h4 data-en="Legal" data-es="Legal">Legal</h4>
+<h3 data-en="Legal" data-es="Legal">Legal</h3>
 <ul>
 <li><a data-en="Privacy Policy" data-es="Política de Privacidad" href="/privacy.html">Privacy Policy</a></li>
 <li><a data-en="Legal Notice" data-es="Aviso Legal" href="/legal.html">Legal Notice</a></li>
@@ -932,13 +931,13 @@ footer .logo-word{font-size:19px}
 </ul>
 </div>
 </div>
-<div aria-hidden="true" class="footer-bigmark">Slapsec</div>
+<div aria-hidden="true" class="footer-bigmark">SlapSec</div>
 <div class="footer-bottom">
 <span>© <span id="year">2026</span> SlapSec LLC · <span data-en="All rights reserved" data-es="Todos los derechos reservados">All rights reserved</span></span>
 <span data-en="Senior cybersecurity. Democratized." data-es="Ciberseguridad senior. Democratizada.">Senior cybersecurity. Democratized.</span>
 </div>
 </footer>
-<div aria-label="Privacy notice" aria-live="polite" class="cookie-note" id="cookieNote" role="dialog">
+<div aria-label="Privacy notice" aria-live="polite" class="cookie-note" data-en-aria="Privacy notice" data-es-aria="Aviso de privacidad" id="cookieNote" role="dialog">
 <span data-en-html="We only use &lt;strong style='color:var(--fg)'&gt;functional storage&lt;/strong&gt; to remember your language and this notice — no tracking, no ad cookies. Fonts load via Google Fonts; details in our &lt;a href='/cookies.html' style='color:var(--fg-dim)'&gt;Cookie Policy&lt;/a&gt;." data-es-html="Solo usamos &lt;strong style='color:var(--fg)'&gt;almacenamiento funcional&lt;/strong&gt; para recordar tu idioma y este aviso — sin tracking ni cookies publicitarias. Las fuentes se cargan vía Google Fonts; detalles en nuestra &lt;a href='/cookies.html' style='color:var(--fg-dim)'&gt;Política de Cookies&lt;/a&gt;.">We only use <strong style="color:var(--fg)">functional storage</strong> to remember your language and this notice — no tracking, no ad cookies. Fonts load via Google Fonts; details in our <a href="/cookies.html" style="color:var(--fg-dim)">Cookie Policy</a>.</span>
 <button data-en="Got it" data-es="Entendido" id="cookieOk" type="button">Got it</button>
 </div>
@@ -952,32 +951,9 @@ footer .logo-word{font-size:19px}
   function safeSet(k,v){ try { window.localStorage.setItem(k,v); } catch(e){} }
 
 
-  /* ============ CLOCKS (UTC) ============ */
-  function tick(){
-    var d = new Date();
-    function p(n){ return (n<10?"0":"")+n; }
-    var t = p(d.getUTCHours())+":"+p(d.getUTCMinutes())+":"+p(d.getUTCSeconds())+" UTC";
-    ["clock","clock2","topClock"].forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) el.textContent = t;
-    });
-  }
-  tick(); setInterval(tick, 1000);
-
   var yEl = document.getElementById("year");
   if(yEl) yEl.textContent = new Date().getFullYear();
 
-  /* ============ SCROLL PROGRESS ============ */
-  var progressBar = document.getElementById("progressBar");
-  function onScroll(){
-    if(!progressBar) return;
-    var h = document.documentElement;
-    var max = (h.scrollHeight - h.clientHeight) || 1;
-    var pct = (h.scrollTop || document.body.scrollTop) / max * 100;
-    progressBar.style.width = pct + "%";
-  }
-  window.addEventListener("scroll", onScroll, { passive:true });
-  onScroll();
 
   /* ============ HERO PARALLAX (guarded) ============ */
   if(!reduceMotion){
@@ -1047,10 +1023,21 @@ footer .logo-word{font-size:19px}
         var on = t === tab;
         t.classList.toggle("active", on);
         t.setAttribute("aria-selected", on ? "true" : "false");
+        t.setAttribute("tabindex", on ? "0" : "-1");
       });
       document.querySelectorAll(".cert-pool").forEach(function(p){
         p.classList.toggle("active", p.getAttribute("data-pool") === pool);
       });
+    });
+    // WAI-ARIA tabs pattern: arrows move between tabs, Home/End jump to the ends
+    tab.addEventListener("keydown", function(e){
+      var list = Array.prototype.slice.call(tabs), i = list.indexOf(tab), next = -1;
+      if(e.key === "ArrowRight") next = (i + 1) % list.length;
+      else if(e.key === "ArrowLeft") next = (i - 1 + list.length) % list.length;
+      else if(e.key === "Home") next = 0;
+      else if(e.key === "End") next = list.length - 1;
+      if(next < 0) return;
+      e.preventDefault(); list[next].click(); list[next].focus();
     });
   });
 
