@@ -18,10 +18,9 @@ SRC = os.path.join(ROOT, "publish", "index.html")
 OUT_DIR = os.path.join(ROOT, "publish", "es")
 OUT = os.path.join(OUT_DIR, "index.html")
 
-ES_TITLE = "Ciberseguridad para Pymes y Empresas — Red Team, GRC y Zero Trust | SlapSec"
-ES_DESC = ("Consultoría de ciberseguridad senior para pymes y gran empresa. Red team y threat intel, "
-           "Zero Trust, GRC y compliance (ENS, ISO 27001), vCISO, dato y automatización. "
-           "El criterio de las Big Four, sin el overhead.")
+ES_TITLE = "Ciberseguridad para Pymes — Red Team y Zero Trust | SlapSec"
+ES_DESC = ("Consultoría de ciberseguridad senior para pymes y gran empresa: red team, Zero Trust, "
+           "GRC y compliance. El criterio de las Big Four, sin el overhead.")
 ES_OG_TITLE = "SlapSec — Ciberseguridad senior. Democratizada."
 ES_OG_DESC = ("Mismo rigor que las firmas tier-1, sin el overhead. Red team y threat intel, "
               "Zero Trust, GRC y compliance, dato y automatización. Para pymes y gran empresa.")
@@ -122,6 +121,7 @@ for sc in soup.find_all("script", attrs={"type": "application/ld+json"}):
     d["description"] = ES_SCHEMA_DESC
     d["slogan"] = ES_SLOGAN
     d["inLanguage"] = "es"
+    d["url"] = "https://slapsec.com/es/"
     sc.string = "\n" + json.dumps(d, ensure_ascii=False, indent=2) + "\n"
     break
 
