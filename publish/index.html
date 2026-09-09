@@ -174,7 +174,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 section[id],[id]{scroll-margin-top:84px}
-@media (max-width:640px){section[id],[id]{scroll-margin-top:72px}}
+@media (max-width:640px){.case-metrics{grid-template-columns:1fr;gap:24px}section[id],[id]{scroll-margin-top:72px}}
 body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;position:relative}
 ::selection{background:var(--fg);color:var(--bg)}
 a{color:inherit;text-decoration:none}
@@ -311,7 +311,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 @media (max-width:768px){.compare-wrap{padding:80px 20px}.compare-row{grid-template-columns:1.5fr 1fr 1fr 1fr}.compare-row > div{padding:14px 10px;font-size:11px}.compare-row .feature{font-size:13px}.compare-row.header > div{padding:14px 10px;font-size:11px}}
 .cases-head{max-width:1440px;margin:0 auto 72px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
 .cases-head p{font-size:16px;color:var(--fg-dim);line-height:1.6;max-width:460px}
-.cases-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cases-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:24px}
 .case{border:1px solid var(--line);background:var(--bg-card);padding:32px 28px;position:relative;overflow:hidden;transition:border-color var(--t-base), transform var(--t-base);display:flex;flex-direction:column}
 .case:hover{border-color:var(--line-strong);transform:translateY(-4px)}
 .case::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--line-strong);opacity:0;transition:opacity var(--t-base)}
@@ -321,10 +321,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .case-id{font-family:var(--mono);font-size:11px;color:var(--fg-muted);letter-spacing:0.08em}
 .case h3{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-0.018em;line-height:1.2;margin-bottom:14px}
 .case-challenge{font-size:14px;color:var(--fg-dim);line-height:1.55;margin-bottom:20px;flex:1}
-.case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:20px;border-top:1px solid var(--line)}
+.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:20px;border-top:1px solid var(--line)}
 .case-metric .k{font-family:var(--display);font-weight:700;font-size:32px;line-height:1;color:var(--accent);letter-spacing:-0.03em;display:block}
 .case-metric .v{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--fg-dim);margin-top:6px;display:block}
-@media (max-width:1024px){.cases-head{grid-template-columns:1fr;gap:32px;align-items:start}.cases-grid{grid-template-columns:1fr;gap:16px}}
+@media (max-width:1024px){.cases-head{grid-template-columns:1fr;gap:32px;align-items:start}}
 .numbers{padding:140px 40px;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:2;overflow:hidden}
 
 .numbers-inner{max-width:1440px;margin:0 auto;position:relative}
@@ -760,7 +760,7 @@ footer .logo-word{font-size:19px}
 <h2 class="eyebrow-h2" data-en-html="A result you can &lt;em&gt;defend&lt;/em&gt;&lt;br/&gt;to your board." data-es-html="Un resultado que puedes &lt;em&gt;defender&lt;/em&gt;&lt;br/&gt;ante tu comité.">A result you can <em>defend</em><br/>to your board.</h2>
 <p data-en="Offensive engagements stay confidential by design — this is the build we can show in public. One flagship project, real numbers." data-es="Los proyectos ofensivos son confidenciales por definición — este es el que podemos enseñar en público. Un proyecto insignia, números reales.">Offensive engagements stay confidential by design — this is the build we can show in public. One flagship project, real numbers.</p>
 </div>
-<div class="cases-grid" style="grid-template-columns:1fr">
+<div class="cases-grid">
 <div class="case">
 <div class="case-head"><span class="case-sector" data-en="Security Automation · Certificate Ops" data-es="Automatización · Gestión de Certificados">Security Automation · Certificate Ops</span><span class="case-id">#CASE-SSL</span></div>
 <h3 data-en="Unattended SSL/TLS certificate rotation" data-es="Rotación desatendida de certificados SSL/TLS">Unattended SSL/TLS certificate rotation</h3>
@@ -773,7 +773,7 @@ footer .logo-word{font-size:19px}
 <span class="chip muted" data-en="Deploy" data-es="Desplegar">Deploy</span>
 <span class="chip muted" data-en="Verify" data-es="Verificar">Verify</span>
 </div>
-<div class="case-metrics" style="grid-template-columns:repeat(3,1fr)">
+<div class="case-metrics">
 <div class="case-metric"><span class="k">0</span><span class="v" data-en="Outages from expired certs" data-es="Caídas por cert caducado">Outages from expired certs</span></div>
 <div class="case-metric"><span class="k">100%</span><span class="v" data-en="Inventory under control" data-es="Inventario bajo control">Inventory under control</span></div>
 <div class="case-metric"><span class="k">100%</span><span class="v" data-en="Renewal automated" data-es="Renovación automatizada">Renewal automated</span></div>
