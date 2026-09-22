@@ -1,0 +1,3 @@
+# The Spanish site moved to its own brand and entity: thalma.es
+/es/*   https://thalma.es/:splat   301!
+/es     https://thalma.es/         301!

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>{{ORIGIN}}/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ORIGIN}}/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="{{ORIGIN}}/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ORIGIN}}/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>{{ORIGIN}}/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ORIGIN}}/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="{{ORIGIN}}/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ORIGIN}}/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>{{ORIGIN}}/privacy.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>{{ORIGIN}}/legal.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>{{ORIGIN}}/cookies.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

@@ -1,0 +1,33 @@
+{
+  "id": "thalma",
+  "publish": "publish-thalma",
+  "BRAND": "Thalma",
+  "DOMAIN": "thalma.es",
+  "ORIGIN": "https://thalma.es",
+  "EMAIL": "ciber@thalmacomputing.com",
+  "ENTITY": "THALMA COMPUTING, S.L.",
+  "BOOKING": "cal.com/slapsec",
+  "KEY": "thalma",
+  "ENTITY_FORM_EN": "a Spanish limited liability company (sociedad de responsabilidad limitada), tax ID B23814635",
+  "ENTITY_FORM_ES": "una sociedad de responsabilidad limitada constituida en España, con CIF B23814635",
+  "ADDRESS_EN": "Av. de Europa, 19, Of. 351, 28108 Alcobendas, Madrid, Spain",
+  "ADDRESS_ES": "Av. de Europa, 19, Of. 351, 28108 Alcobendas, Madrid",
+  "GOVERNING_LAW_EN": "Spanish law",
+  "GOVERNING_LAW_ES": "la legislación española",
+  "languages": [
+    "es",
+    "en"
+  ],
+  "primary_lang": "es",
+  "sister": {
+    "origin": "https://slapsec.com",
+    "brand": "SlapSec",
+    "region": "INTL"
+  },
+  "REGISTRY_EN": "",
+  "REGISTRY_ES": "",
+  "DPA_EN": "the Spanish Data Protection Agency (AEPD, www.aepd.es)",
+  "DPA_ES": "la Agencia Española de Protección de Datos (AEPD, www.aepd.es)",
+  "UPDATED_EN": "September 22, 2026",
+  "UPDATED_ES": "22 de septiembre de 2026"
+}
