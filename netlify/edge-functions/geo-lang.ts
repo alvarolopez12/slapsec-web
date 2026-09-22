@@ -1,33 +1,42 @@
-// Geo language routing for slapsec.com
-// - Visitors from Spain hitting "/" get the Spanish version at /es/ (302).
-// - Clicking "EN" on the Spanish page links to /?lang=en → we remember the
-//   choice in a cookie and never bounce that visitor again.
-// - Everyone else (and all crawlers from non-ES IPs) gets English at "/".
-// hreflang tags on both pages keep SEO correct; the redirect is 302 (never cached).
+// Audience routing for the two sister sites.
+//
+//   slapsec.com  SlapSec LLC        international, English
+//   thalma.es    Thalma Computing   Spain, Spanish (with /en/)
+//
+// A visitor from Spain landing on slapsec.com is almost certainly looking for the
+// Spanish entity, so we send them there. It is a 302 (never cached) and it is
+// escapable: "?stay=1" sets a cookie and we never bounce that visitor again, which
+// keeps the door open for a Spanish-based multinational that genuinely wants the
+// LLC. Crawlers from non-ES IPs see slapsec.com normally, and hreflang plus the
+// canonical on each site keep the two from competing.
+
+// Phase 2 flips this to "https://thalma.es/" once that domain resolves.
+const SISTER = "/es/";
 
 export default async (request: Request, context: any) => {
   const url = new URL(request.url);
 
-  // Explicit English choice → set cookie, serve EN.
-  if (url.searchParams.get("lang") === "en") {
-    const response = await context.next();
-    const headers = new Headers(response.headers);
-    headers.append(
-      "Set-Cookie",
-      "nf_lang=en; Path=/; Max-Age=31536000; SameSite=Lax",
-    );
-    return new Response(response.body, { status: response.status, headers });
-  }
-
-  // Previously chose English → respect it.
-  const cookies = request.headers.get("cookie") || "";
-  if (/(?:^|;\s*)nf_lang=en(?:;|$)/.test(cookies)) {
+  // Both sites deploy from the same repo, so this function also loads on thalma.es.
+  // Without this guard it would redirect thalma.es to itself, forever.
+  if (!url.hostname.endsWith("slapsec.com")) {
     return context.next();
   }
 
-  // From Spain → Spanish version.
+  // explicit "keep me here" -> remember it
+  if (url.searchParams.get("stay") === "1") {
+    const response = await context.next();
+    const headers = new Headers(response.headers);
+    headers.append("Set-Cookie", "nf_stay=1; Path=/; Max-Age=31536000; SameSite=Lax");
+    return new Response(response.body, { status: response.status, headers });
+  }
+
+  const cookies = request.headers.get("cookie") || "";
+  if (/(?:^|;\s*)nf_stay=1(?:;|$)/.test(cookies)) {
+    return context.next();
+  }
+
   if (context.geo?.country?.code === "ES") {
-    return Response.redirect(new URL("/es/", request.url), 302);
+    return Response.redirect(new URL(SISTER, request.url), 302);
   }
 
   return context.next();

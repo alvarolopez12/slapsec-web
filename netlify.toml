@@ -1,4 +1,14 @@
-# Netlify config — static site, no build step.
+# Two sites deploy from this one repo, so the publish directory is NOT set here:
+# netlify.toml would override both. Each Netlify site sets its own in the UI
+# (Site configuration > Build & deploy > Publish directory):
+#
+#   slapsec   ->  publish
+#   thalma    ->  publish-thalma
+#
+# Everything below is shared and safe for both. The geo edge function guards on
+# hostname so it only ever acts on slapsec.com.
 [build]
-  publish = "publish"
   command = ""
+
+[functions]
+  directory = "netlify/functions"
