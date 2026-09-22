@@ -22,8 +22,12 @@ export default async (request: Request, context: any) => {
     return context.next();
   }
 
-  // explicit "keep me here" -> remember it
-  if (url.searchParams.get("stay") === "1") {
+  // Explicit "I want English" -> remember it. The language toggle on the Spanish
+  // page links to /?lang=en, so that parameter is the one that has to work; ?stay=1
+  // is the phase-2 spelling and is accepted too. Getting this wrong bounces a
+  // Spanish visitor straight back to /es/ and they cannot reach the English site.
+  const asked = url.searchParams.get("lang") === "en" || url.searchParams.get("stay") === "1";
+  if (asked) {
     const response = await context.next();
     const headers = new Headers(response.headers);
     headers.append("Set-Cookie", "nf_stay=1; Path=/; Max-Age=31536000; SameSite=Lax");
