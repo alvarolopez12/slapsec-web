@@ -228,7 +228,11 @@ def tidy(html):
     return html
 
 
+WRITTEN = []
+
+
 def write(path, text):
+    WRITTEN.append(path)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     if text.lstrip().lower().startswith("<!doctype") or not path.endswith(".html"):
         open(path, "w", encoding="utf-8").write(text)
@@ -308,6 +312,9 @@ def build_assets(brand, out):
     og = os.path.join(dst, "og.png")
     if os.path.exists(og):
         shutil.move(og, os.path.join(out, "og.png"))
+        WRITTEN.append(os.path.join(out, "og.png"))
+    for f in sorted(os.listdir(dst)):
+        WRITTEN.append(os.path.join(dst, f))
     wk = os.path.join(SRC, ".well-known")
     if os.path.isdir(wk):
         for f in sorted(os.listdir(wk)):
@@ -315,19 +322,27 @@ def build_assets(brand, out):
                   fill(open(os.path.join(wk, f), encoding="utf-8").read(), brand))
 
 
-def prune(brand, out):
-    """Remove language directories this brand no longer serves, so dropping a language
-    does not leave a stale page live."""
-    for d in sorted(os.listdir(out)) if os.path.isdir(out) else []:
-        full = os.path.join(out, d)
-        if not os.path.isdir(full) or len(d) != 2:
-            continue
-        if d not in brand["languages"] or d == brand["primary_lang"]:
-            shutil.rmtree(full)
-            print(f"  pruned stale {brand['publish']}/{d}/")
+def prune(brand, out, written):
+    """Delete anything under the output directory this build did not produce.
+
+    Without this, a file the config stops generating survives, gets committed and
+    ships: dropping src/_redirects.slapsec once left a stale _redirects live that
+    301'd /es/ to a domain that was not ready."""
+    keep = {os.path.normpath(p) for p in written}
+    for root, dirs, files in os.walk(out, topdown=False):
+        for f in files:
+            full = os.path.normpath(os.path.join(root, f))
+            if full not in keep:
+                os.remove(full)
+                print(f"  pruned stale {os.path.relpath(full, ROOT)}")
+        for d in dirs:
+            full = os.path.join(root, d)
+            if not os.listdir(full):
+                os.rmdir(full)
 
 
 def build(brand):
+    WRITTEN.clear()
     out = os.path.join(ROOT, brand["publish"])
     build_index(brand, out)
     build_secondary(brand, out)
@@ -338,7 +353,7 @@ def build(brand):
     if os.path.exists(red):
         write(os.path.join(out, "_redirects"), fill(open(red, encoding="utf-8").read(), brand))
     build_assets(brand, out)
-    prune(brand, out)
+    prune(brand, out, WRITTEN)
     langs = "+".join(brand["languages"])
     print(f"  built {brand['BRAND']:9s} -> {brand['publish']}/  ({langs}, primary {brand['primary_lang']})")
 
