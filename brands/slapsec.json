@@ -15,7 +15,8 @@
   "GOVERNING_LAW_EN": "the laws of the State of New Mexico, United States, without regard to its conflict-of-laws principles",
   "GOVERNING_LAW_ES": "las leyes del Estado de Nuevo México, Estados Unidos, con independencia de sus normas sobre conflicto de leyes",
   "languages": [
-    "en"
+    "en",
+    "es"
   ],
   "primary_lang": "en",
   "sister": {
@@ -25,7 +26,7 @@
   },
   "REGISTRY_EN": "",
   "REGISTRY_ES": "",
-  "DPA_EN": "your data protection supervisory authority",
+  "DPA_EN": "your local data protection authority",
   "DPA_ES": "tu autoridad de control de protección de datos",
   "UPDATED_EN": "June 5, 2026",
   "UPDATED_ES": "5 de junio de 2026"

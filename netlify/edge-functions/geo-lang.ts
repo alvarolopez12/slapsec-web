@@ -10,7 +10,8 @@
 // LLC. Crawlers from non-ES IPs see slapsec.com normally, and hreflang plus the
 // canonical on each site keep the two from competing.
 
-const SISTER = "https://thalma.es/";
+// Phase 2 flips this to "https://thalma.es/" once that domain resolves.
+const SISTER = "/es/";
 
 export default async (request: Request, context: any) => {
   const url = new URL(request.url);
@@ -35,7 +36,7 @@ export default async (request: Request, context: any) => {
   }
 
   if (context.geo?.country?.code === "ES") {
-    return Response.redirect(SISTER, 302);
+    return Response.redirect(new URL(SISTER, request.url), 302);
   }
 
   return context.next();
