@@ -1,40 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://slapsec.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://slapsec.com/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://slapsec.com/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://slapsec.com/"/>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://slapsec.com/es/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://slapsec.com/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://slapsec.com/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://slapsec.com/"/>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://slapsec.com/privacy.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://slapsec.com/legal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slapsec.com/legal"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slapsec.com/es/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slapsec.com/legal"/>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://slapsec.com/legal.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://slapsec.com/es/aviso-legal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slapsec.com/legal"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slapsec.com/es/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slapsec.com/legal"/>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://slapsec.com/cookies.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://slapsec.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slapsec.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slapsec.com/es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slapsec.com/privacy"/>
+    <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://slapsec.com/es/privacidad</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slapsec.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slapsec.com/es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slapsec.com/privacy"/>
+    <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://slapsec.com/cookies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slapsec.com/cookies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slapsec.com/es/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slapsec.com/cookies"/>
+    <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://slapsec.com/es/cookies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slapsec.com/cookies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slapsec.com/es/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slapsec.com/cookies"/>
+    <lastmod>2026-11-11</lastmod>
   </url>
 </urlset>

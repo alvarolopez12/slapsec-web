@@ -26,11 +26,13 @@ export default async (request: Request, context: any) => {
   // page links to /?lang=en, so that parameter is the one that has to work; ?stay=1
   // is the phase-2 spelling and is accepted too. Getting this wrong bounces a
   // Spanish visitor straight back to /es/ and they cannot reach the English site.
+  // With script, the page's own language switch sets this same cookie, and clears it
+  // when the reader chooses Spanish again.
   const asked = url.searchParams.get("lang") === "en" || url.searchParams.get("stay") === "1";
   if (asked) {
     const response = await context.next();
     const headers = new Headers(response.headers);
-    headers.append("Set-Cookie", "nf_stay=1; Path=/; Max-Age=31536000; SameSite=Lax");
+    headers.append("Set-Cookie", "nf_stay=1; Path=/; Max-Age=31536000; SameSite=Lax; Secure");
     return new Response(response.body, { status: response.status, headers });
   }
 

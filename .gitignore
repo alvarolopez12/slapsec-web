@@ -8,3 +8,7 @@ node_modules/
 .DS_Store
 # Claude local settings
 .claude/settings.local.json
+
+# advisory/: local notes and the leak-guard word list stay on this machine
+advisory/*.local.json
+advisory/.leakwords

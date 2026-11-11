@@ -1,6 +1,7 @@
 {
   "id": "slapsec",
   "publish": "publish",
+  "generator": "advisory/build_advisory.py",
   "BRAND": "SlapSec",
   "DOMAIN": "slapsec.com",
   "ORIGIN": "https://slapsec.com",

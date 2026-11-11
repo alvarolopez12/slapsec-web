@@ -1,0 +1,159 @@
+/* Ámbitos as a track (Pista). One hairline runs the whole practice: it enters each area, takes
+   the shape of what that area does and leaves for the next. On a screen with room and motion
+   allowed, the section pins and the reader's own scroll carries the track sideways, one area at
+   a time, each drawing finishing itself as its panel arrives. Everywhere else (phones, reduced
+   motion, no script) the same five areas are a plain list, drawings finished, and print is the
+   list alone. The drawings are aria-hidden; the words are ordinary text in reading order. */
+.pista .pista-run{margin-top:clamp(48px, 5vw, 80px)}
+.pista-view{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.pista-track{list-style:none;padding:0;margin:0}
+.pista-panel{min-width:0}
+.pista-foot{display:none}
+
+/* the words: the page's three voices, as the old row of areas had them */
+.pista-label{display:flex;gap:1.15em;font-family:var(--mono);font-size:var(--fs-meta);font-weight:400;letter-spacing:.16em;
+  text-transform:uppercase;line-height:1.4;color:var(--ink-2)}
+.pista-n{color:var(--ink);font-variant-numeric:tabular-nums}
+.pista-title{font-family:var(--serif-text);font-weight:300;font-size:var(--fs-lead);line-height:1.25;letter-spacing:-.005em;
+  color:var(--ink);text-wrap:balance}
+.pista-body{font-size:1rem;line-height:1.55;color:var(--ink-body);text-wrap:pretty;max-width:34em}
+.pista-text{display:flex;flex-direction:column;gap:14px;min-width:0}
+
+/* the drawings: hairlines in ink and greys, a stroke of about one screen pixel whatever the scale
+   (the script measures it; these defaults hold without it) */
+.pista-fig{position:relative;aspect-ratio:2 / 1}
+.pista-svg{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:visible;--sw:1.9}
+.pista-svg path{fill:none;stroke-width:var(--sw);stroke-linecap:butt;stroke-linejoin:miter}
+.pista-svg .k{stroke:var(--ink);stroke-width:calc(var(--sw) * 1.2)}
+.pista-svg .s{stroke:var(--ink-2)}
+.pista-svg .g{stroke:var(--line-strong)}
+.pista-svg .b{stroke:var(--ink);stroke-width:calc(var(--sw) * 1.5)}
+.pista-svg .fill{fill:var(--ink);stroke:none}
+.pista-svg .dash{stroke-dasharray:calc(var(--sw) * 3) calc(var(--sw) * 4)}
+.pista-svg [data-m]{transform-box:fill-box;transform-origin:center}
+/* the line runs past a figure's box only where the script has measured how far it may go */
+.pista-svg .lead{display:none}
+.pista.pista--js .pista-svg .lead{display:inline}
+
+/* ---------- the list: phones, reduced motion, no script ---------- */
+.pista-panel + .pista-panel{margin-top:clamp(40px, 6vw, 72px)}
+.pista-panel{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:22px;
+  padding-top:28px;border-top:1px solid var(--line-strong)}
+.pista-panel .pista-fig{grid-column:1 / span 6;align-self:start}
+.pista-panel .pista-text{grid-column:7 / span 6;padding-top:.2em}
+@media (max-width: 639px){
+  .pista-panel{display:flex;flex-direction:column;padding-top:22px;row-gap:0}
+  .pista-panel .pista-fig{align-self:stretch;aspect-ratio:16 / 10;margin-bottom:22px}
+  .pista-panel .pista-text{padding-top:0}
+  .pista-svg{--sw:2.7}
+}
+/* phones held sideways: the drawing never taller than half the screen */
+@media (orientation: landscape) and (max-height: 500px){
+  .pista-panel .pista-fig{aspect-ratio:auto;height:min(46svh, 220px)}
+}
+/* the script lets the line run out to the screen's edges, so nothing may scroll sideways */
+.pista.pista--js{overflow-x:clip}
+
+/* ---------- the track: pinned, carried sideways by the reader's scroll ---------- */
+.pista--on{overflow-x:visible}
+.pista--on .pista-run{position:relative}
+.pista--on .pista-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;overflow:clip}
+.pista--on .pista-view{height:100%;display:flex;flex-direction:column;
+  padding-top:clamp(76px, 12vh, 136px);padding-bottom:clamp(30px, 5.5vh, 64px)}
+.pista--on .pista-track{--pw:min(70vw, 0.86 * (min(100vw, var(--max)) - 2 * var(--gutter)));
+  --fh:calc(var(--pw) / 2.15);
+  flex:0 1 auto;margin-block:auto;min-height:0;display:flex;align-items:flex-start;width:max-content;will-change:transform}
+@media (max-aspect-ratio: 5 / 4){
+  .pista--on .pista-track{--pw:min(84vw, 0.92 * (min(100vw, var(--max)) - 2 * var(--gutter)))}
+}
+.pista--on .pista-panel,.pista--on .pista-panel + .pista-panel{flex:none;width:var(--pw);margin:0;padding:0;border:0;
+  display:flex;flex-direction:column;min-height:0}
+/* every figure the same height, so the line through them stays on one level */
+.pista--on .pista-panel .pista-fig{flex:none;align-self:stretch;height:min(46vh, var(--fh));aspect-ratio:auto}
+.pista--on .pista-panel .pista-text{flex:none;position:relative;margin:clamp(22px, 4.2vh, 48px) calc(var(--gap) * 2) 0 0;
+  padding-top:24px;border:0;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:calc(var(--gap) * 1.6);
+  row-gap:16px;align-items:start}
+/* where rows can be shared, the figures take whatever the tallest text leaves */
+@supports (grid-template-rows: subgrid){
+  .pista--on .pista-track{display:grid;grid-auto-flow:column;grid-auto-columns:var(--pw);grid-template-rows:minmax(0,var(--fh)) auto;align-items:stretch}
+  .pista--on .pista-panel,.pista--on .pista-panel + .pista-panel{display:grid;grid-row:1 / span 2;grid-template-rows:subgrid;
+    grid-template-columns:minmax(0,1fr);width:auto}
+  .pista--on .pista-panel .pista-fig{grid-area:1 / 1;height:auto;min-height:0;align-self:stretch}
+  .pista--on .pista-panel .pista-text{grid-area:2 / 1}
+}
+/* each panel's rule draws itself as the panel arrives */
+.pista--on .pista-text::before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:var(--line-strong);
+  transform-origin:0 50%;transform:scaleX(var(--hr, 1))}
+.pista--on .pista-label{grid-column:1 / -1}
+/* the words of an arriving area come in order, label, statement, then the rest, settling a little */
+.pista--on .pista-label{opacity:clamp(0, var(--f, 1) * 1.5, 1)}
+.pista--on .pista-title{opacity:clamp(0, var(--f, 1) * 1.5 - .2, 1);
+  transform:translate3d(calc((1 - var(--f, 1)) * 1.75rem), 0, 0)}
+.pista--on .pista-body{opacity:clamp(0, var(--f, 1) * 1.5 - .45, 1);
+  transform:translate3d(calc((1 - var(--f, 1)) * 3rem), 0, 0)}
+.pista--on .pista-title{font-family:var(--serif);font-size:clamp(1.5rem, 1.15vw + 1rem, 2.375rem);line-height:1.12;
+  letter-spacing:-.014em;max-width:16em}
+.pista--on .pista-body{padding-top:.3em}
+
+/* the running foot: the section's name, where the reader is, and one rule of progress */
+.pista--on .pista-foot{flex:none;display:grid;grid-template-columns:1fr auto;row-gap:14px;margin-top:clamp(28px, 5vh, 60px);
+  font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.4;color:var(--ink-2)}
+.pista-count{margin-inline-end:-.16em;font-variant-numeric:tabular-nums}
+.pista-now{color:var(--ink)}
+.pista-rule{grid-column:1 / -1;position:relative;height:1px;background:var(--line)}
+.pista-done{position:absolute;inset:0;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+.pista-tick{position:absolute;top:-3px;width:1px;height:7px;background:var(--line-strong);transition:background-color .3s var(--ease)}
+.pista-tick.on{background:var(--ink)}
+.pista-index{display:none}
+@media (min-width: 1200px){
+  .pista--on .pista-count{visibility:hidden}
+  .pista--on .pista-index{grid-column:1 / -1;display:block;position:relative;height:1.4em;margin-top:4px}
+  .pista-idx{position:absolute;top:0;white-space:nowrap;color:var(--ink-2);transition:color .3s var(--ease)}
+  .pista-idx.on{color:var(--ink)}
+  .pista-mark{position:absolute;top:-6px;left:0;height:calc(1.4em + 12px);width:0;pointer-events:none}
+  .pista-mark::before,.pista-mark::after{content:"";position:absolute;width:7px;height:7px;border:0 solid var(--ink)}
+  .pista-mark::before{left:-9px;top:0;border-width:1px 0 0 1px}
+  .pista-mark::after{right:-9px;bottom:0;border-width:0 1px 1px 0}
+}
+
+/* short laptop screens: a little less air, the same order */
+@media (min-width: 861px) and (max-height: 760px){
+  .pista--on .pista-view{padding-top:clamp(64px, 10vh, 96px)}
+  .pista--on .pista-panel .pista-text{margin-top:clamp(18px, 3vh, 28px);padding-top:20px;row-gap:12px}
+  .pista--on .pista-title{font-size:clamp(1.375rem, 1vw + .9rem, 2rem)}
+  .pista--on .pista-body{font-size:.9375rem}
+}
+
+/* large monitors: the same proportions as the rest of the page's large-screen tier */
+@media (min-width: 1921px) and (min-height: 1000px){
+  .pista .pista-run{margin-top:5rem}
+  .pista-panel + .pista-panel{margin-top:4.5rem}
+  .pista-panel{padding-top:1.75rem;row-gap:1.375rem}
+  .pista-text{gap:.875rem}
+  .pista--on .pista-panel .pista-text{padding-top:1.5rem;row-gap:1rem}
+  .pista--on .pista-foot{row-gap:.875rem}
+  .pista-tick{top:-.1875rem;height:.4375rem}
+}
+
+@media (forced-colors: active){
+  .pista-svg path{stroke:CanvasText}
+  .pista-svg .fill{fill:CanvasText}
+  .pista-done,.pista-tick.on{background:CanvasText}
+}
+
+/* print: the five areas as a plain list, no drawings, no track */
+@media print{
+  .pista .pista-run{margin-top:6mm;height:auto!important}
+  .pista-stage{position:static!important;height:auto!important;overflow:visible!important}
+  .pista-view{padding:0!important;max-width:none;height:auto!important;display:block!important}
+  .pista-track{display:block!important;transform:none!important;width:auto!important}
+  .pista-panel,.pista-panel + .pista-panel{display:block!important;width:auto!important;margin:0 0 5mm!important;padding:4mm 0 0!important;
+    border:0!important;border-top:.5pt solid #d8d8d5!important;break-inside:avoid}
+  .pista-text{opacity:1!important;display:block!important;margin:0!important;padding:0!important;transform:none!important}
+  .pista-text::before{display:none!important}
+  .pista-label,.pista-title,.pista-body{opacity:1!important;transform:none!important}
+  .pista-fig,.pista-foot,.pista-n{display:none!important}
+  .pista-label{margin-bottom:2mm}
+  .pista-title{color:#0a0a0b!important;font-family:var(--serif-text)!important;font-size:12.5pt!important;margin-bottom:1.5mm}
+  .pista-body{font-size:10.5pt}
+}

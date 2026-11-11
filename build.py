@@ -13,6 +13,9 @@ Netlify runs no build step.
 
 Adding a brand is a JSON file plus a favicon set. Editing copy is one
 edit in src/, and every brand picks it up on the next build.
+
+A brand whose JSON names a "generator" is built by that script instead
+and skipped here: slapsec.com is built by advisory/build_advisory.py.
 """
 import json
 import os
@@ -365,6 +368,12 @@ def main():
     for f in files:
         brand = json.load(open(os.path.join(BRANDS, f), encoding="utf-8"))
         if wanted and brand["id"] not in wanted:
+            continue
+        if brand.get("generator"):
+            # This brand's publish directory belongs to another build; writing it here would
+            # overwrite that site and prune its files.
+            print(f"  skipped {brand['BRAND']:9s} -> built by {brand['generator']}")
+            built += 1
             continue
         brand.setdefault("lastmod", "2026-09-22")
         build(brand)

@@ -1,0 +1,357 @@
+{
+  "updated": {
+    "iso": "2026-11-11",
+    "en": "11 November 2026",
+    "es": "11 de noviembre de 2026"
+  },
+  "pages": [
+    {
+      "key": "legal",
+      "path": {"en": "/legal", "es": "/es/aviso-legal"},
+      "label": {"en": "Legal notice", "es": "Aviso legal"},
+      "title": {"en": "Legal notice", "es": "Aviso legal"},
+      "ref": {"en": "legal notice", "es": "aviso legal"},
+      "desc": {
+        "en": "Legal notice for slapsec.com: who operates the site and the terms on which it may be used.",
+        "es": "Aviso legal de slapsec.com: quién es el titular del sitio y en qué condiciones puede utilizarse."
+      },
+      "sections": [
+        {
+          "h": {"en": "Site operator", "es": "Titular del sitio"},
+          "blocks": [
+            {"p": {
+              "en": "This website, {domain}, is operated by {entity}, a limited liability company organised under the laws of the State of New Mexico, United States.",
+              "es": "Este sitio web, {domain}, es titularidad de {entity}, sociedad de responsabilidad limitada constituida conforme a las leyes del Estado de Nuevo México (Estados Unidos)."
+            }},
+            {"dl": [
+              {"dt": {"en": "Registered address", "es": "Domicilio social"},
+               "dd": {"en": "412 W 7th St, Clovis, NM 88101, USA", "es": "412 W 7th St, Clovis, NM 88101, EE. UU."}},
+              {"dt": {"en": "Contact", "es": "Contacto"},
+               "dd": {"en": "{email}", "es": "{email}"}}
+            ]}
+          ]
+        },
+        {
+          "h": {"en": "Purpose of this site", "es": "Finalidad del sitio"},
+          "blocks": [
+            {"p": {
+              "en": "This site provides general information about {entity} and its strategic advisory services in technology and cybersecurity. Its content is for information only and does not constitute a binding offer, professional or security advice, or a contractual commitment. Any engagement is governed by a separate written agreement.",
+              "es": "Este sitio ofrece información general sobre {entity} y sus servicios de asesoramiento estratégico en tecnología y ciberseguridad. Su contenido es meramente informativo y no constituye una oferta vinculante, un asesoramiento profesional o de seguridad ni un compromiso contractual. Todo encargo se rige por un contrato escrito independiente."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Intellectual property", "es": "Propiedad intelectual"},
+          "blocks": [
+            {"p": {
+              "en": "All content on this site, including its text, design, code, graphics and the {brand} name and logo, belongs to {entity} or its licensors and is protected by applicable intellectual property laws. It may not be reproduced, distributed, modified or otherwise used without our prior written permission.",
+              "es": "Todo el contenido de este sitio, incluidos sus textos, diseño, código, gráficos y el nombre y el logotipo de {brand}, pertenece a {entity} o a sus licenciantes y está protegido por la legislación de propiedad intelectual aplicable. No puede reproducirse, distribuirse, modificarse ni utilizarse de ningún otro modo sin nuestra autorización previa por escrito."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Third-party names and trademarks", "es": "Nombres y marcas de terceros"},
+          "blocks": [
+            {"p": {
+              "en": "Any names, logos or trademarks of third parties that may appear on this site belong to their respective owners and are used for identification only. Their mention does not imply any partnership, sponsorship or endorsement unless expressly stated.",
+              "es": "Los nombres, logotipos o marcas de terceros que puedan aparecer en este sitio pertenecen a sus respectivos titulares y se utilizan únicamente con fines de identificación. Su mención no implica asociación, patrocinio ni respaldo alguno, salvo que se indique expresamente."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "External links", "es": "Enlaces externos"},
+          "blocks": [
+            {"p": {
+              "en": "This site may contain links to third-party websites that we do not control. We are not responsible for their content, availability or privacy practices, and a link does not imply endorsement.",
+              "es": "Este sitio puede contener enlaces a sitios de terceros que no controlamos. No respondemos de su contenido, disponibilidad ni prácticas de privacidad, y la inclusión de un enlace no implica respaldo."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Disclaimer and limitation of liability", "es": "Exención y limitación de responsabilidad"},
+          "blocks": [
+            {"p": {
+              "en": "The site is provided “as is” and “as available”, without warranties of any kind, express or implied. To the fullest extent permitted by applicable law, {entity} shall not be liable for any direct, indirect, incidental or consequential damages arising from the use of, or inability to use, this site.",
+              "es": "El sitio se ofrece «tal cual» y «según disponibilidad», sin garantías de ningún tipo, expresas o implícitas. En la máxima medida permitida por la ley aplicable, {entity} no será responsable de los daños directos, indirectos, incidentales o consecuentes derivados del uso de este sitio o de la imposibilidad de utilizarlo."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Governing law", "es": "Ley aplicable"},
+          "blocks": [
+            {"p": {
+              "en": "This legal notice and the use of the site are governed by the laws of the State of New Mexico, United States, without regard to its conflict-of-laws principles. Client engagements are governed by the terms of their own written agreements.",
+              "es": "Este aviso legal y el uso del sitio se rigen por las leyes del Estado de Nuevo México (Estados Unidos), con independencia de sus normas sobre conflicto de leyes. Los encargos de clientes se rigen por los términos de sus propios contratos escritos."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Changes", "es": "Cambios"},
+          "blocks": [
+            {"p": {
+              "en": "We may update this legal notice from time to time. The version published on this page is always the one in force.",
+              "es": "Podemos actualizar este aviso legal cuando sea necesario. La versión publicada en esta página es siempre la vigente."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Contact", "es": "Contacto"},
+          "blocks": [
+            {"p": {
+              "en": "Questions about this notice: {email}.",
+              "es": "Para cualquier consulta sobre este aviso: {email}."
+            }}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "privacy",
+      "path": {"en": "/privacy", "es": "/es/privacidad"},
+      "label": {"en": "Privacy", "es": "Privacidad"},
+      "title": {"en": "Privacy policy", "es": "Política de privacidad"},
+      "ref": {"en": "privacy policy", "es": "política de privacidad"},
+      "desc": {
+        "en": "How SlapSec LLC handles the personal data it collects through slapsec.com, and the rights you can exercise.",
+        "es": "Cómo trata SlapSec LLC los datos personales que recoge a través de slapsec.com y qué derechos puede ejercer."
+      },
+      "lead": [
+        {"intro": {
+          "en": "This policy explains how {entity} (“{brand}”, “we”, “us”) handles personal data collected through {domain}. We collect only what we need to reply to you and to run the site.",
+          "es": "Esta política explica cómo trata {entity} («{brand}», «nosotros») los datos personales que recoge a través de {domain}. Solo recogemos lo necesario para responderle y para mantener el sitio en funcionamiento."
+        }}
+      ],
+      "sections": [
+        {
+          "h": {"en": "Data controller", "es": "Responsable del tratamiento"},
+          "blocks": [
+            {"dl": [
+              {"dt": {"en": "Controller", "es": "Responsable"},
+               "dd": {"en": "{entity}, 412 W 7th St, Clovis, NM 88101, USA", "es": "{entity}, 412 W 7th St, Clovis, NM 88101, EE. UU."}},
+              {"dt": {"en": "Privacy contact", "es": "Contacto de privacidad"},
+               "dd": {"en": "{email}", "es": "{email}"}}
+            ]},
+            {"note": {
+              "label": {"en": "EU, EEA and UK visitors", "es": "Visitantes de la UE, el EEE y el Reino Unido"},
+              "text": {
+                "en": "Because we offer services to clients in the European Union, the EU GDPR and the UK GDPR may apply to your personal data. The sections below set out the legal bases we rely on and the rights you can exercise. As a controller based in the United States, we handle these requests at {email}.",
+                "es": "Como prestamos servicios a clientes de la Unión Europea, el RGPD y el RGPD del Reino Unido pueden aplicarse a sus datos personales. Los apartados siguientes recogen las bases jurídicas en que nos apoyamos y los derechos que puede ejercer. Como responsable establecido en Estados Unidos, atendemos estas solicitudes en {email}."
+              }
+            }}
+          ]
+        },
+        {
+          "h": {"en": "What we collect", "es": "Qué datos recogemos"},
+          "blocks": [
+            {"h3": {"en": "Information you give us", "es": "Datos que usted nos facilita"}},
+            {"p": {
+              "en": "When you email us, we receive the details you choose to include, such as your name, your organisation, your contact details and the content of your message.",
+              "es": "Cuando nos escribe, recibimos los datos que decide incluir, como su nombre, su organización, sus datos de contacto y el contenido del mensaje."
+            }},
+            {"h3": {"en": "Technical data", "es": "Datos técnicos"}},
+            {"p": {
+              "en": "When you visit the site, our hosting and content delivery provider automatically processes standard technical information, such as your IP address, browser type, the pages requested and the time of each request, to deliver and secure the site. The country a request comes from, derived from its IP address, is used at that moment to show visitors browsing from Spain the Spanish version first; we do not keep it.",
+              "es": "Cuando visita el sitio, nuestro proveedor de alojamiento y distribución de contenidos trata de forma automática información técnica estándar, como su dirección IP, el tipo de navegador, las páginas solicitadas y la hora de cada solicitud, para servir el sitio y protegerlo. El país desde el que llega cada solicitud, deducido de su dirección IP, se utiliza en ese momento para mostrar primero la versión en español a quien navega desde España; no lo conservamos."
+            }},
+            {"h3": {"en": "A functional cookie", "es": "Una cookie funcional"}},
+            {"p": {
+              "en": "If you choose English on the Spanish version, a functional cookie remembers that choice; our {cookies} describes it. We do not use advertising or tracking cookies, we do not run web analytics, and the site loads nothing from third parties.",
+              "es": "Si elige el inglés desde la versión en español, una cookie funcional recuerda esa elección; se describe en nuestra {cookies}. No utilizamos cookies publicitarias ni de seguimiento, no hacemos analítica web y el sitio no carga nada de terceros."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Purposes and legal bases", "es": "Finalidades y bases jurídicas"},
+          "blocks": [
+            {"ul": {
+              "en": [
+                "To reply to your enquiry and to take the steps you ask for before a possible engagement: pre-contractual steps or the performance of a contract (GDPR Art. 6(1)(b)) and, where applicable, your consent (Art. 6(1)(a)).",
+                "To run and secure the site: our legitimate interests (Art. 6(1)(f)).",
+                "To comply with legal obligations, where they apply (Art. 6(1)(c))."
+              ],
+              "es": [
+                "Para responder a su consulta y adoptar las medidas que solicite antes de un posible encargo: aplicación de medidas precontractuales o ejecución de un contrato (art. 6.1.b del RGPD) y, en su caso, su consentimiento (art. 6.1.a).",
+                "Para mantener el sitio en funcionamiento y protegerlo: nuestro interés legítimo (art. 6.1.f).",
+                "Para cumplir obligaciones legales, cuando proceda (art. 6.1.c)."
+              ]
+            }},
+            {"p": {
+              "en": "For visitors in the United States, we process this data in accordance with applicable US law.",
+              "es": "Respecto de los visitantes de Estados Unidos, tratamos estos datos conforme a la legislación estadounidense aplicable."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Who we share it with", "es": "Con quién los compartimos"},
+          "blocks": [
+            {"p": {
+              "en": "We do not sell your personal data. We share it only with the service providers that help us run the site and our email, acting on our instructions as processors:",
+              "es": "No vendemos sus datos personales. Solo los compartimos con los proveedores que nos ayudan a mantener el sitio y el correo electrónico, que actúan siguiendo nuestras instrucciones como encargados del tratamiento:"
+            }},
+            {"ul": {
+              "en": [
+                "Netlify, Inc., for hosting and content delivery;",
+                "our email provider, to receive and reply to your messages."
+              ],
+              "es": [
+                "Netlify, Inc., para el alojamiento y la distribución del sitio;",
+                "nuestro proveedor de correo electrónico, para recibir y responder a sus mensajes."
+              ]
+            }},
+            {"p": {
+              "en": "We may also disclose data where the law requires it or to protect our rights.",
+              "es": "También podemos comunicar datos cuando lo exija la ley o para defender nuestros derechos."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "International transfers", "es": "Transferencias internacionales"},
+          "blocks": [
+            {"p": {
+              "en": "We are based in the United States. If you are in the EEA or the UK, your personal data is transferred to and processed in the United States. Where required, we rely on appropriate safeguards for these transfers, such as the European Commission’s Standard Contractual Clauses. By contacting us, you understand that your data will be processed in the United States.",
+              "es": "Estamos establecidos en Estados Unidos. Si se encuentra en el EEE o en el Reino Unido, sus datos personales se transfieren a Estados Unidos y se tratan allí. Cuando es necesario, aplicamos garantías adecuadas para estas transferencias, como las cláusulas contractuales tipo de la Comisión Europea. Al ponerse en contacto con nosotros, entiende que sus datos se tratarán en Estados Unidos."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "How long we keep it", "es": "Plazo de conservación"},
+          "blocks": [
+            {"p": {
+              "en": "We keep enquiry data only for as long as we need it to handle your request and any business relationship that follows, plus any period the law requires. After that, we delete or anonymise it.",
+              "es": "Conservamos los datos de cada consulta solo mientras los necesitamos para atenderla y para la relación profesional que pueda derivarse de ella, más el plazo que exija la ley. Después, los suprimimos o anonimizamos."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Your rights", "es": "Sus derechos"},
+          "blocks": [
+            {"h3": {"en": "EEA and UK (GDPR)", "es": "EEE y Reino Unido (RGPD)"}},
+            {"p": {
+              "en": "You have the right of access, rectification, erasure, restriction of processing, data portability and objection, and you may withdraw your consent at any time. You may also lodge a complaint with your local data protection authority.",
+              "es": "Tiene derecho de acceso, rectificación, supresión, limitación del tratamiento, portabilidad y oposición, y puede retirar su consentimiento en cualquier momento. También puede presentar una reclamación ante su autoridad de control de protección de datos; en España, la Agencia Española de Protección de Datos."
+            }},
+            {"h3": {"en": "California (CCPA and CPRA)", "es": "California (CCPA y CPRA)"}},
+            {"p": {
+              "en": "You have the right to know, access, delete and correct your personal information, and to opt out of its “sale” or “sharing”. We do not sell or share your personal information, and we will not discriminate against you for exercising your rights.",
+              "es": "Tiene derecho a conocer, acceder, suprimir y rectificar su información personal, y a oponerse a su «venta» o «cesión». No vendemos ni cedemos su información personal, y no le discriminaremos por ejercer sus derechos."
+            }},
+            {"p": {
+              "en": "To exercise any of these rights, write to {email}. We may need to verify your identity before acting on a request.",
+              "es": "Para ejercer cualquiera de estos derechos, escriba a {email}. Es posible que necesitemos verificar su identidad antes de atender la solicitud."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Security", "es": "Seguridad"},
+          "blocks": [
+            {"p": {
+              "en": "We apply reasonable technical and organisational measures to protect personal data, and the site is served only over HTTPS. No method of transmission or storage is completely secure, but we work to protect your information appropriately.",
+              "es": "Aplicamos medidas técnicas y organizativas razonables para proteger los datos personales, y el sitio se sirve únicamente mediante HTTPS. Ningún método de transmisión o almacenamiento es completamente seguro, pero trabajamos para proteger su información de forma adecuada."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Children", "es": "Menores"},
+          "blocks": [
+            {"p": {
+              "en": "This site is intended for professional users and is not directed at children under 16. We do not knowingly collect data from children.",
+              "es": "Este sitio está dirigido a usuarios profesionales, no a menores de 16 años. No recogemos conscientemente datos de menores."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Changes and contact", "es": "Cambios y contacto"},
+          "blocks": [
+            {"p": {
+              "en": "We may update this policy; the date at the top shows the version in force. Questions or requests: {email}.",
+              "es": "Podemos actualizar esta política; la fecha que figura al principio indica la versión vigente. Consultas o solicitudes: {email}."
+            }}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cookies",
+      "path": {"en": "/cookies", "es": "/es/cookies"},
+      "label": {"en": "Cookies", "es": "Cookies"},
+      "title": {"en": "Cookie policy", "es": "Política de cookies"},
+      "ref": {"en": "cookie policy", "es": "política de cookies"},
+      "desc": {
+        "en": "The one functional cookie slapsec.com sets, and only if you ask for it. No analytics, no advertising, nothing from third parties.",
+        "es": "La única cookie funcional que utiliza slapsec.com, y solo si usted lo pide. Sin analítica, sin publicidad y sin nada de terceros."
+      },
+      "lead": [
+        {"intro": {
+          "en": "This policy explains the storage technologies used by {domain}, operated by {entity}. In short: one functional cookie, set only if you ask for it. No analytics, no advertising and nothing loaded from third parties.",
+          "es": "Esta política explica las tecnologías de almacenamiento que utiliza {domain}, titularidad de {entity}. En resumen: una única cookie funcional, que solo se instala si usted lo pide. Sin analítica, sin publicidad y sin nada cargado de terceros."
+        }}
+      ],
+      "sections": [
+        {
+          "h": {"en": "The one cookie we set", "es": "La única cookie que utilizamos"},
+          "blocks": [
+            {"p": {
+              "en": "Visitors browsing from Spain are shown the Spanish version of the site first. If you choose English instead, we set one cookie so that your choice is respected on later visits. Choosing Spanish again removes it.",
+              "es": "A quien navega desde España se le muestra primero la versión en español del sitio. Si elige el inglés, instalamos una cookie para respetar esa elección en visitas posteriores. Si vuelve a elegir el español, la cookie se elimina."
+            }},
+            {"dl": [
+              {"dt": {"en": "Name", "es": "Nombre"}, "dd": {"en": "`nf_stay`", "es": "`nf_stay`"}},
+              {"dt": {"en": "Purpose", "es": "Finalidad"},
+               "dd": {"en": "Remembers that you chose English, so the language redirect does not override your choice.",
+                      "es": "Recuerda que eligió el inglés, para que la redirección de idioma no anule su elección."}},
+              {"dt": {"en": "Type", "es": "Tipo"},
+               "dd": {"en": "First party, functional", "es": "Propia, técnica"}},
+              {"dt": {"en": "Duration", "es": "Duración"},
+               "dd": {"en": "One year", "es": "Un año"}}
+            ]}
+          ]
+        },
+        {
+          "h": {"en": "No analytics or advertising", "es": "Sin analítica ni publicidad"},
+          "blocks": [
+            {"p": {
+              "en": "We do not use web analytics, tracking pixels, advertising cookies or any similar technology to profile visitors. Nothing is stored in your browser’s local storage either.",
+              "es": "No utilizamos analítica web, píxeles de seguimiento, cookies publicitarias ni ninguna otra tecnología similar para elaborar perfiles de los visitantes. Tampoco guardamos nada en el almacenamiento local de su navegador."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Nothing from third parties", "es": "Nada de terceros"},
+          "blocks": [
+            {"p": {
+              "en": "Every file the site uses, its fonts included, is served from {domain} itself, and the site makes no request to any other domain.",
+              "es": "Todos los archivos que utiliza el sitio, incluidas sus tipografías, se sirven desde el propio {domain}, y el sitio no realiza ninguna solicitud a otros dominios."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Managing the cookie", "es": "Cómo gestionar la cookie"},
+          "blocks": [
+            {"p": {
+              "en": "You can delete the cookie at any time from your browser settings, or by choosing Spanish on the site. Without it, visitors browsing from Spain see the Spanish version first.",
+              "es": "Puede eliminar la cookie en cualquier momento desde la configuración de su navegador o eligiendo el español en el sitio. Sin ella, quien navega desde España ve primero la versión en español."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Legal basis", "es": "Base jurídica"},
+          "blocks": [
+            {"p": {
+              "en": "The cookie is set only when you ask for it, to keep the site in the language you chose. It is strictly necessary for that purpose, so it is exempt from consent under Article 22.2 of Spain’s Information Society Services Act (LSSI) and the ePrivacy rules it implements. If you have any concern, write to {email}.",
+              "es": "La cookie solo se instala cuando usted lo pide, para mantener el sitio en el idioma que ha elegido. Es estrictamente necesaria para esa finalidad, por lo que está exenta de consentimiento conforme al artículo 22.2 de la Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico (LSSI). Si tiene cualquier duda, escriba a {email}."
+            }}
+          ]
+        },
+        {
+          "h": {"en": "Changes and contact", "es": "Cambios y contacto"},
+          "blocks": [
+            {"p": {
+              "en": "We may update this policy; the date at the top shows the version in force. Questions: {email}. See also our {privacy}.",
+              "es": "Podemos actualizar esta política; la fecha que figura al principio indica la versión vigente. Consultas: {email}. Consulte también nuestra {privacy}."
+            }}
+          ]
+        }
+      ]
+    }
+  ]
+}

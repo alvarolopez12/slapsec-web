@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="{{HTML_LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+{{LINKS}}
+<meta name="theme-color" content="#050505">
+<meta name="color-scheme" content="light">
+{{ICONS}}
+{{FONT_PRELOADS}}
+<style>
+{{FONT_FACES}}
+/* A legal page: the home page's header and footer around a document set for reading. The title,
+   its date and the list of sections hold still on the left while the text scrolls on the right.
+   No script: the language switch is a link to the same document in the other language. */
+@font-face{font-family:"Newsreader fallback";src:local("Iowan Old Style"),local("IowanOldStyle-Roman");size-adjust:94%;ascent-override:78.7%;descent-override:27.7%;line-gap-override:0%}
+@font-face{font-family:"Newsreader fallback G";src:local("Georgia");size-adjust:94.5%;ascent-override:78.3%;descent-override:27.5%;line-gap-override:0%}
+@font-face{font-family:"Schibsted fallback";src:local("Arial"),local("ArialMT");size-adjust:103.95%;ascent-override:93.94%;descent-override:24.8%;line-gap-override:0%}
+@font-face{font-family:"Mono fallback";src:local("Courier New"),local("CourierNewPSMT");size-adjust:99.98%;ascent-override:102.02%;descent-override:30%;line-gap-override:0%}
+:root{
+  --black:#050505;--paper:#f4f4f2;--ink:#0a0a0b;--ink-body:#26272a;--ink-2:#5d5d5a;--line:#d8d8d5;
+  --on-dark:#f4f4f2;--on-dark-2:#9a9a97;--on-dark-3:#4a4a4d;--line-dark:#232326;--green:#67e18f;
+  --serif:"Newsreader", "Newsreader fallback", "Newsreader fallback G", Georgia, serif;
+  --sans:"Schibsted Grotesk", "Schibsted fallback", Arial, sans-serif;
+  --mono:"JetBrains Mono", "Mono fallback", "Courier New", monospace;
+  --fs-meta:.6875rem;--fs-ui:.875rem;--fs-body:1.0625rem;
+  --fs-lead:clamp(1.25rem, .4vw + 1.125rem, 1.4375rem);
+  --fs-title:clamp(2rem, 1.9vw + 1.1rem, 3.25rem);
+  --fs-h2:clamp(1.375rem, .6vw + 1.2rem, 1.75rem);
+  --gutter:max(clamp(20px, 5vw, 72px), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  --gap:clamp(18px, 2.4vw, 36px);--band:clamp(84px, 9vw, 148px);--max:1360px;--t:.3s cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--black);scrollbar-gutter:stable}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink-body);font-family:var(--sans);font-size:var(--fs-body);
+  line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-kerning:normal;
+  -webkit-tap-highlight-color:transparent}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+a{color:inherit}
+::selection{background:var(--ink);color:var(--paper)}
+.top ::selection,.foot ::selection{background:var(--on-dark);color:var(--black)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.top :focus-visible,.foot :focus-visible{outline-color:var(--on-dark)}
+main:focus{outline:none}
+.skip{position:absolute;left:max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));top:-80px;z-index:40;
+  background:var(--on-dark);color:var(--black);padding:10px 14px;font:400 var(--fs-ui)/1 var(--sans);text-decoration:none}
+.skip:focus{top:104px}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:40px}
+
+/* ---------- header and wordmark, as on the home page ---------- */
+.top{background:var(--black);padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:26px}
+.lockup{display:flex;align-items:center;gap:18px;min-width:0}
+.logo{display:inline-flex;text-decoration:none;flex-shrink:0}
+{{LOGO_CSS}}
+.foot .logo-mark::before,.foot .logo-mark::after{border-color:var(--on-dark)}
+.desc{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.6;
+  width:18.5rem;color:var(--on-dark-2);padding-left:18px;border-left:1px solid var(--line-dark);text-wrap:balance}
+.lang{display:flex;align-items:center;gap:10px;font:400 var(--fs-meta)/1.45 var(--mono);color:var(--on-dark-3)}
+.lang a{position:relative;font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--on-dark-2);text-decoration:none;padding:6px 0;padding-inline-start:.16em;margin-inline:-.16em;line-height:1.45;
+  display:inline-block;white-space:nowrap;transition:color var(--t)}
+.lang a::after{content:"";position:absolute;inset:-8px -6px}
+.lang a[aria-current]{color:var(--on-dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+
+/* ---------- the document ---------- */
+.doc{padding-block:clamp(56px, 7vw, 112px) var(--band)}
+.doc-head{grid-column:1 / span 4;align-self:start}
+.kicker{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.4;
+  color:var(--ink-2);margin-bottom:28px}
+.doc h1{font-family:var(--serif);font-weight:300;font-size:var(--fs-title);line-height:1.08;letter-spacing:-.018em;
+  color:var(--ink);text-wrap:balance;overflow-wrap:break-word}
+.updated{margin-top:24px;font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;
+  line-height:1.6;color:var(--ink-2)}
+.toc{margin-top:48px;padding-top:20px;border-top:1px solid var(--line)}
+.toc-h{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);
+  line-height:1.4;margin-bottom:12px}
+.toc ol{list-style:none;padding:0}
+.toc a{display:flex;gap:12px;padding-block:6px;font-size:var(--fs-ui);line-height:1.45;color:var(--ink-body);
+  text-decoration:none;transition:color var(--t)}
+.toc .n{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.12em;color:var(--ink-2);padding-top:.2em;flex:none}
+.doc-body{grid-column:6 / span 7;max-width:40rem}
+.doc-body > * + *{margin-top:18px}
+.intro{font-family:var(--serif);font-weight:300;font-size:var(--fs-lead);line-height:1.42;letter-spacing:-.005em;color:var(--ink);
+  text-wrap:pretty}
+.doc-body h2{margin-top:64px;padding-top:28px;border-top:1px solid var(--line);font-family:var(--serif);font-weight:300;
+  font-size:var(--fs-h2);line-height:1.2;letter-spacing:-.01em;color:var(--ink);text-wrap:balance;scroll-margin-top:32px}
+.doc-body > h2:first-child{margin-top:0}
+.intro + h2{margin-top:56px}
+.doc-body h2 .n{display:block;margin-bottom:14px;font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;
+  line-height:1.4;color:var(--ink-2)}
+.doc-body h2 + *{margin-top:20px}
+.doc-body h3{margin-top:32px;font-family:var(--mono);font-weight:400;font-size:var(--fs-meta);letter-spacing:.16em;
+  text-transform:uppercase;line-height:1.5;color:var(--ink-2)}
+.doc-body h3 + *{margin-top:10px}
+.doc-body p,.doc-body li{text-wrap:pretty}
+.doc-body ul{padding-left:1.15em}
+.doc-body li{padding-left:.35em}
+.doc-body li + li{margin-top:10px}
+.doc-body li::marker{color:var(--ink-2)}
+.doc-body dl{border-top:1px solid var(--line)}
+.doc-body dl > div{display:grid;grid-template-columns:minmax(0,10.5rem) minmax(0,1fr);gap:4px 24px;padding-block:14px 15px;
+  border-bottom:1px solid var(--line)}
+.doc-body dt{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.5;
+  color:var(--ink-2);padding-top:.4em}
+.doc-body dd{color:var(--ink);overflow-wrap:anywhere}
+.note{padding:2px 0 2px 22px;border-left:1px solid var(--ink)}
+.note-label{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.5;
+  color:var(--ink-2);margin-bottom:8px}
+.doc-body a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;
+  text-decoration-color:var(--ink-2);transition:text-decoration-color var(--t)}
+code{font-family:var(--mono);font-size:.875em;letter-spacing:0}
+
+/* ---------- footer, as on the home page ---------- */
+.foot{background:var(--black);color:var(--on-dark-2);padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
+.foot .wrap{display:flex;flex-direction:column;gap:44px}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:44px;border-top:1px solid var(--line-dark)}
+.foot-base{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase}
+.foot-base > p:last-child,.foot-base ul{margin-inline-end:-.16em}
+.foot-base ul{display:flex;flex-wrap:wrap;gap:12px 26px;list-style:none;padding:0}
+.foot-base a{text-decoration:none;transition:color var(--t)}
+.foot-base a[aria-current]{color:var(--on-dark)}
+
+@media (hover: hover){
+  .lang a:hover,.foot-base a:hover{color:var(--on-dark)}
+  .toc a:hover{color:var(--ink)}
+  .doc-body a:hover{text-decoration-color:var(--ink)}
+}
+@media screen and (hover: hover) and (prefers-reduced-motion: no-preference){
+  .logo .logo-mark::before,.logo .logo-mark::after{transition:transform .45s cubic-bezier(.16,1,.3,1)}
+  .logo:hover .logo-mark::before{transform:translate(2px,2px)}
+  .logo:hover .logo-mark::after{transform:translate(-2px,-2px)}
+}
+/* the title, its date and the sections stay in view where the screen is tall enough to hold them */
+@media (min-width: 861px) and (min-height: 760px){
+  .doc-head{position:sticky;top:40px}
+}
+@media (max-width: 1259px){.top .desc{display:none}}
+@media (max-width: 960px){.desc{display:none}}
+@media (max-width: 860px){
+  .doc-head,.doc-body{grid-column:1 / -1}
+  .toc{display:none}
+  .doc-body{max-width:34em}
+}
+@media (max-width: 520px){
+  .top .wrap{padding-block:18px}
+  .doc-body dl > div{grid-template-columns:minmax(0,1fr)}
+  .doc-body dt{padding-top:0}
+  .foot-top{flex-direction:column;align-items:flex-start}
+}
+@media (orientation: landscape) and (max-height: 500px){.top .wrap{padding-block:14px}}
+@media (min-width: 1921px) and (min-height: 1000px){
+  html{font-size:clamp(100%, calc(100% + (min(100vw, 177.78vh) - 1920px) * .0045), 137.5%)}
+  :root{--max:85rem;--gutter:4.5rem;--gap:2.25rem;--band:9.25rem}
+}
+@media (prefers-contrast: more){
+  :root{--ink-body:#0a0a0b;--ink-2:#3d3d3a;--line:#8c8c88;--on-dark-2:#cfcfcb;--on-dark-3:#8c8c88;--line-dark:#5a5a5e}
+}
+@media print{
+  @page{size:A4;margin:16mm 16mm 18mm}
+  :root{--serif:"Newsreader Print", Georgia, serif}
+  html,body,.top,.foot{background:#fff!important}
+  body{font-size:10.5pt;line-height:1.5}
+  .skip,.lang,.toc,.desc{display:none!important}
+  .wrap{max-width:none;padding-inline:0}
+  .top .wrap{padding-block:0 8mm}
+  .logo-word,.doc h1,.doc-body h2,.intro,.doc-body dd{color:#0a0a0b!important}
+  .logo-mark::before,.logo-mark::after{border-color:#0a0a0b!important}
+  .doc{padding-block:0 8mm}
+  .grid{display:block}
+  .doc-body{max-width:none;margin-top:8mm}
+  .doc-body h2{margin-top:9mm;padding-top:5mm;break-after:avoid}
+  .doc-body h3{break-after:avoid}
+  .doc-body p,.doc-body li,.doc-body dl > div{break-inside:avoid}
+  .foot{color:#5d5d5a;padding-block:0}
+  .foot-top{border-top-color:#d8d8d5;padding-top:8mm}
+  .foot-base a{text-decoration:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">{{SKIP}}</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="lockup">{{LOGO_HEAD}}</div>
+    {{LANG_SWITCH}}
+  </div>
+</header>
+
+<main id="contenido" tabindex="-1">
+  <article class="doc">
+    <div class="wrap grid">
+      <header class="doc-head">
+        <p class="kicker">{{KICKER}}</p>
+        <h1>{{H1}}</h1>
+        <p class="updated">{{UPDATED}}</p>
+        <nav class="toc" aria-labelledby="toc-h">
+          <p class="toc-h" id="toc-h">{{CONTENTS}}</p>
+          <ol>
+{{TOC}}
+          </ol>
+        </nav>
+      </header>
+      <div class="doc-body">
+{{BODY}}
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="lockup">{{LOGO_FOOT}}</div>
+    </div>
+    <div class="foot-base">
+      <p>{{COPYRIGHT}}</p>
+{{FOOT_NOTE}}
+    </div>
+  </div>
+</footer>
+</body>
+</html>

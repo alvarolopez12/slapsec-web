@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Política de privacidad | SlapSec</title>
+<meta name="description" content="Cómo trata SlapSec LLC los datos personales que recoge a través de slapsec.com y qué derechos puede ejercer.">
+<link rel="canonical" href="https://slapsec.com/es/privacidad">
+<link rel="alternate" hreflang="en" href="https://slapsec.com/privacy">
+<link rel="alternate" hreflang="es" href="https://slapsec.com/es/privacidad">
+<link rel="alternate" hreflang="x-default" href="https://slapsec.com/privacy">
+<meta name="theme-color" content="#050505">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/newsreader-300.5f3e1bc9.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/newsreader-300.5f3e1bc9.woff2) format("woff2")}
+@font-face{font-family:"Newsreader";font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/newsreader-300-italic-hero.61c8e439.woff2) format("woff2")}
+@font-face{font-family:"Schibsted Grotesk";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/schibsted-grotesk-400.a0ddc608.woff2) format("woff2")}
+@font-face{font-family:"Schibsted Grotesk";font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/schibsted-grotesk-800-wordmark.eedc6c22.woff2) format("woff2")}
+@font-face{font-family:"Schibsted Grotesk";font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/schibsted-grotesk-italic-loans.39495f6b.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400.d3dcdccd.woff2) format("woff2")}
+@font-face{font-family:"Newsreader Print";font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/newsreader-300-print.04a434c2.woff2) format("woff2")}
+@font-face{font-family:"Newsreader Print";font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/newsreader-300-italic-print.a84d8399.woff2) format("woff2")}
+@font-face{font-family:"Newsreader fallback";src:local("Iowan Old Style"),local("IowanOldStyle-Roman");size-adjust:94%;ascent-override:78.7%;descent-override:27.7%;line-gap-override:0%}
+@font-face{font-family:"Newsreader fallback G";src:local("Georgia");size-adjust:94.5%;ascent-override:78.3%;descent-override:27.5%;line-gap-override:0%}
+@font-face{font-family:"Schibsted fallback";src:local("Arial"),local("ArialMT");size-adjust:103.95%;ascent-override:93.94%;descent-override:24.8%;line-gap-override:0%}
+@font-face{font-family:"Mono fallback";src:local("Courier New"),local("CourierNewPSMT");size-adjust:99.98%;ascent-override:102.02%;descent-override:30%;line-gap-override:0%}
+:root{
+  --black:#050505;--paper:#f4f4f2;--ink:#0a0a0b;--ink-body:#26272a;--ink-2:#5d5d5a;--line:#d8d8d5;
+  --on-dark:#f4f4f2;--on-dark-2:#9a9a97;--on-dark-3:#4a4a4d;--line-dark:#232326;--green:#67e18f;
+  --serif:"Newsreader", "Newsreader fallback", "Newsreader fallback G", Georgia, serif;
+  --sans:"Schibsted Grotesk", "Schibsted fallback", Arial, sans-serif;
+  --mono:"JetBrains Mono", "Mono fallback", "Courier New", monospace;
+  --fs-meta:.6875rem;--fs-ui:.875rem;--fs-body:1.0625rem;
+  --fs-lead:clamp(1.25rem, .4vw + 1.125rem, 1.4375rem);
+  --fs-title:clamp(2rem, 1.9vw + 1.1rem, 3.25rem);
+  --fs-h2:clamp(1.375rem, .6vw + 1.2rem, 1.75rem);
+  --gutter:max(clamp(20px, 5vw, 72px), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  --gap:clamp(18px, 2.4vw, 36px);--band:clamp(84px, 9vw, 148px);--max:1360px;--t:.3s cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--black);scrollbar-gutter:stable}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink-body);font-family:var(--sans);font-size:var(--fs-body);
+  line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-kerning:normal;
+  -webkit-tap-highlight-color:transparent}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+a{color:inherit}
+::selection{background:var(--ink);color:var(--paper)}
+.top ::selection,.foot ::selection{background:var(--on-dark);color:var(--black)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.top :focus-visible,.foot :focus-visible{outline-color:var(--on-dark)}
+main:focus{outline:none}
+.skip{position:absolute;left:max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));top:-80px;z-index:40;
+  background:var(--on-dark);color:var(--black);padding:10px 14px;font:400 var(--fs-ui)/1 var(--sans);text-decoration:none}
+.skip:focus{top:104px}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:40px}
+
+.top{background:var(--black);padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:26px}
+.lockup{display:flex;align-items:center;gap:18px;min-width:0}
+.logo{display:inline-flex;text-decoration:none;flex-shrink:0}
+.logo-mark{position:relative;display:inline-block;font-size:1.3125rem;padding:.2em .385em .2em .366em}
+.logo-word{font-family:var(--sans);font-weight:800;font-size:1em;letter-spacing:-.025em;line-height:1;display:block;color:var(--on-dark)}
+.logo-mark::before,.logo-mark::after{content:"";position:absolute;width:.405em;height:.405em;border:0 solid var(--green)}
+.logo-mark::before{top:0;left:0;border-width:max(2px,.085em) 0 0 max(2px,.085em)}
+.logo-mark::after{bottom:0;right:0;border-width:0 max(2px,.085em) max(2px,.085em) 0}
+.foot .logo-mark::before,.foot .logo-mark::after{border-color:var(--on-dark)}
+.desc{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.6;
+  width:18.5rem;color:var(--on-dark-2);padding-left:18px;border-left:1px solid var(--line-dark);text-wrap:balance}
+.lang{display:flex;align-items:center;gap:10px;font:400 var(--fs-meta)/1.45 var(--mono);color:var(--on-dark-3)}
+.lang a{position:relative;font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--on-dark-2);text-decoration:none;padding:6px 0;padding-inline-start:.16em;margin-inline:-.16em;line-height:1.45;
+  display:inline-block;white-space:nowrap;transition:color var(--t)}
+.lang a::after{content:"";position:absolute;inset:-8px -6px}
+.lang a[aria-current]{color:var(--on-dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+
+.doc{padding-block:clamp(56px, 7vw, 112px) var(--band)}
+.doc-head{grid-column:1 / span 4;align-self:start}
+.kicker{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.4;
+  color:var(--ink-2);margin-bottom:28px}
+.doc h1{font-family:var(--serif);font-weight:300;font-size:var(--fs-title);line-height:1.08;letter-spacing:-.018em;
+  color:var(--ink);text-wrap:balance;overflow-wrap:break-word}
+.updated{margin-top:24px;font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;
+  line-height:1.6;color:var(--ink-2)}
+.toc{margin-top:48px;padding-top:20px;border-top:1px solid var(--line)}
+.toc-h{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);
+  line-height:1.4;margin-bottom:12px}
+.toc ol{list-style:none;padding:0}
+.toc a{display:flex;gap:12px;padding-block:6px;font-size:var(--fs-ui);line-height:1.45;color:var(--ink-body);
+  text-decoration:none;transition:color var(--t)}
+.toc .n{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.12em;color:var(--ink-2);padding-top:.2em;flex:none}
+.doc-body{grid-column:6 / span 7;max-width:40rem}
+.doc-body > * + *{margin-top:18px}
+.intro{font-family:var(--serif);font-weight:300;font-size:var(--fs-lead);line-height:1.42;letter-spacing:-.005em;color:var(--ink);
+  text-wrap:pretty}
+.doc-body h2{margin-top:64px;padding-top:28px;border-top:1px solid var(--line);font-family:var(--serif);font-weight:300;
+  font-size:var(--fs-h2);line-height:1.2;letter-spacing:-.01em;color:var(--ink);text-wrap:balance;scroll-margin-top:32px}
+.doc-body > h2:first-child{margin-top:0}
+.intro + h2{margin-top:56px}
+.doc-body h2 .n{display:block;margin-bottom:14px;font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;
+  line-height:1.4;color:var(--ink-2)}
+.doc-body h2 + *{margin-top:20px}
+.doc-body h3{margin-top:32px;font-family:var(--mono);font-weight:400;font-size:var(--fs-meta);letter-spacing:.16em;
+  text-transform:uppercase;line-height:1.5;color:var(--ink-2)}
+.doc-body h3 + *{margin-top:10px}
+.doc-body p,.doc-body li{text-wrap:pretty}
+.doc-body ul{padding-left:1.15em}
+.doc-body li{padding-left:.35em}
+.doc-body li + li{margin-top:10px}
+.doc-body li::marker{color:var(--ink-2)}
+.doc-body dl{border-top:1px solid var(--line)}
+.doc-body dl > div{display:grid;grid-template-columns:minmax(0,10.5rem) minmax(0,1fr);gap:4px 24px;padding-block:14px 15px;
+  border-bottom:1px solid var(--line)}
+.doc-body dt{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.5;
+  color:var(--ink-2);padding-top:.4em}
+.doc-body dd{color:var(--ink);overflow-wrap:anywhere}
+.note{padding:2px 0 2px 22px;border-left:1px solid var(--ink)}
+.note-label{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.5;
+  color:var(--ink-2);margin-bottom:8px}
+.doc-body a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;
+  text-decoration-color:var(--ink-2);transition:text-decoration-color var(--t)}
+code{font-family:var(--mono);font-size:.875em;letter-spacing:0}
+
+.foot{background:var(--black);color:var(--on-dark-2);padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
+.foot .wrap{display:flex;flex-direction:column;gap:44px}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:44px;border-top:1px solid var(--line-dark)}
+.foot-base{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase}
+.foot-base > p:last-child,.foot-base ul{margin-inline-end:-.16em}
+.foot-base ul{display:flex;flex-wrap:wrap;gap:12px 26px;list-style:none;padding:0}
+.foot-base a{text-decoration:none;transition:color var(--t)}
+.foot-base a[aria-current]{color:var(--on-dark)}
+
+@media (hover: hover){
+  .lang a:hover,.foot-base a:hover{color:var(--on-dark)}
+  .toc a:hover{color:var(--ink)}
+  .doc-body a:hover{text-decoration-color:var(--ink)}
+}
+@media screen and (hover: hover) and (prefers-reduced-motion: no-preference){
+  .logo .logo-mark::before,.logo .logo-mark::after{transition:transform .45s cubic-bezier(.16,1,.3,1)}
+  .logo:hover .logo-mark::before{transform:translate(2px,2px)}
+  .logo:hover .logo-mark::after{transform:translate(-2px,-2px)}
+}
+@media (min-width: 861px) and (min-height: 760px){
+  .doc-head{position:sticky;top:40px}
+}
+@media (max-width: 1259px){.top .desc{display:none}}
+@media (max-width: 960px){.desc{display:none}}
+@media (max-width: 860px){
+  .doc-head,.doc-body{grid-column:1 / -1}
+  .toc{display:none}
+  .doc-body{max-width:34em}
+}
+@media (max-width: 520px){
+  .top .wrap{padding-block:18px}
+  .doc-body dl > div{grid-template-columns:minmax(0,1fr)}
+  .doc-body dt{padding-top:0}
+  .foot-top{flex-direction:column;align-items:flex-start}
+}
+@media (orientation: landscape) and (max-height: 500px){.top .wrap{padding-block:14px}}
+@media (min-width: 1921px) and (min-height: 1000px){
+  html{font-size:clamp(100%, calc(100% + (min(100vw, 177.78vh) - 1920px) * .0045), 137.5%)}
+  :root{--max:85rem;--gutter:4.5rem;--gap:2.25rem;--band:9.25rem}
+}
+@media (prefers-contrast: more){
+  :root{--ink-body:#0a0a0b;--ink-2:#3d3d3a;--line:#8c8c88;--on-dark-2:#cfcfcb;--on-dark-3:#8c8c88;--line-dark:#5a5a5e}
+}
+@media print{
+  @page{size:A4;margin:16mm 16mm 18mm}
+  :root{--serif:"Newsreader Print", Georgia, serif}
+  html,body,.top,.foot{background:#fff!important}
+  body{font-size:10.5pt;line-height:1.5}
+  .skip,.lang,.toc,.desc{display:none!important}
+  .wrap{max-width:none;padding-inline:0}
+  .top .wrap{padding-block:0 8mm}
+  .logo-word,.doc h1,.doc-body h2,.intro,.doc-body dd{color:#0a0a0b!important}
+  .logo-mark::before,.logo-mark::after{border-color:#0a0a0b!important}
+  .doc{padding-block:0 8mm}
+  .grid{display:block}
+  .doc-body{max-width:none;margin-top:8mm}
+  .doc-body h2{margin-top:9mm;padding-top:5mm;break-after:avoid}
+  .doc-body h3{break-after:avoid}
+  .doc-body p,.doc-body li,.doc-body dl > div{break-inside:avoid}
+  .foot{color:#5d5d5a;padding-block:0}
+  .foot-top{border-top-color:#d8d8d5;padding-top:8mm}
+  .foot-base a{text-decoration:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="lockup"><a class="logo" href="/es/" aria-label="SlapSec, inicio"><span class="logo-mark"><span class="logo-word" translate="no">SlapSec</span></span></a><span class="desc">Asesoramiento estratégico en tecnología y ciberseguridad</span></div>
+    <div class="lang" role="group" aria-label="Idioma"><a href="/es/privacidad" hreflang="es" lang="es-ES" data-lang="es" aria-label="ES, español" aria-current="true">ES</a><span aria-hidden="true">/</span><a href="/privacy" hreflang="en" lang="en-GB" data-lang="en" aria-label="EN, English">EN</a></div>
+  </div>
+</header>
+
+<main id="contenido" tabindex="-1">
+  <article class="doc">
+    <div class="wrap grid">
+      <header class="doc-head">
+        <p class="kicker">Legal</p>
+        <h1>Política de privacidad</h1>
+        <p class="updated">Última actualización: <time datetime="2026-11-11">11 de noviembre de 2026</time></p>
+        <nav class="toc" aria-labelledby="toc-h">
+          <p class="toc-h" id="toc-h">En esta página</p>
+          <ol>
+          <li><a href="#responsable-del-tratamiento"><span class="n" aria-hidden="true">01</span>Responsable del tratamiento</a></li>
+          <li><a href="#que-datos-recogemos"><span class="n" aria-hidden="true">02</span>Qué datos recogemos</a></li>
+          <li><a href="#finalidades-y-bases-juridicas"><span class="n" aria-hidden="true">03</span>Finalidades y bases jurídicas</a></li>
+          <li><a href="#con-quien-los-compartimos"><span class="n" aria-hidden="true">04</span>Con quién los compartimos</a></li>
+          <li><a href="#transferencias-internacionales"><span class="n" aria-hidden="true">05</span>Transferencias internacionales</a></li>
+          <li><a href="#plazo-de-conservacion"><span class="n" aria-hidden="true">06</span>Plazo de conservación</a></li>
+          <li><a href="#sus-derechos"><span class="n" aria-hidden="true">07</span>Sus derechos</a></li>
+          <li><a href="#seguridad"><span class="n" aria-hidden="true">08</span>Seguridad</a></li>
+          <li><a href="#menores"><span class="n" aria-hidden="true">09</span>Menores</a></li>
+          <li><a href="#cambios-y-contacto"><span class="n" aria-hidden="true">10</span>Cambios y contacto</a></li>
+          </ol>
+        </nav>
+      </header>
+      <div class="doc-body">
+<p class="intro">Esta política explica cómo trata <span translate="no">SlapSec LLC</span> («<span translate="no">SlapSec</span>», «nosotros») los datos personales que recoge a través de <span translate="no">slapsec.com</span>. Solo recogemos lo necesario para responderle y para mantener el sitio en funcionamiento.</p>
+<h2 id="responsable-del-tratamiento"><span class="n">01</span> Responsable del tratamiento</h2>
+<dl>
+  <div><dt>Responsable</dt><dd><span translate="no">SlapSec LLC</span>, 412 W 7th St, Clovis, NM 88101, EE. UU.</dd></div>
+  <div><dt>Contacto de privacidad</dt><dd><a href="mailto:info@slapsec.com">info@slapsec.com</a></dd></div>
+</dl>
+<div class="note"><p class="note-label">Visitantes de la UE, el EEE y el Reino Unido</p><p>Como prestamos servicios a clientes de la Unión Europea, el RGPD y el RGPD del Reino Unido pueden aplicarse a sus datos personales. Los apartados siguientes recogen las bases jurídicas en que nos apoyamos y los derechos que puede ejercer. Como responsable establecido en Estados Unidos, atendemos estas solicitudes en <a href="mailto:info@slapsec.com">info@slapsec.com</a>.</p></div>
+<h2 id="que-datos-recogemos"><span class="n">02</span> Qué datos recogemos</h2>
+<h3>Datos que usted nos facilita</h3>
+<p>Cuando nos escribe, recibimos los datos que decide incluir, como su nombre, su organización, sus datos de contacto y el contenido del mensaje.</p>
+<h3>Datos técnicos</h3>
+<p>Cuando visita el sitio, nuestro proveedor de alojamiento y distribución de contenidos trata de forma automática información técnica estándar, como su dirección IP, el tipo de navegador, las páginas solicitadas y la hora de cada solicitud, para servir el sitio y protegerlo. El país desde el que llega cada solicitud, deducido de su dirección IP, se utiliza en ese momento para mostrar primero la versión en español a quien navega desde España; no lo conservamos.</p>
+<h3>Una cookie funcional</h3>
+<p>Si elige el inglés desde la versión en español, una cookie funcional recuerda esa elección; se describe en nuestra <a href="/es/cookies">política de cookies</a>. No utilizamos cookies publicitarias ni de seguimiento, no hacemos analítica web y el sitio no carga nada de terceros.</p>
+<h2 id="finalidades-y-bases-juridicas"><span class="n">03</span> Finalidades y bases jurídicas</h2>
+<ul>
+  <li>Para responder a su consulta y adoptar las medidas que solicite antes de un posible encargo: aplicación de medidas precontractuales o ejecución de un contrato (art. 6.1.b del RGPD) y, en su caso, su consentimiento (art. 6.1.a).</li>
+  <li>Para mantener el sitio en funcionamiento y protegerlo: nuestro interés legítimo (art. 6.1.f).</li>
+  <li>Para cumplir obligaciones legales, cuando proceda (art. 6.1.c).</li>
+</ul>
+<p>Respecto de los visitantes de Estados Unidos, tratamos estos datos conforme a la legislación estadounidense aplicable.</p>
+<h2 id="con-quien-los-compartimos"><span class="n">04</span> Con quién los compartimos</h2>
+<p>No vendemos sus datos personales. Solo los compartimos con los proveedores que nos ayudan a mantener el sitio y el correo electrónico, que actúan siguiendo nuestras instrucciones como encargados del tratamiento:</p>
+<ul>
+  <li>Netlify, Inc., para el alojamiento y la distribución del sitio;</li>
+  <li>nuestro proveedor de correo electrónico, para recibir y responder a sus mensajes.</li>
+</ul>
+<p>También podemos comunicar datos cuando lo exija la ley o para defender nuestros derechos.</p>
+<h2 id="transferencias-internacionales"><span class="n">05</span> Transferencias internacionales</h2>
+<p>Estamos establecidos en Estados Unidos. Si se encuentra en el EEE o en el Reino Unido, sus datos personales se transfieren a Estados Unidos y se tratan allí. Cuando es necesario, aplicamos garantías adecuadas para estas transferencias, como las cláusulas contractuales tipo de la Comisión Europea. Al ponerse en contacto con nosotros, entiende que sus datos se tratarán en Estados Unidos.</p>
+<h2 id="plazo-de-conservacion"><span class="n">06</span> Plazo de conservación</h2>
+<p>Conservamos los datos de cada consulta solo mientras los necesitamos para atenderla y para la relación profesional que pueda derivarse de ella, más el plazo que exija la ley. Después, los suprimimos o anonimizamos.</p>
+<h2 id="sus-derechos"><span class="n">07</span> Sus derechos</h2>
+<h3>EEE y Reino Unido (RGPD)</h3>
+<p>Tiene derecho de acceso, rectificación, supresión, limitación del tratamiento, portabilidad y oposición, y puede retirar su consentimiento en cualquier momento. También puede presentar una reclamación ante su autoridad de control de protección de datos; en España, la Agencia Española de Protección de Datos.</p>
+<h3>California (CCPA y CPRA)</h3>
+<p>Tiene derecho a conocer, acceder, suprimir y rectificar su información personal, y a oponerse a su «venta» o «cesión». No vendemos ni cedemos su información personal, y no le discriminaremos por ejercer sus derechos.</p>
+<p>Para ejercer cualquiera de estos derechos, escriba a <a href="mailto:info@slapsec.com">info@slapsec.com</a>. Es posible que necesitemos verificar su identidad antes de atender la solicitud.</p>
+<h2 id="seguridad"><span class="n">08</span> Seguridad</h2>
+<p>Aplicamos medidas técnicas y organizativas razonables para proteger los datos personales, y el sitio se sirve únicamente mediante HTTPS. Ningún método de transmisión o almacenamiento es completamente seguro, pero trabajamos para proteger su información de forma adecuada.</p>
+<h2 id="menores"><span class="n">09</span> Menores</h2>
+<p>Este sitio está dirigido a usuarios profesionales, no a menores de 16 años. No recogemos conscientemente datos de menores.</p>
+<h2 id="cambios-y-contacto"><span class="n">10</span> Cambios y contacto</h2>
+<p>Podemos actualizar esta política; la fecha que figura al principio indica la versión vigente. Consultas o solicitudes: <a href="mailto:info@slapsec.com">info@slapsec.com</a>.</p>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="lockup"><a class="logo" href="/es/" aria-label="SlapSec, inicio"><span class="logo-mark"><span class="logo-word" translate="no">SlapSec</span></span></a><span class="desc">Asesoramiento estratégico en tecnología y ciberseguridad</span></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 <span translate="no">SlapSec LLC</span></p>
+      <ul aria-label="Información legal">
+        <li><a href="/es/aviso-legal">Aviso legal</a></li>
+        <li><a href="/es/privacidad" aria-current="page">Privacidad</a></li>
+        <li><a href="/es/cookies">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
