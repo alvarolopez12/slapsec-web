@@ -5,10 +5,11 @@
   "origin": "https://slapsec.com",
   "contact_email": "info@slapsec.com",
   "private": false,
-  "positioning_es": "SlapSec asesora a organizaciones que afrontan una decisión de tecnología o ciberseguridad difícil de deshacer.",
-  "positioning_en": "SlapSec advises organisations facing a technology or cybersecurity decision that will be hard to undo.",
+  "google_site_verification": "AJyx2sypmYVQC6-4kUNhl5HgsmlhAM7IEbg4ilSYX5c",
+  "positioning_es": "SlapSec asesora a la dirección en las decisiones de tecnología y ciberseguridad que cuesta deshacer.",
+  "positioning_en": "SlapSec advises senior management on technology and cybersecurity decisions that are hard to undo.",
   "descriptor_es": "Asesoramiento estratégico en tecnología y ciberseguridad",
-  "descriptor_en": "Strategic counsel on technology and cybersecurity",
+  "descriptor_en": "Strategic advice on technology and cybersecurity",
   "nav": [
     {
       "es": "Punto de vista",
@@ -16,12 +17,12 @@
       "anchor": "punto-de-vista"
     },
     {
-      "es": "Criterio",
-      "en": "Judgement",
+      "es": "Cómo trabajamos",
+      "en": "How we work",
       "anchor": "criterio"
     },
     {
-      "es": "Ámbitos",
+      "es": "Áreas",
       "en": "Practice",
       "anchor": "ambitos"
     },
@@ -40,10 +41,12 @@
     {
       "id": "inicio",
       "role": "hero",
-      "headline_es": "SlapSec asesora en las decisiones de tecnología y ciberseguridad que solo se toman una vez.",
-      "headline_en": "SlapSec advises on the technology and cybersecurity decisions that can only be made once.",
-      "body_es": "Lo irreversible pocas veces parece una decisión.",
-      "body_en": "What cannot be undone rarely looks like a decision at the time."
+      "headline_es": "Asesoramos a la dirección en las decisiones de tecnología y ciberseguridad que cuesta deshacer.",
+      "headline_en": "We advise senior management on technology and cybersecurity decisions that are hard to undo.",
+      "emphasis_es": "que cuesta deshacer.",
+      "emphasis_en": "that are hard to undo.",
+      "body_es": "Lo hacemos sin productos que vender ni fabricantes a los que representar.",
+      "body_en": "We have no products to sell and no vendors to represent."
     },
     {
       "id": "punto-de-vista",
@@ -51,83 +54,83 @@
       "kicker_es": "Punto de vista",
       "kicker_en": "Point of view",
       "headline_es": "Muchas decisiones tecnológicas llegan a la dirección ya tomadas.",
-      "headline_en": "Many technology decisions reach the top already made.",
-      "body_es": "Se deciden antes: al formular la pregunta, al descartar alternativas y al elegir a quién se escucha. Cuando el asunto llega al orden del día, a menudo solo queda aprobar o rechazar, y rechazar parece una temeridad.\n\nEl coste que importa tampoco está en el presupuesto que se aprueba. Está en lo que esa decisión dejará de permitir. De ahí que algunas de las decisiones más caras sean las que nadie recuerda haber tomado: una renovación automática, una solución provisional que acabó siendo definitiva, la dependencia de un único proveedor aceptada sin debate.\n\nEl riesgo se presenta en colores y se decide en euros. «¿Estamos protegidos?» no tiene una respuesta útil. La pregunta es otra: cuánto daño puede asumir la organización, y quién lo ha decidido.",
-      "body_en": "They are made earlier: in how the question is framed, in which alternatives are set aside, in whose advice is heard. By the time the matter reaches the agenda, there is often nothing left to do but approve or reject, and rejecting looks reckless.\n\nNor does the cost that matters sit in the budget being approved. It lies in what that decision will no longer allow. Some of the most expensive decisions, then, are the ones nobody remembers making: an automatic renewal, a temporary fix that became permanent, dependence on a single supplier accepted without debate.\n\nRisk is presented in colours and decided in euros. ‘Are we secure?’ has no useful answer. The question to ask is how much damage the organisation can absorb, and who has decided that."
+      "headline_en": "Many technology decisions are made before they reach management.",
+      "body_es": "Cuando una propuesta entra en el orden del día, alguien suele haber elegido ya al proveedor y descartado las alternativas. A la dirección solo le queda aprobarla o rechazarla, y a esas alturas rechazarla supone retrasar el proyecto y desautorizar a quien la propone.\n\nOtros compromisos ni siquiera pasan por el orden del día: un contrato que se renueva solo, una solución provisional que sigue en uso años después o un único proveedor del que acaba dependiendo el negocio. Atan a la organización tanto como una gran inversión, y nadie ha tenido que dar su visto bueno.\n\nNuestro trabajo consiste en que la dirección sepa a qué se compromete, qué alternativas se descartaron y por qué, y cuánto costaría dar marcha atrás más adelante. En seguridad empezamos por dos preguntas que el habitual mapa de riesgos en rojo, ámbar y verde no contesta: cuánto puede perder la organización y quién ha aceptado ese riesgo.",
+      "body_en": "By the time a proposal is on the agenda, someone has usually chosen the supplier and ruled out the alternatives. All that is left for management is to approve or reject it, and by then a rejection means delaying the project and undermining whoever put it forward.\n\nOther commitments never reach the agenda at all: a contract that renews automatically, a temporary fix still in use years later, a single supplier the business has come to depend on. They bind the organisation as much as a major investment would, and nobody has had to sign them off.\n\nOur job is to show management what it is committing to, which alternatives were ruled out and why, and what it would cost to reverse course later. In security we start with two questions the usual red, amber and green risk map does not answer: how much the organisation could lose, and who has accepted that risk."
     },
     {
       "id": "cuando",
       "role": "decisions",
-      "kicker_es": "Cuándo llamarnos",
-      "kicker_en": "When to call us",
-      "headline_es": "Cuando la pregunta todavía puede cambiarse.",
-      "headline_en": "While the question can still be changed.",
-      "body_es": "- Antes de aprobar una gran inversión tecnológica, o de cancelar una que ya no se justifica.\n- En una compra, una venta o una fusión, porque la tecnología de la compañía y su exposición al riesgo también forman parte del precio.\n- Cuando un regulador, un cliente o un socio exige garantías que aún no se pueden dar.\n- Cuando dos directivos defienden, con buenos argumentos, posiciones opuestas.\n- Cuando hay que definir quién dirige la tecnología o la seguridad, de quién depende y con qué mandato.\n- Después de un incidente grave, al decidir qué debe cambiar y qué no.",
-      "body_en": "- Before approving a major technology investment, or cancelling one that no longer makes sense.\n- In an acquisition, a sale or a merger, because the company’s technology and its exposure to risk are part of the price too.\n- When a regulator, a client or a partner requires assurances the organisation cannot yet give.\n- When two senior executives each make a good case for opposite positions.\n- When settling who leads technology or security, whom they report to and with what mandate.\n- After a serious incident, when deciding what must change and what must not."
+      "kicker_es": "Situaciones",
+      "kicker_en": "Situations",
+      "headline_es": "Cuándo tiene sentido llamarnos.",
+      "headline_en": "When it makes sense to call us in.",
+      "body_es": "- Antes de aprobar una gran inversión tecnológica, o de cancelar una que ya está en marcha.\n- En una compra, una venta o una fusión, porque la tecnología y los riesgos que arrastra también forman parte del precio.\n- Cuando un regulador, un cliente o un socio exige garantías que la organización aún no puede dar.\n- Cuando dos directivos defienden posiciones opuestas y los dos tienen buenos argumentos.\n- Cuando hay que determinar quién dirige la tecnología o la seguridad, de quién depende y con qué mandato.\n- Después de un incidente grave, para concretar qué debe cambiar y qué puede seguir igual.",
+      "body_en": "- Before approving a major technology investment, or cancelling one already under way.\n- In an acquisition, a sale or a merger, because the technology and the risks that come with it are part of the price too.\n- When a regulator, a customer or a partner demands assurances the organisation cannot yet give.\n- When two executives take opposing views and both have a good case.\n- When the question is who should lead technology or security, whom they report to and with what mandate.\n- After a serious incident, to work out what must change and what can stay as it is."
     },
     {
       "id": "criterio",
       "role": "approach",
-      "kicker_es": "Criterio",
-      "kicker_en": "Judgement",
-      "headline_es": "A quien decide no suele faltarle información.",
-      "headline_en": "Whoever has to decide is rarely short of information.",
-      "body_es": "Le falta saber qué está decidiendo, qué arriesga y qué alternativas se descartaron sin llegar a examinarse.\n\nNo entregamos un abanico de opciones, sino una posición: qué haríamos, por qué y qué tendría que cambiar para que pensáramos otra cosa.\n\nSi lo más sensato es esperar, hacer menos o no hacer nada, lo decimos.",
-      "body_en": "What they lack is a clear view of what they are deciding, what they are risking and which alternatives were dismissed without being examined.\n\nRather than offer a range of options, we take a position: what we would do, why, and what would have to change for us to think otherwise.\n\nIf the wisest course is to wait, to do less or to do nothing, we say so."
+      "kicker_es": "Cómo trabajamos",
+      "kicker_en": "How we work",
+      "headline_es": "Le decimos qué haríamos en su lugar.",
+      "headline_en": "We tell you what we would do in your place.",
+      "body_es": "Explicamos por qué, y qué tendría que ocurrir para que cambiáramos de opinión.\n\nAunque haya varias opciones razonables, recomendamos una sola. Una lista de ventajas e inconvenientes devolvería el problema a quien ya lo tenía.\n\nSi lo más sensato es esperar, hacer menos o no hacer nada, lo decimos.",
+      "body_en": "We explain why, and what would have to happen for us to change our minds.\n\nEven where several options are reasonable, we recommend one. A list of pros and cons would only hand the problem back to you.\n\nIf the sensible course is to wait, to do less or to do nothing, we say so."
     },
     {
       "id": "ambitos",
       "role": "practice",
-      "kicker_es": "Ámbitos",
-      "kicker_en": "Practice",
-      "headline_es": "El criterio no se ejerce a distancia.",
-      "headline_en": "Judgement is not exercised from a distance.",
-      "intro_es": "Por eso también trabajamos allí donde las decisiones tienen consecuencias.",
-      "intro_en": "That is why we also work where decisions have consequences.",
+      "kicker_es": "Áreas de práctica",
+      "kicker_en": "Practice areas",
+      "headline_es": "Además de asesorar, hacemos trabajo técnico.",
+      "headline_en": "As well as advising, we do technical work.",
+      "intro_es": "Revisar, diseñar y poner a prueba sistemas es lo que nos permite recomendar con conocimiento de causa.",
+      "intro_en": "Examining, designing and testing systems is what lets us advise with first-hand knowledge.",
       "items": [
         {
           "label_es": "Gobierno y cumplimiento",
           "label_en": "Governance and compliance",
-          "title_es": "Un riesgo sin responsable ya es un riesgo aceptado.",
-          "title_en": "A risk without an owner is already an accepted risk.",
-          "body_es": "Proponemos quién decide sobre la seguridad y quién responde de ella, y preparamos a la organización para dar garantías a reguladores, clientes y socios.",
-          "body_en": "We propose who should take decisions on security and who should answer for it, and prepare the organisation to give assurances to regulators, clients and partners.",
+          "title_es": "Proponemos quién debe decidir sobre la seguridad y quién debe responder de ella.",
+          "title_en": "We propose who should decide on security and who should answer for it.",
+          "body_es": "También preparamos a la organización para acreditar que cumple lo que le exigen la regulación y sus contratos.",
+          "body_en": "We also prepare the organisation to show that it meets what regulation and its contracts require.",
           "key": "gobierno"
         },
         {
           "label_es": "Operaciones corporativas",
           "label_en": "Corporate transactions",
-          "title_es": "Lo que no figura en el cuaderno de venta también cambia de manos.",
-          "title_en": "What the information memorandum leaves out changes hands as well.",
-          "body_es": "Hacemos due diligence tecnológica y de ciberseguridad para quien compra, vende o invierte, y asesoramos en la integración que sigue al cierre.",
-          "body_en": "We carry out technology and cybersecurity due diligence for those buying, selling or investing, and advise on the integration that follows completion.",
+          "title_es": "Examinamos la tecnología de una empresa antes de que cambie de dueño.",
+          "title_en": "We examine the technology of a company before it changes hands.",
+          "body_es": "Hacemos la due diligence tecnológica y de ciberseguridad para quien compra, vende o invierte, y asesoramos en la integración posterior al cierre.",
+          "body_en": "We carry out technology and cybersecurity due diligence for the buyer, the seller or an investor, and advise on the integration that follows completion.",
           "key": "operaciones"
         },
         {
           "label_es": "Arquitectura de seguridad",
           "label_en": "Security architecture",
-          "title_es": "Lo decidido tiene que llegar a los sistemas, no quedarse en el papel.",
-          "title_en": "A decision has to reach the systems, not stay on paper.",
-          "body_es": "Diseñamos la arquitectura e implantamos sus controles junto a quienes van a operarlos.",
-          "body_en": "We design the architecture and put its controls in place, alongside the people who will run them.",
+          "title_es": "Diseñamos la arquitectura de seguridad e implantamos sus controles.",
+          "title_en": "We design the security architecture and put its controls in place.",
+          "body_es": "Trabajamos junto a quienes se ocuparán de esos controles cuando termine el encargo.",
+          "body_en": "We work alongside the people who will run those controls once the engagement ends.",
           "key": "arquitectura"
         },
         {
           "label_es": "Seguridad ofensiva",
           "label_en": "Offensive security",
-          "title_es": "Una defensa que nadie ha intentado superar sigue siendo una hipótesis.",
-          "title_en": "A defence nobody has tried to get past remains a hypothesis.",
-          "body_es": "Actuamos como lo haría un adversario, para saber hasta dónde llegaría, con pruebas de intrusión autorizadas por escrito por el titular de los sistemas y acotadas de antemano.",
-          "body_en": "We act as an adversary would, to see how far an attack could get, in penetration tests authorised in writing by the owner of the systems and scoped in advance.",
+          "title_es": "Ponemos a prueba las defensas como lo haría un adversario.",
+          "title_en": "We test the defences as an adversary would.",
+          "body_es": "Realizamos pruebas de intrusión para saber hasta dónde llegaría un ataque real, siempre con autorización escrita del titular de los sistemas y con un alcance acordado de antemano.",
+          "body_en": "We run penetration tests to see how far a real attack would get. Every test has written authorisation from the owner of the systems and a scope agreed in advance.",
           "key": "ofensiva"
         },
         {
           "label_es": "Inteligencia de amenazas",
           "label_en": "Threat intelligence",
-          "title_es": "Lo que era prudente puede dejar de serlo sin haber cambiado.",
-          "title_en": "What was prudent can cease to be so without being changed.",
-          "body_es": "Seguimos las amenazas dirigidas al sector y a la organización, y señalamos cuáles deberían pesar en sus decisiones.",
-          "body_en": "We follow the threats aimed at the sector and the organisation, and point out which should carry weight in its decisions.",
+          "title_es": "Vigilamos las amenazas que apuntan a su sector y a su organización.",
+          "title_en": "We track the threats aimed at your sector and your organisation.",
+          "body_es": "Señalamos cuáles deberían pesar en sus decisiones y cuáles puede dejar de lado.",
+          "body_en": "We tell you which should carry weight in your decisions and which you can disregard.",
           "key": "inteligencia"
         }
       ],
@@ -139,28 +142,28 @@
       "role": "independence",
       "kicker_es": "Independencia",
       "kicker_en": "Independence",
-      "headline_es": "Una recomendación no debería cambiar según quién vaya a ejecutarla.",
-      "headline_en": "A recommendation should not depend on who will carry it out.",
-      "body_es": "Se da por hecho que el asesor del comprador no trabaja también para el vendedor. Aplicamos ese principio a la tecnología: no tenemos productos que vender ni fabricantes a los que representar, y no aceptamos comisiones ni incentivos de quien la vende.\n\nEjecutar lo recomendado es un encargo aparte, que el cliente es libre de confiar a otra firma. Y en SlapSec, quien construye un sistema no es quien lo pone a prueba.",
-      "body_en": "It is taken for granted that the buyer’s adviser does not also work for the seller. We apply the same principle to technology: we have no products to sell and no vendors to represent, and we take no commissions or incentives from those who sell it.\n\nCarrying out what we recommend is a separate engagement, which the client is free to entrust to another firm. And at SlapSec, whoever builds a system is not the one who tests it."
+      "headline_es": "No aceptamos comisiones ni incentivos de quien vende tecnología.",
+      "headline_en": "We take no commissions or incentives from anyone who sells technology.",
+      "body_es": "No tenemos productos propios, no revendemos los de terceros y no representamos a ningún fabricante.\n\nLlevar a la práctica una recomendación es siempre un encargo aparte, que el cliente es libre de confiar a otra firma. Así, lo que recomendamos no depende de quién vaya a ejecutarlo. Por la misma razón, quien construye un sistema nunca es quien lo pone a prueba.",
+      "body_en": "We make no products of our own, resell no one else’s and represent no vendors.\n\nCarrying out a recommendation is always a separate engagement, which the client is free to give to another firm. That way, what we recommend does not depend on who will carry it out. For the same reason, whoever builds a system is never the one who tests it."
     },
     {
       "id": "contacto",
       "role": "contact",
       "kicker_es": "Contacto",
       "kicker_en": "Contact",
-      "headline_es": "Hablemos mientras siga siendo una decisión.",
-      "headline_en": "Talk to us while there is still a decision to make.",
-      "body_es": "Basta con decirnos para cuándo hay que decidir. Lo demás, mejor en persona.\n\nA veces, llamar a un asesor ya es información sensible. La primera conversación es confidencial.",
-      "body_en": "We only need to know when the decision is due. The rest is better said in person.\n\nSometimes the call to an adviser is itself sensitive information. The first conversation is confidential."
+      "headline_es": "Para empezar, basta con un correo.",
+      "headline_en": "An email is enough to begin.",
+      "body_es": "Díganos para cuándo necesita una respuesta. No hace falta contar nada más por escrito.\n\nLa primera conversación es confidencial.",
+      "body_en": "Tell us how soon you need an answer. There is no need to put anything else in writing.\n\nThe first conversation is confidential."
     }
   ],
   "meta": {
     "title_es": "Asesoramiento estratégico en tecnología y ciberseguridad | SlapSec",
-    "title_en": "Strategic counsel on technology and cybersecurity | SlapSec",
-    "desc_es": "SlapSec asesora en las decisiones de tecnología y ciberseguridad que solo se toman una vez. Lo irreversible pocas veces parece una decisión.",
-    "desc_en": "SlapSec advises on the technology and cybersecurity decisions that can only be made once. What cannot be undone rarely looks like a decision at the time.",
-    "og_alt_es": "SlapSec asesora en las decisiones de tecnología y ciberseguridad que solo se toman una vez.",
-    "og_alt_en": "SlapSec advises on the technology and cybersecurity decisions that can only be made once."
+    "title_en": "Strategic advice on technology and cybersecurity | SlapSec",
+    "desc_es": "SlapSec asesora a la dirección en las decisiones de tecnología y ciberseguridad que cuesta deshacer. No vende productos ni representa a fabricantes.",
+    "desc_en": "SlapSec advises senior management on technology and cybersecurity decisions that are hard to undo. It sells no products and represents no vendors.",
+    "og_alt_es": "Asesoramos a la dirección en las decisiones de tecnología y ciberseguridad que cuesta deshacer.",
+    "og_alt_en": "We advise senior management on technology and cybersecurity decisions that are hard to undo."
   }
 }

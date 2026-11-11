@@ -14,6 +14,7 @@ The cut files record their characters in fonts/subsets.json, which the build che
 hero clause, a loanword or the name changes, the build stops and asks for this to be run again.
 Requires fontTools with brotli (pip install fonttools brotli).
 """
+import io
 import json
 import os
 import sys
@@ -41,10 +42,30 @@ def cut(font, text):
     return font
 
 
+def tables(font):
+    """A font's contents without the two fields that change on every save: the time it was
+    written and the checksum that covers it."""
+    out = {}
+    for tag in font.reader.keys():
+        data = font.reader[tag]
+        if tag == "head":
+            data = data[:8] + bytes(4) + data[12:28] + bytes(8) + data[36:]
+        out[tag] = data
+    return out
+
+
 def save(font, name):
+    """Write the file only if the font in it would change. The site names each font after a hash
+    of its bytes, so rewriting an identical font would rename it and make every reader download
+    it again."""
     font.flavor = "woff2"
     path = os.path.join(FONTS, name)
-    font.save(path)
+    fresh = io.BytesIO()
+    font.save(fresh)
+    if os.path.isfile(path) and tables(TTFont(path)) == tables(TTFont(io.BytesIO(fresh.getvalue()))):
+        print(f"  {name}: unchanged")
+        return
+    open(path, "wb").write(fresh.getvalue())
     print(f"  {name}: {os.path.getsize(path):,} bytes")
 
 

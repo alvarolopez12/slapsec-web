@@ -4,7 +4,8 @@
 //   thalma.es    Thalma Computing   Spain, Spanish (with /en/)
 //
 // A visitor from Spain landing on slapsec.com is almost certainly looking for the
-// Spanish entity, so we send them there. It is a 302 (never cached) and it is
+// Spanish entity, so we send them there. It is a 302 marked no-store, because a
+// browser keeps a bare 302 and replays it on Back and on restored tabs, and it is
 // escapable: "?stay=1" sets a cookie and we never bounce that visitor again, which
 // keeps the door open for a Spanish-based multinational that genuinely wants the
 // LLC. Crawlers from non-ES IPs see slapsec.com normally, and hreflang plus the
@@ -41,11 +42,31 @@ export default async (request: Request, context: any) => {
     return context.next();
   }
 
+  // Route arrivals only. A reader already on the site who follows a link to "/" (the logo of
+  // an English legal page, or of the 404) is reading English and is served it, and no cookie
+  // is set. Typed, bookmarked and outside visits carry "none" or "cross-site" and go on below,
+  // and so do browsers that do not send the header on such a link (Safari before 18).
+  if (request.headers.get("sec-fetch-site") === "same-origin") {
+    return context.next();
+  }
+
   if (context.geo?.country?.code === "ES") {
-    return Response.redirect(new URL(SISTER, request.url), 302);
+    // Netlify does not apply publish/_headers to a response built here and would add its own,
+    // weaker HSTS. This is the value advisory/build_advisory.py writes into _headers, and the
+    // build checks that the two agree. no-store: without it Chrome answers a later Back to "/"
+    // with this redirect, from its own cache, even for a reader who has since chosen English.
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: new URL(SISTER, request.url).href,
+        "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+        "Cache-Control": "no-store",
+      },
+    });
   }
 
   return context.next();
 };
 
-export const config = { path: "/" };
+// onError "bypass": if this function ever fails, the home page is served as it is, in English.
+export const config = { path: "/", onError: "bypass" };

@@ -291,8 +291,8 @@
           "h": {"en": "The one cookie we set", "es": "La única cookie que utilizamos"},
           "blocks": [
             {"p": {
-              "en": "Visitors browsing from Spain are shown the Spanish version of the site first. If you choose English instead, we set one cookie so that your choice is respected on later visits. Choosing Spanish again removes it.",
-              "es": "A quien navega desde España se le muestra primero la versión en español del sitio. Si elige el inglés, instalamos una cookie para respetar esa elección en visitas posteriores. Si vuelve a elegir el español, la cookie se elimina."
+              "en": "Visitors browsing from Spain are shown the Spanish version of the site first. If you choose English instead, we set one cookie so that your choice is respected on later visits.",
+              "es": "A quien navega desde España se le muestra primero la versión en español del sitio. Si elige el inglés, instalamos una cookie para respetar esa elección en visitas posteriores."
             }},
             {"dl": [
               {"dt": {"en": "Name", "es": "Nombre"}, "dd": {"en": "`nf_stay`", "es": "`nf_stay`"}},
@@ -300,7 +300,7 @@
                "dd": {"en": "Remembers that you chose English, so the language redirect does not override your choice.",
                       "es": "Recuerda que eligió el inglés, para que la redirección de idioma no anule su elección."}},
               {"dt": {"en": "Type", "es": "Tipo"},
-               "dd": {"en": "First party, functional", "es": "Propia, técnica"}},
+               "dd": {"en": "First party, functional", "es": "Propia, funcional"}},
               {"dt": {"en": "Duration", "es": "Duración"},
                "dd": {"en": "One year", "es": "Un año"}}
             ]}
@@ -328,8 +328,8 @@
           "h": {"en": "Managing the cookie", "es": "Cómo gestionar la cookie"},
           "blocks": [
             {"p": {
-              "en": "You can delete the cookie at any time from your browser settings, or by choosing Spanish on the site. Without it, visitors browsing from Spain see the Spanish version first.",
-              "es": "Puede eliminar la cookie en cualquier momento desde la configuración de su navegador o eligiendo el español en el sitio. Sin ella, quien navega desde España ve primero la versión en español."
+              "en": "You can delete the cookie at any time from your browser settings. Without it, visitors browsing from Spain see the Spanish version first.",
+              "es": "Puede eliminar la cookie en cualquier momento desde la configuración de su navegador. Sin ella, quien navega desde España ve primero la versión en español."
             }}
           ]
         },

@@ -1,0 +1,9 @@
+# Written by advisory/build_advisory.py on every build. Do not edit by hand.
+https://slapsec.netlify.app/*  https://slapsec.com/:splat  301!
+/og.png  /og-en.png  301
+/brand/favicon.svg  /favicon.svg  301
+/brand/favicon-32.png  /favicon-32.png  301
+/brand/apple-touch-icon.png  /apple-touch-icon.png  301
+/brand/icon-512.png  /icon-512.png  301
+/favicon.ico  /favicon-32.png  301
+/security.txt  /.well-known/security.txt  301

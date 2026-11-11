@@ -2,10 +2,16 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "static",
+      "name": "slapsec",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4599"],
-      "port": 4599
+      "runtimeArgs": ["advisory/tools/serve.py", "8765"],
+      "port": 8765
+    },
+    {
+      "name": "slapsec-from-spain",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["advisory/tools/serve.py", "8766", "--geo", "ES"],
+      "port": 8766
     }
   ]
 }

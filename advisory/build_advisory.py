@@ -54,11 +54,12 @@ def read(name):
     return open(os.path.join(HERE, name), encoding="utf-8").read()
 
 
-# The decisive clause in the hero, set in italic.
-EMPHASIS = {
-    "es": "que solo se toman una vez.",
-    "en": "that can only be made once.",
-}
+# The closing clause of the hero headline, set in italic. It lives with the words, in copy.json,
+# and the italic font is cut to exactly its letters (tools/make_fonts.py).
+EMPHASIS = {code: COPY["sections"][0][f"emphasis_{code}"] for code in ("es", "en")}
+
+# The default address Netlify gives this site. It serves the same deploy, so it is sent to ORIGIN.
+NETLIFY_HOST = "slapsec.netlify.app"
 
 UI = {
     "menu": ("Menú", "Menu"),
@@ -189,8 +190,8 @@ def list_items(body):
 
 def emphasise(text, lang):
     clause = EMPHASIS[lang]
-    assert clause in text, f"hero {lang}: emphasis clause not found"
-    head = text[: text.index(clause)].rstrip()
+    assert text.endswith(clause) and text != clause, f"hero {lang}: the headline must end with its emphasis clause"
+    head = text[: -len(clause)].rstrip()
     # English binds only articles and prepositions here, so «decisions» is never left alone
     head = _glue(head, SHORT if lang == "es" else r"a|an|the|of|on|to|in")
     return f"{brand(esc(head))} <em>{esc(display(clause))}</em>"
@@ -495,11 +496,21 @@ def robots_meta():
     return '<meta name="robots" content="noindex, nofollow">' if COPY.get("private", True) else ""
 
 
-def head_links(urls):
-    """canonical and the language alternates: urls maps each language to its absolute address."""
+def verification_meta(target):
+    """Search Console's proof of ownership for the home pages. It is a line of text: nothing loads."""
+    token = COPY.get("google_site_verification", "")
+    assert re.fullmatch(r"[A-Za-z0-9_-]*", token), "google_site_verification"
+    return f'<meta name="google-site-verification" content="{token}">' if token and target == "site" else ""
+
+
+def head_links(urls, swap=False):
+    """canonical and the language alternates: urls maps each language to its absolute address.
+    On the home pages the canonical follows the language switch, as the address bar does, so a
+    link shared from the page after switching is the page the reader is looking at."""
     if not ORIGIN:
         return ""
-    out = [f'<link rel="canonical" href="{esc(urls[LANG])}">']
+    both = "".join(f' data-{code}-href="{esc(urls[code])}"' for code in ("es", "en")) if swap else ""
+    out = [f'<link rel="canonical" href="{esc(urls[LANG])}"{both}>']
     out += [f'<link rel="alternate" hreflang="{code}" href="{esc(urls[code])}">' for code in LANGS]
     out.append(f'<link rel="alternate" hreflang="x-default" href="{esc(urls[PRIMARY])}">')
     return "\n".join(out)
@@ -508,18 +519,37 @@ def head_links(urls):
 OG_SIZE = (1200, 630)
 
 
+def share_image(lang):
+    """The share image's address carries a hash of the picture: sites that show link previews keep
+    an image by its address, and would otherwise go on showing an old headline."""
+    path = os.path.join(STATIC_DIR, f"og-{lang}.png")
+    version = "?v=" + hashlib.sha256(open(path, "rb").read()).hexdigest()[:8] if os.path.isfile(path) else ""
+    return f"{ORIGIN}/og-{lang}.png{version}"
+
+
 def open_graph(target):
+    """What a shared link shows. A value that depends on the language is an (es, en) pair and, on
+    the site, carries both, so it follows the language switch with the title and the canonical."""
     meta = COPY["meta"]
-    other = "en" if LANG == "es" else "es"
-    tags = [("og:type", "website"), ("og:site_name", BRAND), ("og:title", pick(meta["title_es"], meta["title_en"])),
-            ("og:description", pick(meta["desc_es"], meta["desc_en"])),
-            ("og:locale", OG_LOCALE[LANG]), ("og:locale:alternate", OG_LOCALE[other])]
-    if ORIGIN and target == "site":
-        tags.append(("og:url", ORIGIN + home_path(LANG)))
-        tags += [("og:image", f"{ORIGIN}/og-{LANG}.png"), ("og:image:width", str(OG_SIZE[0])),
-                 ("og:image:height", str(OG_SIZE[1])), ("og:image:alt", pick(meta["og_alt_es"], meta["og_alt_en"]))]
-    out = [f'<meta property="{k}" content="{esc(v)}">' for k, v in tags]
-    if ORIGIN and target == "site":
+    site = bool(ORIGIN) and target == "site"
+    tags = [("og:type", "website"), ("og:site_name", BRAND),
+            ("og:title", (meta["title_es"], meta["title_en"])),
+            ("og:description", (meta["desc_es"], meta["desc_en"])),
+            ("og:locale", (OG_LOCALE["es"], OG_LOCALE["en"])),
+            ("og:locale:alternate", (OG_LOCALE["en"], OG_LOCALE["es"]))]
+    if site:
+        tags += [("og:url", (ORIGIN + home_path("es"), ORIGIN + home_path("en"))),
+                 ("og:image", (share_image("es"), share_image("en"))),
+                 ("og:image:width", str(OG_SIZE[0])), ("og:image:height", str(OG_SIZE[1])),
+                 ("og:image:alt", (meta["og_alt_es"], meta["og_alt_en"]))]
+    out = []
+    for k, v in tags:
+        if isinstance(v, tuple):
+            both = f' data-es-content="{esc(v[0])}" data-en-content="{esc(v[1])}"' if site else ""
+            out.append(f'<meta property="{k}" content="{esc(pick(*v))}"{both}>')
+        else:
+            out.append(f'<meta property="{k}" content="{esc(v)}">')
+    if site:
         out.append('<meta name="twitter:card" content="summary_large_image">')
     return "\n".join(out)
 
@@ -611,7 +641,8 @@ def build(target="site", lang=None):
         "DESC": esc(pick(meta["desc_es"], meta["desc_en"])),
         "DESC_ES": esc(meta["desc_es"]), "DESC_EN": esc(meta["desc_en"]),
         "ROBOTS": robots_meta(),
-        "LINKS": head_links({code: ORIGIN + home_path(code) for code in LANGS}) if target == "site" else "",
+        "VERIFY": verification_meta(target),
+        "LINKS": head_links({code: ORIGIN + home_path(code) for code in LANGS}, swap=True) if target == "site" else "",
         "OG": open_graph(target),
         "JSONLD": json_ld(target),
         "ICONS": icons(target),
@@ -661,7 +692,7 @@ def build_404():
     global LANG
     LANG = PRIMARY
     fills = {"ICONS": icons("site"), "FONT_FACES": font_faces("site"), "ROBOTS": '<meta name="robots" content="noindex">',
-             "TITLE": esc(f"This page does not exist | {BRAND}"), "HOME_ES": home_path("es"), "HOME_EN": switch_href("en"),
+             "TITLE": esc(f"This page does not exist | {BRAND}"), "HOME": home_path(PRIMARY), "HOME_ES": home_path("es"), "HOME_EN": switch_href("en"),
              "WORDMARK": wordmark(), "BRAND": BRAND, "COPYRIGHT": copyright_line(), "LOGO_CSS": LOGO_CSS}
     return finish(fill(read("404.template.html"), fills), "site")
 
@@ -689,7 +720,15 @@ def csp_hashes(pages, tag):
                            for b in blocks))
 
 
+# The edge function answers visitors from Spain with a redirect it builds itself, which Netlify
+# sends without these headers, so it carries this value too and the build keeps the two in step.
+HSTS = "max-age=63072000; includeSubDomains; preload"
+EDGE_FUNCTION = os.path.join(ROOT, "netlify", "edge-functions", "geo-lang.ts")
+
+
 def headers(pages):
+    assert f'"Strict-Transport-Security": "{HSTS}"' in open(EDGE_FUNCTION, encoding="utf-8").read(), \
+        "geo-lang.ts must send the same Strict-Transport-Security as _headers"
     csp = ("default-src 'none'; "
            f"script-src {csp_hashes(pages, 'script')}; "
            f"style-src {csp_hashes(pages, 'style')}; "
@@ -700,7 +739,7 @@ def headers(pages):
         "# Content-Security-Policy hashes are those of the inline code in every page of this directory.",
         "/*",
         f"  Content-Security-Policy: {csp}",
-        "  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload",
+        f"  Strict-Transport-Security: {HSTS}",
         "  Cross-Origin-Opener-Policy: same-origin",
         "  Cross-Origin-Embedder-Policy: require-corp",
         "  Cross-Origin-Resource-Policy: same-origin",
@@ -711,11 +750,41 @@ def headers(pages):
     ]
     if COPY.get("private", True):
         lines.append("  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex")
+    lines.append("")
+    # A year only for the faces whose name is a hash of their content. A wildcard would also pin a
+    # missing font's 404, and the licence texts, in every browser that asked for them.
+    for _, _, _, name, _ in FACES + PRINT_FACES:
+        lines += [f"/fonts/{hashed(name)}", "  Cache-Control: public, max-age=31536000, immutable"]
     lines += [
-        "", "/fonts/*", "  Cache-Control: public, max-age=31536000, immutable",
         "/robots.txt", "  Cache-Control: public, max-age=3600",
         "/.well-known/security.txt", "  Content-Type: text/plain; charset=utf-8", "  Cache-Control: public, max-age=86400",
     ]
+    return "\n".join(lines) + "\n"
+
+
+# Addresses the previous site published, which old shares, caches and indexes still ask for,
+# and the places a browser or a scanner looks by habit. No file may exist at a "from" path.
+MOVED = (
+    ("/og.png", "/og-en.png"),
+    ("/brand/favicon.svg", "/favicon.svg"),
+    ("/brand/favicon-32.png", "/favicon-32.png"),
+    ("/brand/apple-touch-icon.png", "/apple-touch-icon.png"),
+    ("/brand/icon-512.png", "/icon-512.png"),
+    ("/favicon.ico", "/favicon-32.png"),
+    ("/security.txt", "/.well-known/security.txt"),
+)
+
+
+def redirects():
+    lines = ["# Written by advisory/build_advisory.py on every build. Do not edit by hand."]
+    if ORIGIN and NETLIFY_HOST:
+        # Netlify's own address for this site serves the same deploy: one host for readers and search.
+        # The rule names its host, so branch and preview addresses are left alone.
+        lines.append(f"https://{NETLIFY_HOST}/*  {ORIGIN}/:splat  301!")
+    for old, new in MOVED:
+        assert not os.path.exists(os.path.join(OUT, old.lstrip("/"))), f"{old} exists, so its redirect would never fire"
+        assert os.path.isfile(os.path.join(OUT, new.lstrip("/"))), f"{old} points at {new}, which the build did not write"
+        lines.append(f"{old}  {new}  301")
     return "\n".join(lines) + "\n"
 
 
@@ -778,6 +847,7 @@ def write_site():
             f"Contact: mailto:{EMAIL}\nExpires: {expires}\nPreferred-Languages: {langs}\n"
             f"Canonical: {ORIGIN}/.well-known/security.txt\n")
     open(os.path.join(OUT, "_headers"), "w").write(headers(list(pages.values())))
+    open(os.path.join(OUT, "_redirects"), "w").write(redirects())
     size = sum(os.path.getsize(os.path.join(r, f)) for r, _, fs in os.walk(OUT) for f in fs)
     print(f"  wrote publish/ ({len(pages)} pages, {size:,} bytes in all)")
 

@@ -12,3 +12,7 @@ node_modules/
 # advisory/: local notes and the leak-guard word list stay on this machine
 advisory/*.local.json
 advisory/.leakwords
+
+# Python bytecode from the build scripts
+__pycache__/
+*.pyc
