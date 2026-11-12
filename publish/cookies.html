@@ -11,8 +11,8 @@
 <link rel="alternate" hreflang="x-default" href="https://slapsec.com/cookies">
 <meta name="theme-color" content="#050505">
 <meta name="color-scheme" content="light">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.svg?v=a93b0ab8" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png?v=e7df2122" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/newsreader-300.5f3e1bc9.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -27,6 +27,7 @@
 @font-face{font-family:"Newsreader fallback";src:local("Iowan Old Style"),local("IowanOldStyle-Roman");size-adjust:94%;ascent-override:78.7%;descent-override:27.7%;line-gap-override:0%}
 @font-face{font-family:"Newsreader fallback G";src:local("Georgia");size-adjust:94.5%;ascent-override:78.3%;descent-override:27.5%;line-gap-override:0%}
 @font-face{font-family:"Schibsted fallback";src:local("Arial"),local("ArialMT");size-adjust:103.95%;ascent-override:93.94%;descent-override:24.8%;line-gap-override:0%}
+@font-face{font-family:"Schibsted fallback";font-weight:800;src:local("Arial Bold"),local("Arial-BoldMT");size-adjust:106.09%;ascent-override:92.05%;descent-override:24.3%;line-gap-override:0%}
 @font-face{font-family:"Mono fallback";src:local("Courier New"),local("CourierNewPSMT");size-adjust:99.98%;ascent-override:102.02%;descent-override:30%;line-gap-override:0%}
 :root{
   --black:#050505;--paper:#f4f4f2;--ink:#0a0a0b;--ink-body:#26272a;--ink-2:#5d5d5a;--line:#d8d8d5;
@@ -77,6 +78,10 @@ main:focus{outline:none}
   color:var(--on-dark-2);text-decoration:none;padding:6px 0;padding-inline-start:.16em;margin-inline:-.16em;line-height:1.45;
   display:inline-block;white-space:nowrap;transition:color var(--t)}
 .lang a::after{content:"";position:absolute;inset:-8px -6px}
+.lang a:first-child::after{inset:-9px -11px -9px -15px}
+.lang a:last-child::after{inset:-9px -15px -9px -11px}
+.top .logo,.foot .logo{position:relative}
+.top .logo::after,.foot .logo::after{content:"";position:absolute;inset:-8px -6px}
 .lang a[aria-current]{color:var(--on-dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
 
 .doc{padding-block:clamp(56px, 7vw, 112px) var(--band)}
@@ -123,26 +128,38 @@ main:focus{outline:none}
 .note-label{font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.5;
   color:var(--ink-2);margin-bottom:8px}
 .doc-body a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;
-  text-decoration-color:var(--ink-2);transition:text-decoration-color var(--t)}
+  text-decoration-color:var(--ink-2);transition:text-decoration-color var(--t),text-decoration-thickness var(--t)}
 code{font-family:var(--mono);font-size:.875em;letter-spacing:0}
 
 .foot{background:var(--black);color:var(--on-dark-2);padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
 .foot .wrap{display:flex;flex-direction:column;gap:44px}
 .foot-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:44px;border-top:1px solid var(--line-dark)}
+.social{position:relative;display:inline-flex;align-items:center;gap:.6em;font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.45;color:var(--on-dark-2);text-decoration:none;padding:6px 0;white-space:nowrap;transition:color var(--t)}
+.social::before{content:"";position:absolute;inset:-9px -6px}
+.social::after{content:"";flex:none;width:.5rem;height:.5rem;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M1 7l6-6M2.5 1H7v4.5' fill='none' stroke='%23000' stroke-width='1.1'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M1 7l6-6M2.5 1H7v4.5' fill='none' stroke='%23000' stroke-width='1.1'/%3E%3C/svg%3E") center/contain no-repeat}
 .foot-base{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;
   font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase}
 .foot-base > p:last-child,.foot-base ul{margin-inline-end:-.16em}
 .foot-base ul{display:flex;flex-wrap:wrap;gap:12px 26px;list-style:none;padding:0}
-.foot-base a{text-decoration:none;transition:color var(--t)}
-.foot-base a[aria-current]{color:var(--on-dark)}
+.foot-base a{position:relative;text-decoration:none;white-space:nowrap;transition:color var(--t)}
+.foot-base a::after{content:"";position:absolute;inset:-15px -10px}  .foot-base a[aria-current]{color:var(--on-dark)}
 
 @media (hover: hover){
-  .lang a:hover,.foot-base a:hover{color:var(--on-dark)}
+  .lang a:hover,.foot-base a:hover,.social:hover{color:var(--on-dark)}
   .toc a:hover{color:var(--ink)}
   .doc-body a:hover{text-decoration-color:var(--ink)}
 }
-@media screen and (hover: hover) and (prefers-reduced-motion: no-preference){
+.lang a:active,.foot-base a:active,.social:active{color:var(--on-dark);transition-duration:0s}
+.toc a:active{color:var(--ink);transition-duration:0s}
+.doc-body a:active{text-decoration-color:var(--ink);text-decoration-thickness:2px;transition-duration:0s}
+@media screen and (prefers-reduced-motion: no-preference){
   .logo .logo-mark::before,.logo .logo-mark::after{transition:transform .45s cubic-bezier(.16,1,.3,1)}
+  .logo:active .logo-mark::before{transform:translate(2px,2px);transition-duration:0s}
+  .logo:active .logo-mark::after{transform:translate(-2px,-2px);transition-duration:0s}
+}
+@media screen and (hover: hover) and (prefers-reduced-motion: no-preference){
   .logo:hover .logo-mark::before{transform:translate(2px,2px)}
   .logo:hover .logo-mark::after{transform:translate(-2px,-2px)}
 }
@@ -160,7 +177,9 @@ code{font-family:var(--mono);font-size:.875em;letter-spacing:0}
   .top .wrap{padding-block:18px}
   .doc-body dl > div{grid-template-columns:minmax(0,1fr)}
   .doc-body dt{padding-top:0}
-  .foot-top{flex-direction:column;align-items:flex-start}
+}
+@media (max-width: 339px){
+  .foot-base ul{column-gap:20px}
 }
 @media (orientation: landscape) and (max-height: 500px){.top .wrap{padding-block:14px}}
 @media (min-width: 1921px) and (min-height: 1000px){
@@ -170,12 +189,13 @@ code{font-family:var(--mono);font-size:.875em;letter-spacing:0}
 @media (prefers-contrast: more){
   :root{--ink-body:#0a0a0b;--ink-2:#3d3d3a;--line:#8c8c88;--on-dark-2:#cfcfcb;--on-dark-3:#8c8c88;--line-dark:#5a5a5e}
 }
+@media (forced-colors: active){.social::after{background:LinkText}}
 @media print{
   @page{size:A4;margin:16mm 16mm 18mm}
   :root{--serif:"Newsreader Print", Georgia, serif}
   html,body,.top,.foot{background:#fff!important}
   body{font-size:10.5pt;line-height:1.5}
-  .skip,.lang,.toc,.desc{display:none!important}
+  .skip,.lang,.toc,.desc,.social{display:none!important}
   .wrap{max-width:none;padding-inline:0}
   .top .wrap{padding-block:0 8mm}
   .logo-word,.doc h1,.doc-body h2,.intro,.doc-body dd{color:#0a0a0b!important}
@@ -250,6 +270,7 @@ code{font-family:var(--mono);font-size:.875em;letter-spacing:0}
   <div class="wrap">
     <div class="foot-top">
       <div class="lockup"><a class="logo" href="/" aria-label="SlapSec, home"><span class="logo-mark"><span class="logo-word" translate="no">SlapSec</span></span></a><span class="desc">Cybersecurity and technology firm</span></div>
+      <a class="social" href="https://www.linkedin.com/company/slapsec/" target="_blank" rel="noopener" aria-label="SlapSec on LinkedIn, opens in a new tab"><span translate="no">LinkedIn</span></a>
     </div>
     <div class="foot-base">
       <p>© 2026 <span translate="no">SlapSec LLC</span></p>

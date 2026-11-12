@@ -26,6 +26,7 @@ import re
 import shutil
 import sys
 import unicodedata
+import urllib.parse
 from datetime import date, datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -42,6 +43,7 @@ BRAND, ENTITY = COPY["brand"], COPY["entity"]
 ORIGIN = COPY.get("origin", "").rstrip("/")
 DOMAIN = re.sub(r"^https://", "", ORIGIN)
 EMAIL = COPY.get("contact_email", "").strip()
+LINKEDIN = COPY.get("linkedin", "").strip()   # the firm's page there; empty leaves the footer without the link
 PRIMARY = COPY.get("primary_lang", "es")
 LANGS = ("en", "es")
 HTML_LANG = {"es": "es-ES", "en": "en-GB"}
@@ -71,6 +73,7 @@ UI = {
     "resume": ("Reanudar animación", "Resume animation"),
     "skip": ("Saltar al contenido", "Skip to content"),
     "legal_nav": ("Información legal", "Legal information"),
+    "linkedin": (f"{BRAND} en LinkedIn, se abre en otra pestaña", f"{BRAND} on LinkedIn, opens in a new tab"),
     "updated": ("Última actualización", "Last updated"),
     "contents": ("En esta página", "On this page"),
     "legal_kicker": ("Legal", "Legal"),
@@ -109,6 +112,13 @@ def _bind(s):
 def display(s):
     """Headlines, the Criterio continuation, the list of moments, the descriptor."""
     return widont(_glue(_bind(s), SHORT))
+
+
+def balanced(s):
+    """Headlines and titles the browser balances (text-wrap: balance): the same binding, without
+    the last-two-words glue. Balancing already keeps a last line from being one word, and Chrome
+    takes the glued pair for a word it may not leave alone, so it drags the word before it down."""
+    return _glue(_bind(s), SHORT)
 
 
 def running(s, lang):
@@ -212,7 +222,9 @@ def section(s):
     kicker = t(s["kicker_es"], s["kicker_en"], "p", "kicker") if s.get("kicker_es") else ""
     pes = [running(p, "es") for p in paragraphs(s.get("body_es", ""))]
     pen = [running(p, "en") for p in paragraphs(s.get("body_en", ""))]
-    hes, hen = display(s["headline_es"]), display(s["headline_en"])
+    # the approach headline runs on into its paragraph; every other h2 is balanced by the browser
+    head = display if role == "approach" else balanced
+    hes, hen = head(s["headline_es"]), head(s["headline_en"])
 
     if role == "decisions":
         items = zip(list_items(s["body_es"]), list_items(s["body_en"]))
@@ -236,7 +248,7 @@ def section(s):
     if role == "practice":
         # The five areas as one track: a hairline that takes the shape of each area's work,
         # carried sideways by the reader's scroll where there is room, a list everywhere else.
-        return pista.module(s, {"t": t, "rich": rich, "display": display, "running": running,
+        return pista.module(s, {"t": t, "rich": rich, "balanced": balanced, "running": running,
                                 "loans": loans, "esc": esc})
 
     if role == "feature":
@@ -342,6 +354,18 @@ def footer_links(swap, current=None):
     return f"      <ul{label}>\n" + "\n".join(lis) + "\n      </ul>"
 
 
+def social(swap):
+    """The firm's page on LinkedIn, in the footer across from the wordmark. It opens in its own
+    tab, so the reader keeps the page; on the home page its label follows the language switch."""
+    if not LINKEDIN:
+        return ""
+    aria = f' aria-label="{esc(ui("linkedin"))}"'
+    if swap:
+        aria += f' data-es-aria="{esc(UI["linkedin"][0])}" data-en-aria="{esc(UI["linkedin"][1])}"'
+    return (f'      <a class="social" href="{esc(LINKEDIN)}" target="_blank" rel="noopener"{aria}>'
+            f'<span translate="no">LinkedIn</span></a>')
+
+
 def copyright_line():
     return f'© {YEAR} <span translate="no">{ENTITY}</span>'
 
@@ -425,6 +449,7 @@ def legal_page(key, lang):
         "TOC": "\n".join(f"          {li}" for li in toc),
         "BODY": "\n".join(body),
         "COPYRIGHT": copyright_line(),
+        "FOOT_SOCIAL": social(False),
         "FOOT_NOTE": footer_links(False, key),
     }
     return finish(fill(read("legal.template.html"), fills), "site")
@@ -493,12 +518,19 @@ FAVICON_SVG = open(os.path.join(STATIC_DIR, "favicon.svg"), encoding="utf-8").re
 ICON_FILES = ("favicon.svg", "favicon-32.png", "apple-touch-icon.png", "icon-512.png")
 
 
+def icon_version(name):
+    """A tab icon's address carries a hash of the picture, as the share image's does: browsers keep
+    an icon by its address for a long time, and would otherwise go on showing the old one."""
+    return "?v=" + hashlib.sha256(open(os.path.join(STATIC_DIR, name), "rb").read()).hexdigest()[:8]
+
+
 def icons(target):
+    """The tab icons (tools/make_icons.py draws them). The vector one has no size and the bitmap
+    exactly one, which is what makes Chrome and Firefox take the first and Safari the second."""
     if target == "artifact":
-        data = "data:image/svg+xml," + re.sub(r'[<>#"]', lambda m: "%{:02X}".format(ord(m.group())), FAVICON_SVG).replace('"', "'")
-        return f'<link rel="icon" href="{data}">'
-    return ('<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n'
-            '<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">\n'
+        return f'<link rel="icon" href="data:image/svg+xml,{urllib.parse.quote(FAVICON_SVG)}">'
+    return (f'<link rel="icon" href="/favicon.svg{icon_version("favicon.svg")}" type="image/svg+xml">\n'
+            f'<link rel="icon" href="/favicon-32.png{icon_version("favicon-32.png")}" sizes="32x32" type="image/png">\n'
             '<link rel="apple-touch-icon" href="/apple-touch-icon.png">')
 
 
@@ -574,6 +606,8 @@ def json_ld(target):
             "description": pick(COPY["positioning_es"], COPY["positioning_en"])}
     if EMAIL:
         data["email"] = EMAIL
+    if LINKEDIN:
+        data["sameAs"] = [LINKEDIN]
     text = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return f'<script type="application/ld+json">{text}</script>'
 
@@ -676,6 +710,7 @@ def build(target="site", lang=None):
         "NAV_LABEL_NOW": esc(ui("nav")),
         "NAV_LABEL": esc(UI["nav"][0]), "NAV_LABEL_EN": esc(UI["nav"][1]),
         "COPYRIGHT": copyright_line(),
+        "FOOT_SOCIAL": social(True) if target == "site" else "",
         "FOOT_NOTE": footer_links(True) if (PAGES and target == "site") else "",
         "FILM": read("film.js"),
         "MOTION": read("motion.js"),
@@ -741,12 +776,13 @@ def headers(pages):
         "geo-lang.ts must send the same Strict-Transport-Security as _headers"
     csp = ("default-src 'none'; "
            f"script-src {csp_hashes(pages, 'script')}; "
-           f"style-src {csp_hashes(pages, 'style')}; "
+           f"style-src {csp_hashes(pages + [FAVICON_SVG], 'style')}; "
            "img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; "
            "require-trusted-types-for 'script'; trusted-types 'none'")
     lines = [
         "# Written by advisory/build_advisory.py on every build. Do not edit by hand: the",
-        "# Content-Security-Policy hashes are those of the inline code in every page of this directory.",
+        "# Content-Security-Policy hashes are those of the inline code in every page of this directory,",
+        "# and of the style inside favicon.svg, which is served under the same policy.",
         "/*",
         f"  Content-Security-Policy: {csp}",
         f"  Strict-Transport-Security: {HSTS}",
@@ -780,7 +816,7 @@ MOVED = (
     ("/brand/favicon-32.png", "/favicon-32.png"),
     ("/brand/apple-touch-icon.png", "/apple-touch-icon.png"),
     ("/brand/icon-512.png", "/icon-512.png"),
-    ("/favicon.ico", "/favicon-32.png"),
+    ("/favicon.ico", "/apple-touch-icon.png"),   # asked for by habit: the opaque icon, which holds on any ground
     ("/security.txt", "/.well-known/security.txt"),
 )
 

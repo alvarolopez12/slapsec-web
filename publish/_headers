@@ -1,7 +1,8 @@
 # Written by advisory/build_advisory.py on every build. Do not edit by hand: the
-# Content-Security-Policy hashes are those of the inline code in every page of this directory.
+# Content-Security-Policy hashes are those of the inline code in every page of this directory,
+# and of the style inside favicon.svg, which is served under the same policy.
 /*
-  Content-Security-Policy: default-src 'none'; script-src 'sha256-Db1nCm2CmnNpctiMHfVmDbbSZOY6PZ8rrXdfHz5pSds=' 'sha256-QYBia3taSekzIucwz0pPYLcPGsxrx50l6eQZkPkQ8do=' 'sha256-SH9Ov6ydn7JKriD9NI5c7N0CstSyHYSWgRj7y6pw41E=' 'sha256-gmAkPUDyBN36lZktS0AZMx8yqkmRH2xP9LMjSCUmTkY=' 'sha256-tQOj7Mklz7GRtf8vzk4SprbT9WwSPlxL8HPdBPa9O3Q='; style-src 'sha256-39EnYLdzIu1r9xdi449PYxql4NxHrx6uFeoWyWEKAkM=' 'sha256-5dli2eQZSZBghgHsRPBW4FZnY5gVuc5ToqFUyZm1om0=' 'sha256-QrggfE7/sqdYt7i2hdfUz4zf+Cehau0m1lku7bd68/U='; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; require-trusted-types-for 'script'; trusted-types 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'sha256-7Uu21m9emcQ0XDMM13b22gSxvX61lx8p4aC6V+7vA6w=' 'sha256-Db1nCm2CmnNpctiMHfVmDbbSZOY6PZ8rrXdfHz5pSds=' 'sha256-L/ljizoV2Rq+TMKsVhiXUy8qgcatnkJ3bHurjk0y8us=' 'sha256-QYBia3taSekzIucwz0pPYLcPGsxrx50l6eQZkPkQ8do=' 'sha256-SH9Ov6ydn7JKriD9NI5c7N0CstSyHYSWgRj7y6pw41E='; style-src 'sha256-3geF2q6f+zDdLE0LYQv6ppMNOjgBeQWcYO7nja0ZkKc=' 'sha256-AFlgshjUFOyBWSbxqKPCqZE+CTOWmyYimU/MbofClsY=' 'sha256-Ds4dJmbHNdGpMxPjnQQSDT6xY+cv8kipuagmqwPrPWM=' 'sha256-wYi0dOPGGGmr0z5OaGh/IYTrUkvC+iO4G2SlfZJF7Qk='; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; require-trusted-types-for 'script'; trusted-types 'none'
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp

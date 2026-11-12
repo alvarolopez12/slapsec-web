@@ -23,12 +23,12 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="La tecnología y la seguridad de tu organización, al ritmo de su ambición." data-es-content="La tecnología y la seguridad de tu organización, al ritmo de su ambición." data-en-content="Your organisation’s technology and security, in step with its ambition.">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://slapsec.com/#organization","name":"SlapSec","legalName":"SlapSec LLC","url":"https://slapsec.com/","logo":"https://slapsec.com/icon-512.png","description":"SlapSec es una firma de consultoría en ciberseguridad y tecnología. Asesora a la dirección, diseña, implanta y opera la seguridad, y suministra la tecnología.","email":"info@slapsec.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://slapsec.com/#organization","name":"SlapSec","legalName":"SlapSec LLC","url":"https://slapsec.com/","logo":"https://slapsec.com/icon-512.png","description":"SlapSec es una firma de consultoría en ciberseguridad y tecnología. Asesora a la dirección, diseña, implanta y opera la seguridad, y suministra la tecnología.","email":"info@slapsec.com","sameAs":["https://www.linkedin.com/company/slapsec/"]}</script>
 <meta name="theme-color" content="#050505">
 <meta name="color-scheme" content="light">
 <script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")}catch(e){}</script>
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.svg?v=a93b0ab8" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png?v=e7df2122" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/newsreader-300.5f3e1bc9.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/newsreader-300-italic-hero.39a17952.woff2" as="font" type="font/woff2" crossorigin>
@@ -48,7 +48,14 @@
 @font-face{font-family:"Newsreader text fallback";src:local("Iowan Old Style"),local("IowanOldStyle-Roman");size-adjust:88.5%;ascent-override:83.6%;descent-override:29.4%;line-gap-override:0%}
 @font-face{font-family:"Newsreader text fallback G";src:local("Georgia");size-adjust:89.5%;ascent-override:82.7%;descent-override:29%;line-gap-override:0%}
 @font-face{font-family:"Schibsted fallback";src:local("Arial"),local("ArialMT");size-adjust:103.95%;ascent-override:93.94%;descent-override:24.8%;line-gap-override:0%}
+@font-face{font-family:"Schibsted fallback";font-weight:800;src:local("Arial Bold"),local("Arial-BoldMT");size-adjust:106.09%;ascent-override:92.05%;descent-override:24.3%;line-gap-override:0%}
 @font-face{font-family:"Mono fallback";src:local("Courier New"),local("CourierNewPSMT");size-adjust:99.98%;ascent-override:102.02%;descent-override:30%;line-gap-override:0%}
+@media (max-width: 640px), (orientation: landscape) and (max-height: 500px){
+@font-face{font-family:"Newsreader fallback";src:local("Iowan Old Style"),local("IowanOldStyle-Roman");size-adjust:89.9%;ascent-override:82.3%;descent-override:29%;line-gap-override:0%}
+@font-face{font-family:"Newsreader fallback";font-style:italic;src:local("Iowan Old Style Italic"),local("IowanOldStyle-Italic");size-adjust:94.4%;ascent-override:78.3%;descent-override:27.6%;line-gap-override:0%}
+@font-face{font-family:"Newsreader fallback G";src:local("Georgia");size-adjust:90.7%;ascent-override:81.6%;descent-override:28.7%;line-gap-override:0%}
+@font-face{font-family:"Newsreader fallback G";font-style:italic;src:local("Georgia Italic"),local("Georgia-Italic");size-adjust:82.2%;ascent-override:90%;descent-override:31.6%;line-gap-override:0%}
+}
 
 :root{
   --black:#050505;      --paper:#f4f4f2;      --ink:#0a0a0b;        --ink-body:#26272a;   --ink-2:#5d5d5a;      --ink-3:#bdbdb8;      --line:#d8d8d5;       --line-strong:#a9a9a5; --on-dark:#f4f4f2;    --on-dark-2:#9a9a97;  --on-dark-3:#4a4a4d;  --line-dark:#232326;  --pattern:#1a1a1e;    --green:#67e18f;
@@ -155,7 +162,7 @@ main:focus{outline:none}
 .moments{grid-column:7 / span 6;list-style:none;padding:0;border-top:1px solid var(--line)}
 .moments li{padding-block:18px 22px;border-bottom:1px solid var(--line);font-family:var(--serif-text);font-weight:300;
   font-size:var(--fs-lead);line-height:1.34;color:var(--ink);text-wrap:pretty}
-.moments li:last-child{border-bottom:0}
+.moments li:last-child{border-bottom:0;padding-bottom:0}
 
 .cont{font-family:var(--serif);font-size:var(--fs-h2);line-height:1.12;max-width:14.7em;margin-bottom:clamp(40px, 5vw, 72px);text-wrap:pretty;overflow-wrap:break-word}
 .cont h2,.cont p{display:inline;font-family:var(--serif);font-weight:300;font-size:1em;line-height:1.12;letter-spacing:-.015em}
@@ -306,13 +313,21 @@ main:focus{outline:none}
   margin-bottom:clamp(40px, 5vw, 72px)}
 
 .dark{background:var(--black);color:var(--on-dark)}
-.close{position:relative;isolation:isolate;overflow:hidden;overflow:clip}
-.close::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='216' viewBox='0 0 240 216'%3E%3Cg fill='%231a1a1e'%3E%3Cpath d='M24 24h30v8H32v22h-8z'/%3E%3Cpath d='M216 192h-30v-8h22v-22h8z'/%3E%3C/g%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='216' viewBox='0 0 240 216'%3E%3Cg fill='%231a1a1e'%3E%3Cpath d='M24 24h30v8H32v22h-8z'/%3E%3Cpath d='M216 192h-30v-8h22v-22h8z'/%3E%3C/g%3E%3C/svg%3E");
-  background-size:240px 216px;background-repeat:space no-repeat;background-position:0 0,0 100%;
-  -webkit-mask-image:linear-gradient(180deg, #000 0, #000 calc(var(--band) - 56px), rgba(0,0,0,.07) calc(var(--band) - 8px), rgba(0,0,0,.07) calc(100% - var(--band) + 8px), #000 calc(100% - var(--band) + 56px));
-  mask-image:linear-gradient(180deg, #000 0, #000 calc(var(--band) - 56px), rgba(0,0,0,.07) calc(var(--band) - 8px), rgba(0,0,0,.07) calc(100% - var(--band) + 8px), #000 calc(100% - var(--band) + 56px))}
+.close{position:relative;isolation:isolate;overflow:hidden;overflow:clip;
+  --fu:4px;--fp:calc(20 * var(--fu));--ft:36px;--fg:56px;--fn:10;--fk:5;
+  --fm:linear-gradient(90deg, #000 calc(5 * var(--fp)), transparent 0 calc(6 * var(--fp)), rgba(0,0,0,.7) 0 calc(7 * var(--fp)), rgba(0,0,0,.48) 0 calc(8 * var(--fp)), rgba(0,0,0,.3) 0 calc(9 * var(--fp)), rgba(0,0,0,.15) 0);
+  --fx:max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+  padding-top:calc(var(--ft) + 13 * var(--fu) + var(--fg))}
+.close::before,.close::after{content:"";position:absolute;z-index:-1;pointer-events:none;left:var(--fx)}
+@supports (left:round(down, 1px, 1px)){.close::before,.close::after{left:round(down, calc(var(--fx) + .01px), 1px)}}
+.close::before{top:var(--ft);width:calc(var(--fn) * var(--fp));max-width:calc(100% - 2 * var(--fx));height:calc(13 * var(--fu));
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 13' preserveAspectRatio='none'%3E%3Cpath fill='%231a1a1e' d='M0 0h4v1H1v3H0zM12 13H8v-1h3V9h1z'/%3E%3C/svg%3E") 0 0 / var(--fp) 100% repeat-x;
+  -webkit-mask-image:var(--fm);mask-image:var(--fm)}
+@supports (width:round(down, 1px, 1px)){.close::before{max-width:round(down, calc(100% - 2 * var(--fx) + 8 * var(--fu) + .01px), var(--fp))}}
+.close::after{top:calc(var(--ft) - 2 * var(--fu));margin-left:calc(var(--fk) * var(--fp) - 2 * var(--fu));
+  width:calc(16 * var(--fu));height:calc(17 * var(--fu));opacity:.54;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath fill='%2367e18f' d='M0 0h4v1H1v3H0z'/%3E%3C/svg%3E") calc(2 * var(--fu)) calc(2 * var(--fu)) / calc(4 * var(--fu)) calc(4 * var(--fu)) no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath fill='%2367e18f' d='M4 4H0V3h3V0h1z'/%3E%3C/svg%3E") calc(100% - 2 * var(--fu)) calc(100% - 2 * var(--fu)) / calc(4 * var(--fu)) calc(4 * var(--fu)) no-repeat}
 .close h2{color:var(--on-dark)}
 .close .body{color:var(--on-dark-2)}
 .close .body p:first-child{color:var(--on-dark)}
@@ -326,15 +341,23 @@ main:focus{outline:none}
 .foot{background:var(--black);color:var(--on-dark-2);padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
 .foot .wrap{display:flex;flex-direction:column;gap:44px}
 .foot-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:44px;border-top:1px solid var(--line-dark)}
+.social{position:relative;display:inline-flex;align-items:center;gap:.6em;font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase;line-height:1.45;color:var(--on-dark-2);text-decoration:none;padding:6px 0;white-space:nowrap;transition:color var(--t)}
+.social::before{content:"";position:absolute;inset:-9px -6px}
+.social::after{content:"";flex:none;width:.5rem;height:.5rem;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M1 7l6-6M2.5 1H7v4.5' fill='none' stroke='%23000' stroke-width='1.1'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M1 7l6-6M2.5 1H7v4.5' fill='none' stroke='%23000' stroke-width='1.1'/%3E%3C/svg%3E") center/contain no-repeat}
+.foot .logo{position:relative}
+.foot .logo::after{content:"";position:absolute;inset:-8px -6px}
 .foot-base{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;
   font-family:var(--mono);font-size:var(--fs-meta);letter-spacing:.16em;text-transform:uppercase}
-.foot-base ul{display:flex;gap:26px;list-style:none;padding:0}
-.foot-base a{text-decoration:none;transition:color var(--t)}
-
-@media (hover: hover){
-  .nav a:hover,.lang a:hover,.menu-btn:hover,.film-ctl:hover,.foot-base a:hover{color:var(--on-dark)}
+.foot-base ul{display:flex;flex-wrap:wrap;gap:12px 26px;list-style:none;padding:0}
+.foot-base a{position:relative;text-decoration:none;white-space:nowrap;transition:color var(--t)}
+.foot-base a::after{content:"";position:absolute;inset:-15px -10px}  @media (hover: hover){
+  .nav a:hover,.lang a:hover,.menu-btn:hover,.film-ctl:hover,.foot-base a:hover,.social:hover{color:var(--on-dark)}
   .cta:hover{border-color:var(--on-dark);gap:18px}
 }
+.nav a:active,.lang a:active,.menu-btn:active,.film-ctl:active,.foot-base a:active,.social:active{color:var(--on-dark);transition-duration:0s}
+a.cta:active{border-color:var(--on-dark);gap:18px;transition-duration:0s}
 
 @media (min-width: 861px) and (max-height: 820px){
   .hero{--fs-h1:clamp(2.125rem, 1.7vw + 4.2svh, 3.5rem)}
@@ -349,23 +372,43 @@ main:focus{outline:none}
 @media (max-width: 960px){
   .nav{display:none}
   .nav.open{display:block;position:fixed;inset:0;z-index:30;background:var(--black);overflow-y:auto;overscroll-behavior:contain;
-    padding:calc(96px + env(safe-area-inset-top,0px)) var(--gutter) 40px}
-  .nav.open ul{flex-direction:column;gap:6px}
+    padding:0 var(--gutter) 40px;scroll-padding-top:calc(96px + env(safe-area-inset-top,0px))}
+  .nav.open::before{content:"";display:block;position:sticky;top:0;z-index:1;height:calc(84px + env(safe-area-inset-top,0px));
+    margin-inline:calc(-1 * var(--gutter));background:var(--black)}
+  .nav.open ul{flex-direction:column;gap:6px;padding-top:12px}
+  .nav.open li{position:relative}
+  .nav.open li::after{content:"";position:absolute;inset:auto 0 0;border-top:1px solid var(--line-dark)}
   .nav.open a{font-family:var(--serif);font-weight:300;font-size:2rem;letter-spacing:-.015em;text-transform:none;color:var(--on-dark);
-    display:block;padding:12px 0;margin-inline:0;border-bottom:1px solid var(--line-dark);white-space:normal}
-  .menu-open .top{position:fixed}
-  .menu-open .top::before{content:"";position:absolute;inset:0 0 auto 0;height:calc(96px + env(safe-area-inset-top,0px));
-    background:var(--black);z-index:31;pointer-events:none}
+    display:block;padding:12px 0 13px;margin-inline:0;white-space:normal}
+  .nav.open li::after{transition:border-color var(--t)}
+  .nav.open li:has(> a:active)::after{border-top-color:var(--on-dark);transition-duration:0s}
+  .menu-open .top,.menu-closing .top{position:fixed}
   .top .lockup,.lang,.menu-btn{position:relative;z-index:32}
-  .menu-btn{display:inline-block}
+  .menu-btn{display:inline-block;min-width:calc(6ch + 1.12em);text-align:end}
   .lang{border-left:0;padding-left:0}
   .desc{display:none}
   .right{gap:22px}
+  .lang a:first-child::after{inset:-9px -11px -9px -15px}
+  .lang a:last-child::after{inset:-9px -15px -9px -11px}
+  .menu-btn::after{inset:-9px -6px -9px 0}
+  .top .logo{position:relative}
+  .top .logo::after{content:"";position:absolute;inset:-8px -6px}
 }
+@media (max-width: 960px) and (scripting: none){
+  .menu-btn{display:none}
+  .top .wrap{flex-wrap:wrap;row-gap:6px}
+  .right{display:contents}
+  .nav{display:block;order:1;flex:0 0 100%}
+  .nav ul{flex-wrap:wrap;gap:0 22px}
+}
+@media (min-width: 861px) and (max-width: 880px){.close{--fn:9}}
 @media (max-width: 860px){
   .head,.body,.span-right,.moments{grid-column:1 / -1}
-  .close::before{display:none}  .grid{row-gap:28px}
+  .close{--ft:32px;--fn:6;--fk:3;
+    --fm:linear-gradient(90deg, #000 calc(3 * var(--fp)), transparent 0 calc(4 * var(--fp)), rgba(0,0,0,.6) 0 calc(5 * var(--fp)), rgba(0,0,0,.3) 0)}
+  .grid,.practice .grid{row-gap:28px}
   .body{max-width:32em}
+  .cont{text-wrap:wrap}
   .moments{max-width:34em}
   .practice .grid > .body{grid-column:1 / -1}
 }
@@ -378,13 +421,20 @@ main:focus{outline:none}
 }
 @media (max-width: 520px){
   .top .wrap{padding-block:18px}
-  .foot-top{flex-direction:column;align-items:flex-start}
+  .close{--fu:3px;--ft:28px;--fg:48px}
+}
+@media (max-width: 375px){
+  .close{--fn:5;--fm:linear-gradient(90deg, #000 calc(3 * var(--fp)), transparent 0 calc(4 * var(--fp)), rgba(0,0,0,.45) 0)}
+}
+@media (max-width: 339px){
+  .foot-base ul{column-gap:20px}
 }
 @media (max-width: 439px){
   .hero h1{max-width:10.75em}
 }
 @media (max-width: 374px){
   :root{--fs-h1:clamp(1.75rem, 9vw, 2.125rem);--fs-feature:clamp(1.75rem, 9vw, 2.125rem)}
+  .cont{font-size:clamp(1.4375rem, 7.25vw, 1.75rem)}
 }
 @media (orientation: landscape) and (max-height: 500px){
   .top .wrap{padding-block:14px}
@@ -393,9 +443,9 @@ main:focus{outline:none}
   .hero .wrap{padding-block:calc(4.25rem + 8svh) calc(24px + env(safe-area-inset-bottom, 0px))}
   .standfirst{margin-top:14px;padding-top:12px;font-size:1.0625rem;max-width:min(26em, 100% - 10.5rem)}
   .film-ctl{bottom:calc(24px + env(safe-area-inset-bottom, 0px))}
-  .nav.open{padding:calc(72px + env(safe-area-inset-top, 0px)) var(--gutter) 20px}
-  .menu-open .top::before{height:calc(72px + env(safe-area-inset-top, 0px))}
-  .nav.open a{font-size:1.5rem;padding:8px 0}
+  .nav.open{padding-bottom:20px;scroll-padding-top:calc(72px + env(safe-area-inset-top, 0px))}
+  .nav.open::before{height:calc(60px + env(safe-area-inset-top, 0px))}
+  .nav.open a{font-size:1.5rem;padding:8px 0 9px}
 }
 @media (min-width: 1921px) and (min-height: 1000px){
   html{font-size:clamp(100%, calc(100% + (min(100vw, 177.78vh) - 1920px) * .0045), 137.5%)}
@@ -418,13 +468,22 @@ main:focus{outline:none}
   .foot .wrap{gap:2.75rem}
   .foot-top{gap:1.5rem;padding-top:2.75rem}
   .foot-base{gap:.75rem 1.5rem}
-  .foot-base ul{gap:1.625rem}
+  .foot-base ul{gap:.75rem 1.625rem}
   .cta{margin-top:1.625rem;padding-bottom:.625rem;gap:.875rem}
   .cta::after{width:1rem;height:.625rem}
-  .close::before{background-size:15rem 13.5rem}
+  a.cta:active{gap:1.125rem}
+  .close{--ft:2.25rem;--fg:3.5rem}
+  @supports (width:round(1px, 1px)){.close{--fu:round(.25rem, 1px);--ft:round(2.25rem, 1px)}}
 }
 @media (min-width: 1921px) and (min-height: 1000px) and (hover: hover){
   .cta:hover{gap:1.125rem}
+}
+@media (max-width: 17.4em){
+  .top .wrap{flex-wrap:wrap;row-gap:4px}
+  .right{margin-left:auto}
+  .skip:focus{top:calc(64px + 2.85rem)}
+  .nav.open{scroll-padding-top:calc(82px + 2.85rem + env(safe-area-inset-top,0px))}
+  .nav.open::before{height:calc(70px + 2.85rem + env(safe-area-inset-top,0px))}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -435,7 +494,7 @@ main:focus{outline:none}
 @media screen and (prefers-reduced-motion: no-preference){
   .motion .top .logo-mark::before{animation:scope-in-tl 1s var(--ease-out) .15s backwards}
   .motion .top .logo-mark::after{animation:scope-in-br 1s var(--ease-out) .15s backwards}
-  .motion .top .logo-word,.motion .top .desc,.motion .top .right{animation:fade-in .9s var(--ease) .35s backwards}
+  .motion:not(.entered) .top .logo-word,.motion:not(.entered) .top .desc,.motion:not(.entered) .top .right{animation:fade-in .9s var(--ease) .35s backwards}
   .motion:not(.entered) .hero h1{animation:rise 1.2s var(--ease-out) .25s backwards}
   .motion:not(.entered) .hero h1 em{animation:rise 1.2s var(--ease-out) .6s backwards}
   .motion:not(.entered) .standfirst{animation:fade-up 1s var(--ease-out) 1s backwards}
@@ -447,6 +506,8 @@ main:focus{outline:none}
   @keyframes fade-in{from{opacity:0}to{opacity:1}}
 
   .logo .logo-mark::before,.logo .logo-mark::after{transition:transform .45s var(--ease-out)}
+  .logo:active .logo-mark::before{transform:translate(2px,2px);transition-duration:0s}
+  .logo:active .logo-mark::after{transform:translate(-2px,-2px);transition-duration:0s}
 
   .motion .ground,.motion .film,.motion .hero .wrap,.motion .film-ctl{transform:translate3d(0,var(--hero-shift,0px),0);will-change:transform}
   .motion .hero .wrap{opacity:var(--hero-fade,1)}
@@ -455,6 +516,7 @@ main:focus{outline:none}
   .rv{opacity:0;transform:translate3d(0,18px,0);transition:opacity .9s var(--ease),transform 1s var(--ease-out);
     transition-delay:calc(var(--d, 0) * 80ms)}
   .rv.in{opacity:1;transform:none}
+  .cta.rv{transition:opacity .9s var(--ease) calc(var(--d, 0) * 80ms),transform 1s var(--ease-out) calc(var(--d, 0) * 80ms),border-color var(--t),gap var(--t)}
   h2.rv,.close.rv{opacity:1;transform:none}
   .split{display:flex;flex-direction:column}
   .ln{display:block;overflow:hidden;padding-block:.14em;margin-block:-.14em}
@@ -465,17 +527,44 @@ main:focus{outline:none}
   .cont p .sw{color:var(--ink-3);transition:color .45s var(--ease)}
   .cont p .sw.on{color:var(--ink-2)}
 
-  .close.rv::before{opacity:0;transition:opacity 1.6s var(--ease)}
-  .close.rv.in::before{opacity:1}
+  .close.rv:not(.in)::before,.close.rv:not(.in)::after{opacity:0}
+  .close.rv.in::before{animation:frieze-in 1.6s var(--ease) .2s backwards}
+  .close.rv.in::after{animation:frieze-lock 1s var(--ease-out) 1.1s backwards}
+  @keyframes frieze-in{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
+  @keyframes frieze-lock{from{opacity:0;background-position:0 0,100% 100%}}
 
   .motion .top{border-bottom:1px solid transparent;transition:background-color .45s var(--ease),border-color .45s var(--ease)}
   .motion .top .wrap{transition:padding-block .5s var(--ease-out)}
-  .motion .top.stuck{position:fixed;top:calc(-9rem - env(safe-area-inset-top, 0px));background:var(--black);border-bottom-color:var(--line-dark);
+  .motion .top.stuck{position:fixed;top:calc(-2rem - 48px - env(safe-area-inset-top, 0px));background:var(--black);border-bottom-color:var(--line-dark);
     transition:top .5s var(--ease-out),background-color .45s var(--ease),border-color .45s var(--ease)}
-  .motion .top.stuck.shown,.menu-open .top.stuck{top:0}
-  .motion .top.stuck .wrap{padding-block:14px}
+  @media (max-width: 17.4em){.motion .top.stuck{top:calc(-3rem - 48px - env(safe-area-inset-top, 0px))}}
+  .motion .top.stuck.shown,.menu-open .top.stuck,.menu-closing .top.stuck{top:0}
+  .motion .top.stuck .wrap{padding-block:14px;transition:none}
   .motion .top.stuck .desc{display:none}
   .motion .nav a[aria-current]{color:var(--on-dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+
+  @media (max-width: 960px){
+    .motion .nav.open{animation:menu-down .42s var(--ease-out)}
+    .motion .nav.open li{animation:menu-mask calc(var(--i, 0) * 35ms + 510ms)}
+    .motion .nav.open a{animation:menu-rise .45s var(--ease-out) calc(var(--i, 0) * 35ms + 60ms) backwards}
+    .motion .nav.open li::after{transform-origin:0 50%;animation:menu-draw .45s var(--ease-out) calc(var(--i, 0) * 35ms) backwards}
+    .motion.menu-closing .nav.open{animation:menu-up .26s var(--ease) .06s forwards}
+    .motion.menu-closing:not(.menu-away) .nav.open li{animation:none;clip-path:inset(0)}
+    .motion.menu-closing:not(.menu-away) .nav.open a{animation:menu-sink .16s var(--ease) forwards}
+    .motion.menu-away .nav.open{animation-delay:0s}
+    .motion .nav.open a[aria-current]{text-decoration:none}
+    .motion .nav.open li:has(> [aria-current])::after{border-top-color:var(--on-dark)}
+    .motion.menu-open .top:not(.stuck){animation:bar-down .42s var(--ease-out)}
+    .motion.menu-closing .top:not(.stuck){animation:bar-up .32s var(--ease) forwards}
+    @keyframes bar-down{from{top:var(--bar-y, 0px)}}
+    @keyframes bar-up{to{top:var(--bar-y, 0px)}}
+    @keyframes menu-down{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+    @keyframes menu-up{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 100% 0)}}
+    @keyframes menu-mask{from,to{clip-path:inset(-8px -8px 0 -8px)}}
+    @keyframes menu-rise{from{transform:translate3d(0,100%,0)}to{transform:none}}
+    @keyframes menu-sink{to{transform:translate3d(0,100%,0)}}
+    @keyframes menu-draw{from{transform:scaleX(0)}to{transform:none}}
+  }
 
   .scope{display:block;position:fixed;inset:0;pointer-events:none;z-index:60;opacity:0;color:var(--ink-2);
     transition:opacity .3s var(--ease),color .3s var(--ease)}
@@ -503,7 +592,9 @@ main:focus{outline:none}
     --on-dark-2:#cfcfcb;--on-dark-3:#8c8c88;--line-dark:#5a5a5e;--film-line:rgba(226,226,222,.4)}
 }
 @media (forced-colors: active){
-  .ground,.film,.film-ctl,.scope,.close::before{display:none!important}
+  .ground,.film,.film-ctl,.scope,.close::before,.close::after{display:none!important}
+  .motion .nav.open a[aria-current]{text-decoration:underline}
+  .social::after,.cta::after{background:LinkText}
 }
 
 @media print{
@@ -511,7 +602,7 @@ main:focus{outline:none}
   :root{--serif:"Newsreader Print", Georgia, serif;--serif-text:"Newsreader Print", Georgia, serif}
   html,body,.hero,.light,.dark,.foot{background:#fff!important}
   body{font-size:10.5pt;line-height:1.5}
-  .skip,.right,.film-ctl,.ground,.film,.scope,.desc,.close::before{display:none!important}
+  .skip,.right,.film-ctl,.ground,.film,.scope,.desc,.social,.close::before,.close::after{display:none!important}
   .top{position:static!important;border:0!important}
   .wrap,.top .wrap,.foot .wrap{max-width:none;padding-inline:0}
   .top .wrap{padding-block:0 8mm}
@@ -570,7 +661,7 @@ main:focus{outline:none}
   <section id="firma" class="band light">
     <div class="wrap grid">
       <div class="head"><p class="kicker" data-es="La firma" data-en="The firm">La firma</p>
-        <h2 data-es="La seguridad que hay detrás de tus grandes decisiones" data-en="The security behind your biggest decisions">La seguridad que hay detrás de tus grandes decisiones</h2>
+        <h2 data-es="La seguridad que hay detrás de tus grandes decisiones" data-en="The security behind your biggest decisions">La seguridad que hay detrás de tus grandes decisiones</h2>
       </div>
       <div class="body">
         <p class="lead" data-es="Trabajamos con los equipos directivos y con los responsables de tecnología y seguridad desde que una decisión empieza a perfilarse, para que la seguridad avance con ella." data-en="We work with senior management and with technology and security leaders from the moment a decision starts to take shape, so that security moves with it.">Trabajamos con los equipos directivos y con los responsables de tecnología y seguridad desde que una decisión empieza a perfilarse, para que la seguridad avance con ella.</p>
@@ -583,7 +674,7 @@ main:focus{outline:none}
   <section id="situaciones" class="band light">
     <div class="wrap grid">
       <div class="head"><p class="kicker" data-es="Situaciones" data-en="Situations">Situaciones</p>
-        <h2 data-es="Cuándo contar con nosotros" data-en="When to bring us in">Cuándo contar con nosotros</h2>
+        <h2 data-es="Cuándo contar con nosotros" data-en="When to bring us in">Cuándo contar con nosotros</h2>
       </div>
       <ul class="moments">
         <li data-es="Tienes que decidir dónde invertir en tecnología y seguridad, y en qué orden." data-en="You have to decide where to invest in technology and security, and in what order.">Tienes que decidir dónde invertir en tecnología y seguridad, y en qué orden.</li>
@@ -612,7 +703,7 @@ main:focus{outline:none}
     <div class="wrap">
       <div class="grid">
       <div class="head"><p class="kicker" data-es="Servicios" data-en="Services">Servicios</p>
-        <h2 data-es="Del gobierno de la seguridad a la inteligencia de amenazas" data-en="From security governance to threat intelligence">Del gobierno de la seguridad a la inteligencia de amenazas</h2>
+        <h2 data-es="Del gobierno de la seguridad a la inteligencia de amenazas" data-en="From security governance to threat intelligence">Del gobierno de la seguridad a la inteligencia de amenazas</h2>
       </div>
       <div class="body">
         <p class="lead" data-es="En estas áreas asesoramos a la dirección y trabajamos junto a tus equipos de tecnología y seguridad." data-en="In these areas we advise senior management and work with your technology and security teams.">En estas áreas asesoramos a la dirección y trabajamos junto a tus equipos de tecnología y seguridad.</p>
@@ -635,7 +726,7 @@ main:focus{outline:none}
             <div class="pista-fig" aria-hidden="true"><svg class="pista-svg" data-fig="operaciones" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" focusable="false"><path class="k lead lead-in" d="M-400,250H0" pathLength="1" data-d="0 0.07"/><path class="k lead lead-out" d="M1000,250H1400" pathLength="1" data-d="0.93 1"/><path d="M0,250H90" class="k" pathLength="1" data-d="0.07 0.12"/><g data-m="0.06 0.5 -110 0 0" data-o="0:0 0.12:0.5 0.5:1"><path d="M90,140H410V360H90Z" class="g"/><path d="M90,250H410" class="k" pathLength="1" data-d="0.12 0.3"/><path d="M170,241V259" class="s"/><path d="M324,244H336V256H324Z" class="s"/><path d="M170,244V196H330V244" class="s"/><path d="M250,250V310" class="s"/><path d="M241,310H259" class="s"/></g><g data-m="0.06 0.5 110 0 0" data-o="0:0 0.12:0.5 0.5:1"><path d="M590,120H910V380H590Z" class="g"/><path d="M664,244H676V256H664Z" class="s"/><path d="M830,241V259" class="s"/><path d="M670,244V184H830V244" class="s"/><path d="M741,184H759" class="s"/><path d="M750,250V318H670" class="s"/><path d="M670,309V327" class="s"/></g><path d="M410,250H590" class="k" pathLength="1" data-d="0.5 0.58"/><path d="M410,196H590" class="s" pathLength="1" data-d="0.54 0.62"/><path d="M410,304H590" class="s" pathLength="1" data-d="0.56 0.64"/><path d="M590,250H910" class="k" pathLength="1" data-d="0.58 0.72"/><path d="M910,250H1000" class="k" pathLength="1" data-d="0.72 0.8"/><path d="M830,256V432H788" class="s dash" data-o="0.7:0 0.82:1"/><path d="M772,424H788V440H772Z" class="s dash" data-o="0.74:0 0.86:1"/><path d="M762,424V414H772" class="b" data-m="0.84 0.98 -9 -9 0" data-o="0.84:0 0.98:1"/><path d="M798,440V450H788" class="b" data-m="0.84 0.98 9 9 0" data-o="0.84:0 0.98:1"/></svg></div>
             <div class="pista-text">
               <h3 class="pista-label"><span class="pista-n" aria-hidden="true">02</span><span data-es="Operaciones corporativas" data-en="Corporate transactions">Operaciones corporativas</span></h3>
-              <p class="pista-title" data-es="Conoce el riesgo tecnológico antes de firmar" data-en="Know the technology risk before you sign">Conoce el riesgo tecnológico antes de firmar</p>
+              <p class="pista-title" data-es="Conoce el riesgo tecnológico antes de firmar" data-en="Know the technology risk before you sign">Conoce el riesgo tecnológico antes de firmar</p>
               <p class="pista-body" data-i18n="t2">Realizamos la <i lang="en">due diligence</i> de tecnología y ciberseguridad para compradores, vendedores e inversores, con conclusiones que puedes llevar a la negociación. Tras el cierre, asesoramos en la integración.</p>
             </div>
           </li>
@@ -643,7 +734,7 @@ main:focus{outline:none}
             <div class="pista-fig" aria-hidden="true"><svg class="pista-svg" data-fig="arquitectura" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" focusable="false"><path class="k lead lead-in" d="M-400,250H0" pathLength="1" data-d="0 0.07"/><path class="k lead lead-out" d="M1000,250H1400" pathLength="1" data-d="0.93 1"/><path d="M200,237V40H800V237M200,263V460H800V263" class="g dash" data-o="0:0 0.1:1 0.82:1 0.96:0" opacity="0"/><path d="M270,237V96H730V237M270,263V404H730V263" class="g dash" data-o="0:0 0.1:1 0.82:1 0.96:0" opacity="0"/><path d="M340,237V152H660V237M340,263V348H660V263" class="g dash" data-o="0:0 0.1:1 0.82:1 0.96:0" opacity="0"/><path d="M410,237V206H590V237M410,263V294H590V263" class="g dash" data-o="0:0 0.1:1 0.82:1 0.96:0" opacity="0"/><path d="M0,250H490" class="k" pathLength="1" data-d="0.07 0.47"/><path d="M200,237V40H800V237" class="g" pathLength="1" data-d="0.233 0.493"/><path d="M200,263V460H800V263" class="g" pathLength="1" data-d="0.233 0.493"/><path d="M193,237H207M193,263H207" class="s" data-o="0.233:0 0.283:1"/><path d="M793,237H807M793,263H807" class="s" data-o="0.721:0 0.771:1"/><path d="M270,237V96H730V237" class="g" pathLength="1" data-d="0.29 0.52"/><path d="M270,263V404H730V263" class="g" pathLength="1" data-d="0.29 0.52"/><path d="M263,237H277M263,263H277" class="s" data-o="0.29:0 0.34:1"/><path d="M723,237H737M723,263H737" class="s" data-o="0.673:0 0.723:1"/><path d="M340,237V152H660V237" class="s" pathLength="1" data-d="0.348 0.548"/><path d="M340,263V348H660V263" class="s" pathLength="1" data-d="0.348 0.548"/><path d="M333,237H347M333,263H347" class="s" data-o="0.348:0 0.398:1"/><path d="M653,237H667M653,263H667" class="s" data-o="0.624:0 0.674:1"/><path d="M410,237V206H590V237" class="s" pathLength="1" data-d="0.405 0.575"/><path d="M410,263V294H590V263" class="s" pathLength="1" data-d="0.405 0.575"/><path d="M403,237H417M403,263H417" class="s" data-o="0.405:0 0.455:1"/><path d="M583,237H597M583,263H597" class="s" data-o="0.576:0 0.626:1"/><path d="M490,240H510V260H490Z" class="k" pathLength="1" data-d="0.47 0.52"/><path d="M510,250H1000" class="k" pathLength="1" data-d="0.52 0.86"/><path d="M478,238V228H488" class="b" data-m="0.84 0.98 -9 -9 0" data-o="0.84:0 0.98:1"/><path d="M522,262V272H512" class="b" data-m="0.84 0.98 9 9 0" data-o="0.84:0 0.98:1"/></svg></div>
             <div class="pista-text">
               <h3 class="pista-label"><span class="pista-n" aria-hidden="true">03</span><span data-es="Arquitectura y tecnología" data-en="Architecture &amp; technology">Arquitectura y tecnología</span></h3>
-              <p class="pista-title" data-es="Una arquitectura de seguridad a la medida de tus planes" data-en="Security architecture designed around your plans">Una arquitectura de seguridad a la medida de tus planes</p>
+              <p class="pista-title" data-es="Una arquitectura de seguridad a la medida de tus planes" data-en="Security architecture designed around your plans">Una arquitectura de seguridad a la medida de tus planes</p>
               <p class="pista-body" data-i18n="t3">Diseñamos, implantamos y operamos arquitecturas Zero Trust: identidades y accesos privilegiados (IAM y PAM), segmentación de red, acceso seguro (SASE y ZTNA), detección y respuesta (EDR y XDR), postura de seguridad en la nube y protección de datos (DLP). También suministramos la tecnología.</p>
             </div>
           </li>
@@ -651,7 +742,7 @@ main:focus{outline:none}
             <div class="pista-fig" aria-hidden="true"><svg class="pista-svg" data-fig="ofensiva" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" focusable="false"><path class="k lead lead-in" d="M-400,250H0" pathLength="1" data-d="0 0.07"/><path class="k lead lead-out" d="M1000,250H1400" pathLength="1" data-d="0.93 1"/><path d="M236,106V78H264" class="g" data-m="0.02 0.14 -16 -16 0" data-o="0.02:0 0.14:1"/><path d="M808,394V422H780" class="g" data-m="0.02 0.14 16 16 0" data-o="0.02:0 0.14:1"/><path d="M340,104V281" class="s" pathLength="1" data-d="0.05 0.17"/><path d="M340,396V319" class="s" pathLength="1" data-d="0.05 0.17"/><path d="M440,104V181" class="s" pathLength="1" data-d="0.075 0.195"/><path d="M440,396V219" class="s" pathLength="1" data-d="0.075 0.195"/><path d="M540,104V301" class="s" pathLength="1" data-d="0.1 0.22"/><path d="M540,396V339" class="s" pathLength="1" data-d="0.1 0.22"/><path d="M640,104V161" class="s" pathLength="1" data-d="0.125 0.245"/><path d="M640,396V199" class="s" pathLength="1" data-d="0.125 0.245"/><path d="M0,250H331" class="k" pathLength="1" data-d="0.12 0.269"/><path d="M331,250V206" class="s" pathLength="1" data-d="0.269 0.289" data-o="0.289:1 0.349:0.6" opacity="0.6"/><path d="M331,250V300H431" class="k" pathLength="1" data-d="0.289 0.357"/><path d="M431,300V344" class="s" pathLength="1" data-d="0.357 0.377" data-o="0.377:1 0.436:0.6" opacity="0.6"/><path d="M431,300V200H531" class="k" pathLength="1" data-d="0.377 0.467"/><path d="M531,200V156" class="s" pathLength="1" data-d="0.467 0.487" data-o="0.487:1 0.547:0.6" opacity="0.6"/><path d="M531,200V320H631" class="k" pathLength="1" data-d="0.487 0.586"/><path d="M631,320V364" class="s" pathLength="1" data-d="0.586 0.606" data-o="0.606:1 0.666:0.6" opacity="0.6"/><path d="M631,320V180H720V250H762" class="k" pathLength="1" data-d="0.606 0.76"/><path d="M762,242H778V258H762Z" class="k" pathLength="1" data-d="0.76 0.795"/><path d="M767,247H773V253H767Z" class="fill" data-o="0.79:0 0.82:1"/><path d="M778,250H1000" class="k" pathLength="1" data-d="0.8 0.9"/><path d="M752,242V232H762" class="b" data-m="0.86 0.98 -9 -9 0" data-o="0.86:0 0.98:1"/><path d="M788,258V268H778" class="b" data-m="0.86 0.98 9 9 0" data-o="0.86:0 0.98:1"/></svg></div>
             <div class="pista-text">
               <h3 class="pista-label"><span class="pista-n" aria-hidden="true">04</span><span data-es="Seguridad ofensiva" data-en="Offensive security">Seguridad ofensiva</span></h3>
-              <p class="pista-title" data-es="Pon a prueba tus defensas con ataques autorizados" data-en="Test your defences with authorised attacks">Pon a prueba tus defensas con ataques autorizados</p>
+              <p class="pista-title" data-es="Pon a prueba tus defensas con ataques autorizados" data-en="Test your defences with authorised attacks">Pon a prueba tus defensas con ataques autorizados</p>
               <p class="pista-body" data-i18n="t4">Hacemos pruebas de intrusión en aplicaciones web y móviles, API, infraestructura y servicios de directorio, entornos en la nube y sistemas industriales (OT), además de ejercicios de <i lang="en">red team</i> e ingeniería social.</p>
             </div>
           </li>
@@ -659,7 +750,7 @@ main:focus{outline:none}
             <div class="pista-fig" aria-hidden="true"><svg class="pista-svg" data-fig="inteligencia" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" focusable="false"><path class="k lead lead-in" d="M-400,250H0" pathLength="1" data-d="0 0.07"/><path class="k lead lead-out" d="M1000,250H1400" pathLength="1" data-d="0.93 1"/><path d="M0,250H110" class="k" pathLength="1" data-d="0.07 0.11"/><path d="M110,198H270V302H110Z" class="s" pathLength="1" data-d="0.09 0.2"/><path d="M110,250H184" class="k" pathLength="1" data-d="0.11 0.135"/><path d="M184,244H196V256H184Z" class="k" pathLength="1" data-d="0.135 0.15"/><path d="M196,250H270" class="k" pathLength="1" data-d="0.15 0.17"/><path d="M270,250H452" class="k" pathLength="1" data-d="0.17 0.27"/><path d="M547.947,100.87L572.053,91.13" class="g" data-o="0.01:0 0.11:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M626.571,404.335L645.429,415.665" class="g" data-o="0.022:0 0.122:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M690.262,61.505L713.738,66.495" class="g" data-o="0.034:0 0.134:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M745.146,434.088L774.854,429.912" class="g" data-o="0.046:0 0.146:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M611.862,133.418L624.138,146.582" class="g" data-o="0.058:0 0.158:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M874.989,458.309L893.011,445.691" class="g" data-o="0.07:0 0.17:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M967.636,123.983L992.364,132.017" class="g" data-o="0.082:0 0.182:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M515.5,372.206L524.5,387.794" class="g" data-o="0.094:0 0.194:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M716.493,337.19L723.507,322.81" class="g" data-o="0.106:0 0.206:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M809.219,49.44L814.781,66.56" class="g" data-o="0.118:0 0.218:1 0.6:1 0.84:0.3" opacity="0.3"/><path d="M968,92H934" class="s" data-m="0.3 0.48 14.748 95.664 53.094" data-o="0.02:0 0.12:0.7 0.48:1"/><path d="M934,92C724,92 622,250 452,250" class="g" pathLength="1" data-d="0.46 0.72"/><path d="M876,150H842" class="s" data-m="0.4 0.58 28.788 -98.824 33.115" data-o="0.02:0 0.12:0.7 0.58:1"/><path d="M842,150C632,150 622,250 452,250" class="g" pathLength="1" data-d="0.56 0.82"/><path d="M1002,196H968" class="s" data-m="0.2 0.38 -30.114 -103.063 -46.415" data-o="0.02:0 0.12:0.7 0.38:1"/><path d="M968,196C758,196 622,250 452,250" class="g" pathLength="1" data-d="0.36 0.62"/><path d="M906,318H872" class="s" data-m="0.25 0.43 -3.712 -66.653 -47.763" data-o="0.02:0 0.12:0.7 0.43:1"/><path d="M872,318C662,318 622,250 452,250" class="g" pathLength="1" data-d="0.41 0.67"/><path d="M980,372H946" class="s" data-m="0.45 0.63 -30.08 -68.571 -38.151" data-o="0.02:0 0.12:0.7 0.63:1"/><path d="M946,372C736,372 622,250 452,250" class="g" pathLength="1" data-d="0.61 0.87"/><path d="M860,420H826" class="s" data-m="0.35 0.53 44.095 51.172 35.658" data-o="0.02:0 0.12:0.7 0.53:1"/><path d="M826,420C616,420 622,250 452,250" class="g" pathLength="1" data-d="0.51 0.77"/><path d="M452,250H1000" class="k" pathLength="1" data-d="0.7 0.86"/><path d="M434,242V232H444" class="b" data-m="0.84 0.98 -9 -9 0" data-o="0.84:0 0.98:1"/><path d="M470,258V268H460" class="b" data-m="0.84 0.98 9 9 0" data-o="0.84:0 0.98:1"/></svg></div>
             <div class="pista-text">
               <h3 class="pista-label"><span class="pista-n" aria-hidden="true">05</span><span data-es="Inteligencia de amenazas" data-en="Threat intelligence">Inteligencia de amenazas</span></h3>
-              <p class="pista-title" data-es="Mira más allá de tu perímetro" data-en="See beyond your perimeter">Mira más allá de tu perímetro</p>
+              <p class="pista-title" data-es="Mira más allá de tu perímetro" data-en="See beyond your perimeter">Mira más allá de tu perímetro</p>
               <p class="pista-body" data-i18n="t5">Monitorizamos de forma continua la exposición externa de tu organización y las amenazas dirigidas a tu sector, también en la <i lang="en">dark web</i>, y te avisamos de lo que requiere atención.</p>
             </div>
           </li>
@@ -678,7 +769,7 @@ main:focus{outline:none}
   <section id="por-que-slapsec" class="band light feature">
     <div class="wrap">
       <p class="kicker" data-i18n="t6">Por qué <span translate="no">SlapSec</span></p>
-      <h2 class="feature-h" data-es="Seguridad sobre la que construir" data-en="Security you can build on">Seguridad sobre la que construir</h2>
+      <h2 class="feature-h" data-es="Seguridad sobre la que construir" data-en="Security you can build on">Seguridad sobre la que construir</h2>
       <div class="grid"><div class="body span-right">
         <p data-es="Lo que se acuerda con la dirección lo llevamos hasta tu red, tus sistemas y tus datos, y lo sostenemos en el tiempo. Así puedes avanzar sabiendo dónde pisas." data-en="We carry what is agreed with senior management through to your networks, systems and data, and sustain it over time. You can move forward knowing where you stand.">Lo que se acuerda con la dirección lo llevamos hasta tu red, tus sistemas y tus datos, y lo sostenemos en el tiempo. Así puedes avanzar sabiendo dónde pisas.</p>
         <p data-es="Vemos tu organización como la vería un atacante y vigilamos las amenazas contra tu sector, para que las prioridades respondan a riesgos reales." data-en="We see your organisation as an attacker would and track the threats facing your sector, so that priorities reflect real risks.">Vemos tu organización como la vería un atacante y vigilamos las amenazas contra tu sector, para que las prioridades respondan a riesgos reales.</p>
@@ -689,7 +780,7 @@ main:focus{outline:none}
   <section id="contacto" class="band dark close">
     <div class="wrap grid">
       <div class="head"><p class="kicker" data-es="Contacto" data-en="Contact">Contacto</p>
-        <h2 data-es="Cuéntanos hacia dónde va tu organización" data-en="Tell us where your organisation is heading">Cuéntanos hacia dónde va tu organización</h2>
+        <h2 data-es="Cuéntanos hacia dónde va tu organización" data-en="Tell us where your organisation is heading">Cuéntanos hacia dónde va tu organización</h2>
       </div>
       <div class="body">
         <p data-es="Escríbenos sobre tu próximo paso: una operación corporativa, una auditoría, un proyecto de tecnología o una prueba de seguridad." data-en="Write to us about your next step: a corporate transaction, an audit, a technology project or a security test.">Escríbenos sobre tu próximo paso: una operación corporativa, una auditoría, un proyecto de tecnología o una prueba de seguridad.</p>
@@ -704,6 +795,7 @@ main:focus{outline:none}
   <div class="wrap">
     <div class="foot-top">
       <div class="lockup"><a class="logo" href="#inicio" data-es-aria="SlapSec, inicio" data-en-aria="SlapSec, home" aria-label="SlapSec, inicio"><span class="logo-mark"><span class="logo-word" translate="no">SlapSec</span></span></a><span class="desc"><span data-es="Firma de ciberseguridad y tecnología" data-en="Cybersecurity and technology firm">Firma de ciberseguridad y tecnología</span></span></div>
+      <a class="social" href="https://www.linkedin.com/company/slapsec/" target="_blank" rel="noopener" aria-label="SlapSec en LinkedIn, se abre en otra pestaña" data-es-aria="SlapSec en LinkedIn, se abre en otra pestaña" data-en-aria="SlapSec on LinkedIn, opens in a new tab"><span translate="no">LinkedIn</span></a>
     </div>
     <div class="foot-base">
       <p>© 2026 <span translate="no">SlapSec LLC</span></p>
@@ -738,8 +830,9 @@ main:focus{outline:none}
   var behind = [".skip", "main", ".foot"].map(function(s){ return document.querySelector(s); });
 
   function cur(){ return root.lang.slice(0, 2) === "en" ? "en" : "es"; }
+  function isOpen(){ return root.classList.contains("menu-open"); }
   function label(){
-    btn.textContent = btn.getAttribute("data-" + (nav.classList.contains("open") ? "close" : "menu") + "-" + cur());
+    btn.textContent = btn.getAttribute("data-" + (isOpen() ? "close" : "menu") + "-" + cur());
   }
   function apply(l){
     root.lang = l === "en" ? "en-GB" : "es-ES";
@@ -757,13 +850,38 @@ main:focus{outline:none}
     label();
     document.dispatchEvent(new CustomEvent("slap:lang"));
   }
+  function hold(change){
+    var mark = null, was = 0;
+    if (window.scrollY > 0) {
+      var floor = Math.max(0, document.querySelector(".top").getBoundingClientRect().bottom);
+      var blocks = document.querySelectorAll(".band h2, .band p, .band li, .foot p");
+      for (var i = 0; i < blocks.length; i++) {
+        var r = blocks[i].getBoundingClientRect();
+        if (r.height && r.top >= floor) {
+          mark = blocks[i].closest(".pista--on .pista-run") || blocks[i];
+          was = mark.getBoundingClientRect().top; break;
+        }
+      }
+    }
+    change();
+    if (mark && mark.isConnected) {
+      var d = mark.getBoundingClientRect().top - was;
+      if (d) {
+        var smooth = root.classList.contains("smooth");
+        root.classList.remove("smooth");
+        window.scrollBy(0, d);
+        if (smooth) root.classList.add("smooth");
+      }
+    }
+    document.dispatchEvent(new CustomEvent("slap:held"));
+  }
   document.querySelectorAll(".lang a").forEach(function(a){
     a.addEventListener("click", function(e){
       if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
       var l = a.getAttribute("data-lang"), path = a.getAttribute("data-path");
       if (l === cur()) return;
-      apply(l);
+      hold(function(){ apply(l); });
       if (!path) return;
       try { history.replaceState(history.state, "", path + location.hash); } catch (err) {}
       document.cookie = "nf_stay=" + (l === "en" ? "1; Max-Age=31536000" : "; Max-Age=0") + "; Path=/; SameSite=Lax; Secure";
@@ -771,22 +889,49 @@ main:focus{outline:none}
   });
   window.addEventListener("load", function(){ requestAnimationFrame(function(){ root.classList.add("smooth"); }); });
 
+  var leaving = 0, bar = document.querySelector(".top");
+  function hide(){
+    clearTimeout(leaving); leaving = 0;
+    nav.classList.remove("open"); nav.inert = false;
+    root.classList.remove("menu-closing", "menu-away");
+    root.classList.add("smooth");
+    document.dispatchEvent(new CustomEvent("slap:menu-gone"));
+  }
   function setOpen(o, restore){
-    nav.classList.toggle("open", o);
+    if (o === isOpen()) return;
+    clearTimeout(leaving); leaving = 0;
+    if (o) bar.style.setProperty("--bar-y", (bar.classList.contains("stuck") ? 0 : -window.scrollY) + "px");
     root.classList.toggle("menu-open", o);
+    root.classList.toggle("menu-closing", !o);
+    if (o) { nav.classList.add("open"); root.classList.remove("menu-away"); }
     btn.setAttribute("aria-expanded", o ? "true" : "false");
     behind.forEach(function(el){ if (el) el.inert = o; });
+    if (o) nav.inert = false;
     label();
     document.dispatchEvent(new CustomEvent("slap:menu"));
-    if (o) { var first = nav.querySelector("a"); if (first) first.focus(); }
-    else if (restore) btn.focus();
+    if (o) { var first = nav.querySelector("a"); if (first) first.focus({ preventScroll: true }); }
+    else {
+      if (restore) btn.focus({ preventScroll: true });
+      nav.inert = true;
+      if (getComputedStyle(nav).animationName === "none") hide(); else leaving = setTimeout(hide, 600);
+    }
   }
-  btn.addEventListener("click", function(){ setOpen(!nav.classList.contains("open"), true); });
-  nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setOpen(false); }); });
-  document.querySelectorAll(".top .logo").forEach(function(a){ a.addEventListener("click", function(){ setOpen(false); }); });
-  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && nav.classList.contains("open")) setOpen(false, true); });
+  nav.addEventListener("animationend", function(e){ if (e.target === nav && root.classList.contains("menu-closing")) hide(); });
+  nav.querySelectorAll("li").forEach(function(li, i){ li.style.setProperty("--i", i); });
+  function go(){
+    if (!isOpen()) return;
+    root.classList.remove("smooth");
+    root.classList.add("menu-away");
+    setOpen(false);
+    bar.style.setProperty("--bar-y", "0px");
+  }
+  btn.addEventListener("click", function(){ setOpen(!isOpen(), true); });
+  nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", go); });
+  document.querySelectorAll(".top .logo").forEach(function(a){ a.addEventListener("click", go); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && isOpen()) setOpen(false, true); });
+  document.addEventListener("touchstart", function(){}, { passive: true });
   var wide = window.matchMedia("(min-width: 961px)");
-  var onWide = function(e){ if (e.matches) setOpen(false); };
+  var onWide = function(e){ if (!e.matches) return; if (isOpen()) setOpen(false); else if (root.classList.contains("menu-closing")) hide(); };
   if (wide.addEventListener) wide.addEventListener("change", onWide);
 })();
 </script>
@@ -1427,6 +1572,7 @@ main:focus{outline:none}
   document.querySelectorAll("main > section").forEach(function (s) { spy.observe(s); });
 
   var lastY = window.scrollY, ticking = false, acc = 0;
+  document.addEventListener("slap:held", function () { lastY = window.scrollY; acc = 0; });
   var heroWords = hero && hero.querySelector(".wrap"), heroSub = hero && hero.querySelector(".standfirst");
   function wordsEnd() {
     return heroSub ? hero.offsetTop + heroWords.offsetTop + heroSub.offsetTop + heroSub.offsetHeight : 0;
@@ -1535,6 +1681,7 @@ main:focus{outline:none}
   if (top) top.addEventListener("transitionend", function (e) {
     if (e.propertyName === "top" && scope.classList.contains("on")) { hit(document.elementFromPoint(px, py)); kick(); }
   });
+  document.addEventListener("slap:menu-gone", function () { if (scope.classList.contains("on")) { hit(document.elementFromPoint(px, py)); kick(); } });
   var rehit = false;
   window.addEventListener("scroll", function () {
     if (rehit || !scope.classList.contains("on")) return;

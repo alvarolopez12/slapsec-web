@@ -167,6 +167,8 @@
 
   /* ---------- scroll: the hero drifts away, the header comes back on the way up ---------- */
   var lastY = window.scrollY, ticking = false, acc = 0;
+  // a change of language moves the page under a reader who has not scrolled: the bar stays as it is
+  document.addEventListener("slap:held", function () { lastY = window.scrollY; acc = 0; });
   var heroWords = hero && hero.querySelector(".wrap"), heroSub = hero && hero.querySelector(".standfirst");
   // where the hero's words end, in layout space, so the drift itself never changes the answer
   function wordsEnd() {
@@ -289,6 +291,8 @@
   if (top) top.addEventListener("transitionend", function (e) {
     if (e.propertyName === "top" && scope.classList.contains("on")) { hit(document.elementFromPoint(px, py)); kick(); }
   });
+  // and so does the menu's sheet, when it has gone
+  document.addEventListener("slap:menu-gone", function () { if (scope.classList.contains("on")) { hit(document.elementFromPoint(px, py)); kick(); } });
   var rehit = false;
   window.addEventListener("scroll", function () {
     if (rehit || !scope.classList.contains("on")) return;

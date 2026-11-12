@@ -17,12 +17,13 @@
 *,*::before,*::after{box-sizing:border-box}
 html{background:var(--black);-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;background:var(--black);color:var(--on-dark);
-  font-family:"Schibsted Grotesk",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  font-family:"Schibsted Grotesk",Arial,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 ::selection{background:var(--on-dark);color:var(--black)}
 :focus-visible{outline:2px solid var(--on-dark);outline-offset:4px}
 .wrap{width:100%;max-width:1360px;margin-inline:auto;padding-inline:var(--gutter)}
 header .wrap{padding-block:calc(26px + env(safe-area-inset-top, 0px)) 26px}
-.logo{display:inline-flex;text-decoration:none}
+.logo{position:relative;display:inline-flex;text-decoration:none}
+.logo::after{content:"";position:absolute;inset:-8px -6px}  /* a 44px tall target, same look */
 {{LOGO_CSS}}
 main{flex:1;display:flex;align-items:flex-end}
 main .wrap{padding-block:clamp(56px, 12vh, 140px) clamp(56px, 9vh, 104px)}
@@ -32,9 +33,13 @@ h1{font-family:"Newsreader",Georgia,serif;font-weight:300;font-size:clamp(2.125r
   letter-spacing:-.022em;margin:0;max-width:13em;text-wrap:balance}
 .other{font-family:"Newsreader",Georgia,serif;font-weight:300;font-size:clamp(1.3125rem, .5vw + 1.15rem, 1.5625rem);line-height:1.45;
   color:var(--on-dark-2);margin:clamp(28px, 3vw, 44px) 0 0;padding-top:20px;border-top:1px solid var(--line-dark);max-width:18.9em}
-.links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:44px;font-family:"JetBrains Mono","Courier New",monospace;font-size:.6875rem;
+.links{display:flex;flex-wrap:wrap;gap:18px 22px;margin-top:44px;font-family:"JetBrains Mono","Courier New",monospace;font-size:.6875rem;
   letter-spacing:.16em;text-transform:uppercase}
-.links a{color:var(--on-dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;padding:6px 0}
+.links a{position:relative;color:var(--on-dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;padding:6px 0;
+  transition:text-decoration-thickness .3s cubic-bezier(.2,.7,.2,1)}
+.links a::after{content:"";position:absolute;inset:-9px -8px}  /* a 44px tall target, same look */
+/* pressed: the underline takes a second pixel at once, and eases back */
+.links a:active{text-decoration-thickness:2px;transition-duration:0s}
 footer .wrap{padding-block:0 calc(32px + env(safe-area-inset-bottom, 0px));
   font-family:"JetBrains Mono","Courier New",monospace;font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-2)}
 footer p{margin:0;padding-top:32px;border-top:1px solid var(--line-dark)}

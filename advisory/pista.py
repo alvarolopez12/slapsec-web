@@ -284,9 +284,9 @@ def figure(key):
 # ---------- the section ----------
 def module(s, h):
     """s is the practice section from copy.json; h carries the build's helpers
-    (t, rich, display, running, loans, esc), so the module follows the page's typography and
-    its language switch exactly."""
-    t, rich, display, running, loans, esc = h["t"], h["rich"], h["display"], h["running"], h["loans"], h["esc"]
+    (t, rich, balanced, running, loans, esc), so the module follows the page's typography and
+    its language switch exactly. The headline and the titles are balanced by the browser."""
+    t, rich, balanced, running, loans, esc = h["t"], h["rich"], h["balanced"], h["running"], h["loans"], h["esc"]
     areas = s["items"]
     n = len(areas)
     items, index = [], []
@@ -300,7 +300,7 @@ def module(s, h):
             f'            <div class="pista-text">\n'
             f'              <h3 class="pista-label"><span class="pista-n" aria-hidden="true">{num}</span>'
             f'{t(a["label_es"], a["label_en"])}</h3>\n'
-            f'              {t(display(a["title_es"]), display(a["title_en"]), "p", "pista-title")}\n'
+            f'              {t(balanced(a["title_es"]), balanced(a["title_en"]), "p", "pista-title")}\n'
             f'              {body}\n'
             f'            </div>\n'
             f'          </li>')
@@ -309,7 +309,7 @@ def module(s, h):
     <div class="wrap">
       <div class="grid">
       <div class="head">{t(s["kicker_es"], s["kicker_en"], "p", "kicker")}
-        {t(display(s["headline_es"]), display(s["headline_en"]), "h2")}
+        {t(balanced(s["headline_es"]), balanced(s["headline_en"]), "h2")}
       </div>
       <div class="body">
         {t(running(s["intro_es"], "es"), running(s["intro_en"], "en"), "p", "lead")}
