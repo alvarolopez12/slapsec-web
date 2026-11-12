@@ -1,7 +1,7 @@
 # Written by advisory/build_advisory.py on every build. Do not edit by hand: the
 # Content-Security-Policy hashes are those of the inline code in every page of this directory.
 /*
-  Content-Security-Policy: default-src 'none'; script-src 'sha256-Db1nCm2CmnNpctiMHfVmDbbSZOY6PZ8rrXdfHz5pSds=' 'sha256-QYBia3taSekzIucwz0pPYLcPGsxrx50l6eQZkPkQ8do=' 'sha256-SH9Ov6ydn7JKriD9NI5c7N0CstSyHYSWgRj7y6pw41E=' 'sha256-gmAkPUDyBN36lZktS0AZMx8yqkmRH2xP9LMjSCUmTkY=' 'sha256-tQOj7Mklz7GRtf8vzk4SprbT9WwSPlxL8HPdBPa9O3Q='; style-src 'sha256-Nnr7Uv1RkBqU6KrVgWv75LbDofJEyOzVT8etUF0dM28=' 'sha256-RILSy6WFBMuyBmxKMwRTRKgHHOCo79WUM/72ezml4Fo=' 'sha256-p3s7tE8CfY5rjZHhDuRzhhfI+yhs+Mg6i3vxDKbuuQI='; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; require-trusted-types-for 'script'; trusted-types 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'sha256-Db1nCm2CmnNpctiMHfVmDbbSZOY6PZ8rrXdfHz5pSds=' 'sha256-QYBia3taSekzIucwz0pPYLcPGsxrx50l6eQZkPkQ8do=' 'sha256-SH9Ov6ydn7JKriD9NI5c7N0CstSyHYSWgRj7y6pw41E=' 'sha256-gmAkPUDyBN36lZktS0AZMx8yqkmRH2xP9LMjSCUmTkY=' 'sha256-tQOj7Mklz7GRtf8vzk4SprbT9WwSPlxL8HPdBPa9O3Q='; style-src 'sha256-39EnYLdzIu1r9xdi449PYxql4NxHrx6uFeoWyWEKAkM=' 'sha256-5dli2eQZSZBghgHsRPBW4FZnY5gVuc5ToqFUyZm1om0=' 'sha256-QrggfE7/sqdYt7i2hdfUz4zf+Cehau0m1lku7bd68/U='; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; require-trusted-types-for 'script'; trusted-types 'none'
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
@@ -13,7 +13,7 @@
 
 /fonts/newsreader-300.5f3e1bc9.woff2
   Cache-Control: public, max-age=31536000, immutable
-/fonts/newsreader-300-italic-hero.dbac5161.woff2
+/fonts/newsreader-300-italic-hero.39a17952.woff2
   Cache-Control: public, max-age=31536000, immutable
 /fonts/schibsted-grotesk-400.a0ddc608.woff2
   Cache-Control: public, max-age=31536000, immutable
@@ -25,7 +25,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /fonts/newsreader-300-print.04a434c2.woff2
   Cache-Control: public, max-age=31536000, immutable
-/fonts/newsreader-300-italic-print.999dd4a7.woff2
+/fonts/newsreader-300-italic-print.e5c4bc30.woff2
   Cache-Control: public, max-age=31536000, immutable
 /robots.txt
   Cache-Control: public, max-age=3600
