@@ -96,21 +96,31 @@ def widont(s):
     return re.sub(r" (\S+)\s*$", NBSP + r"\1", s)
 
 
+# Names the reader takes in as one word: never split across a line, in any kind of text.
+TERMS = ("ISO 27001", "PCI DSS")
+
+
+def _bind(s):
+    for term in TERMS:
+        s = s.replace(term, term.replace(" ", NBSP))
+    return s
+
+
 def display(s):
     """Headlines, the Criterio continuation, the list of moments, the descriptor."""
-    return widont(_glue(s, SHORT))
+    return widont(_glue(_bind(s), SHORT))
 
 
 def running(s, lang):
     """Paragraphs: Spanish binds its one-letter words, as Spanish typesetting does; both
     languages keep "no" with its verb, because the page's commitments are built on negations.
     English does not bind its articles."""
-    return widont(_glue(s, ONE + "|no" if lang == "es" else "no"))
+    return widont(_glue(_bind(s), ONE + "|no" if lang == "es" else "no"))
 
 
 # Loanwords Spanish keeps in their original form: italic in Spanish, marked as English for
 # screen readers, and never split across a line in either language.
-LOANS = ("due diligence",)
+LOANS = ("due diligence", "red team", "dark web")
 
 
 def esc(s):
@@ -229,7 +239,7 @@ def section(s):
         return pista.module(s, {"t": t, "rich": rich, "display": display, "running": running,
                                 "loans": loans, "esc": esc})
 
-    if role == "independence":
+    if role == "feature":
         rest = "\n".join(f"        {t(es, en, 'p')}" for es, en in zip(pes, pen))
         return (f'  <section id="{sid}" class="band light feature">\n    <div class="wrap">\n'
                 f'      {kicker}\n      {t(hes, hen, "h2", "feature-h")}\n'
@@ -655,7 +665,7 @@ def build(target="site", lang=None):
         "NAV": nav,
         "LANG_SWITCH": lang_switch(target),
         "H1": rich(emphasise(hero["headline_es"], "es"), emphasise(hero["headline_en"], "en"), "h1"),
-        "STANDFIRST": t(widont(hero["body_es"]), widont(hero["body_en"]), "p", "standfirst"),
+        "STANDFIRST": t(running(hero["body_es"], "es"), running(hero["body_en"], "en"), "p", "standfirst"),
         "FILM_CTL": (f'<button class="film-ctl" type="button" hidden '
                      f'data-pause-es="{esc(UI["pause"][0])}" data-pause-en="{esc(UI["pause"][1])}" '
                      f'data-resume-es="{esc(UI["resume"][0])}" data-resume-en="{esc(UI["resume"][1])}">{esc(ui("pause"))}</button>'),

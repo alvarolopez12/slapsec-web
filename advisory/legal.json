@@ -1,8 +1,8 @@
 {
   "updated": {
-    "iso": "2026-11-11",
-    "en": "11 November 2026",
-    "es": "11 de noviembre de 2026"
+    "iso": "2026-11-12",
+    "en": "12 November 2026",
+    "es": "12 de noviembre de 2026"
   },
   "pages": [
     {
@@ -35,8 +35,8 @@
           "h": {"en": "Purpose of this site", "es": "Finalidad del sitio"},
           "blocks": [
             {"p": {
-              "en": "This site provides general information about {entity} and its strategic advisory services in technology and cybersecurity. Its content is for information only and does not constitute a binding offer, professional or security advice, or a contractual commitment. Any engagement is governed by a separate written agreement.",
-              "es": "Este sitio ofrece información general sobre {entity} y sus servicios de asesoramiento estratégico en tecnología y ciberseguridad. Su contenido es meramente informativo y no constituye una oferta vinculante, un asesoramiento profesional o de seguridad ni un compromiso contractual. Todo encargo se rige por un contrato escrito independiente."
+              "en": "This site provides general information about {entity} and its cybersecurity and technology services. Its content is for information only and does not constitute a binding offer, professional or security advice, or a contractual commitment. Any engagement is governed by a separate written agreement.",
+              "es": "Este sitio ofrece información general sobre {entity} y sus servicios de ciberseguridad y tecnología. Su contenido es meramente informativo y no constituye una oferta vinculante, un asesoramiento profesional o de seguridad ni un compromiso contractual. Todo encargo se rige por un contrato escrito independiente."
             }}
           ]
         },

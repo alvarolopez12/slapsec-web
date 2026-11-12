@@ -6,30 +6,30 @@
   "contact_email": "info@slapsec.com",
   "private": false,
   "google_site_verification": "AJyx2sypmYVQC6-4kUNhl5HgsmlhAM7IEbg4ilSYX5c",
-  "positioning_es": "SlapSec asesora a la dirección en las decisiones de tecnología y ciberseguridad que cuesta deshacer.",
-  "positioning_en": "SlapSec advises senior management on technology and cybersecurity decisions that are hard to undo.",
-  "descriptor_es": "Asesoramiento estratégico en tecnología y ciberseguridad",
-  "descriptor_en": "Strategic advice on technology and cybersecurity",
+  "positioning_es": "SlapSec es una firma de consultoría en ciberseguridad y tecnología. Asesora a la dirección, diseña, implanta y opera la seguridad, y suministra la tecnología.",
+  "positioning_en": "SlapSec is a cybersecurity and technology consulting firm. It advises senior management, designs, implements and runs security, and supplies the technology.",
+  "descriptor_es": "Consultoría en ciberseguridad y tecnología",
+  "descriptor_en": "Cybersecurity and technology consulting",
   "nav": [
     {
-      "es": "Punto de vista",
-      "en": "Point of view",
-      "anchor": "punto-de-vista"
+      "es": "La firma",
+      "en": "The firm",
+      "anchor": "firma"
     },
     {
       "es": "Cómo trabajamos",
       "en": "How we work",
-      "anchor": "criterio"
+      "anchor": "como-trabajamos"
     },
     {
-      "es": "Áreas",
-      "en": "Practice",
-      "anchor": "ambitos"
+      "es": "Servicios",
+      "en": "Services",
+      "anchor": "servicios"
     },
     {
-      "es": "Independencia",
-      "en": "Independence",
-      "anchor": "independencia"
+      "es": "Por qué SlapSec",
+      "en": "Why SlapSec",
+      "anchor": "por-que-slapsec"
     },
     {
       "es": "Contacto",
@@ -41,96 +41,96 @@
     {
       "id": "inicio",
       "role": "hero",
-      "headline_es": "Asesoramos a la dirección en las decisiones de tecnología y ciberseguridad que cuesta deshacer.",
-      "headline_en": "We advise senior management on technology and cybersecurity decisions that are hard to undo.",
-      "emphasis_es": "que cuesta deshacer.",
-      "emphasis_en": "that are hard to undo.",
-      "body_es": "Lo hacemos sin productos que vender ni fabricantes a los que representar.",
-      "body_en": "We have no products to sell and no vendors to represent."
+      "headline_es": "Asesoramos a la dirección en ciberseguridad y tecnología, y ponemos en marcha sus decisiones.",
+      "headline_en": "We advise senior management on cybersecurity and technology, and see its decisions through.",
+      "emphasis_es": "y ponemos en marcha sus decisiones.",
+      "emphasis_en": "and see its decisions through.",
+      "body_es": "Diseñamos, implantamos y operamos la seguridad de tu organización, y suministramos la tecnología que necesita.",
+      "body_en": "We design, implement and run your organisation’s security, and supply the technology it needs."
     },
     {
-      "id": "punto-de-vista",
+      "id": "firma",
       "role": "point-of-view",
-      "kicker_es": "Punto de vista",
-      "kicker_en": "Point of view",
-      "headline_es": "Muchas decisiones tecnológicas llegan a la dirección ya tomadas.",
-      "headline_en": "Many technology decisions are made before they reach management.",
-      "body_es": "Cuando una propuesta entra en el orden del día, alguien suele haber elegido ya al proveedor y descartado las alternativas. A la dirección solo le queda aprobarla o rechazarla, y a esas alturas rechazarla supone retrasar el proyecto y desautorizar a quien la propone.\n\nOtros compromisos ni siquiera pasan por el orden del día: un contrato que se renueva solo, una solución provisional que sigue en uso años después o un único proveedor del que acaba dependiendo el negocio. Atan a la organización tanto como una gran inversión, y nadie ha tenido que dar su visto bueno.\n\nNuestro trabajo consiste en que la dirección sepa a qué se compromete, qué alternativas se descartaron y por qué, y cuánto costaría dar marcha atrás más adelante. En seguridad empezamos por dos preguntas que el habitual mapa de riesgos en rojo, ámbar y verde no contesta: cuánto puede perder la organización y quién ha aceptado ese riesgo.",
-      "body_en": "By the time a proposal is on the agenda, someone has usually chosen the supplier and ruled out the alternatives. All that is left for management is to approve or reject it, and by then a rejection means delaying the project and undermining whoever put it forward.\n\nOther commitments never reach the agenda at all: a contract that renews automatically, a temporary fix still in use years later, a single supplier the business has come to depend on. They bind the organisation as much as a major investment would, and nobody has had to sign them off.\n\nOur job is to show management what it is committing to, which alternatives were ruled out and why, and what it would cost to reverse course later. In security we start with two questions the usual red, amber and green risk map does not answer: how much the organisation could lose, and who has accepted that risk."
+      "kicker_es": "La firma",
+      "kicker_en": "The firm",
+      "headline_es": "Decisiones de ciberseguridad con criterios de negocio",
+      "headline_en": "Cybersecurity decisions taken on business grounds",
+      "body_es": "Trabajamos con la dirección y con los responsables de tecnología y seguridad en las decisiones que más pesan: qué proteger primero, cuánto invertir y quién decide y quién responde de cada riesgo.\n\nAdemás de asesorar, hacemos el trabajo técnico: suministramos productos y licencias, realizamos pruebas de intrusión y monitorizamos las amenazas dirigidas a tu sector.",
+      "body_en": "We work with senior management and with technology and security leaders on the decisions that matter most: what to protect first, how much to invest, and who decides and who is accountable for each risk.\n\nAs well as advising, we do the technical work: we supply products and licences, carry out penetration tests and monitor the threats aimed at your sector."
     },
     {
-      "id": "cuando",
+      "id": "situaciones",
       "role": "decisions",
       "kicker_es": "Situaciones",
       "kicker_en": "Situations",
-      "headline_es": "Cuándo tiene sentido llamarnos.",
-      "headline_en": "When it makes sense to call us in.",
-      "body_es": "- Antes de aprobar una gran inversión tecnológica, o de cancelar una que ya está en marcha.\n- En una compra, una venta o una fusión, porque la tecnología y los riesgos que arrastra también forman parte del precio.\n- Cuando un regulador, un cliente o un socio exige garantías que la organización aún no puede dar.\n- Cuando dos directivos defienden posiciones opuestas y los dos tienen buenos argumentos.\n- Cuando hay que determinar quién dirige la tecnología o la seguridad, de quién depende y con qué mandato.\n- Después de un incidente grave, para concretar qué debe cambiar y qué puede seguir igual.",
-      "body_en": "- Before approving a major technology investment, or cancelling one already under way.\n- In an acquisition, a sale or a merger, because the technology and the risks that come with it are part of the price too.\n- When a regulator, a customer or a partner demands assurances the organisation cannot yet give.\n- When two executives take opposing views and both have a good case.\n- When the question is who should lead technology or security, whom they report to and with what mandate.\n- After a serious incident, to work out what must change and what can stay as it is."
+      "headline_es": "Cuándo contar con nosotros",
+      "headline_en": "When to bring us in",
+      "body_es": "- Tienes que decidir dónde invertir en seguridad y en qué orden.\n- Tienes por delante una auditoría del ENS, ISO 27001 o PCI DSS.\n- Buscas un CISO sin incorporarlo a la plantilla.\n- Vas a comprar una empresa, venderla o invertir en ella.\n- Vas a renovar la protección de identidades, accesos o dispositivos.\n- Necesitas comprobar hasta dónde llegaría un ataque.\n- Quieres saber qué puede ver un atacante desde fuera de tu organización.",
+      "body_en": "- You have to decide where to invest in security, and in what order.\n- You are preparing for an ENS, ISO 27001 or PCI DSS audit.\n- You are looking for a CISO without making a permanent hire.\n- You are about to buy, sell or invest in a company.\n- You are replacing or upgrading identity, access or endpoint security.\n- You need to check how far an attack would get.\n- You want to know what an attacker can see from outside your organisation."
     },
     {
-      "id": "criterio",
+      "id": "como-trabajamos",
       "role": "approach",
       "kicker_es": "Cómo trabajamos",
       "kicker_en": "How we work",
-      "headline_es": "Le decimos qué haríamos en su lugar.",
-      "headline_en": "We tell you what we would do in your place.",
-      "body_es": "Explicamos por qué, y qué tendría que ocurrir para que cambiáramos de opinión.\n\nAunque haya varias opciones razonables, recomendamos una sola. Una lista de ventajas e inconvenientes devolvería el problema a quien ya lo tenía.\n\nSi lo más sensato es esperar, hacer menos o no hacer nada, lo decimos.",
-      "body_en": "We explain why, and what would have to happen for us to change our minds.\n\nEven where several options are reasonable, we recommend one. A list of pros and cons would only hand the problem back to you.\n\nIf the sensible course is to wait, to do less or to do nothing, we say so."
+      "headline_es": "Empezamos por lo que la dirección necesita decidir.",
+      "headline_en": "We start with what senior management needs to decide.",
+      "body_es": "A partir de ahí acordamos contigo las prioridades y la inversión, diseñamos la arquitectura y llevamos el plan hasta la implantación y la operación.\n\nCuando el proyecto incluye tecnología, la elegimos para que encaje con el entorno de tu organización y con el equipo que la va a operar.\n\nToda prueba ofensiva requiere la autorización por escrito del propietario de los sistemas y un alcance acordado de antemano, que fija qué se prueba y cómo.",
+      "body_en": "From there we agree priorities and investment with you, design the architecture and take the plan through implementation and into operation.\n\nWhen a project includes technology, we choose it to fit your organisation’s environment and the team that will run it.\n\nEvery offensive test requires written authorisation from the owner of the systems and a scope agreed in advance, setting out what is tested and how."
     },
     {
-      "id": "ambitos",
+      "id": "servicios",
       "role": "practice",
-      "kicker_es": "Áreas de práctica",
-      "kicker_en": "Practice areas",
-      "headline_es": "Además de asesorar, hacemos trabajo técnico.",
-      "headline_en": "As well as advising, we do technical work.",
-      "intro_es": "Revisar, diseñar y poner a prueba sistemas es lo que nos permite recomendar con conocimiento de causa.",
-      "intro_en": "Examining, designing and testing systems is what lets us advise with first-hand knowledge.",
+      "kicker_es": "Servicios",
+      "kicker_en": "Services",
+      "headline_es": "Del gobierno de la seguridad a la inteligencia de amenazas",
+      "headline_en": "From security governance to threat intelligence",
+      "intro_es": "En estas áreas asesoramos a la dirección y trabajamos junto a tus equipos de tecnología y seguridad.",
+      "intro_en": "In these areas we advise senior management and work alongside your technology and security teams.",
       "items": [
         {
           "label_es": "Gobierno y cumplimiento",
-          "label_en": "Governance and compliance",
-          "title_es": "Proponemos quién debe decidir sobre la seguridad y quién debe responder de ella.",
-          "title_en": "We propose who should decide on security and who should answer for it.",
-          "body_es": "También preparamos a la organización para acreditar que cumple lo que le exigen la regulación y sus contratos.",
-          "body_en": "We also prepare the organisation to show that it meets what regulation and its contracts require.",
+          "label_en": "Governance & compliance",
+          "title_es": "Responsabilidades claras y auditorías preparadas",
+          "title_en": "Clear accountability and audit readiness",
+          "body_es": "Definimos las responsabilidades de seguridad, traducimos el riesgo técnico a términos de negocio y preparamos a tu organización para las auditorías del ENS, ISO 27001, PCI DSS y RGPD. Si no cuentas con un CISO, asumimos esa función como servicio.",
+          "body_en": "We define security responsibilities, translate technical risk into business terms and prepare your organisation for ENS, ISO 27001, PCI DSS and GDPR audits. If you do not have a CISO, we take on the role as a service.",
           "key": "gobierno"
         },
         {
           "label_es": "Operaciones corporativas",
           "label_en": "Corporate transactions",
-          "title_es": "Examinamos la tecnología de una empresa antes de que cambie de dueño.",
-          "title_en": "We examine the technology of a company before it changes hands.",
-          "body_es": "Hacemos la due diligence tecnológica y de ciberseguridad para quien compra, vende o invierte, y asesoramos en la integración posterior al cierre.",
-          "body_en": "We carry out technology and cybersecurity due diligence for the buyer, the seller or an investor, and advise on the integration that follows completion.",
+          "title_es": "Conoce el riesgo tecnológico antes de firmar",
+          "title_en": "Know the technology risk before you sign",
+          "body_es": "Realizamos la due diligence de tecnología y ciberseguridad para compradores, vendedores e inversores, con conclusiones que puedes llevar a la negociación. Tras el cierre, asesoramos en la integración.",
+          "body_en": "We carry out technology and cybersecurity due diligence for buyers, sellers and investors, with findings you can take into the negotiation. After closing, we advise on the integration.",
           "key": "operaciones"
         },
         {
-          "label_es": "Arquitectura de seguridad",
-          "label_en": "Security architecture",
-          "title_es": "Diseñamos la arquitectura de seguridad e implantamos sus controles.",
-          "title_en": "We design the security architecture and put its controls in place.",
-          "body_es": "Trabajamos junto a quienes se ocuparán de esos controles cuando termine el encargo.",
-          "body_en": "We work alongside the people who will run those controls once the engagement ends.",
+          "label_es": "Arquitectura y tecnología",
+          "label_en": "Architecture & technology",
+          "title_es": "Protección de identidades, redes, dispositivos y datos",
+          "title_en": "Protection across identities, networks, endpoints and data",
+          "body_es": "Diseñamos, implantamos y operamos arquitecturas Zero Trust que abarcan identidades y accesos privilegiados (IAM y PAM), segmentación de red, acceso seguro (SASE y ZTNA), detección y respuesta (EDR y XDR), postura de seguridad en la nube y protección de datos (DLP). Seleccionamos la tecnología entre las principales plataformas del mercado y la suministramos.",
+          "body_en": "We design, implement and run Zero Trust architectures covering identity and privileged access (IAM and PAM), network segmentation, secure access (SASE and ZTNA), detection and response (EDR and XDR), cloud security posture and data protection (DLP). We select the technology from the market’s leading platforms and supply it.",
           "key": "arquitectura"
         },
         {
           "label_es": "Seguridad ofensiva",
           "label_en": "Offensive security",
-          "title_es": "Ponemos a prueba las defensas como lo haría un adversario.",
-          "title_en": "We test the defences as an adversary would.",
-          "body_es": "Realizamos pruebas de intrusión para saber hasta dónde llegaría un ataque real, siempre con autorización escrita del titular de los sistemas y con un alcance acordado de antemano.",
-          "body_en": "We run penetration tests to see how far a real attack would get. Every test has written authorisation from the owner of the systems and a scope agreed in advance.",
+          "title_es": "Pon a prueba tus defensas con ataques autorizados",
+          "title_en": "Test your defences with authorised attacks",
+          "body_es": "Realizamos pruebas de intrusión en aplicaciones web y API, infraestructura y servicios de directorio, nube, entornos OT e industriales y aplicaciones móviles, además de ejercicios de red team e ingeniería social. Trabajamos siempre con autorización por escrito del propietario de los sistemas y dentro de un alcance acordado de antemano.",
+          "body_en": "We run penetration tests on web applications and APIs, infrastructure and directory services, cloud environments, OT and industrial systems, and mobile apps, as well as red team exercises and social engineering. We always work with written authorisation from the owner of the systems and within a scope agreed in advance.",
           "key": "ofensiva"
         },
         {
           "label_es": "Inteligencia de amenazas",
           "label_en": "Threat intelligence",
-          "title_es": "Vigilamos las amenazas que apuntan a su sector y a su organización.",
-          "title_en": "We track the threats aimed at your sector and your organisation.",
-          "body_es": "Señalamos cuáles deberían pesar en sus decisiones y cuáles puede dejar de lado.",
-          "body_en": "We tell you which should carry weight in your decisions and which you can disregard.",
+          "title_es": "Amenazas convertidas en prioridades de actuación",
+          "title_en": "Threats turned into priorities for action",
+          "body_es": "Monitorizamos de forma continua la exposición externa de tu organización y las amenazas dirigidas a tu sector, también en la dark web, para que sepas qué atender primero.",
+          "body_en": "We continuously monitor your organisation’s external exposure and the threats aimed at your sector, including on the dark web, so that you know what to address first.",
           "key": "inteligencia"
         }
       ],
@@ -138,32 +138,32 @@
       "body_en": ""
     },
     {
-      "id": "independencia",
-      "role": "independence",
-      "kicker_es": "Independencia",
-      "kicker_en": "Independence",
-      "headline_es": "No aceptamos comisiones ni incentivos de quien vende tecnología.",
-      "headline_en": "We take no commissions or incentives from anyone who sells technology.",
-      "body_es": "No tenemos productos propios, no revendemos los de terceros y no representamos a ningún fabricante.\n\nLlevar a la práctica una recomendación es siempre un encargo aparte, que el cliente es libre de confiar a otra firma. Así, lo que recomendamos no depende de quién vaya a ejecutarlo. Por la misma razón, quien construye un sistema nunca es quien lo pone a prueba.",
-      "body_en": "We make no products of our own, resell no one else’s and represent no vendors.\n\nCarrying out a recommendation is always a separate engagement, which the client is free to give to another firm. That way, what we recommend does not depend on who will carry it out. For the same reason, whoever builds a system is never the one who tests it."
+      "id": "por-que-slapsec",
+      "role": "feature",
+      "kicker_es": "Por qué SlapSec",
+      "kicker_en": "Why SlapSec",
+      "headline_es": "Asesoramiento y ejecución",
+      "headline_en": "Advice and delivery",
+      "body_es": "Tu organización trabaja con una sola firma desde la primera decisión hasta la operación diaria. Así, las prioridades acordadas con la dirección guían la arquitectura, la elección de la tecnología y la forma de operarla.\n\nLas pruebas ofensivas muestran cómo responden las defensas ante un ataque, y la inteligencia de amenazas ajusta esas prioridades a lo que ocurre en tu sector. Explicamos los resultados a la dirección en términos de riesgo y de negocio.",
+      "body_en": "Your organisation works with one firm from the first decision to day-to-day operation. The priorities agreed with senior management then guide the architecture, the choice of technology and the way it is run.\n\nOffensive testing shows how defences hold up under attack, and threat intelligence adjusts those priorities to what is happening in your sector. We explain the results to senior management in terms of risk and business impact."
     },
     {
       "id": "contacto",
       "role": "contact",
       "kicker_es": "Contacto",
       "kicker_en": "Contact",
-      "headline_es": "Para empezar, basta con un correo.",
-      "headline_en": "An email is enough to begin.",
-      "body_es": "Díganos para cuándo necesita una respuesta. No hace falta contar nada más por escrito.\n\nLa primera conversación es confidencial.",
-      "body_en": "Tell us how soon you need an answer. There is no need to put anything else in writing.\n\nThe first conversation is confidential."
+      "headline_es": "Cuéntanos qué necesita tu organización",
+      "headline_en": "Tell us what your organisation needs",
+      "body_es": "Escríbenos sobre la decisión de inversión, la auditoría, la operación corporativa, el proyecto de tecnología o la prueba de seguridad que tengas por delante. Te propondremos una primera reunión para analizarlo contigo.",
+      "body_en": "Write to us about the investment decision, audit, corporate transaction, technology project or security test on your agenda. We will suggest a first meeting to go through it with you."
     }
   ],
   "meta": {
-    "title_es": "Asesoramiento estratégico en tecnología y ciberseguridad | SlapSec",
-    "title_en": "Strategic advice on technology and cybersecurity | SlapSec",
-    "desc_es": "SlapSec asesora a la dirección en las decisiones de tecnología y ciberseguridad que cuesta deshacer. No vende productos ni representa a fabricantes.",
-    "desc_en": "SlapSec advises senior management on technology and cybersecurity decisions that are hard to undo. It sells no products and represents no vendors.",
-    "og_alt_es": "Asesoramos a la dirección en las decisiones de tecnología y ciberseguridad que cuesta deshacer.",
-    "og_alt_en": "We advise senior management on technology and cybersecurity decisions that are hard to undo."
+    "title_es": "Consultoría en ciberseguridad y tecnología | SlapSec",
+    "title_en": "Cybersecurity and technology consulting | SlapSec",
+    "desc_es": "SlapSec asesora a la dirección en ciberseguridad y tecnología. Diseña, implanta y opera la seguridad, suministra la tecnología y realiza pruebas de intrusión.",
+    "desc_en": "SlapSec advises senior management on cybersecurity and technology. It designs, implements and runs security, supplies the technology and carries out penetration tests.",
+    "og_alt_es": "Asesoramos a la dirección en ciberseguridad y tecnología, y ponemos en marcha sus decisiones.",
+    "og_alt_en": "We advise senior management on cybersecurity and technology, and see its decisions through."
   }
 }
